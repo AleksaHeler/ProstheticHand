@@ -19,6 +19,9 @@ Body wiring:
 
 ******************************************************************************/
 
+#include <Arduino.h>
+#include <Ewma.h>
+
 #define ANALOG_INPUT_PIN 34
 #define LO_NEG_PIN 25
 #define LO_POS_PIN 26
@@ -27,9 +30,12 @@ const int analogInputPin = 34;
 const int loNegPin = 34;
 const int loPosPin = 34;
 
+// Filters
+Ewma adcFilter(0.02);  // More smoothing - less prone to noise, but slower to detect changes
+
 void setup() {
   // Initialize the serial communication
-  Serial.begin(9600);
+  Serial.begin(115200);
   
   pinMode(LO_NEG_PIN, INPUT); // Setup for leads off detection LO +
   pinMode(LO_POS_PIN, INPUT); // Setup for leads off detection LO -
@@ -38,13 +44,15 @@ void setup() {
 void loop() {
   // If leads are not connected
   if((digitalRead(LO_NEG_PIN) == 1)||(digitalRead(LO_POS_PIN) == 1)){
-    Serial.println('!');
+    //Serial.println('!');
   }
   else{
     // Send the value of analog input
-    Serial.println(analogRead(ANALOG_INPUT_PIN));
+    int raw = analogRead(ANALOG_INPUT_PIN);
+    float filtered = adcFilter.filter(raw);
+    Serial.println(filtered);
   }
   
   // Wait for a bit to keep serial data from saturating
-  delay(1);
+  delayMicroseconds(1000);
 }
