@@ -20,39 +20,48 @@ Body wiring:
 ******************************************************************************/
 
 #include <Arduino.h>
-#include <Ewma.h>
-
-#define ANALOG_INPUT_PIN 34
-#define LO_NEG_PIN 25
-#define LO_POS_PIN 26
 
 const int analogInputPin = 34;
 const int loNegPin = 34;
 const int loPosPin = 34;
 
-// Filters
-Ewma adcFilter(0.02);  // More smoothing - less prone to noise, but slower to detect changes
+// Global Variables for highpass filter
+int sensorValue = 0;  //initialization of sensor variable, equivalent to EMA Y
+float EMA_a = 0.3;    //initialization of EMA alpha
+int EMA_S = 0;        //initialization of EMA S
+int highpass = 0;
+
+int detectionTreshold = 350; // 500 also works good
 
 void setup() {
   // Initialize the serial communication
   Serial.begin(115200);
   
-  pinMode(LO_NEG_PIN, INPUT); // Setup for leads off detection LO +
-  pinMode(LO_POS_PIN, INPUT); // Setup for leads off detection LO -
+  pinMode(loNegPin, INPUT); // Setup for leads off detection LO +
+  pinMode(loPosPin, INPUT); // Setup for leads off detection LO -
+
+  EMA_S = analogRead(analogInputPin);     //set EMA S for t=1
 }
  
 void loop() {
   // If leads are not connected
-  if((digitalRead(LO_NEG_PIN) == 1)||(digitalRead(LO_POS_PIN) == 1)){
+  if((digitalRead(loNegPin) == 1)||(digitalRead(loPosPin) == 1)){
     //Serial.println('!');
   }
   else{
-    // Send the value of analog input
-    int raw = analogRead(ANALOG_INPUT_PIN);
-    float filtered = adcFilter.filter(raw);
-    Serial.println(filtered);
+    sensorValue = analogRead(analogInputPin);              //read the sensor value using ADC
+    EMA_S = (EMA_a*sensorValue) + ((1-EMA_a)*EMA_S);  //run the EMA
+    highpass = sensorValue - EMA_S;                   //calculate the high-pass signal 
+    //Serial.println(highpass);
+
+    // If muscle is activated send 1, else 0
+    if(abs(highpass) > detectionTreshold){
+      Serial.println(1);
+    }else{
+      Serial.println(0);
+    }
   }
   
   // Wait for a bit to keep serial data from saturating
-  delayMicroseconds(1000);
+  delay(10);
 }
