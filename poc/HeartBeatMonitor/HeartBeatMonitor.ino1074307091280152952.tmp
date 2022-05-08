@@ -17,11 +17,6 @@ Body wiring:
   Yellow: LA (left arm or left side of chest)
   Green: RL (right leg)
 
-  Example (Bicep):
-    Green: back of elbow
-    Yellow: upper end of muscle
-    Red: lower end of muscle
-
 Signal processing path:
   Analog signal from sensor -> highpass filter -> treshold activation -> lowpass filter
 
@@ -36,22 +31,22 @@ const int loNegPin = 25;
 const int loPosPin = 26;
 
 // Config constants
-const int analogInputTreshold = 350;                 // Value above which the muscleActive is set to TRUE
-const float lowpassFilterActivationTreshold = 0.05;  // After lowpass, how to check if muscle is active
-const int sensorReadDelay = 10;                      // How long to wait between sensor readings
-const float EMA_a = 0.3;                             // Initialization of EMA alpha
-const float lowpassWeight = 0.1;                     // How much the values are smoothed
+const int lowPassFrameSize = 5;                 // How many previous readings are averaged
+const int contractionDetectionTreshold = 350;   // Value above which the muscleActive is set to TRUE
+const int sensorReadDelay = 10;                 // How long to wait between sensor readings
+const float EMA_a = 0.3;                        // Initialization of EMA alpha
 
 // Variables for highpass filter
 
 // Other variables
 int sensorValue = 0;                            // Initialization of sensor variable, equivalent to EMA Y
 int highpassOutput = 0;                         // Output from high pass filter stage
-bool highpassBool = false;
-float lowpassValue = 0.0; 
-float lowpassOutput = 0;                        // Output from low pass filter stage
-int EMA_S = 0;                                  // Highpass filter initialization of EMA S
 bool muscleActive = false;                      // Output from tresholding stage
+int lowpassOutput = 0;                          // Output from low pass filter stage
+int EMA_S = 0;                                  // Highpass filter initialization of EMA S
+bool lowpassHistory[lowPassFrameSize];          // Previous values for low pass filter
+
+
 
 void setup() 
 {
@@ -75,14 +70,16 @@ void loop()
     Serial.println('!');
     return;
   }
+
+  // Read sensor
+  // highpass
+  // treshold
+  // lowpass filter
   
-  sensorValue = readSensor();                                                        // Read the sensor value using ADC
-  highpassOutput = highpassFilter(sensorValue);                                      // Calculate the high-pass signal
-  highpassBool = tresholdSignal(highpassOutput, analogInputTreshold);
-  lowpassOutput = lowpassFilter(highpassBool);                                       // Calculate the low-pass signal (and convert int signal to bool)
-  muscleActive = tresholdSignal(lowpassOutput, lowpassFilterActivationTreshold);
-  
-  Serial.println(muscleActive);
+  sensorValue = readSensor();                      // Read the sensor value using ADC
+  highpass = highpassFilter(sensorValue);          // Calculate the high-pass signal
+  muscleActive = tresholdSignal(highpass);         // Convert int signal to bool
+  lowpassOutput = lowpassFilter(muscleActive)// Calculate the low-pass signal
   
   // Wait for a bit
   delay(sensorReadDelay);
@@ -110,14 +107,13 @@ int highpassFilter(int val){
 }
 
 // Return true if signal is greater than 'contractionDetectionTreshold'
-bool tresholdSignal(float val, float treshold){
-  if(abs(val) > treshold){
+bool tresholdSignal(int val){
+  if(abs(val) > contractionDetectionTreshold){
     return true;
   }
   return false;
 }
 
-float lowpassFilter(bool val){
-  lowpassValue = (1.0-lowpassWeight) * lowpassValue + lowpassWeight * (float)val;
-  return lowpassValue;
+bool lowpassFilter(bool val){
+  return false;
 }
