@@ -23,7 +23,7 @@ Body wiring:
     Red: lower end of muscle
 
 Signal processing path:
-  Analog signal from sensor -> highpass filter -> treshold activation -> lowpass filter
+  Analog signal from sensor -> highpass filter -> threshold activation -> lowpass filter
 
 ******************************************************************************/
 
@@ -36,8 +36,8 @@ const int loNegPin = 25;
 const int loPosPin = 26;
 
 // Config constants
-const int analogInputTreshold = 350;                 // Value above which the muscleActive is set to TRUE
-const float lowpassFilterActivationTreshold = 0.05;  // After lowpass, how to check if muscle is active
+const int analogInputThreshold = 350;                 // Value above which the muscleActive is set to TRUE
+const float lowpassFilterActivationThreshold = 0.05;  // After lowpass, how to check if muscle is active
 const int sensorReadDelay = 10;                      // How long to wait between sensor readings
 const float EMA_a = 0.3;                             // Initialization of EMA alpha
 const float lowpassWeight = 0.1;                     // How much the values are smoothed
@@ -51,7 +51,7 @@ bool highpassBool = false;
 float lowpassValue = 0.0; 
 float lowpassOutput = 0;                        // Output from low pass filter stage
 int EMA_S = 0;                                  // Highpass filter initialization of EMA S
-bool muscleActive = false;                      // Output from tresholding stage
+bool muscleActive = false;                      // Output from thresholding stage
 
 void setup() 
 {
@@ -78,9 +78,9 @@ void loop()
   
   sensorValue = readSensor();                                                        // Read the sensor value using ADC
   highpassOutput = highpassFilter(sensorValue);                                      // Calculate the high-pass signal
-  highpassBool = tresholdSignal(highpassOutput, analogInputTreshold);
+  highpassBool = thresholdSignal(highpassOutput, analogInputThreshold);
   lowpassOutput = lowpassFilter(highpassBool);                                       // Calculate the low-pass signal (and convert int signal to bool)
-  muscleActive = tresholdSignal(lowpassOutput, lowpassFilterActivationTreshold);
+  muscleActive = thresholdSignal(lowpassOutput, lowpassFilterActivationThreshold);
   
   Serial.println(muscleActive);
   
@@ -109,9 +109,9 @@ int highpassFilter(int val){
   return val - EMA_S;                             //calculate the high-pass signal 
 }
 
-// Return true if signal is greater than 'contractionDetectionTreshold'
-bool tresholdSignal(float val, float treshold){
-  if(abs(val) > treshold){
+// Return true if signal is greater than 'contractionDetectionThreshold'
+bool thresholdSignal(float val, float threshold){
+  if(abs(val) > threshold){
     return true;
   }
   return false;
