@@ -18,7 +18,9 @@ The unfiltered raw signal from sensor looks like this:
 
 <img src="images/poc/bicep_test.PNG" width="50%"/>
 
-We have both high and low frequency noises. That may be from cheap electrodes, cheap sensor, the fact we are using ECG sensor for EMG signals or poor electrode placement. Nevertheless we continue processing this signal, because if we can get data from this we can also get it from more beautiful signals. 
+We have both high and low frequency noises. That may be from cheap electrodes, cheap sensor, the fact we are using ECG sensor for EMG signals or poor electrode placement. Nevertheless we continue processing this signal, because if we can get data from this we can also get it from more beautiful signals.
+
+(Look into better electrode placement: https://www.researchgate.net/figure/Electrode-placements-on-the-right-arm_fig1_298738710)
 
 After applying some highpass filtering and thresholding we can get this signal:
 
