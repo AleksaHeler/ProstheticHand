@@ -28,12 +28,13 @@ Signal processing path:
 ******************************************************************************/
 
 #include <Arduino.h>
-
+#include <ESP32Servo.h>
 
 // Pins
 const int sensorInputPin = 34;
 const int loNegPin = 25;
 const int loPosPin = 26;
+const int servoPin = 33;
 
 // Config constants
 const int analogInputThreshold = 350;                 // Value above which the muscleActive is set to TRUE
@@ -41,6 +42,9 @@ const float lowpassFilterActivationThreshold = 0.05;  // After lowpass, how to c
 const int sensorReadDelay = 10;                      // How long to wait between sensor readings
 const float EMA_a = 0.3;                             // Initialization of EMA alpha
 const float lowpassWeight = 0.1;                     // How much the values are smoothed
+#define DEBOUNCE_DELAY 600
+#define FINGER_ACTIVE_ANGLE 140
+#define FINGER_NOT_ACTIVE_ANGLE 40
 
 // Variables for highpass filter
 
@@ -52,6 +56,9 @@ float lowpassValue = 0.0;
 float lowpassOutput = 0;                        // Output from low pass filter stage
 int EMA_S = 0;                                  // Highpass filter initialization of EMA S
 bool muscleActive = false;                      // Output from thresholding stage
+bool fingerActive = false;
+int lastMusleActive = 0;
+Servo myservo;  // create servo object to control a servo
 
 void setup() 
 {
@@ -62,6 +69,9 @@ void setup()
   pinMode(loNegPin, INPUT); // Setup for leads off detection LO +
   pinMode(loPosPin, INPUT); // Setup for leads off detection LO -
 
+  fingerActive = false;
+  myservo.attach(servoPin);  // attaches the servo on pin 13 to the servo object
+  
   // Reset variables
   highpassFilterReset();
 }
@@ -71,10 +81,10 @@ void setup()
 void loop()
 {
   // If leads are not connected
-  if((digitalRead(loNegPin) == 1)||(digitalRead(loPosPin) == 1)){
-    Serial.println('!');
-    return;
-  }
+  //if((digitalRead(loNegPin) == 1)||(digitalRead(loPosPin) == 1)){
+  //  Serial.println('!');
+  //  return;
+  //}
   
   sensorValue = readSensor();                                                        // Read the sensor value using ADC
   highpassOutput = highpassFilter(sensorValue);                                      // Calculate the high-pass signal
@@ -83,7 +93,19 @@ void loop()
   muscleActive = thresholdSignal(lowpassOutput, lowpassFilterActivationThreshold);
   
   Serial.println(muscleActive);
-  
+
+  if (muscleActive && ( millis() - lastMusleActive > DEBOUNCE_DELAY)) {
+    fingerActive = !fingerActive;
+    lastMusleActive = millis();
+  }
+
+  if (fingerActive) {
+    myservo.write(FINGER_ACTIVE_ANGLE);
+  }
+  else {
+    myservo.write(FINGER_NOT_ACTIVE_ANGLE);
+  }
+
   // Wait for a bit
   delay(sensorReadDelay);
 }
