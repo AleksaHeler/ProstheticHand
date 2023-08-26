@@ -1,38 +1,74 @@
-/* Basic example of FreeRTOS on ESP32, flashing LED using task instead of in the loop */
+/** @file main.cpp
+ *  @brief Main entry point of the prosthetic hand code
+ *
+ *  This is the main file and starting point of the prosthetic hand project.
+ *  Here we have two functions: setup (called once on boot) and loop (called in loop forever)
+ *  In 'setup' we firstly initialize all modules (software components), and then in 'loop'
+ *  we constantly call each handle function in constrained timing containers (1ms, 10ms etc.)
+ *
+ *  @author Aleksa Heler (aleksaheler@gmail.com)
+ *  @bug No known bugs.
+ */
 
-#include <Arduino.h>
 
-#define LED_BUILTIN 2
+/********************************************************************************
+ *** Includes
+ *******************************************************************************/
 
-/* Define function/task */
-void myTask( void * parameter )
+/* Include own header first! */
+#include "main.h"
+
+
+/* Include all drivers/software components... */
+#include "drivers/btn/btn.h"
+#include "drivers/pot/pot.h"
+#include "drivers/srv/srv.h"
+
+
+/********************************************************************************
+ *** Functions
+ *******************************************************************************/
+
+/** @brief Init function called once on boot 
+ *
+ *  This function only executes once and is as such used to set up the 
+ *  internal 'os' and then calls initializations of all other components.
+ *
+ *  @return void
+ */
+void setup() 
 {
-  /* loop forever */
-  while(1) {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(1000);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(1000);
-  }
-  /* Delete the task when finished */
-  vTaskDelete( NULL );
-}
-
-
-void setup() {
+  /* Internal setup first... */
   Serial.begin(9600);
 
-  pinMode(LED_BUILTIN, OUTPUT);
+  /* Call all the initialization functions */
+  btn_Init_v();
+  pot_Init_v();
+  srv_Init_v();
 
-  /* we create a new task here */
-  xTaskCreate(myTask,    /* Task function. */
-              "task",    /* Task name */
-              10000,     /* Task stack size */
-              NULL,      /* Task parameter */
-              1,         /* Task priority */
-              NULL);     /* Task handle to keep track of created task */
 }
 
-void loop() {
-}
+/** @brief Handle function called in loop forever
+ *
+ *  This function checks the timers and keeps track of timing contaiers (for example 1ms, 10ms..) 
+ *  Once the time is right, it then calls functions that handle these containers 
+ *  (which then handle software components)
+ * 
+ *  @return void
+ */
+void loop() 
+{
+  /* Call all the handle functions */
+  btn_Handle_v();
+  pot_Handle_v();
+  srv_Handle_v();
 
+  /* For debug only */
+  Serial.println();
+  Serial.println();
+  Serial.println();
+  Serial.println();
+
+  /* Wait */
+  delay(50);
+}
