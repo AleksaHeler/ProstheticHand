@@ -36,7 +36,7 @@
  *
  * @values 0..100 (percents)
  */
-extern uint16_t pot_PotStates_u8[3];
+extern uint8_t pot_PotStates_u8[3];
 
 
 /********************************************************************************
