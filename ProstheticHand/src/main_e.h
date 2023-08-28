@@ -1,15 +1,13 @@
-/** @file pot.h
- *  @brief Header file for the corresponding pot.cpp
+/** @file main_e.h
+ *  @brief Header file for the corresponding main.cpp
  *
  *  @todo Aleksa Heler: add comment for this file (what is located here?)
- *  @todo Aleksa Heler: add structure that defines pot input, so that it's modular
  *
  *  @author Aleksa Heler (aleksaheler@gmail.com)
  *  @bug No known bugs.
  */
-#ifndef POT_H
-#define POT_H
-
+#ifndef MAIN_E_H
+#define MAIN_E_H
 
 /********************************************************************************
  *** Includes
@@ -22,28 +20,30 @@
  *** Defines
  *******************************************************************************/
 
-#define POT_PIN0 25
-#define POT_PIN1 26
-#define POT_PIN2 27
+#define MAIN_TIMER_CALLBACK_COUNT 2
 
 
 /********************************************************************************
- *** Global variables
+ *** Structures
  *******************************************************************************/
 
-/**
- * Buffer for storing values of the potentiometers connected
- *
- * @values 0..100 (percents)
- */
-extern uint8_t pot_PotStates_u8[3];
+typedef struct {
+  uint16_t currExecTime;
+  uint16_t minExecTime;
+  uint16_t maxExecTime;
+  uint16_t stuff;
+} main_g_RuntimeMeas_t;
 
+
+/********************************************************************************
+ *** Variables
+ *******************************************************************************/
+
+extern main_g_RuntimeMeas_t main_g_RuntimeMeas_s[MAIN_TIMER_CALLBACK_COUNT];
 
 /********************************************************************************
  *** Functions
  *******************************************************************************/
 
-extern void pot_Init_v( void );
-extern void pot_Handle_v( void );
 
-#endif /* POT_H */
+#endif /* MAIN_E_H */

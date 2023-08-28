@@ -15,7 +15,8 @@
  *******************************************************************************/
 
 /* Own header file */
-#include "pot.h"
+#include "pot_e.h"
+#include "pot_i.h"
 
 
 /********************************************************************************
@@ -25,24 +26,32 @@
 /**
  * Buffer for storing values of the potentiometers connected
  *
- * @values 0..100 (percents)
+ * @values See pot_PotConfig_u8 in pot_i.h
  */
-uint8_t pot_PotStates_u8[3];
+float32_t pot_g_PotValues_f32[POT_COUNT];
 
 /**
- * Stores previous pot value for filtering
+ * Buffer for storing previous values of the potentiometers for filtering
  *
- * @values 0..100 (percents)
+ * @values See pot_PotConfig_u8 in pot_i.h
  */
-uint8_t pot_PrevPotStates_u8[3];
+float32_t pot_g_PotPrevValues_f32[POT_COUNT];
+
+/**
+ * Buffer for storing previous values of the potentiometers for filtering
+ *
+ * @values See pot_PotConfig_u8 in pot_i.h
+ */
+float32_t pot_g_PotReadingSum_f32[POT_COUNT];
 
 
 /********************************************************************************
  *** Functions
  *******************************************************************************/
 
-void pot_Init_v( void );
-void pot_Handle_v( void );
+void pot_f_Init_v( void );
+void pot_f_Handle_v( void );
+float32_t pot_f_AnalogRead_v( uint16_t potIndex );
 
 
 /** @brief Init function called once on boot 
@@ -51,17 +60,23 @@ void pot_Handle_v( void );
  *
  *  @return void
  */
-void pot_Init_v( void )
+void pot_f_Init_v( void )
 {
+  uint16_t i;
+
+  #ifdef SERIAL_DEBUG
   Serial.println("POT: init");
+  #endif
 
-  pinMode(POT_PIN0, INPUT);
-  pinMode(POT_PIN1, INPUT);
-  pinMode(POT_PIN2, INPUT);
+  /* Configure all given pins as inputs */
+  for(i = 0; i < POT_COUNT; i++) {
+    pinMode(pot_g_PotConfig_s[i].pin_u16, INPUT);
+  }
 
-  pot_PrevPotStates_u8[0] = (uint8_t)map(analogRead(POT_PIN0), 0, 4096, 0, 100);
-  pot_PrevPotStates_u8[1] = (uint8_t)map(analogRead(POT_PIN1), 0, 4096, 0, 100);
-  pot_PrevPotStates_u8[2] = (uint8_t)map(analogRead(POT_PIN2), 0, 4096, 0, 100);
+  /* Set initial pot read value for filter */
+  for(i = 0; i < POT_COUNT; i++) {
+    pot_g_PotPrevValues_f32[i] = pot_f_AnalogRead_v(i);
+  }
 }
 
 
@@ -72,27 +87,61 @@ void pot_Init_v( void )
  *
  *  @return void
  */
-void pot_Handle_v( void )
+void pot_f_Handle_v( void )
 {
-  uint32_t l_PotSum_u32[3];
+  uint16_t i, j;
 
-  Serial.print("POT: handle    ");
+  #ifdef SERIAL_DEBUG
+  Serial.println("POT: handle");
+  #endif
 
-  l_PotSum_u32[0] = 0;
-  l_PotSum_u32[1] = 0;
-  l_PotSum_u32[2] = 0;
-  
-  for (int i = 0; i < 20; i++){
-    l_PotSum_u32[0] += (uint8_t)map(analogRead(POT_PIN0), 0, 4096, 0, 100);
-    l_PotSum_u32[1] += (uint8_t)map(analogRead(POT_PIN1), 0, 4096, 0, 100);
-    l_PotSum_u32[2] += (uint8_t)map(analogRead(POT_PIN2), 0, 4096, 0, 100);
+  /* Set sum to 0 first */
+  for(i = 0; i < POT_COUNT; i++) {
+    pot_g_PotReadingSum_f32[i] = 0;
   }
 
-  pot_PotStates_u8[0] = ( l_PotSum_u32[0] / 20 ) * 0.5 + pot_PrevPotStates_u8[0] * 0.5;
-  pot_PotStates_u8[1] = ( l_PotSum_u32[1] / 20 ) * 0.5 + pot_PrevPotStates_u8[1] * 0.5;
-  pot_PotStates_u8[2] = ( l_PotSum_u32[2] / 20 ) * 0.5 + pot_PrevPotStates_u8[2] * 0.5;
+  /* Go over all channels to be read */
+  for(i = 0; i < POT_COUNT; i++) {
+    /* Read each channel N times to be averaged */
+    for(j = 0; j < pot_g_PotConfig_s[i].averageCount_u16; j++) {
+      pot_g_PotReadingSum_f32[i] += pot_f_AnalogRead_v(i);
+    }
+    /* Average all those readings */
+    pot_g_PotValues_f32[i] = pot_g_PotReadingSum_f32[i] / pot_g_PotConfig_s[i].averageCount_u16;
+  }
+  
+  /* Take % of last reading and % of current reading as resulting value */
+  for(i = 0; i < POT_COUNT; i++) {
+    /* result = mult * prev + (1 - mult) * curr */
+    pot_g_PotValues_f32[i] = pot_g_PotConfig_s[i].prevValMult_f32 * pot_g_PotPrevValues_f32[i] + (1.0 - pot_g_PotConfig_s[i].prevValMult_f32) * pot_g_PotValues_f32[i];
+  }
 
-  pot_PrevPotStates_u8[0] = pot_PotStates_u8[0];
-  pot_PrevPotStates_u8[1] = pot_PotStates_u8[1];
-  pot_PrevPotStates_u8[2] = pot_PotStates_u8[2];
+  /* Keep track of current value as it will become previous next time */
+  for(i = 0; i < POT_COUNT; i++) {
+    pot_g_PotPrevValues_f32[i] = pot_g_PotValues_f32[i];
+  }
+}
+
+/** @brief Single shot analog read of given pot index
+ *
+ *  Read ADC value of pot, and scale it as in config in pot_i.h
+ *
+ *  @return One time scaled analog reading of given pin index as float32_t
+ */
+float32_t pot_f_AnalogRead_v( uint16_t potIndex ){
+  return pot_g_PotConfig_s[potIndex].offset_f32 + (float32_t)pot_f_MapFloat_v(
+    analogRead(pot_g_PotConfig_s[potIndex].pin_u16), 
+    0,
+    4096,
+    pot_g_PotConfig_s[potIndex].min_val_f32,
+    pot_g_PotConfig_s[potIndex].max_val_f32
+  );
+}
+
+/** @brief Scale given int input value to float output
+ *
+ *  @return scaled float value
+ */
+float32_t pot_f_MapFloat_v(uint16_t val, uint16_t in_min, uint16_t in_max, float32_t out_min, float32_t out_max) {
+  return (float32_t)(val - in_min) * (out_max - out_min) / (float32_t)(in_max - in_min) + out_min;
 }

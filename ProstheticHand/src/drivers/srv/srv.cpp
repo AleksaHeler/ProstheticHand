@@ -15,10 +15,10 @@
  *******************************************************************************/
 
 /* Own header file */
-#include "srv.h"
+#include "srv_e.h"
 
 /* Other components used here */
-#include "drivers/pot/pot.h"
+#include "drivers/pot/pot_e.h"
 
 /********************************************************************************
  *** Global variables
@@ -43,7 +43,9 @@ void srv_Handle_v( void );
  */
 void srv_Init_v( void )
 {
+  #ifdef SERIAL_DEBUG
   Serial.println("SRV: init");
+  #endif
 
   pinMode(SERVO_PIN0, OUTPUT);
   pinMode(SERVO_PIN1, OUTPUT);
@@ -61,9 +63,11 @@ void srv_Init_v( void )
  */
 void srv_Handle_v( void )
 {
-  Serial.print("SRV: handle    ");
+  #ifdef SERIAL_DEBUG
+  Serial.println("SRV: handle");
+  #endif
 
-  uint16_t angle = map(pot_PotStates_u8[SERVO_CONTROL_POT_INDEX], 0, 100, SERVO_MIN_ANGLE, SERVO_MAX_ANGLE);
+  uint16_t angle = (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX];
 
   srv_Servo1_s.write(angle);
   srv_Servo2_s.write(angle);

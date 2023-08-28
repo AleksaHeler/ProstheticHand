@@ -169,7 +169,9 @@ void Servo::write(int value)
         else if (value > 180)
             value = 180;
 
-        value = map(value, 0, 180, this->min, this->max);
+        // Used to be:
+        // value = map(value, 0, 180, this->min, this->max);
+        value = (int)((float)value * (float)(this->max - this->min) / 180 + (float)this->min);
     }
     this->writeMicroseconds(value);
 }

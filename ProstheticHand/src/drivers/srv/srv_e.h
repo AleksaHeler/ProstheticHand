@@ -1,4 +1,4 @@
-/** @file srv.h
+/** @file srv_e.h
  *  @brief Header file for the corresponding srv.cpp
  *
  *  @todo Aleksa Heler: add comment for this file (what is located here?)
@@ -6,8 +6,8 @@
  *  @author Aleksa Heler (aleksaheler@gmail.com)
  *  @bug No known bugs.
  */
-#ifndef SRV_H
-#define SRV_H
+#ifndef SRV_E_H
+#define SRV_E_H
 
 
 /********************************************************************************
@@ -68,4 +68,4 @@
 extern void srv_Init_v( void );
 extern void srv_Handle_v( void );
 
-#endif /* SRV_H */
+#endif /* SRV_E_H */

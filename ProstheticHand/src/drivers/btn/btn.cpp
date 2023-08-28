@@ -15,7 +15,7 @@
  *******************************************************************************/
 
 /* Own header file */
-#include "btn.h"
+#include "btn_e.h"
 
 
 /********************************************************************************
@@ -45,7 +45,9 @@ void btn_Handle_v( void );
  */
 void btn_Init_v( void )
 {
+  #ifdef SERIAL_DEBUG
   Serial.println("BTN: init");
+  #endif
 
   pinMode(BTN_PIN0, INPUT);
   pinMode(BTN_PIN1, INPUT);
@@ -62,7 +64,9 @@ void btn_Init_v( void )
  */
 void btn_Handle_v( void )
 {
-  Serial.print("BTN: handle    ");
+  #ifdef SERIAL_DEBUG
+  Serial.println("BTN: handle");
+  #endif
   btn_BtnStates_u8[0] = !digitalRead(BTN_PIN0);
   btn_BtnStates_u8[1] = !digitalRead(BTN_PIN1);
   btn_BtnStates_u8[2] = !digitalRead(BTN_PIN2);

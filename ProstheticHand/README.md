@@ -14,6 +14,9 @@ Here is a guide on how to prepare project for developers:
  - J-link should have on it WinUSB (our example v6.1.7600.16385) driver installed. (if not, install it using Zadig)
  - Now, if the J-link is connected and the ESP32 receives power, you should be able to upload the code using J-link as well as debug the code
 
+If you want to have serial monitor with the ESP32, you need the drivers for its on-board USB to UARD IC:
+ - Download the driver from [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads), under CP210x Windows Drivers and install
+ 
 ## Schematic and wiring
 TODO: Create schematic for example board with buttons, potentiometer, servo, JTAG debugger...
 
