@@ -66,12 +66,6 @@ typedef struct {
    * @values 0..1
    */
   float32_t prevValMult_f32;
-  /**
-   * Stuffing bits to ensure alignment
-   *
-   * @values 0
-   */
-  uint16_t stuff_u16;
 } pot_g_PotConfig_t;
 
 /********************************************************************************
@@ -82,10 +76,10 @@ typedef struct {
  * Configures all connected potentiometers, the code does all the rest
  */
 pot_g_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
-  /* pin min_val max_val offset averageCount prevValMult stuff */
-  {   25,      0,    180,     0,         300,        0.8,    0 },  /* Normal 10k pot */ 
-  {   26,      0,    180,     0,          20,        0.9,    0 },  /* 10k Trim pot   */ 
-  {   27,      0,    180,     0,          20,        0.9,    0 }   /* 10k Trim pot   */
+  /* pin min_val max_val offset averageCount prevValMult  */
+  {   25,      0,    180,     0,           5,        0.5, },  /* Normal 10k pot */ 
+  {   26,      0,    180,     0,           5,        0.8, },  /* 10k Trim pot   */ 
+  {   27,      0,    180,     0,           5,        0.8, }   /* 10k Trim pot   */
 };
 
 

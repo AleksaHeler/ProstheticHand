@@ -19,6 +19,8 @@
 
 /**
  * Define wether to write debug data to Serial port
+ * Communication over serial port can take _very_ long time,
+ * and thus slow down the whole program.
  *
  * @values Comment out this line to disable serial debug
  */

@@ -29,6 +29,8 @@
  *** Variables
  *******************************************************************************/
 
+uint64_t main_g_CurrMicros_u64 = 0;
+uint64_t main_g_Last1msMicros_u64 = 0;
 
 /********************************************************************************
  *** Functions
@@ -62,8 +64,24 @@ void setup() {
  *  @return void
  */
 void loop() {
-  /* Call all handle/update function */
-  btn_Handle_v();
-  pot_f_Handle_v();
-  srv_Handle_v();
+  /* Get current time */
+  main_g_CurrMicros_u64 = micros();
+
+  /* If more than 1000us = 1ms has passed, call the handle functions */
+  if(main_g_CurrMicros_u64 - main_g_Last1msMicros_u64 >= 1000 ) {
+
+    #ifdef SERIAL_DEBUG
+    Serial.print("1ms container: time difference = ");
+    Serial.println(main_g_CurrMicros_u64 - main_g_Last1msMicros_u64);
+    #endif
+
+    /* Keep track of the last 1ms time*/
+    main_g_Last1msMicros_u64 = main_g_CurrMicros_u64;
+
+    /* Call handle functions */
+    btn_Handle_v();
+    pot_f_Handle_v();
+    srv_Handle_v();
+  }
 }
+

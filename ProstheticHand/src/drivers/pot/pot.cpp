@@ -92,12 +92,7 @@ void pot_f_Handle_v( void )
   uint16_t i, j;
 
   #ifdef SERIAL_DEBUG
-  Serial.print("POT: handle   ");
-  Serial.print(pot_g_PotValues_f32[0]);
-  Serial.print("   ");
-  Serial.print(pot_g_PotValues_f32[1]);
-  Serial.print("   ");
-  Serial.println(pot_g_PotValues_f32[2]);
+  Serial.println("POT: handle");
   #endif
 
   /* Set sum to 0 first */
