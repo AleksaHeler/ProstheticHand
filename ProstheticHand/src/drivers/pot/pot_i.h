@@ -74,7 +74,6 @@ typedef struct {
   uint16_t stuff_u16;
 } pot_g_PotConfig_t;
 
-
 /********************************************************************************
  *** Global variables
  *******************************************************************************/
@@ -84,7 +83,7 @@ typedef struct {
  */
 pot_g_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
   /* pin min_val max_val offset averageCount prevValMult stuff */
-  {   25,      0,    180,     0,          10,        0.5,    0 },  /* Normal 10k pot */ 
+  {   25,      0,    180,     0,         300,        0.8,    0 },  /* Normal 10k pot */ 
   {   26,      0,    180,     0,          20,        0.9,    0 },  /* 10k Trim pot   */ 
   {   27,      0,    180,     0,          20,        0.9,    0 }   /* 10k Trim pot   */
 };
@@ -108,7 +107,7 @@ extern float32_t pot_g_PotReadingSum_f32[POT_COUNT];
  *** Functions
  *******************************************************************************/
 
-extern float32_t pot_f_AnalogRead_v( uint16_t potIndex );
-extern float32_t pot_f_MapFloat_v( uint16_t val, uint16_t in_min, uint16_t in_max, float32_t out_min, float32_t out_max );
+extern float32_t pot_f_AnalogRead_f32( uint16_t potIndex );
+extern float32_t pot_f_MapFloat_f32( uint16_t val, uint16_t in_min, uint16_t in_max, float32_t out_min, float32_t out_max );
 
 #endif /* POT_I_H */

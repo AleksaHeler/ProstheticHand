@@ -22,7 +22,7 @@
  *
  * @values Comment out this line to disable serial debug
  */
-#define SERIAL_DEBUG
+//#define SERIAL_DEBUG
 
 
 /********************************************************************************

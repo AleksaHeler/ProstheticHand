@@ -11,7 +11,7 @@ Here is a guide on how to prepare project for developers:
  - Open the "ProstheticHand" project from PlatformIOs home screen
  - First time opening the project, PlatformIO should update and download something and configure it
  - Then if you try to build the code, it should work
- - J-link should have on it WinUSB (our example v6.1.7600.16385) driver installed. (if not, install it using Zadig)
+ - J-link should have on it WinUSB (our example v6.1.7600.16385) driver installed. (if not, install it using [Zadig](https://zadig.akeo.ie/))
  - Now, if the J-link is connected and the ESP32 receives power, you should be able to upload the code using J-link as well as debug the code
 
 If you want to have serial monitor with the ESP32, you need the drivers for its on-board USB to UARD IC:

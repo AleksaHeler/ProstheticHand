@@ -51,7 +51,7 @@ float32_t pot_g_PotReadingSum_f32[POT_COUNT];
 
 void pot_f_Init_v( void );
 void pot_f_Handle_v( void );
-float32_t pot_f_AnalogRead_v( uint16_t potIndex );
+float32_t pot_f_AnalogRead_f32( uint16_t potIndex );
 
 
 /** @brief Init function called once on boot 
@@ -75,7 +75,7 @@ void pot_f_Init_v( void )
 
   /* Set initial pot read value for filter */
   for(i = 0; i < POT_COUNT; i++) {
-    pot_g_PotPrevValues_f32[i] = pot_f_AnalogRead_v(i);
+    pot_g_PotPrevValues_f32[i] = pot_f_AnalogRead_f32(i);
   }
 }
 
@@ -92,7 +92,12 @@ void pot_f_Handle_v( void )
   uint16_t i, j;
 
   #ifdef SERIAL_DEBUG
-  Serial.println("POT: handle");
+  Serial.print("POT: handle   ");
+  Serial.print(pot_g_PotValues_f32[0]);
+  Serial.print("   ");
+  Serial.print(pot_g_PotValues_f32[1]);
+  Serial.print("   ");
+  Serial.println(pot_g_PotValues_f32[2]);
   #endif
 
   /* Set sum to 0 first */
@@ -104,7 +109,7 @@ void pot_f_Handle_v( void )
   for(i = 0; i < POT_COUNT; i++) {
     /* Read each channel N times to be averaged */
     for(j = 0; j < pot_g_PotConfig_s[i].averageCount_u16; j++) {
-      pot_g_PotReadingSum_f32[i] += pot_f_AnalogRead_v(i);
+      pot_g_PotReadingSum_f32[i] += pot_f_AnalogRead_f32(i);
     }
     /* Average all those readings */
     pot_g_PotValues_f32[i] = pot_g_PotReadingSum_f32[i] / pot_g_PotConfig_s[i].averageCount_u16;
@@ -128,8 +133,8 @@ void pot_f_Handle_v( void )
  *
  *  @return One time scaled analog reading of given pin index as float32_t
  */
-float32_t pot_f_AnalogRead_v( uint16_t potIndex ){
-  return pot_g_PotConfig_s[potIndex].offset_f32 + (float32_t)pot_f_MapFloat_v(
+float32_t pot_f_AnalogRead_f32( uint16_t potIndex ){
+  return pot_g_PotConfig_s[potIndex].offset_f32 + (float32_t)pot_f_MapFloat_f32(
     analogRead(pot_g_PotConfig_s[potIndex].pin_u16), 
     0,
     4096,
@@ -142,6 +147,6 @@ float32_t pot_f_AnalogRead_v( uint16_t potIndex ){
  *
  *  @return scaled float value
  */
-float32_t pot_f_MapFloat_v(uint16_t val, uint16_t in_min, uint16_t in_max, float32_t out_min, float32_t out_max) {
+float32_t pot_f_MapFloat_f32(uint16_t val, uint16_t in_min, uint16_t in_max, float32_t out_min, float32_t out_max) {
   return (float32_t)(val - in_min) * (out_max - out_min) / (float32_t)(in_max - in_min) + out_min;
 }
