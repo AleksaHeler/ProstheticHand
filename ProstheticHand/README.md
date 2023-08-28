@@ -7,6 +7,7 @@ Flashing and debugging of the code is done using [J-Link debugger from SEGGER](h
 Here is a guide on how to prepare project for developers:
  - Install [Visual Studio Code](https://code.visualstudio.com/download), and install [PlatformIO](https://platformio.org/install/ide?install=vscode) plugin for it
  - Install [J-Link Software](https://www.segger.com/downloads/jlink/) from SEGGER (Windows 64-bit Installer, leave everything at default while installing)
+ - You may need to have Arduino IDE installed (to be tested)
  - Clone our projects git repository
  - Open the "ProstheticHand" project from PlatformIOs home screen
  - First time opening the project, PlatformIO should update and download something and configure it

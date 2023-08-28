@@ -62,11 +62,8 @@ void setup() {
  *  @return void
  */
 void loop() {
-  
   /* Call all handle/update function */
   btn_Handle_v();
   pot_f_Handle_v();
   srv_Handle_v();
-
-  delay(1);
 }
