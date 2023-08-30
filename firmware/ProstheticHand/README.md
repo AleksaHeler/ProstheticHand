@@ -23,3 +23,22 @@ TODO: Create schematic for example board with buttons, potentiometer, servo, JTA
 
 ## Code guide
 TODO: Create a guide on how to code and comment everything, and the architecture of the project 
+
+If serial degbug is enabled, the output to console for now looks like this:
+```
+----------------------------------------
+ > runtimes (in microseconds):
+    ├─[0] curr: 14, min: 13, max: 73
+    ├─[1] curr: 715, min: 702, max: 843
+    ├─[2] curr: 24, min: 23, max: 81
+    ├─[3] curr: 1, min: 1, max: 1
+    ├─[4] curr: 1, min: 1, max: 1
+    ├─[5] curr: 1, min: 1, max: 1
+    ├─[6] curr: 1, min: 1, max: 1
+    ├─[7] curr: 1, min: 1, max: 1
+    ├─[8] curr: 1, min: 1, max: 1
+    ├─[9] curr: 1, min: 1, max: 1
+btns:  0  0  0  0
+pots:  179.96  30.22  0.00
+servo working
+```

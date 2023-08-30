@@ -36,6 +36,10 @@ uint8_t btn_BtnStates_u8[4];
 void btn_Init_v( void );
 void btn_Handle_v( void );
 
+#ifdef SERIAL_DEBUG
+void btn_SerialDebug_v( void );
+#endif
+
 
 /** @brief Initialize function to be called once on startup/boot
  *
@@ -45,10 +49,6 @@ void btn_Handle_v( void );
  */
 void btn_Init_v( void )
 {
-  #ifdef SERIAL_DEBUG
-  Serial.println("BTN: init");
-  #endif
-
   pinMode(BTN_PIN0, INPUT);
   pinMode(BTN_PIN1, INPUT);
   pinMode(BTN_PIN2, INPUT);
@@ -64,11 +64,22 @@ void btn_Init_v( void )
  */
 void btn_Handle_v( void )
 {
-  #ifdef SERIAL_DEBUG
-  Serial.println("BTN: handle");
-  #endif
   btn_BtnStates_u8[0] = !digitalRead(BTN_PIN0);
   btn_BtnStates_u8[1] = !digitalRead(BTN_PIN1);
   btn_BtnStates_u8[2] = !digitalRead(BTN_PIN2);
   btn_BtnStates_u8[3] = !digitalRead(BTN_PIN3);
 }
+
+
+#ifdef SERIAL_DEBUG
+void btn_SerialDebug_v( void ) {
+  uint16_t i;
+
+  Serial.print("btns:  ");
+  for(i = 0; i < 4; i++) {
+    Serial.print(btn_BtnStates_u8[i]);
+    Serial.print("  ");
+  }
+  Serial.println(" ");
+}
+#endif

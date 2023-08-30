@@ -43,5 +43,8 @@ extern float32_t pot_g_PotValues_f32[POT_COUNT];
 
 extern void pot_f_Init_v( void );
 extern void pot_f_Handle_v( void );
+#ifdef SERIAL_DEBUG
+extern void pot_f_SerialDebug_v( void );
+#endif
 
 #endif /* POT_E_H */

@@ -67,5 +67,8 @@
 
 extern void srv_Init_v( void );
 extern void srv_Handle_v( void );
+#ifdef SERIAL_DEBUG
+extern void srv_SerialDebug_v( void );
+#endif
 
 #endif /* SRV_E_H */

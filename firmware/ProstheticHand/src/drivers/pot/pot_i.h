@@ -77,9 +77,9 @@ typedef struct {
  */
 pot_g_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
   /* pin min_val max_val offset averageCount prevValMult  */
-  {   25,      0,    180,     0,           5,        0.5, },  /* Normal 10k pot */ 
-  {   26,      0,    180,     0,           5,        0.8, },  /* 10k Trim pot   */ 
-  {   27,      0,    180,     0,           5,        0.8, }   /* 10k Trim pot   */
+  {   25,      0,    180,     0,           2,        0.5, },  /* Normal 10k pot */ 
+  {   26,      0,    180,     0,           2,        0.8, },  /* 10k Trim pot   */ 
+  {   27,      0,    180,     0,           2,        0.8, }   /* 10k Trim pot   */
 };
 
 

@@ -51,6 +51,9 @@ float32_t pot_g_PotReadingSum_f32[POT_COUNT];
 
 void pot_f_Init_v( void );
 void pot_f_Handle_v( void );
+#ifdef SERIAL_DEBUG
+void pot_f_SerialDebug_v( void );
+#endif
 float32_t pot_f_AnalogRead_f32( uint16_t potIndex );
 
 
@@ -63,10 +66,6 @@ float32_t pot_f_AnalogRead_f32( uint16_t potIndex );
 void pot_f_Init_v( void )
 {
   uint16_t i;
-
-  #ifdef SERIAL_DEBUG
-  Serial.println("POT: init");
-  #endif
 
   /* Configure all given pins as inputs */
   for(i = 0; i < POT_COUNT; i++) {
@@ -90,10 +89,6 @@ void pot_f_Init_v( void )
 void pot_f_Handle_v( void )
 {
   uint16_t i, j;
-
-  #ifdef SERIAL_DEBUG
-  Serial.println("POT: handle");
-  #endif
 
   /* Set sum to 0 first */
   for(i = 0; i < POT_COUNT; i++) {
@@ -121,6 +116,19 @@ void pot_f_Handle_v( void )
     pot_g_PotPrevValues_f32[i] = pot_g_PotValues_f32[i];
   }
 }
+
+#ifdef SERIAL_DEBUG
+void pot_f_SerialDebug_v( void ) {
+  uint16_t i;
+
+  Serial.print("pots:  ");
+  for(i = 0; i < POT_COUNT; i++) {
+    Serial.print(pot_g_PotValues_f32[i]);
+    Serial.print("  ");
+  }
+  Serial.println(" ");
+}
+#endif
 
 /** @brief Single shot analog read of given pot index
  *

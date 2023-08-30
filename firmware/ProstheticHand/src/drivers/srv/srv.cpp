@@ -34,6 +34,10 @@ Servo srv_Servo2_s;
 void srv_Init_v( void );
 void srv_Handle_v( void );
 
+#ifdef SERIAL_DEBUG
+void srv_SerialDebug_v( void );
+#endif
+
 
 /** @brief Init function called once on boot 
  *
@@ -43,10 +47,6 @@ void srv_Handle_v( void );
  */
 void srv_Init_v( void )
 {
-  #ifdef SERIAL_DEBUG
-  Serial.println("SRV: init");
-  #endif
-
   pinMode(SERVO_PIN0, OUTPUT);
   pinMode(SERVO_PIN1, OUTPUT);
 
@@ -63,12 +63,14 @@ void srv_Init_v( void )
  */
 void srv_Handle_v( void )
 {
-  #ifdef SERIAL_DEBUG
-  Serial.println("SRV: handle");
-  #endif
-
   uint16_t angle = (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX];
 
   srv_Servo1_s.write(angle);
   srv_Servo2_s.write(angle);
 }
+
+#ifdef SERIAL_DEBUG
+void srv_SerialDebug_v( void ){
+  Serial.println("servo working");
+}
+#endif

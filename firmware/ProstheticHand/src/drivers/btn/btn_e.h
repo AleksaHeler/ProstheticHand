@@ -51,5 +51,8 @@ extern uint8_t btn_BtnStates_u8[4];
 
 extern void btn_Init_v( void );
 extern void btn_Handle_v( void );
+#ifdef SERIAL_DEBUG
+extern void btn_SerialDebug_v( void );
+#endif
 
 #endif /* BTN_E_H */
