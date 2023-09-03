@@ -14,7 +14,7 @@
  *******************************************************************************/
 
 /* Default Arduino stuff */
-#include <Arduino.h>
+//#include <Arduino.h>
 
 /* Integer types */
 #include "stdint.h"

@@ -49,10 +49,12 @@ void btn_SerialDebug_v( void );
  */
 void btn_Init_v( void )
 {
-  pinMode(BTN_PIN0, INPUT);
-  pinMode(BTN_PIN1, INPUT);
-  pinMode(BTN_PIN2, INPUT);
-  pinMode(BTN_PIN3, INPUT);
+  
+    // esp_err_t gpio_config(const gpio_config_t *pGPIOConfig)
+  // pinMode(BTN_PIN0, INPUT);
+  // pinMode(BTN_PIN1, INPUT);
+  // pinMode(BTN_PIN2, INPUT);
+  // pinMode(BTN_PIN3, INPUT);
 }
 
 
@@ -64,10 +66,10 @@ void btn_Init_v( void )
  */
 void btn_Handle_v( void )
 {
-  btn_BtnStates_u8[0] = !digitalRead(BTN_PIN0);
-  btn_BtnStates_u8[1] = !digitalRead(BTN_PIN1);
-  btn_BtnStates_u8[2] = !digitalRead(BTN_PIN2);
-  btn_BtnStates_u8[3] = !digitalRead(BTN_PIN3);
+  // btn_BtnStates_u8[0] = !digitalRead(BTN_PIN0);
+  // btn_BtnStates_u8[1] = !digitalRead(BTN_PIN1);
+  // btn_BtnStates_u8[2] = !digitalRead(BTN_PIN2);
+  // btn_BtnStates_u8[3] = !digitalRead(BTN_PIN3);
 }
 
 

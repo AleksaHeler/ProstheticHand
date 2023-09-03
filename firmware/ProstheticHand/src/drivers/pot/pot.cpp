@@ -69,7 +69,8 @@ void pot_f_Init_v( void )
 
   /* Configure all given pins as inputs */
   for(i = 0; i < POT_COUNT; i++) {
-    pinMode(pot_g_PotConfig_s[i].pin_u16, INPUT);
+    // esp_err_t gpio_config(const gpio_config_t *pGPIOConfig)
+    // pinMode(pot_g_PotConfig_s[i].pin_u16, INPUT);
   }
 
   /* Set initial pot read value for filter */
@@ -137,13 +138,13 @@ void pot_f_SerialDebug_v( void ) {
  *  @return One time scaled analog reading of given pin index as float32_t
  */
 float32_t pot_f_AnalogRead_f32( uint16_t potIndex ){
-  return pot_g_PotConfig_s[potIndex].offset_f32 + (float32_t)pot_f_MapFloat_f32(
-    analogRead(pot_g_PotConfig_s[potIndex].pin_u16), 
-    0,
-    4096,
-    pot_g_PotConfig_s[potIndex].min_val_f32,
-    pot_g_PotConfig_s[potIndex].max_val_f32
-  );
+  // return pot_g_PotConfig_s[potIndex].offset_f32 + (float32_t)pot_f_MapFloat_f32(
+  //   pot_g_PotConfig_s[potIndex].adcGroup_u16 == 1 ? adc1_get_raw(pot_g_PotConfig_s[potIndex].adcChannel_u16) : adc2_get_raw(pot_g_PotConfig_s[potIndex].adcChannel_u16),
+  //   0,
+  //   4096,
+  //   pot_g_PotConfig_s[potIndex].min_val_f32,
+  //   pot_g_PotConfig_s[potIndex].max_val_f32
+  // );
 }
 
 /** @brief Scale given int input value to float output

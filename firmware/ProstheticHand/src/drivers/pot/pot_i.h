@@ -36,6 +36,18 @@ typedef struct {
    */
   uint16_t pin_u16;
   /**
+   * GPIO pin to which the potentiometer is connected
+   *
+   * @values See which pins are usable in file "ESP32_Pins.xlsx"
+   */
+  uint16_t adcGroup_u16;
+  /**
+   * GPIO pin to which the potentiometer is connected
+   *
+   * @values See which pins are usable in file "ESP32_Pins.xlsx"
+   */
+  uint16_t adcChannel_u16;
+  /**
    * Minimum value returned when the pot is at its lowest
    *
    * @values see float32_t define
@@ -53,7 +65,7 @@ typedef struct {
    * @values see float32_t define
    */
   float32_t offset_f32;
-  /**
+  /**7
    * How many ADC readings to take at once to average reading
    *
    * @values see float32_t define
@@ -76,10 +88,10 @@ typedef struct {
  * Configures all connected potentiometers, the code does all the rest
  */
 pot_g_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
-  /* pin min_val max_val offset averageCount prevValMult  */
-  {   25,      0,    180,     0,           2,        0.5, },  /* Normal 10k pot */ 
-  {   26,      0,    180,     0,           2,        0.8, },  /* 10k Trim pot   */ 
-  {   27,      0,    180,     0,           2,        0.8, }   /* 10k Trim pot   */
+  /* pin adc chn min_val max_val offset averageCount prevValMult  */
+  {   25,  1,  8,      0,    180,     0,           2,        0.5, },  /* Normal 10k pot */ 
+  {   26,  2,  9,      0,    180,     0,           2,        0.8, },  /* 10k Trim pot   */ 
+  {   27,  2,  7,      0,    180,     0,           2,        0.8, }   /* 10k Trim pot   */
 };
 
 

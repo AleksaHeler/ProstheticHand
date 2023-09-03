@@ -47,11 +47,12 @@ void srv_SerialDebug_v( void );
  */
 void srv_Init_v( void )
 {
-  pinMode(SERVO_PIN0, OUTPUT);
-  pinMode(SERVO_PIN1, OUTPUT);
-
-  srv_Servo1_s.attach(SERVO_PIN0, SERVO_MIN_ANGLE_US, SERVO_MAX_ANGLE_US);
-  srv_Servo2_s.attach(SERVO_PIN1, SERVO_MIN_ANGLE_US, SERVO_MAX_ANGLE_US);
+    // esp_err_t gpio_config(const gpio_config_t *pGPIOConfig)
+  // pinMode(SERVO_PIN0, OUTPUT);
+  // pinMode(SERVO_PIN1, OUTPUT);
+  
+  // srv_Servo1_s.attach(SERVO_PIN0, SERVO_MIN_ANGLE_US, SERVO_MAX_ANGLE_US);
+  // srv_Servo2_s.attach(SERVO_PIN1, SERVO_MIN_ANGLE_US, SERVO_MAX_ANGLE_US);
 }
 
 
@@ -63,10 +64,10 @@ void srv_Init_v( void )
  */
 void srv_Handle_v( void )
 {
-  uint16_t angle = (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX];
+  // uint16_t angle = (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX];
 
-  srv_Servo1_s.write(angle);
-  srv_Servo2_s.write(angle);
+  // srv_Servo1_s.write(angle);
+  // srv_Servo2_s.write(angle);
 }
 
 #ifdef SERIAL_DEBUG
