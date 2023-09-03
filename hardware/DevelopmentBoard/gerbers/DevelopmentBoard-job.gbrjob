@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "7.0.7"
     },
-    "CreationDate": "2023-09-02T13:45:52+02:00"
+    "CreationDate": "2023-09-03T15:00:53+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -24,8 +24,8 @@
   "DesignRules": [
     {
       "Layers": "Outer",
-      "PadToPad": 0.0,
-      "PadToTrack": 0.0,
+      "PadToPad": 0.2,
+      "PadToTrack": 0.2,
       "TrackToTrack": 0.2,
       "MinLineWidth": 0.762,
       "TrackToRegion": 0.6,
@@ -44,33 +44,13 @@
       "FilePolarity": "Positive"
     },
     {
-      "Path": "DevelopmentBoard-F_Paste.gtp",
-      "FileFunction": "SolderPaste,Top",
-      "FilePolarity": "Positive"
-    },
-    {
-      "Path": "DevelopmentBoard-B_Paste.gbp",
-      "FileFunction": "SolderPaste,Bot",
-      "FilePolarity": "Positive"
-    },
-    {
       "Path": "DevelopmentBoard-F_Silkscreen.gto",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "DevelopmentBoard-B_Silkscreen.gbo",
-      "FileFunction": "Legend,Bot",
-      "FilePolarity": "Positive"
-    },
-    {
       "Path": "DevelopmentBoard-F_Mask.gts",
       "FileFunction": "SolderMask,Top",
-      "FilePolarity": "Negative"
-    },
-    {
-      "Path": "DevelopmentBoard-B_Mask.gbs",
-      "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
