@@ -3,8 +3,8 @@
 For designing those we use [KiCAD](https://www.kicad.org/download/). Good tutorial can be found [here](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB). Although it's for a bit older version of the KiCAD it is still usefull.
 
 For now only two project are here:
- - **DevelopmentBoard** - First example board to test the KiCAD software and to try our hand at making our own PCB at home (TODO: update this document with findings)
- - **ProstheticHand v1** - The actual PCB design that will be used in the prosthetic hand (for the first prototype)
+ - **DevelopmentBoard** - First example board to test the KiCAD software and to try our hand at making our own PCB at home (TODO: update this document with findings once home-made pcb is done)
+ - **ProstheticHand v1** - The actual PCB design that will be used in the prosthetic hand (for the first prototype), hopefully to be ordered from PCB manufacturer
 
 Folders:
  - **images** - contains images of the PCBs and hardware
@@ -24,6 +24,10 @@ It contains 4 buttons (with pullup resistors), 3 potentiometers (two trim pots, 
 Here are some PCB screenshots:
 ![development_board_pcb](images/development_board_pcb.png)
 ![development_board_pcb_3d](images/development_board_pcb_3d.png)
+
+And some photos of the protoboard build:
+![development_board_protoboard_front](images/development_board_protoboard_front.jpeg)
+![development_board_protoboard_back](images/development_board_protoboard_back.jpeg)
 
 
 ## Prosthetic Hand v1
