@@ -32,4 +32,30 @@ And some photos of the protoboard build:
 
 ## Prosthetic Hand v1
 
-TODO
+Components ideas for this iteration of the board:
+ - debug LED
+ - 2x pot
+ - oled display
+ - 2x buttons
+ - 4x servos
+ - current shunts for servo current measurement (we have 1 ohm power resistors at hand)
+ - battery voltage sensing (connected to a battery -> 4 cell Li-ion)
+ - [LDO voltage regulator](https://en.wikipedia.org/wiki/Low-dropout_regulator)
+ - JTAG for programming and debugging
+ - external power connector (selectable between this power input or the batteries by a switch)
+
+Used ESP32 GPIO pins:
+ - Servo output -> GPIO04, GPIO05, GPIO26, GPIO27 
+ - Servo current sensing -> GPIO34, GPIO35, GPIO36, GPIO39
+ - Debug LED -> GPIO23
+ - JTAG -> GPIO12, GPIO13, GPIO14, GPIO15
+ - UART -> GPIO01, GPIO03 (using built in serial to usb chip, no our connnected hardware)
+ - Buttons -> GPIO18, GPIO19
+ - Pots -> GPIO32, GPIO33
+ - Battery voltage -> GPIO25
+ - OLED display SPI com -> GPIO21, GPIO22
+
+This leaves us with pretty much no spare pins. So if something comes to mind, we'll have to use multiplexers for input and outputs. Or just use the method described below.
+
+Maybe: selectable pin functions using DIP swithces or jumper header connectors (we had some 4x DIP switches at hand so we're using them): each pin can be routed to some functionality by enabling these DIP switches. For example we can use a pin as a button input or as a pot input based on the DIP swith configuration. This is purely hardware oriented configuration and we have to then configure the code to support these changes.
+

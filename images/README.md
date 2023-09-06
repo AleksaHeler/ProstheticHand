@@ -1,1 +1,1 @@
-TODO: document what this folder contains and how to use it
+# This folder contains some global images used in the main readme file
