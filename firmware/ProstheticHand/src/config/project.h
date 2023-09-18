@@ -1,23 +1,32 @@
-/** @file project.h
- *  @brief Header file that unifies everything used in project for easier includes
- *
- *  @todo Document this file, and add everything that needs to be here 
- *
- *  @author Aleksa Heler (aleksaheler@gmail.com)
- *  @bug No known bugs.
+/**
+ * @file project.h
+ * 
+ * @author your name (you@domain.com)
+ * 
+ * @brief Header file that unifies everything used in project for easier includes
+ * 
+ * @todo Document this file, and add everything that needs to be here 
+ * 
+ * @version 0.1
+ * @date 2023-09-17
+ * 
+ * @copyright Copyright (c) 2023
+ * 
  */
-/* For all includes and everything this project needs */
 
+#ifndef PROJECT_H
+#define PROJECT_H
 
-/********************************************************************************
- *** Includes
- *******************************************************************************/
+/**************************************************************************
+ * Includes
+ **************************************************************************/
 
-/* Default Arduino stuff */
-//#include <Arduino.h>
+/* ESP IDF stuff */
 
 /* Integer types */
 #include "stdint.h"
+#include "driver/gpio.h"
+#include "esp_log.h"
 
 /* All defines */
 #include "defines.h"
@@ -25,3 +34,4 @@
 /* Info headers */
 #include "version.h"
 
+#endif // PROJECT_H

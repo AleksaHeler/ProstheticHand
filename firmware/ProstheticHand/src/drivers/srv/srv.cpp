@@ -1,77 +1,77 @@
-/** @file srv.cpp
- *  @brief Servo software component / driver
- *
- *  Here we have handling of the servos connected to the board.
- *  For now only couple of servos are connected for debugging, 
- *  and we just set their angle to the potentiometer value.
- *
- *  @author Aleksa Heler (aleksaheler@gmail.com)
- *  @bug No known bugs.
- */
+// /** @file srv.cpp
+//  *  @brief Servo software component / driver
+//  *
+//  *  Here we have handling of the servos connected to the board.
+//  *  For now only couple of servos are connected for debugging, 
+//  *  and we just set their angle to the potentiometer value.
+//  *
+//  *  @author Aleksa Heler (aleksaheler@gmail.com)
+//  *  @bug No known bugs.
+//  */
 
 
-/********************************************************************************
- *** Includes
- *******************************************************************************/
+// /********************************************************************************
+//  *** Includes
+//  *******************************************************************************/
 
-/* Own header file */
-#include "srv_e.h"
+// /* Own header file */
+// #include "srv_e.h"
 
-/* Other components used here */
-#include "drivers/pot/pot_e.h"
+// /* Other components used here */
+// #include "drivers/pot/pot_e.h"
 
-/********************************************************************************
- *** Global variables
- *******************************************************************************/
+// /********************************************************************************
+//  *** Global variables
+//  *******************************************************************************/
 
-Servo srv_Servo1_s;
-Servo srv_Servo2_s;
+// Servo srv_Servo1_s;
+// Servo srv_Servo2_s;
 
-/********************************************************************************
- *** Functions
- *******************************************************************************/
+// /********************************************************************************
+//  *** Functions
+//  *******************************************************************************/
 
-void srv_Init_v( void );
-void srv_Handle_v( void );
+// void srv_Init_v( void );
+// void srv_Handle_v( void );
 
-#ifdef SERIAL_DEBUG
-void srv_SerialDebug_v( void );
-#endif
+// #ifdef SERIAL_DEBUG
+// void srv_SerialDebug_v( void );
+// #endif
 
 
-/** @brief Init function called once on boot 
- *
- *  Set all the given pins as inputs
- *
- *  @return void
- */
-void srv_Init_v( void )
-{
-    // esp_err_t gpio_config(const gpio_config_t *pGPIOConfig)
-  // pinMode(SERVO_PIN0, OUTPUT);
-  // pinMode(SERVO_PIN1, OUTPUT);
+// /** @brief Init function called once on boot 
+//  *
+//  *  Set all the given pins as inputs
+//  *
+//  *  @return void
+//  */
+// void srv_Init_v( void )
+// {
+//     // esp_err_t gpio_config(const gpio_config_t *pGPIOConfig)
+//   // pinMode(SERVO_PIN0, OUTPUT);
+//   // pinMode(SERVO_PIN1, OUTPUT);
   
-  // srv_Servo1_s.attach(SERVO_PIN0, SERVO_MIN_ANGLE_US, SERVO_MAX_ANGLE_US);
-  // srv_Servo2_s.attach(SERVO_PIN1, SERVO_MIN_ANGLE_US, SERVO_MAX_ANGLE_US);
-}
+//   // srv_Servo1_s.attach(SERVO_PIN0, SERVO_MIN_ANGLE_US, SERVO_MAX_ANGLE_US);
+//   // srv_Servo2_s.attach(SERVO_PIN1, SERVO_MIN_ANGLE_US, SERVO_MAX_ANGLE_US);
+// }
 
 
-/** @brief Handle function to be called cyclically
- *
- *  Set the potentiometers to an angle that relates to a potentiometer
- *
- *  @return void
- */
-void srv_Handle_v( void )
-{
-  // uint16_t angle = (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX];
+// /** @brief Handle function to be called cyclically
+//  *
+//  *  Set the potentiometers to an angle that relates to a potentiometer
+//  *
+//  *  @return void
+//  */
+// void srv_Handle_v( void )
+// {
+//   // uint16_t angle = (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX];
 
-  // srv_Servo1_s.write(angle);
-  // srv_Servo2_s.write(angle);
-}
+//   // srv_Servo1_s.write(angle);
+//   // srv_Servo2_s.write(angle);
+// }
 
-#ifdef SERIAL_DEBUG
-void srv_SerialDebug_v( void ){
-  Serial.println("servo working");
-}
-#endif
+// #ifdef SERIAL_DEBUG
+// void srv_SerialDebug_v( void ){
+//   Serial.println("servo working");
+// }
+// #endif
