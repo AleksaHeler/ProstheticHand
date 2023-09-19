@@ -53,12 +53,12 @@ void btn_Init_v(void)
 {
     gpio_config_t btn_pin_config{
         (1ULL << BTN_0) | (1ULL << BTN_1) | (1ULL << BTN_2) | (1ULL << BTN_3),
-        GPIO_MODE_OUTPUT,
-        GPIO_PULLUP_ENABLE,
+        GPIO_MODE_INPUT,
+        GPIO_PULLUP_ENABLE, // The pins used don't have a pull-up/pull-down resistor, so we've implemented our own in the PCB design
         GPIO_PULLDOWN_DISABLE,
         GPIO_INTR_DISABLE
     };
-    gpio_config(&btn_pin_config);
+    ESP_ERROR_CHECK(gpio_config(&btn_pin_config));
 }
 
 

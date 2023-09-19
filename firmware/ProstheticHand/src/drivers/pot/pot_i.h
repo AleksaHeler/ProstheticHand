@@ -66,7 +66,7 @@ typedef struct {
    * @values 0..1
    */
   float32_t prevValMult_f32;
-} pot_g_PotConfig_t;
+} pot_s_PotConfig_t;
 
 /********************************************************************************
  *** Global variables
@@ -75,7 +75,7 @@ typedef struct {
 /**
  * Configures all connected potentiometers, the code does all the rest
  */
-pot_g_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
+pot_s_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
   /* pin min_val max_val offset averageCount prevValMult  */
   {   25,      0,    180,     0,           2,        0.5, },  /* Normal 10k pot */ 
   {   26,      0,    180,     0,           2,        0.8, },  /* 10k Trim pot   */ 
