@@ -5,7 +5,7 @@
  * 
  * @brief Header file for the corresponding btn.cpp
  * 
- *  *  @todo Aleksa Heler: add comment for this file (what is located here?)
+ *  @todo Aleksa Heler: add comment for this file (what is located here?)
  *  @todo Aleksa Heler: add structure that defines button input, so that it's modular
  * 
  * @version 0.1
@@ -43,7 +43,7 @@
 /**
  * Buffer for storing if a button is pressed
  *
- * @values 0..1 (HIGH/LOW, TRUE/FALSE...)
+ * @values 0, 1 (HIGH/LOW, TRUE/FALSE...)
  */
 extern uint8_t btn_BtnStates_u8[4];
 

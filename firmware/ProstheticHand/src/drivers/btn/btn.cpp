@@ -83,7 +83,7 @@ void btn_SerialDebug_v(void)
     uint16_t i;
 
     for(i = 0; i < 4; i++){
-        ESP_LOGD(BTN_TAG, "Button %d: %d", i, btn_BtnStates_u8[i]);
+        ESP_LOGD(BTN_TAG, "Button %u: %u", i, btn_BtnStates_u8[i]);
     }
 }
 #endif
