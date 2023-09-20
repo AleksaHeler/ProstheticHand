@@ -29,6 +29,8 @@
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "driver/adc.h" // WARNING: deprecated, migration needed
+#include "driver/ledc.h"
+#include <math.h>
 
 #include "include/GPIO_ADC_Mapping/gpio_adc_mapping.h"
 
