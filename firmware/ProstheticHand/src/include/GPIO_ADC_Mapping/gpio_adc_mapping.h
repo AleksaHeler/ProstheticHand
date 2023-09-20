@@ -28,4 +28,4 @@
         ADC2_CHANNEL_MAX \
     )
 
-#endif // GPIO_ADC_NAPPING_H
+#endif // GPIO_ADC_MAPPING_H
