@@ -30,21 +30,21 @@
 /**
  * @brief Buffer for storing values of the connected potentiometers 
  * 
- * @values See pot_g_PotConfig_s in pot_i.h
+ * @values See pot_s_PotConfig_t in pot_i.h
  */
 float32_t pot_g_PotValues_f32[POT_COUNT];
 
 /**
  * @brief Buffer for storing previous values of the potentiometers for filtering
  * 
- * @values See pot_g_PotConfig_s in pot_i.h
+ * @values See pot_s_PotConfig_t in pot_i.h
  */
 float32_t pot_g_PotPrevValues_f32[POT_COUNT];
 
 /**
  * @brief Buffer for storing the sum of all readings to be averaged
  * 
- * @values See pot_g_PotConfig_s in pot_i.h 
+ * @values See pot_s_PotConfig_t in pot_i.h 
  */
 float32_t pot_g_PotReadingSum_f32[POT_COUNT];
 
@@ -71,13 +71,13 @@ void pot_f_Init_v(void)
     uint16_t i;
 
     /* Configure all given pins as inputs */
-    gpio_config_t pot_pin_config;
-
-    pot_pin_config.pin_bit_mask = pot_g_PotConfig_s[0].pin_u16;
-    pot_pin_config.mode = GPIO_MODE_INPUT;
-    pot_pin_config.pull_up_en = GPIO_PULLUP_DISABLE;
-    pot_pin_config.pull_down_en = GPIO_PULLDOWN_DISABLE;
-    pot_pin_config.intr_type = GPIO_INTR_DISABLE;
+    gpio_config_t pot_pin_config = {
+        pot_pin_config.pin_bit_mask = pot_g_PotConfig_s[0].pin_u16,
+        pot_pin_config.mode         = GPIO_MODE_INPUT,
+        pot_pin_config.pull_up_en   = GPIO_PULLUP_DISABLE,
+        pot_pin_config.pull_down_en = GPIO_PULLDOWN_DISABLE,
+        pot_pin_config.intr_type    = GPIO_INTR_DISABLE
+    };
 
     for(i = 1; i < POT_COUNT; i++){
         pot_pin_config.pin_bit_mask |= pot_g_PotConfig_s[i].pin_u16;
