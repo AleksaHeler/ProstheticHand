@@ -41,10 +41,10 @@
  **************************************************************************/
 
 void srv_Init_v(void);
-void srv_Handle_v( void );
+void srv_Handle_v(void);
 
 #ifdef SERIAL_DEBUG
-void srv_SerialDebug_v( void );
+void srv_SerialDebug_v(void);
 #endif
 
 /**
@@ -98,7 +98,7 @@ void srv_Init_v(void)
  * 
  * @return void
  */
-void srv_Handle_V(void)
+void srv_Handle_v(void)
 {
     /* Scale the angle to the duty cycle */
     uint16_t angle = ((u_int16_t)pow(2, (u_int16_t)PWM_RESOLUTION) - 1) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 180;
