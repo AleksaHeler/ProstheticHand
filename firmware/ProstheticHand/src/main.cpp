@@ -86,7 +86,13 @@ void main_f_HandleRTMStats_v(uint16_t index);
 
 extern "C" void app_main(void)
 {
+  ESP_LOGI(MAIN_TAG, "Application start");
     main_f_Init_v();
+    while(true){
+      main_f_Handle_v();
+      vTaskDelay(10/portTICK_PERIOD_MS);
+    }
+    
 }
 
 
@@ -208,7 +214,7 @@ uint32_t main_f_StartRTM_v(void)
  * @brief Returns time passed since the given parameter rtmStart
  * 
  */
-uint32_t mainf_f_StopRTM_v(uint32_t rtmStart)
+uint32_t main_f_StopRTM_v(uint32_t rtmStart)
 {
     return esp_timer_get_time() - rtmStart;
 }

@@ -72,15 +72,15 @@ void pot_f_Init_v(void)
 
     /* Configure all given pins as inputs */
     gpio_config_t pot_pin_config = {
-        pot_pin_config.pin_bit_mask = pot_g_PotConfig_s[0].pin_u16,
+        pot_pin_config.pin_bit_mask = (1ULL << pot_g_PotConfig_s[0].pin_u16),
         pot_pin_config.mode         = GPIO_MODE_INPUT,
         pot_pin_config.pull_up_en   = GPIO_PULLUP_DISABLE,
         pot_pin_config.pull_down_en = GPIO_PULLDOWN_DISABLE,
-        pot_pin_config.intr_type    = GPIO_INTR_DISABLE
+        pot_pin_config.intr_type    = GPIO_INTR_ANYEDGE
     };
 
     for(i = 1; i < POT_COUNT; i++){
-        pot_pin_config.pin_bit_mask |= pot_g_PotConfig_s[i].pin_u16;
+        pot_pin_config.pin_bit_mask |= (1ULL << pot_g_PotConfig_s[i].pin_u16);
     }
 
     ESP_ERROR_CHECK(gpio_config(&pot_pin_config));
