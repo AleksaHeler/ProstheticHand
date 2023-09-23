@@ -17,20 +17,26 @@ Versioning:
 ## Development Board
 
 Here is the schematic of the development board:
+
 ![development_board_schematic](images/development_board_schematic.png)
 
 It contains 4 buttons (with pullup resistors), 3 potentiometers (two trim pots, and one guitar pot), two servo connectors, JTAG connector and 12V barrel jack.
 
 Here are some PCB screenshots:
+
 ![development_board_pcb](images/development_board_pcb.png)
 ![development_board_pcb_3d](images/development_board_pcb_3d.png)
 
 And some photos of the protoboard build:
+
 ![development_board_protoboard_front](images/development_board_protoboard_front.jpeg)
 ![development_board_protoboard_back](images/development_board_protoboard_back.jpeg)
 
 
 ## Prosthetic Hand v1
+
+We're using EPS32-S3:
+ - https://api.riot-os.org/group__cpu__esp32__esp32s3.html
 
 Components ideas for this iteration of the board:
  - debug LED
@@ -43,6 +49,7 @@ Components ideas for this iteration of the board:
  - [LDO voltage regulator](https://en.wikipedia.org/wiki/Low-dropout_regulator)
  - JTAG for programming and debugging
  - external power connector (selectable between this power input or the batteries by a switch)
+ - two EMG sensor input pins (simple analog read)
 
 Used ESP32 GPIO pins:
  - Servo output -> GPIO04, GPIO05, GPIO26, GPIO27 
@@ -54,8 +61,8 @@ Used ESP32 GPIO pins:
  - Pots -> GPIO32, GPIO33
  - Battery voltage -> GPIO25
  - OLED display SPI com -> GPIO21, GPIO22
-
-This leaves us with pretty much no spare pins. So if something comes to mind, we'll have to use multiplexers for input and outputs. Or just use the method described below.
+ - two EMG sensor input pins (simple analog read) -> 
 
 Maybe: selectable pin functions using DIP swithces or jumper header connectors (we had some 4x DIP switches at hand so we're using them): each pin can be routed to some functionality by enabling these DIP switches. For example we can use a pin as a button input or as a pot input based on the DIP swith configuration. This is purely hardware oriented configuration and we have to then configure the code to support these changes.
 
+![ESP32_S3_Pinout](images\esp_s3_pins.png)
