@@ -1,38 +1,48 @@
-/** @file btn.h
- *  @brief For defines such as processor type, hw configuration, mechanical configuration...
- *
- *  @todo Aleksa Heler: add comment for this file (what is located here?) and populate this file
- *
- *  @author Aleksa Heler (aleksaheler@gmail.com)
- *  @bug No known bugs.
+/**
+ * @file defines.h
+ * 
+ * @author your name (you@domain.com)
+ * 
+ * @brief For defines such as processor type, hardware configuration, mechanical configuration...
+ * 
+ * @todo Aleksa Heler: add comment for this file (what is located here?) and populate this file
+ * 
+ * @version 0.1
+ * @date 2023-09-17
+ * 
+ * @copyright Copyright (c) 2023
+ * 
  */
 
+#ifndef DEFINES_H
+#define DEFINES_H
 
-/********************************************************************************
- *** Includes
- *******************************************************************************/
+/**************************************************************************
+ * Includes
+ **************************************************************************/
 
 
-/********************************************************************************
- *** Defines
- *******************************************************************************/
+
+/**************************************************************************
+ * Defines
+ **************************************************************************/
 
 /**
- * Define wether to write debug data to Serial port
- * Communication over serial port can take _very_ long time,
- * and thus slow down the whole program.
- *
- * @values Comment out this line to disable serial debug
+ * @brief Define whether to write debug data to Serial port
+ * Communication over the serial port can take a _very_ long time, thus slowing down the whole program.
+ * 
+ * @values Comment out the line to disable serial debug
+ * 
  */
 #define SERIAL_DEBUG
 
-
-/********************************************************************************
- *** Type defines
- *******************************************************************************/
+/**************************************************************************
+ * Type defines
+ **************************************************************************/
 
 /**
- * Floating point type defines
+ * @brief Floating point type defines
+ * 
  */
 #ifdef __cplusplus
   using float32_t = float;
@@ -41,3 +51,5 @@
   typedef float  float32_t;
   typedef double float64_t;
 #endif // __cplusplus
+
+#endif // DEFINES_H
