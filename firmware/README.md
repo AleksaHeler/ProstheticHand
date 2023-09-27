@@ -1,6 +1,8 @@
 # Firmware/software for the Prosthetic Hand project
 
-Within this directory, you can find the **ProstheticHand** [PlatformIO](https://platformio.org/) project created in the [Visual Studio Code](https://code.visualstudio.com/download) editor. The [SEGGER J-Link debug probe](https://www.segger.com/products/debug-probes/j-link/) is used for code flashing and debugging. Below is the step by step process on how to set the project up and compile it for the first time:
+Within this directory, you can find the **ProstheticHand** [PlatformIO](https://platformio.org/) project created in the [Visual Studio Code](https://code.visualstudio.com/download) editor.  
+The [SEGGER J-Link debug probe](https://www.segger.com/products/debug-probes/j-link/) is used for code flashing and debugging.  
+Below is the step by step process on how to set the project up and compile it for the first time:
  - __Install [Visual Studio Code](https://code.visualstudio.com/download)__
  - __Install the [PlatformIO](https://platformio.org/install/ide?install=vscode) plugin__ for Visual Studio Code
  - __Install the [J-Link Software](https://www.segger.com/downloads/jlink/)__ from SEGGER (Choose the installer based on your operating system, leave all settings at their default values during installation)
