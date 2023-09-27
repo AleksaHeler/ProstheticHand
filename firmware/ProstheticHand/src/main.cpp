@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief Main entry point of the Prosthetic Hand project's code
  * 
@@ -86,11 +86,11 @@ void main_f_HandleRTMStats_v(uint16_t index);
 
 extern "C" void app_main(void)
 {
-  ESP_LOGI(MAIN_TAG, "Application start");
+    ESP_LOGI(MAIN_TAG, "Application start");
     main_f_Init_v();
     while(true){
-      main_f_Handle_v();
-      vTaskDelay(10/portTICK_PERIOD_MS);
+        main_f_Handle_v();
+        vTaskDelay(10/portTICK_PERIOD_MS);
     }
     
 }
@@ -116,9 +116,9 @@ void main_f_Init_v(void)
     }
 
     /* Call all the initialization functions */
-    btn_Init_v();
+    btn_f_Init_v();
     pot_f_Init_v();
-    srv_Init_v();
+    srv_f_Init_v();
 
 
     #ifdef SERIAL_DEBUG
@@ -150,13 +150,13 @@ void main_f_Handle_v(void)
         /* Call the right handle functions for this task */
         switch(main_g_CurrTaskIndex_u16){
             case 0:
-                btn_Handle_v();
+                btn_f_Handle_v();
                 break;
             case 1:
                 pot_f_Handle_v();
                 break;
             case 2:
-                srv_Handle_v();
+                srv_f_Handle_v();
                 break;
             case 3:
                 /* To be populated*/
@@ -245,23 +245,22 @@ void main_f_HandleRTMStats_v(uint16_t index)
 /** @brief Write runtime data to Serial console and call right functions in components to do the same 
  */
 void main_f_SerialDebug_v( void *arg ) {
-  uint16_t i; 
+    uint16_t i; 
 
   /* TODO: maybe make this output data as a JSON to Serial */
-  while(1){
-    ESP_LOGD(MAIN_TAG, "----------------------------------------");
+    while(1){
+        ESP_LOGD(MAIN_TAG, "----------------------------------------");
 
-    ESP_LOGD(MAIN_TAG, " > runtimes (in microseconds):");
-    for(i = 0; i < MAIN_CYCLE_TASK_COUNT; i++) {
-        ESP_LOGD(MAIN_TAG, "    ├─[%u] curr: %lu, min: %lu, max: %lu", i, main_g_RuntimeMeas_s[i].currentCycle_u32, main_g_RuntimeMeas_s[i].minCycle_u32, main_g_RuntimeMeas_s[i].maxCycle_u32);
+        ESP_LOGD(MAIN_TAG, " > runtimes (in microseconds):");
+        for(i = 0; i < MAIN_CYCLE_TASK_COUNT; i++) {
+            ESP_LOGD(MAIN_TAG, "    ├─[%u] curr: %lu, min: %lu, max: %lu", i, main_g_RuntimeMeas_s[i].currentCycle_u32, main_g_RuntimeMeas_s[i].minCycle_u32, main_g_RuntimeMeas_s[i].maxCycle_u32);
+        }
+
+        btn_f_SerialDebug_v();
+        pot_f_SerialDebug_v();
+        srv_f_SerialDebug_v();
+
+        vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);
     }
-
-    btn_SerialDebug_v();
-    pot_f_SerialDebug_v();
-    srv_SerialDebug_v();
-
-    vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);
-  }
 }
 #endif
- 

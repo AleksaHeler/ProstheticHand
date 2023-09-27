@@ -1,7 +1,7 @@
 /**
  * @file btn_e.h
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief Header file for the corresponding btn.cpp
  * 
@@ -43,18 +43,18 @@
 /**
  * Buffer for storing if a button is pressed
  *
- * @values 0, 1 (HIGH/LOW, TRUE/FALSE...)
+ * @values 0..1 (HIGH/LOW, TRUE/FALSE...)
  */
-extern uint8_t btn_BtnStates_u8[4];
+extern uint8_t btn_g_BtnStates_u8[4];
 
 /**************************************************************************
  * Function prototypes
  **************************************************************************/
 
-extern void btn_Init_v( void );
-extern void btn_Handle_v( void );
+extern void btn_f_Init_v( void );
+extern void btn_f_Handle_v( void );
 #ifdef SERIAL_DEBUG
-extern void btn_SerialDebug_v( void );
+extern void btn_f_SerialDebug_v( void );
 #endif
 
 #endif // BTN_E_H

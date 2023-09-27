@@ -1,7 +1,7 @@
 /**
  * @file defines.h
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief For defines such as processor type, hardware configuration, mechanical configuration...
  * 

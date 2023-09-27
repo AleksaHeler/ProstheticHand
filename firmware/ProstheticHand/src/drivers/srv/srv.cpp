@@ -1,7 +1,7 @@
 /**
  * @file srv.cpp
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief Servo software component / driver
  * 
@@ -40,11 +40,11 @@
  * Functions
  **************************************************************************/
 
-void srv_Init_v(void);
-void srv_Handle_v(void);
+void srv_f_Init_v(void);
+void srv_f_Handle_v(void);
 
 #ifdef SERIAL_DEBUG
-void srv_SerialDebug_v(void);
+void srv_f_SerialDebug_v(void);
 #endif
 
 /**
@@ -54,7 +54,7 @@ void srv_SerialDebug_v(void);
  * 
  * @return void
  */
-void srv_Init_v(void)
+void srv_f_Init_v(void)
 {
     ledc_timer_config_t srvPWM_TimerConfig = {
         .speed_mode         = LEDC_HIGH_SPEED_MODE,
@@ -98,7 +98,7 @@ void srv_Init_v(void)
  * 
  * @return void
  */
-void srv_Handle_v(void)
+void srv_f_Handle_v(void)
 {
     /* Scale the angle to the duty cycle */
     uint16_t angle = ((u_int16_t)pow(2, (u_int16_t)PWM_RESOLUTION) - 1) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 180;
@@ -113,7 +113,7 @@ void srv_Handle_v(void)
 }
 
 #ifdef SERIAL_DEBUG
-void srv_SerialDebug_v(void){
+void srv_f_SerialDebug_v(void){
     ESP_LOGD(SRV_TAG, "Servo working");
 }
 #endif

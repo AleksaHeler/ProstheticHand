@@ -1,7 +1,7 @@
 /**
  * @file pot_e.h
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief Header file for the corresponding pot.cpp
  * 

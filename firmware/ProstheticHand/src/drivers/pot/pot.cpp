@@ -1,7 +1,7 @@
 /**
  * @file pot.cpp
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief Potentiometer software component / driver
  * 
@@ -30,21 +30,21 @@
 /**
  * @brief Buffer for storing values of the connected potentiometers 
  * 
- * @values See pot_s_PotConfig_t in pot_i.h
+ * @values See pot_g_PotConfig_s in pot_i.h
  */
 float32_t pot_g_PotValues_f32[POT_COUNT];
 
 /**
  * @brief Buffer for storing previous values of the potentiometers for filtering
  * 
- * @values See pot_s_PotConfig_t in pot_i.h
+ * @values See pot_g_PotConfig_s in pot_i.h
  */
 float32_t pot_g_PotPrevValues_f32[POT_COUNT];
 
 /**
  * @brief Buffer for storing the sum of all readings to be averaged
  * 
- * @values See pot_s_PotConfig_t in pot_i.h 
+ * @values See pot_g_PotConfig_s in pot_i.h 
  */
 float32_t pot_g_PotReadingSum_f32[POT_COUNT];
 
@@ -160,7 +160,7 @@ float32_t pot_f_AnalogRead_f32(uint16_t potIndex)
     4095,
     pot_g_PotConfig_s[potIndex].min_val_f32,
     pot_g_PotConfig_s[potIndex].max_val_f32
-  );
+    );
 }
 
 /**

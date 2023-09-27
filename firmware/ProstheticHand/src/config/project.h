@@ -1,7 +1,7 @@
 /**
  * @file project.h
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief Header file that unifies everything used in project for easier includes
  * 

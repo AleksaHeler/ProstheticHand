@@ -1,7 +1,7 @@
 /**
  * @file srv_e.h
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief Header file for the corresponding srv.cpp
  * 
@@ -18,9 +18,9 @@
 #define SRV_E_H
 
 
-/********************************************************************************
- *** Includes
- *******************************************************************************/
+/**************************************************************************
+ * Includes
+ **************************************************************************/
 
 #include "config/project.h"
 #include "driver/ledc.h"
@@ -70,11 +70,11 @@
  * Function prototypes
  **************************************************************************/
 
-extern void srv_Init_v(void);
-extern void srv_Handle_v(void);
+extern void srv_f_Init_v(void);
+extern void srv_f_Handle_v(void);
 
 #ifdef SERIAL_DEBUG
-extern void srv_SerialDebug_v(void);
+extern void srv_f_SerialDebug_v(void);
 #endif
 
 #endif // SRV_E_H

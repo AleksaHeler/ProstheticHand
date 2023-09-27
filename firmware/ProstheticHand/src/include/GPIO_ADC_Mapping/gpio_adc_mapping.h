@@ -1,7 +1,7 @@
 /**
  * @file gpio_adc_mapping.h
  * 
- * @author your name (you@domain.com)
+ * @author Milan Popđurđev (m.popdjurdjev@gmail.com)
  * 
  * @brief Header file that contains mappings of ESP32's GPIO pins to its correspondent ADC channels
  * 

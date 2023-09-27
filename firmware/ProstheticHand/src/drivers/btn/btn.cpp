@@ -1,7 +1,7 @@
 /**
  * @file btn.cpp
  * 
- * @author your name (you@domain.com)
+ * @author Aleksa Heler (aleksaheler@gmail.com)
  * 
  * @brief Button software component / driver
  *  This file deals with the handling fo the 4 buttons connected to the board.
@@ -27,19 +27,19 @@
 /**
  * Buffer for storing button states
  * 
- * @values 0, 1 (HIGH/LOW, TRUE/FALSE...)
+ * @values 0..1 (HIGH/LOW, TRUE/FALSE...)
  */
-uint8_t btn_BtnStates_u8[4];
+uint8_t btn_g_BtnStates_u8[4];
 
 /**************************************************************************
  * Functions
  **************************************************************************/
 
-void btn_Init_v(void);
-void btn_Handle_v( void );
+void btn_f_Init_v(void);
+void btn_f_Handle_v( void );
 
 #ifdef SERIAL_DEBUG
-void btn_SerialDebug_v( void );
+void btn_f_SerialDebug_v( void );
 #endif
 
 /**
@@ -49,7 +49,7 @@ void btn_SerialDebug_v( void );
  *
  *  @return void
  */
-void btn_Init_v(void)
+void btn_f_Init_v(void)
 {
     gpio_config_t btn_pin_config{
         (1ULL << BTN_0) | (1ULL << BTN_1) | (1ULL << BTN_2) | (1ULL << BTN_3),
@@ -69,21 +69,21 @@ void btn_Init_v(void)
  *
  * @return void
  */
-void btn_Handle_v( void )
+void btn_f_Handle_v( void )
 {
-    btn_BtnStates_u8[0] = !gpio_get_level(BTN_0);
-    btn_BtnStates_u8[1] = !gpio_get_level(BTN_1);
-    btn_BtnStates_u8[2] = !gpio_get_level(BTN_2);
-    btn_BtnStates_u8[3] = !gpio_get_level(BTN_3);
+    btn_g_BtnStates_u8[0] = !gpio_get_level(BTN_0);
+    btn_g_BtnStates_u8[1] = !gpio_get_level(BTN_1);
+    btn_g_BtnStates_u8[2] = !gpio_get_level(BTN_2);
+    btn_g_BtnStates_u8[3] = !gpio_get_level(BTN_3);
 }
 
 #ifdef SERIAL_DEBUG
-void btn_SerialDebug_v(void)
+void btn_f_SerialDebug_v(void)
 {
     uint16_t i;
 
     for(i = 0; i < 4; i++){
-        ESP_LOGD(BTN_TAG, "Button %u: %u", i, btn_BtnStates_u8[i]);
+        ESP_LOGD(BTN_TAG, "Button %u: %u", i, btn_g_BtnStates_u8[i]);
     }
 }
 #endif
