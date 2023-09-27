@@ -1,18 +1,23 @@
-# Firmware/software for the prosthetic hand project
+# Firmware/software for the Prosthetic Hand project
 
-Here you can find a folder **ProstheticHand** which is acutally [PlatformIO](https://platformio.org/) project in [Visual Studio Code](https://code.visualstudio.com/download). Flashing and debugging of the code is done using [J-Link debugger from SEGGER](https://www.segger.com/products/debug-probes/j-link/). Below is the step by step process on how to set the project up and compile it first time:
- - Install [Visual Studio Code](https://code.visualstudio.com/download), and install [PlatformIO](https://platformio.org/install/ide?install=vscode) plugin for it
- - Install [J-Link Software](https://www.segger.com/downloads/jlink/) from SEGGER (Windows 64-bit Installer, leave everything at default while installing)
- - You may need to have Arduino IDE installed (to be tested)
- - Clone our projects git repository
- - Open the "ProstheticHand" project from PlatformIOs home screen
- - First time opening the project, PlatformIO should update and download something and configure it
- - Then if you try to build the code, it should work
- - J-link should have on it WinUSB (our example v6.1.7600.16385) driver installed. (if not, install it using [Zadig](https://zadig.akeo.ie/))
- - Now, if the J-link is connected and the ESP32 receives power, you should be able to upload the code using J-link as well as debug the code
+Within this directory, you can find the **ProstheticHand** [PlatformIO](https://platformio.org/) project created in the [Visual Studio Code](https://code.visualstudio.com/download) editor. The [SEGGER J-Link debug probe](https://www.segger.com/products/debug-probes/j-link/) is used for code flashing and debugging. Below is the step by step process on how to set the project up and compile it for the first time:
+ - __Install [Visual Studio Code](https://code.visualstudio.com/download)__
+ - __Install the [PlatformIO](https://platformio.org/install/ide?install=vscode) plugin__ for Visual Studio Code
+ - __Install the [J-Link Software](https://www.segger.com/downloads/jlink/)__ from SEGGER (Choose the installer based on your operating system, leave all settings at their default values during installation)
+ - __Clone the project's git repository__
+ - __Open the _ProstheticHand_ project__ from PlatformIO's home screen
+ - When opening the project for the first time, PlatformIO should automatically update and download necessary dependencies and configure the project.
+ - Try to __build the code__. It should work without issues.
+ - If there are issues, __ensure that the correct USB driver is installed__, as it is required for the J-Link debugger to function.
+  For Windows, we used the WinUSB driver. If it's missing, you can use [Zadig](https://zadig.akeo.ie/) to install it. (Our example driver version is v6.1.7600.16385.)
+ - With the J-Link connected and the ESP32 powered on, you should be able to upload the code using the J-Link debugger, as well as debug it.
 
-If you want to have serial monitor with the ESP32, you need the drivers for its on-board USB to UARD IC:
- - Download the driver from [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads), under CP210x Windows Drivers and install
+If you want to use the serial monitor with the ESP32, you may need to install drivers for its onboard USB to UART bridge:
+ - __Identify the USB to UART bridge__ on your ESP32 board
+ - __Find and install the driver__
+ You can find most USB to UART bridge chips included on ESP32 development boards listed [here](http://esp32.net/usb-uart/), together with the necessary drivers
+ 
+ Note: You can install the [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) extension for Visual Studio Code, which provides a more organised interface compared to PlatformIO's built-in serial monitor.
 
 
 ## Code guide / developer guide
