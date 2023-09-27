@@ -1,24 +1,21 @@
 /**
- * @file pot_e.h
+ * @file sensor_e.h
  * 
- * @author Aleksa Heler (aleksaheler@gmail.com)
+ * @author Milan Popđurđev (m.popdjurdjev@gmail.com)
  * 
- * @brief Header file for the corresponding pot.cpp
+ * @brief Header file for the corresponding sensor.cpp
  * 
  * This file contains everything needed by other modules in order to use this module
  * 
- * @todo Aleksa Heler: add comment for this file (what is located here?)
- * @todo Aleksa Heler: add structure that defines pot input, so that it's modular
- * 
  * @version 0.1
- * @date 2023-09-18
+ * @date 2023-09-28
  * 
  * @copyright Copyright (c) 2023
  * 
  */
 
-#ifndef POT_E_H
-#define POT_E_H
+#ifndef SENSOR_E_H
+#define SENSOR_E_H
 
 /**************************************************************************
  * Includes
@@ -30,30 +27,19 @@
  * Defines
  **************************************************************************/
 
-#define POT_COUNT 3
-
-#define POT_TAG "POT"
-
 /**************************************************************************
  * Global variables
  **************************************************************************/
-
-/**
- * @brief Buffer for storing values of the connected potentiometers 
- * 
- * @values See pot_g_PotConfig_s in pot_i.h
- */
-extern float32_t pot_g_PotValues_f32[POT_COUNT];
 
 /**************************************************************************
  * Function prototypes
  **************************************************************************/
 
-extern void pot_f_Init_v(void);
-extern void pot_f_Handle_v(void);
+extern void sensor_f_Init_v(void);
+extern void sensor_f_Handle_v(void);
 #ifdef SERIAL_DEBUG
-extern void pot_f_SerialDebug_v(void);
+extern void sensor_f_SerialDebug_v(void);
 #endif
 
 
-#endif // POT_E_H
+#endif // SENSOR_E_H
