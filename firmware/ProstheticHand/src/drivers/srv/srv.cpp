@@ -28,6 +28,7 @@
 
 /* Other components used here */
 #include "drivers/pot/pot_e.h"
+#include "drivers/sensor/sensor_e.h"
 
 /**************************************************************************
  * Global variables
@@ -101,7 +102,8 @@ void srv_f_Init_v(void)
 void srv_f_Handle_v(void)
 {
     /* Scale the angle to the duty cycle */
-    uint16_t angle = ((u_int16_t)pow(2, (u_int16_t)PWM_RESOLUTION) - 1) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 180;
+    //uint16_t angle = ((u_int16_t)pow(2, (u_int16_t)PWM_RESOLUTION) - 1) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 180;
+    uint16_t angle = ((u_int16_t)pow(2, (u_int16_t)PWM_RESOLUTION) - 1) * sensor_g_Value_u16 / 4095;
 
     /* Set and update the PWM signal's duty cycle */
     ESP_ERROR_CHECK(ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, angle));
