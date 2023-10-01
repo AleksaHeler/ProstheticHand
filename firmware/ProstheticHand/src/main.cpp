@@ -13,6 +13,9 @@
  * @version 0.1
  * @date 2023-09-21
  * 
+ * @bug Pot and Sensor modules cannot be called together as they initialise the same ADC unit.
+ * The code needs to be restructured so that the ADC unit initialisation is done directly in main.cpp
+ * 
  * @copyright Copyright (c) 2023
  * 
  */
@@ -93,6 +96,7 @@ extern "C" void app_main(void)
         main_f_Handle_v();
         vTaskDelay(10/portTICK_PERIOD_MS);
     }
+    //pot_f_Deinit_v();
     sensor_f_Deinit_v();
 }
 
@@ -118,9 +122,9 @@ void main_f_Init_v(void)
 
     /* Call all the initialization functions */
     btn_f_Init_v();
-    pot_f_Init_v();
+    //pot_f_Init_v();
     srv_f_Init_v();
-    //sensor_f_Init_v();
+    sensor_f_Init_v();
 
 
     #ifdef SERIAL_DEBUG
@@ -155,8 +159,8 @@ void main_f_Handle_v(void)
                 btn_f_Handle_v();
                 break;
             case 1:
-                //sensor_f_Handle_v();
-                pot_f_Handle_v();
+                //pot_f_Handle_v();
+                sensor_f_Handle_v();
                 break;
             case 2:
                 srv_f_Handle_v();
@@ -260,8 +264,8 @@ void main_f_SerialDebug_v( void *arg ) {
         }
 
         btn_f_SerialDebug_v();
-        pot_f_SerialDebug_v();
-        //sensor_f_SerialDebug_v();
+        //pot_f_SerialDebug_v();
+        sensor_f_SerialDebug_v();
         srv_f_SerialDebug_v();
 
         vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);
