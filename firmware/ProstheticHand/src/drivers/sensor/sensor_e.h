@@ -27,7 +27,7 @@
  * Defines
  **************************************************************************/
 
-#define SENSOR_PIN GPIO_NUM_2
+#define SENSOR_PIN GPIO_NUM_4
 
 #define SENSOR_TAG "SENSOR"
 

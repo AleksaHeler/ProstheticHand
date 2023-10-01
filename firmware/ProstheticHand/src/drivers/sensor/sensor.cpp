@@ -62,7 +62,7 @@ void sensor_f_Init_v(void)
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config, &sensor_g_UnitHandle));
 
     adc_oneshot_chan_cfg_t channel_config = {
-        .atten = ADC_ATTEN_DB_11,
+        .atten = ADC_ATTEN_DB_0,
         .bitwidth = ADC_BITWIDTH_12
     };
     ESP_ERROR_CHECK(adc_oneshot_io_to_channel(SENSOR_PIN, &adc_unit, &sensor_g_sensorChannel_t));
