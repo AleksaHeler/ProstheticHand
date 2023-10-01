@@ -151,11 +151,36 @@ void pot_f_SerialDebug_v(void)
  */
 float32_t pot_f_AnalogRead_f32(uint16_t potIndex)
 {
-    int adcAnalogRead;
-    adc2_get_raw(GPIO_PIN_TO_ADC_CHANNEL(pot_g_PotConfig_s[potIndex].pin_u16), ADC_WIDTH_BIT_12, &adcAnalogRead);
+    adc_oneshot_unit_handle_t adc2_handle_s;
+    adc_unit_t unit = ADC_UNIT_2;
+
+    adc_oneshot_unit_init_cfg_t pot_Config_s = {
+        .unit_id = unit,
+        .clk_src = ADC_RTC_CLK_SRC_DEFAULT,
+        .ulp_mode = ADC_ULP_MODE_DISABLE
+    };
+
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&pot_Config_s, &adc2_handle_s));
+
+    adc_oneshot_chan_cfg_t adc_config_s = {
+        .atten = ADC_ATTEN_DB_11,
+        .bitwidth = ADC_BITWIDTH_12
+    };
+
+    adc_channel_t pot_Channel_e;
+
+    ESP_ERROR_CHECK(adc_oneshot_io_to_channel(pot_g_PotConfig_s[potIndex].pin_u16, &unit, &pot_Channel_e));
+
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc2_handle_s, pot_Channel_e, &adc_config_s));
+
+    uint16_t adcAnalogRead;
+
+    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle_s, pot_Channel_e, (int*)&adcAnalogRead));
+
+    ESP_ERROR_CHECK(adc_oneshot_del_unit(adc2_handle_s));
 
     return pot_g_PotConfig_s[potIndex].offset_f32 + (float32_t)pot_f_MapFloat_f32(
-    adcAnalogRead, /* WARNING: Possible bugs due to forced int from adc2_get_raw (should be tested on the actual hardware) */
+    adcAnalogRead,
     0,
     4095,
     pot_g_PotConfig_s[potIndex].min_val_f32,

@@ -30,6 +30,7 @@
 #include "drivers/btn/btn_e.h"
 #include "drivers/pot/pot_e.h"
 #include "drivers/srv/srv_e.h"
+#include "drivers/sensor/sensor_e.h"
 
 /**************************************************************************
  * Global variables
@@ -92,7 +93,7 @@ extern "C" void app_main(void)
         main_f_Handle_v();
         vTaskDelay(10/portTICK_PERIOD_MS);
     }
-    
+    sensor_f_Deinit_v();
 }
 
 
@@ -119,6 +120,7 @@ void main_f_Init_v(void)
     btn_f_Init_v();
     pot_f_Init_v();
     srv_f_Init_v();
+    //sensor_f_Init_v();
 
 
     #ifdef SERIAL_DEBUG
@@ -153,6 +155,7 @@ void main_f_Handle_v(void)
                 btn_f_Handle_v();
                 break;
             case 1:
+                //sensor_f_Handle_v();
                 pot_f_Handle_v();
                 break;
             case 2:
@@ -258,6 +261,7 @@ void main_f_SerialDebug_v( void *arg ) {
 
         btn_f_SerialDebug_v();
         pot_f_SerialDebug_v();
+        //sensor_f_SerialDebug_v();
         srv_f_SerialDebug_v();
 
         vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);

@@ -27,9 +27,15 @@
  * Defines
  **************************************************************************/
 
+#define SENSOR_PIN GPIO_NUM_2
+
+#define SENSOR_TAG "SENSOR"
+
 /**************************************************************************
  * Global variables
  **************************************************************************/
+
+extern uint16_t sensor_g_Value_u16;
 
 /**************************************************************************
  * Function prototypes
@@ -37,6 +43,7 @@
 
 extern void sensor_f_Init_v(void);
 extern void sensor_f_Handle_v(void);
+extern void sensor_f_Deinit_v(void);
 #ifdef SERIAL_DEBUG
 extern void sensor_f_SerialDebug_v(void);
 #endif
