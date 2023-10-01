@@ -28,6 +28,9 @@
 
 uint16_t sensor_g_Value_u16;
 
+adc_oneshot_unit_handle_t sensor_g_UnitHandle;
+adc_channel_t sensor_g_sensorChannel_t;
+
 /**************************************************************************
  * Functions
  **************************************************************************/
@@ -40,7 +43,13 @@ void sensor_f_SerialDebug_v(void);
 #endif
 
 
-
+/**
+ * @brief Initialise function to be called once on boot
+ * 
+ * Configure the Analog to Digital converter unit and channel
+ * 
+ * @return void
+ */
 void sensor_f_Init_v(void)
 {
     adc_unit_t adc_unit = ADC_UNIT_2;
@@ -60,11 +69,25 @@ void sensor_f_Init_v(void)
     ESP_ERROR_CHECK(adc_oneshot_config_channel(sensor_g_UnitHandle, sensor_g_sensorChannel_t, &channel_config));
 }
 
+/**
+ * @brief Handle function to be called cyclically
+ * 
+ * Read and store the sensor value
+ * 
+ * @return void
+ */
 void sensor_f_Handle_v(void)
 {
     ESP_ERROR_CHECK(adc_oneshot_read(sensor_g_UnitHandle, sensor_g_sensorChannel_t, (int*)&sensor_g_Value_u16));
 }
 
+/**
+ * @brief Deinitialisation function
+ * 
+ * Delete the ADC unit
+ * 
+ * @return void
+ */
 void sensor_f_Deinit_v(void)
 {
     ESP_ERROR_CHECK(adc_oneshot_del_unit(sensor_g_UnitHandle));

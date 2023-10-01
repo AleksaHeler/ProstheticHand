@@ -33,8 +33,8 @@
  * Global variables
  **************************************************************************/
 
-adc_oneshot_unit_handle_t sensor_g_UnitHandle;
-adc_channel_t sensor_g_sensorChannel_t;
+extern adc_oneshot_unit_handle_t sensor_g_UnitHandle;
+extern adc_channel_t sensor_g_sensorChannel_t;
 
 /**************************************************************************
  * Function prototypes

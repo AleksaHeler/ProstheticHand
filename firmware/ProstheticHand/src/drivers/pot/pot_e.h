@@ -7,8 +7,6 @@
  * 
  * This file contains everything needed by other modules in order to use this module
  * 
- * @todo Aleksa Heler: add comment for this file (what is located here?)
- * @todo Aleksa Heler: add structure that defines pot input, so that it's modular
  * 
  * @version 0.1
  * @date 2023-09-18
@@ -51,6 +49,7 @@ extern float32_t pot_g_PotValues_f32[POT_COUNT];
 
 extern void pot_f_Init_v(void);
 extern void pot_f_Handle_v(void);
+extern void pot_f_Deinit_v(void);
 #ifdef SERIAL_DEBUG
 extern void pot_f_SerialDebug_v(void);
 #endif

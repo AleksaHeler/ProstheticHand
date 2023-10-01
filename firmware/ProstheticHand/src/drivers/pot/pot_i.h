@@ -7,8 +7,6 @@
  * 
  * This file contains configurations needed by this module that should not be visible to other modules
  * 
- * @todo Aleksa Heler: add comment for this file (what is located here?)
- * @todo Aleksa Heler: add structure that defines pot input, so that it's modular
  * 
  * @version 0.1
  * @date 2023-09-18
@@ -110,6 +108,18 @@ extern float32_t pot_g_PotPrevValues_f32[POT_COUNT];
  * @values See pot_g_PotConfig_s above 
  */
 extern float32_t pot_g_PotReadingSum_f32[POT_COUNT];
+
+/**
+ * @brief Analog to Digital converter unit handle
+ * 
+ */
+extern adc_oneshot_unit_handle_t pot_g_handle;
+
+/**
+ * @brief Analog to digital converter channel
+ * 
+ */
+extern adc_channel_t pot_g_channel[POT_COUNT];
 
 /**************************************************************************
  * Function prototypes

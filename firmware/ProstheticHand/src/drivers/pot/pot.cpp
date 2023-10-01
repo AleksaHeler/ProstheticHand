@@ -48,21 +48,34 @@ float32_t pot_g_PotPrevValues_f32[POT_COUNT];
  */
 float32_t pot_g_PotReadingSum_f32[POT_COUNT];
 
+/**
+ * @brief Analog to Digital converter unit handle
+ * 
+ */
+adc_oneshot_unit_handle_t pot_g_handle;
+
+/**
+ * @brief Analog to digital converter channel
+ * 
+ */
+adc_channel_t pot_g_channel[POT_COUNT];
+
 /**************************************************************************
  * Functions
  **************************************************************************/
 
 void pot_f_Init_v(void);
 void pot_f_Handle_v(void);
+void pot_f_Deinit_v(void);
 #ifdef SERIAL_DEBUG
 void pot_f_SerialDebug_v(void);
 #endif
 float32_t pot_f_AnalogRead_f32(uint16_t potIndex);
 
 /**
- * @brief Init function called once on boot
+ * @brief Initialise function to be called once on boot
  * 
- * Set all the given pins as inputs
+ * Configure the Analog to Digital converter unit and channels
  * 
  * @return void
  */
@@ -70,20 +83,23 @@ void pot_f_Init_v(void)
 {
     uint16_t i;
 
-    /* Configure all given pins as inputs */
-    gpio_config_t pot_pin_config = {
-        pot_pin_config.pin_bit_mask = (1ULL << pot_g_PotConfig_s[0].pin_u16),
-        pot_pin_config.mode         = GPIO_MODE_INPUT,
-        pot_pin_config.pull_up_en   = GPIO_PULLUP_DISABLE,
-        pot_pin_config.pull_down_en = GPIO_PULLDOWN_DISABLE,
-        pot_pin_config.intr_type    = GPIO_INTR_ANYEDGE
+    adc_unit_t adc_unit = ADC_UNIT_2;
+
+    adc_oneshot_unit_init_cfg_t init_config = {
+        .unit_id = adc_unit,
+        .clk_src = ADC_RTC_CLK_SRC_DEFAULT,
+        .ulp_mode = ADC_ULP_MODE_DISABLE
     };
+    ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config, &pot_g_handle));
 
-    for(i = 1; i < POT_COUNT; i++){
-        pot_pin_config.pin_bit_mask |= (1ULL << pot_g_PotConfig_s[i].pin_u16);
+    adc_oneshot_chan_cfg_t channel_config = {
+        .atten = ADC_ATTEN_DB_11,
+        .bitwidth = ADC_BITWIDTH_12
+    };
+    for(i = 0; i < POT_COUNT; i++){
+        ESP_ERROR_CHECK(adc_oneshot_io_to_channel(pot_g_PotConfig_s[i].pin_u16, &adc_unit, &pot_g_channel[i]));
+        ESP_ERROR_CHECK(adc_oneshot_config_channel(pot_g_handle, pot_g_channel[i], &channel_config));
     }
-
-    ESP_ERROR_CHECK(gpio_config(&pot_pin_config));
 
     /* Set initial pot read value for filter */
     for(i = 0; i < POT_COUNT; i++){
@@ -130,6 +146,18 @@ void pot_f_Handle_v(void)
     }
 }
 
+/**
+ * @brief Deinitialisation function
+ * 
+ * Delete the ADC unit
+ * 
+ * @return void
+ */
+void pot_f_Deinit_v(void)
+{
+    ESP_ERROR_CHECK(adc_oneshot_del_unit(pot_g_handle));
+}
+
 #ifdef SERIAL_DEBUG
 void pot_f_SerialDebug_v(void)
 {
@@ -151,33 +179,9 @@ void pot_f_SerialDebug_v(void)
  */
 float32_t pot_f_AnalogRead_f32(uint16_t potIndex)
 {
-    adc_oneshot_unit_handle_t adc2_handle_s;
-    adc_unit_t unit = ADC_UNIT_2;
-
-    adc_oneshot_unit_init_cfg_t pot_Config_s = {
-        .unit_id = unit,
-        .clk_src = ADC_RTC_CLK_SRC_DEFAULT,
-        .ulp_mode = ADC_ULP_MODE_DISABLE
-    };
-
-    ESP_ERROR_CHECK(adc_oneshot_new_unit(&pot_Config_s, &adc2_handle_s));
-
-    adc_oneshot_chan_cfg_t adc_config_s = {
-        .atten = ADC_ATTEN_DB_11,
-        .bitwidth = ADC_BITWIDTH_12
-    };
-
-    adc_channel_t pot_Channel_e;
-
-    ESP_ERROR_CHECK(adc_oneshot_io_to_channel(pot_g_PotConfig_s[potIndex].pin_u16, &unit, &pot_Channel_e));
-
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc2_handle_s, pot_Channel_e, &adc_config_s));
-
     uint16_t adcAnalogRead;
 
-    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle_s, pot_Channel_e, (int*)&adcAnalogRead));
-
-    ESP_ERROR_CHECK(adc_oneshot_del_unit(adc2_handle_s));
+    ESP_ERROR_CHECK(adc_oneshot_read(pot_g_handle, pot_g_channel[potIndex], (int*)&adcAnalogRead));
 
     return pot_g_PotConfig_s[potIndex].offset_f32 + (float32_t)pot_f_MapFloat_f32(
     adcAnalogRead,
