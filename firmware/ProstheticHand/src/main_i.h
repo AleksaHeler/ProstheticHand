@@ -37,6 +37,20 @@
 #define MAIN_SERIAL_DEBUG_DELAY 1000/portTICK_PERIOD_MS
 #endif
 
+/**
+ * @brief Debug LED pin
+ * 
+ * @values GPIO pin
+ */
+#define MAIN_DEBUG_LED_PIN GPIO_NUM_38
+
+/**
+ * @brief How many main 10ms cycles to wait until changing debug LED state 
+ * 
+ * @values 0-250 = 0-2.5s
+ */
+#define MAIN_DEBUG_LED_CYCLE_COUNT 40
+
 /**************************************************************************
  * Structures
  **************************************************************************/
@@ -50,7 +64,7 @@ extern uint64_t main_g_LastMicros_u64;
 
 extern uint16_t main_g_CurrTaskIndex_u16;
 
-
+extern uint8_t main_g_DebugLEDCountdown_s;
 extern TaskHandle_t main_g_SerialDebugTaskHandle_s;
 
 /**************************************************************************
@@ -67,5 +81,7 @@ extern void main_f_SerialDebug_v(void *arg);
 extern uint32_t main_f_StartRTM_v(void);
 extern uint32_t main_f_StopRTM_v(uint32_t rtmStart);
 extern void main_f_HandleRTMStats_v(uint16_t index);
+extern void main_f_DebugLEDInit_v(void);
+extern void main_f_DebugLEDHandle_v(void);
 
 #endif // MAIN_I_H
