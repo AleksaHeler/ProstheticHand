@@ -34,9 +34,6 @@
  * Global variables
  **************************************************************************/
 
-// Servo srv_Servo1_s;
-// Servo srv_Servo2_s;
-
 /**************************************************************************
  * Functions
  **************************************************************************/
@@ -61,7 +58,7 @@ void srv_f_Init_v(void)
         .speed_mode         = LEDC_HIGH_SPEED_MODE,
         .duty_resolution    = PWM_RESOLUTION,
         .timer_num          = LEDC_TIMER_0,
-        .freq_hz            = 50,
+        .freq_hz            = 330,
         .clk_cfg            = LEDC_AUTO_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&srvPWM_TimerConfig));
@@ -102,8 +99,8 @@ void srv_f_Init_v(void)
 void srv_f_Handle_v(void)
 {
     /* Scale the angle to the duty cycle */
-    //uint16_t angle = ((u_int16_t)pow(2, (u_int16_t)PWM_RESOLUTION) - 1) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 180;
-    uint16_t angle = ((u_int16_t)pow(2, (u_int16_t)PWM_RESOLUTION) - 1) * sensor_g_Value_u16 / 4095;
+    uint16_t angle = BITS_TO_MAX_VAL(PWM_RESOLUTION) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 180;
+    //uint16_t angle = BITS_TO_MAX_VAL(PWM_RESOLUTION) * sensor_g_Value_u16 / 4095;
 
     /* Set and update the PWM signal's duty cycle */
     ESP_ERROR_CHECK(ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, angle));
@@ -112,6 +109,8 @@ void srv_f_Handle_v(void)
     /* Using a 2nd channel makes it possible to give different PWM signals to each servo */
     ESP_ERROR_CHECK(ledc_set_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, angle));
     ESP_ERROR_CHECK(ledc_update_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1));
+
+    ESP_LOGD(SRV_TAG, "Duty: %lu", ledc_get_duty(LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0));
 }
 
 #ifdef SERIAL_DEBUG
