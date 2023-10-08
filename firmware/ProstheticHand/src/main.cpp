@@ -61,13 +61,6 @@ uint16_t main_g_CurrTaskIndex_u16 = 0;
 uint8_t main_g_DebugLEDCountdown_s = 0;
 
 /**
- * State to know what to switch the debug LED next to
- * 
- * @values 0..1
- */
-uint8_t main_g_DebugLEDState_s = 0;
-
-/**
  * Buffer for runtime measurement statistics
  * 
  * @values see main_g_RuntimeMeasTyp_t define in main_e.h
@@ -112,8 +105,7 @@ extern "C" void app_main(void)
     while(true){
         main_f_Handle_v();
         /* Hopefully wait for 1us (have to check the math) */
-        //vTaskDelay(portTICK_PERIOD_MS/1000);
-        vTaskDelay(0.001);
+        vTaskDelay(portTICK_PERIOD_MS);
     }
 
     //pot_f_Deinit_v();
@@ -162,7 +154,6 @@ void main_f_Init_v(void)
  */
 void main_f_Handle_v(void)
 {
-  ESP_LOGI(MAIN_TAG, "Start handle");
   uint32_t l_rtmMeas_u32;
 
   /* Get current time */
@@ -173,16 +164,14 @@ void main_f_Handle_v(void)
     main_g_LastMicros_u64 = main_g_CurrMicros_u64;
 
     /* Start of runtime measurement */
-    l_rtmMeas_u32 = main_f_StartRTM_v();
+    //l_rtmMeas_u32 = main_f_StartRTM_v();
 
     /* Call the right handle functions for this task */
     switch(main_g_CurrTaskIndex_u16){
       case 0:
-          ESP_LOGI(MAIN_TAG, "Cycle 0");
           main_f_DebugLEDHandle_v();
           break;
       case 1:
-          ESP_LOGI(MAIN_TAG, "Cycle 1");
           //btn_f_Handle_v();
           break;
       case 2:
@@ -215,17 +204,16 @@ void main_f_Handle_v(void)
     }
 
     /* Calculate current task execution time */
-    main_g_RuntimeMeas_s[main_g_CurrTaskIndex_u16].currentCycle_u32 = main_f_StopRTM_v(l_rtmMeas_u32);
+    //main_g_RuntimeMeas_s[main_g_CurrTaskIndex_u16].currentCycle_u32 = main_f_StopRTM_v(l_rtmMeas_u32);
 
     /* Calculate the rest of the statistics for runtime measurement (min/max) */
-    main_f_HandleRTMStats_v(main_g_CurrTaskIndex_u16);
+    //main_f_HandleRTMStats_v(main_g_CurrTaskIndex_u16);
 
     /* Keep track of which task we're in */
     main_g_CurrTaskIndex_u16++;
     if(main_g_CurrTaskIndex_u16 >= MAIN_CYCLE_TASK_COUNT){
         main_g_CurrTaskIndex_u16 = 0;
     }
-    ESP_LOGI(MAIN_TAG, "Onto next task!");
   }
 }
 
@@ -292,7 +280,8 @@ void main_f_DebugLEDInit_v(void)
  */
 void main_f_DebugLEDHandle_v(void)
 {
-  ESP_LOGI(MAIN_TAG, "Debug LED: cnt %u - state: %u - want: %u", main_g_DebugLEDCountdown_s, gpio_get_level(MAIN_DEBUG_LED_PIN), main_g_DebugLEDState_s);
+  ESP_LOGI(MAIN_TAG, "Debug LED...");
+  //ESP_LOGI(MAIN_TAG, "Debug LED: cnt %u - state: %u - want: %u", main_g_DebugLEDCountdown_s, gpio_get_level(MAIN_DEBUG_LED_PIN), main_g_DebugLEDState_s);
   /* If debug LED cycle counter greater than 0, decrement it */
   if(main_g_DebugLEDCountdown_s > 0){
     main_g_DebugLEDCountdown_s--;
@@ -300,8 +289,8 @@ void main_f_DebugLEDHandle_v(void)
   /* If countdown done: set LED to inverse of itself and reset the counter! */
   else{
     main_g_DebugLEDCountdown_s = MAIN_DEBUG_LED_CYCLE_COUNT;
-    main_g_DebugLEDState_s = !main_g_DebugLEDState_s;
-    ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, main_g_DebugLEDState_s));
+    ESP_LOGI(MAIN_TAG, "Debug LED: %u", gpio_get_level(MAIN_DEBUG_LED_PIN));
+    ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, !gpio_get_level(MAIN_DEBUG_LED_PIN)));
   }
 }
 
@@ -325,8 +314,7 @@ void main_f_SerialDebug_v( void *arg ) {
     //pot_f_SerialDebug_v();
     //sensor_f_SerialDebug_v();
 
-    //vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);
-    vTaskDelay(1000);
+    vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);
   }
 }
 #endif

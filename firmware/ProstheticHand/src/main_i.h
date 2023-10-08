@@ -49,7 +49,7 @@
  * 
  * @values 0-250 = 0-2.5s
  */
-#define MAIN_DEBUG_LED_CYCLE_COUNT 100
+#define MAIN_DEBUG_LED_CYCLE_COUNT 3
 
 /**************************************************************************
  * Structures
@@ -64,7 +64,6 @@ extern uint64_t main_g_LastMicros_u64;
 
 extern uint16_t main_g_CurrTaskIndex_u16;
 
-extern uint8_t main_g_DebugLEDState_s;
 extern uint8_t main_g_DebugLEDCountdown_s;
 extern TaskHandle_t main_g_SerialDebugTaskHandle_s;
 
