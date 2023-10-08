@@ -34,7 +34,7 @@
  * 
  * @values recommended more than 50 (milliseconds)
  */
-#define MAIN_SERIAL_DEBUG_DELAY 1000/portTICK_PERIOD_MS
+#define MAIN_SERIAL_DEBUG_DELAY 500/portTICK_PERIOD_MS
 #endif
 
 /**
@@ -64,6 +64,7 @@ extern uint64_t main_g_LastMicros_u64;
 
 extern uint16_t main_g_CurrTaskIndex_u16;
 
+extern uint8_t main_g_DebugLEDState_s;
 extern uint8_t main_g_DebugLEDCountdown_s;
 extern TaskHandle_t main_g_SerialDebugTaskHandle_s;
 

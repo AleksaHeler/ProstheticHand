@@ -8,7 +8,7 @@
  * This is the main file and starting point of the prosthetic hand project.
  * Here we have two functions: setup (called once on boot) and loop (called in loop forever)
  * In 'setup' we firstly initialize all modules (software components), and then in 'loop'
- * we constantly call each handle function in constrained timing containers (1ms, 10ms etc.)
+ * we constantly call each ` function in constrained timing containers (1ms, 10ms etc.)
  * 
  * @version 0.1
  * @date 2023-09-21
@@ -61,6 +61,13 @@ uint16_t main_g_CurrTaskIndex_u16 = 0;
 uint8_t main_g_DebugLEDCountdown_s = 0;
 
 /**
+ * State to know what to switch the debug LED next to
+ * 
+ * @values 0..1
+ */
+uint8_t main_g_DebugLEDState_s = 0;
+
+/**
  * Buffer for runtime measurement statistics
  * 
  * @values see main_g_RuntimeMeasTyp_t define in main_e.h
@@ -99,13 +106,19 @@ void main_f_DebugLEDHandle_v(void);
 extern "C" void app_main(void)
 {
     ESP_LOGI(MAIN_TAG, "Application start");
+
     main_f_Init_v();
+
     while(true){
         main_f_Handle_v();
-        vTaskDelay(10/portTICK_PERIOD_MS);
+        /* Hopefully wait for 1us (have to check the math) */
+        //vTaskDelay(portTICK_PERIOD_MS/1000);
+        vTaskDelay(0.001);
     }
+
     //pot_f_Deinit_v();
-    sensor_f_Deinit_v();
+    //btn_f_Deinit_v();
+    //sensor_f_Deinit_v();
 }
 
 
@@ -130,9 +143,9 @@ void main_f_Init_v(void)
 
     /* Call all the initialization functions */
     main_f_DebugLEDInit_v();
-    btn_f_Init_v();
+    //btn_f_Init_v();
     //pot_f_Init_v();
-    sensor_f_Init_v();
+    //sensor_f_Init_v();
 
 
     #ifdef SERIAL_DEBUG
@@ -149,67 +162,71 @@ void main_f_Init_v(void)
  */
 void main_f_Handle_v(void)
 {
-    uint32_t l_rtmMeas_u32;
+  ESP_LOGI(MAIN_TAG, "Start handle");
+  uint32_t l_rtmMeas_u32;
 
-    /* Get current time */
-    main_g_CurrMicros_u64 = esp_timer_get_time();
+  /* Get current time */
+  main_g_CurrMicros_u64 = esp_timer_get_time();
 
-    if(main_g_CurrMicros_u64 - main_g_LastMicros_u64 >= main_g_CycleTaskLengthUs_u16){
-        /* Keep track of the last task time */
-        main_g_LastMicros_u64 = main_g_CurrMicros_u64;
+  if(main_g_CurrMicros_u64 - main_g_LastMicros_u64 >= main_g_CycleTaskLengthUs_u16){
+    /* Keep track of the last task time */
+    main_g_LastMicros_u64 = main_g_CurrMicros_u64;
 
-        /* Start of runtime measurement */
-        l_rtmMeas_u32 = main_f_StartRTM_v();
+    /* Start of runtime measurement */
+    l_rtmMeas_u32 = main_f_StartRTM_v();
 
-        /* Call the right handle functions for this task */
-        switch(main_g_CurrTaskIndex_u16){
-            case 0:
-                main_f_DebugLEDHandle_v();
-                break;
-            case 1:
-                btn_f_Handle_v();
-                break;
-            case 2:
-                //pot_f_Handle_v();
-                break;
-            case 3:
-                sensor_f_Handle_v();
-                break;
-            case 4:
-                /* To be populated*/
-                break;
-            case 5:
-                /* To be populated*/
-                break;
-            case 6:
-                /* To be populated*/
-                break;
-            case 7:
-                /* To be populated*/
-                break;
-            case 8:
-                /* To be populated*/
-                break;
-            case 9:
-                /* To be populated*/
-                break;
-            default:
-                /* This should not happen */
-                break;
-        }
-
-        /* Calculate current task execution time */
-        main_g_RuntimeMeas_s[main_g_CurrTaskIndex_u16].currentCycle_u32 = main_f_StopRTM_v(l_rtmMeas_u32);
-
-        /* Calculate the rest of the statistics for runtime measurement (min/max) */
-        main_f_HandleRTMStats_v(main_g_CurrTaskIndex_u16);
-
-        /* Keep track of which task we're in */
-        main_g_CurrTaskIndex_u16++;
-        if(main_g_CurrTaskIndex_u16 >= MAIN_CYCLE_TASK_COUNT){
-            main_g_CurrTaskIndex_u16 = 0;
-        }
+    /* Call the right handle functions for this task */
+    switch(main_g_CurrTaskIndex_u16){
+      case 0:
+          ESP_LOGI(MAIN_TAG, "Cycle 0");
+          main_f_DebugLEDHandle_v();
+          break;
+      case 1:
+          ESP_LOGI(MAIN_TAG, "Cycle 1");
+          //btn_f_Handle_v();
+          break;
+      case 2:
+          //pot_f_Handle_v();
+          break;
+      case 3:
+          //sensor_f_Handle_v();
+          break;
+      case 4:
+          /* To be populated*/
+          break;
+      case 5:
+          /* To be populated*/
+          break;
+      case 6:
+          /* To be populated*/
+          break;
+      case 7:
+          /* To be populated*/
+          break;
+      case 8:
+          /* To be populated*/
+          break;
+      case 9:
+          /* To be populated*/
+          break;
+      default:
+          /* This should not happen */
+          break;
     }
+
+    /* Calculate current task execution time */
+    main_g_RuntimeMeas_s[main_g_CurrTaskIndex_u16].currentCycle_u32 = main_f_StopRTM_v(l_rtmMeas_u32);
+
+    /* Calculate the rest of the statistics for runtime measurement (min/max) */
+    main_f_HandleRTMStats_v(main_g_CurrTaskIndex_u16);
+
+    /* Keep track of which task we're in */
+    main_g_CurrTaskIndex_u16++;
+    if(main_g_CurrTaskIndex_u16 >= MAIN_CYCLE_TASK_COUNT){
+        main_g_CurrTaskIndex_u16 = 0;
+    }
+    ESP_LOGI(MAIN_TAG, "Onto next task!");
+  }
 }
 
 /**************************************************************************
@@ -260,14 +277,14 @@ void main_f_HandleRTMStats_v(uint16_t index)
 void main_f_DebugLEDInit_v(void)
 {
   /* Output pin without any pullup/pulldown */
-  gpio_config_t btn_pin_config{
+  gpio_config_t dbg_pin_config{
     (1ULL << MAIN_DEBUG_LED_PIN),
-    GPIO_MODE_OUTPUT,
+    GPIO_MODE_INPUT_OUTPUT,
     GPIO_PULLUP_DISABLE,
     GPIO_PULLDOWN_DISABLE,
     GPIO_INTR_DISABLE
   };
-  ESP_ERROR_CHECK(gpio_config(&btn_pin_config));
+  ESP_ERROR_CHECK(gpio_config(&dbg_pin_config));
 }
 
 
@@ -275,6 +292,7 @@ void main_f_DebugLEDInit_v(void)
  */
 void main_f_DebugLEDHandle_v(void)
 {
+  ESP_LOGI(MAIN_TAG, "Debug LED: cnt %u - state: %u - want: %u", main_g_DebugLEDCountdown_s, gpio_get_level(MAIN_DEBUG_LED_PIN), main_g_DebugLEDState_s);
   /* If debug LED cycle counter greater than 0, decrement it */
   if(main_g_DebugLEDCountdown_s > 0){
     main_g_DebugLEDCountdown_s--;
@@ -282,7 +300,8 @@ void main_f_DebugLEDHandle_v(void)
   /* If countdown done: set LED to inverse of itself and reset the counter! */
   else{
     main_g_DebugLEDCountdown_s = MAIN_DEBUG_LED_CYCLE_COUNT;
-    ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, !gpio_get_level(MAIN_DEBUG_LED_PIN)));
+    main_g_DebugLEDState_s = !main_g_DebugLEDState_s;
+    ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, main_g_DebugLEDState_s));
   }
 }
 
@@ -290,22 +309,24 @@ void main_f_DebugLEDHandle_v(void)
 /** @brief Write runtime data to Serial console and call right functions in components to do the same 
  */
 void main_f_SerialDebug_v( void *arg ) {
-    uint16_t i; 
+  uint16_t i; 
 
   /* TODO: maybe make this output data as a JSON to Serial */
-    while(1){
-        ESP_LOGD(MAIN_TAG, "----------------------------------------");
+  while(true){
+    ESP_LOGD(MAIN_TAG, "----------------------------------------");
 
-        ESP_LOGD(MAIN_TAG, " > runtimes (in microseconds):");
-        for(i = 0; i < MAIN_CYCLE_TASK_COUNT; i++) {
-            ESP_LOGD(MAIN_TAG, "    ├─[%u] curr: %lu, min: %lu, max: %lu", i, main_g_RuntimeMeas_s[i].currentCycle_u32, main_g_RuntimeMeas_s[i].minCycle_u32, main_g_RuntimeMeas_s[i].maxCycle_u32);
-        }
-
-        btn_f_SerialDebug_v();
-        //pot_f_SerialDebug_v();
-        sensor_f_SerialDebug_v();
-
-        vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);
+    ESP_LOGD(MAIN_TAG, " > runtimes (in microseconds):");
+    for(i = 0; i < MAIN_CYCLE_TASK_COUNT; i++) {
+        ESP_LOGD(MAIN_TAG, "    ├─[%u] curr: %lu, min: %lu, max: %lu", i, main_g_RuntimeMeas_s[i].currentCycle_u32, main_g_RuntimeMeas_s[i].minCycle_u32, main_g_RuntimeMeas_s[i].maxCycle_u32);
     }
+
+    /* Call all module debug functions! */
+    //btn_f_SerialDebug_v();
+    //pot_f_SerialDebug_v();
+    //sensor_f_SerialDebug_v();
+
+    //vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);
+    vTaskDelay(1000);
+  }
 }
 #endif
