@@ -42,14 +42,14 @@
  * 
  * @values GPIO pin
  */
-#define MAIN_DEBUG_LED_PIN GPIO_NUM_38
+#define MAIN_DEBUG_LED_PIN GPIO_NUM_37
 
 /**
  * @brief How many main 10ms cycles to wait until changing debug LED state 
  * 
  * @values 0-250 = 0-2.5s
  */
-#define MAIN_DEBUG_LED_CYCLE_COUNT 40
+#define MAIN_DEBUG_LED_CYCLE_COUNT 100
 
 /**************************************************************************
  * Structures

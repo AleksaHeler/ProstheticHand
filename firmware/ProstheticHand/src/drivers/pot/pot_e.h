@@ -28,7 +28,7 @@
  * Defines
  **************************************************************************/
 
-#define POT_COUNT 2
+#define POT_COUNT 4
 
 #define POT_TAG "POT"
 

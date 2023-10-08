@@ -29,6 +29,8 @@
  * Defines
  **************************************************************************/
 
+#define BTN_CNT 2
+
 #define BTN_0 GPIO_NUM_1
 #define BTN_1 GPIO_NUM_2
 
@@ -43,7 +45,7 @@
  *
  * @values 0..1 (HIGH/LOW, TRUE/FALSE...)
  */
-extern uint8_t btn_g_BtnStates_u8[2];
+extern uint8_t btn_g_BtnStates_u8[BTN_CNT];
 
 /**************************************************************************
  * Function prototypes

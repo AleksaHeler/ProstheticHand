@@ -29,7 +29,7 @@
  * 
  * @values 0..1 (HIGH/LOW, TRUE/FALSE...)
  */
-uint8_t btn_g_BtnStates_u8[2];
+uint8_t btn_g_BtnStates_u8[BTN_CNT];
 
 /**************************************************************************
  * Functions
@@ -80,7 +80,7 @@ void btn_f_SerialDebug_v(void)
 {
     uint16_t i;
 
-    for(i = 0; i < 2; i++){
+    for(i = 0; i < BTN_CNT; i++){
         ESP_LOGD(BTN_TAG, "Button %u: %u", i, btn_g_BtnStates_u8[i]);
     }
 }

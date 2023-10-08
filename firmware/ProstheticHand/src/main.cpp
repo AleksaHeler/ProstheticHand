@@ -165,16 +165,15 @@ void main_f_Handle_v(void)
         switch(main_g_CurrTaskIndex_u16){
             case 0:
                 main_f_DebugLEDHandle_v();
-                btn_f_Handle_v();
                 break;
             case 1:
-                //pot_f_Handle_v();
-                sensor_f_Handle_v();
+                btn_f_Handle_v();
                 break;
             case 2:
+                //pot_f_Handle_v();
                 break;
             case 3:
-                /* To be populated*/
+                sensor_f_Handle_v();
                 break;
             case 4:
                 /* To be populated*/
@@ -256,7 +255,6 @@ void main_f_HandleRTMStats_v(uint16_t index)
     }
 }
 
-
 /** @brief Configures the LED debug output pin accordingly
  */
 void main_f_DebugLEDInit_v(void)
@@ -287,7 +285,6 @@ void main_f_DebugLEDHandle_v(void)
     ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, !gpio_get_level(MAIN_DEBUG_LED_PIN)));
   }
 }
-
 
 #ifdef SERIAL_DEBUG
 /** @brief Write runtime data to Serial console and call right functions in components to do the same 
