@@ -89,10 +89,11 @@ typedef struct{
  * 
  */
 pot_s_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
-  /* pin min_val max_val offset averageCount prevValMult  */
-  {   GPIO_NUM_25,      0,    180,     0,           2,        0.5, },  /* Normal 10k pot */ 
-  {   GPIO_NUM_26,      0,    180,     0,           2,        0.8, },  /* 10k Trim pot   */ 
-  {   GPIO_NUM_27,      0,    180,     0,           2,        0.8, }   /* 10k Trim pot   */
+  /*  pin         min_val max_val offset averageCount prevValMult  */
+  {   GPIO_NUM_25,      0,    100,     0,           5,        0.6 },  /* Normal 5k pot  */ 
+  {   GPIO_NUM_26,      0,    100,     0,           5,        0.6 },  /* Normal 5k pot  */ 
+  {   GPIO_NUM_27,      0,    100,     0,           5,        0.6 },  /* 10k Trim pot   */
+  {   GPIO_NUM_27,      0,    100,     0,           5,        0.6 }   /* 10k Trim pot   */
 };
 
 /**

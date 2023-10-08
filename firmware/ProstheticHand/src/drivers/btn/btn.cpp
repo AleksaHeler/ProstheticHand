@@ -29,7 +29,7 @@
  * 
  * @values 0..1 (HIGH/LOW, TRUE/FALSE...)
  */
-uint8_t btn_g_BtnStates_u8[4];
+uint8_t btn_g_BtnStates_u8[BTN_CNT];
 
 /**************************************************************************
  * Functions
@@ -52,7 +52,7 @@ void btn_f_SerialDebug_v( void );
 void btn_f_Init_v(void)
 {
     gpio_config_t btn_pin_config{
-        (1ULL << BTN_0) | (1ULL << BTN_1) | (1ULL << BTN_2) | (1ULL << BTN_3),
+        (1ULL << BTN_0) | (1ULL << BTN_1),
         GPIO_MODE_INPUT,
         GPIO_PULLUP_ENABLE, // The pins used don't have a pull-up/pull-down resistor, so we've implemented our own in the PCB design
         GPIO_PULLDOWN_DISABLE,
@@ -73,8 +73,6 @@ void btn_f_Handle_v( void )
 {
     btn_g_BtnStates_u8[0] = !gpio_get_level(BTN_0);
     btn_g_BtnStates_u8[1] = !gpio_get_level(BTN_1);
-    btn_g_BtnStates_u8[2] = !gpio_get_level(BTN_2);
-    btn_g_BtnStates_u8[3] = !gpio_get_level(BTN_3);
 }
 
 #ifdef SERIAL_DEBUG
@@ -82,7 +80,7 @@ void btn_f_SerialDebug_v(void)
 {
     uint16_t i;
 
-    for(i = 0; i < 4; i++){
+    for(i = 0; i < BTN_CNT; i++){
         ESP_LOGD(BTN_TAG, "Button %u: %u", i, btn_g_BtnStates_u8[i]);
     }
 }

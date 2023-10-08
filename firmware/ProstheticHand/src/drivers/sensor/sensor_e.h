@@ -27,9 +27,10 @@
  * Defines
  **************************************************************************/
 
-#define SENSOR_PIN GPIO_NUM_4
-
 #define SENSOR_TAG "SENSOR"
+
+#define SENSOR_PIN GPIO_NUM_17
+//#define SENSOR_PIN GPIO_NUM_18 // Another sensor input
 
 /**************************************************************************
  * Global variables

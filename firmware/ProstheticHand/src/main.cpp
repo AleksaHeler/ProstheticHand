@@ -55,6 +55,13 @@ uint64_t main_g_LastMicros_u64 = 0;
 uint16_t main_g_CurrTaskIndex_u16 = 0;
 
 /**
+ * Counter to know when to turn on/off the debug LED
+ * 
+ * @values 0..MAIN_DEBUG_LED_CYCLE_COUNT
+ */
+uint8_t main_g_DebugLEDCountdown_s = 0;
+
+/**
  * Buffer for runtime measurement statistics
  * 
  * @values see main_g_RuntimeMeasTyp_t define in main_e.h
@@ -83,6 +90,8 @@ void main_f_SerialDebug_v(void *arg);
 uint32_t main_f_StartRTM_v(void);
 uint32_t main_f_StopRTM_v(uint32_t rtmStart);
 void main_f_HandleRTMStats_v(uint16_t index);
+void main_f_DebugLEDInit_v(void);
+void main_f_DebugLEDHandle_v(void);
 
 /**************************************************************************
  * Application entry point
@@ -156,20 +165,19 @@ void main_f_Handle_v(void)
         /* Call the right handle functions for this task */
         switch(main_g_CurrTaskIndex_u16){
             case 0:
-                btn_f_Handle_v();
+                main_f_DebugLEDHandle_v();
                 break;
             case 1:
-                //pot_f_Handle_v();
-                sensor_f_Handle_v();
+                btn_f_Handle_v();
                 break;
             case 2:
-                srv_f_Handle_v();
+                //pot_f_Handle_v();
                 break;
             case 3:
-                /* To be populated*/
+                sensor_f_Handle_v();
                 break;
             case 4:
-                /* To be populated*/
+                srv_f_Handle_v();
                 break;
             case 5:
                 /* To be populated*/
@@ -246,6 +254,37 @@ void main_f_HandleRTMStats_v(uint16_t index)
     if(main_g_RuntimeMeas_s[index].minCycle_u32 == 0){
         main_g_RuntimeMeas_s[index].minCycle_u32 = main_g_RuntimeMeas_s[index].currentCycle_u32;
     }
+}
+
+/** @brief Configures the LED debug output pin accordingly
+ */
+void main_f_DebugLEDInit_v(void)
+{
+  /* Output pin without any pullup/pulldown */
+  gpio_config_t btn_pin_config{
+    (1ULL << MAIN_DEBUG_LED_PIN),
+    GPIO_MODE_OUTPUT,
+    GPIO_PULLUP_DISABLE,
+    GPIO_PULLDOWN_DISABLE,
+    GPIO_INTR_DISABLE
+  };
+  ESP_ERROR_CHECK(gpio_config(&btn_pin_config));
+}
+
+
+/** @brief Turns on/off debug LED when needed (cyclically)
+ */
+void main_f_DebugLEDHandle_v(void)
+{
+  /* If debug LED cycle counter greater than 0, decrement it */
+  if(main_g_DebugLEDCountdown_s > 0){
+    main_g_DebugLEDCountdown_s--;
+  }
+  /* If countdown done: set LED to inverse of itself and reset the counter! */
+  else{
+    main_g_DebugLEDCountdown_s = MAIN_DEBUG_LED_CYCLE_COUNT;
+    ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, !gpio_get_level(MAIN_DEBUG_LED_PIN)));
+  }
 }
 
 #ifdef SERIAL_DEBUG

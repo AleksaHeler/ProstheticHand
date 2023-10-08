@@ -29,8 +29,9 @@
  * Defines
  **************************************************************************/
 
-#define SERVO_PIN0 GPIO_NUM_18
-#define SERVO_PIN1 GPIO_NUM_19
+#define SERVO_PIN0 GPIO_NUM_4
+#define SERVO_PIN1 GPIO_NUM_6
+#define SERVO_PIN3 GPIO_NUM_15
 
 #define PWM_RESOLUTION LEDC_TIMER_12_BIT
 
