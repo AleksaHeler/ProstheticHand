@@ -63,7 +63,7 @@
  * 
  * @values 0..number of potentiometers (index)
  */
-#define SERVO_CONTROL_POT_INDEX 0
+#define SERVO_CONTROL_POT_INDEX 1
 
 /**************************************************************************
  * Global variables
