@@ -32,6 +32,7 @@
 /* Include all drivers/software components... */
 #include "drivers/btn/btn_e.h"
 #include "drivers/pot/pot_e.h"
+#include "drivers/srv/srv_e.h"
 #include "drivers/sensor/sensor_e.h"
 
 /**************************************************************************
@@ -133,8 +134,8 @@ void main_f_Init_v(void)
     /* Call all the initialization functions */
     main_f_DebugLEDInit_v();
     btn_f_Init_v();
-    //pot_f_Init_v();
-    //sensor_f_Init_v();
+    pot_f_Init_v();
+    srv_f_Init_v();
 }
 
 /**
@@ -166,13 +167,13 @@ void main_f_Handle_v(void)
           btn_f_Handle_v();
           break;
       case 2:
-          //pot_f_Handle_v();
+          pot_f_Handle_v();
           break;
       case 3:
           //sensor_f_Handle_v();
           break;
       case 4:
-          /* To be populated*/
+          srv_f_Handle_v();
           break;
       case 5:
           /* To be populated*/
@@ -299,7 +300,8 @@ void main_f_SerialDebug_v( void *arg ) {
 
     /* Call all module debug functions! */
     btn_f_SerialDebug_v();
-    //pot_f_SerialDebug_v();
+    pot_f_SerialDebug_v();
+    srv_f_SerialDebug_v();
     //sensor_f_SerialDebug_v();
 
     vTaskDelay(MAIN_SERIAL_DEBUG_DELAY);

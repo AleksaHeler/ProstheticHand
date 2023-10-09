@@ -99,7 +99,7 @@ void srv_f_Init_v(void)
 void srv_f_Handle_v(void)
 {
     /* Scale the angle to the duty cycle */
-    uint16_t angle = BITS_TO_MAX_VAL(PWM_RESOLUTION) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 180;
+    uint16_t angle = BITS_TO_MAX_VAL(PWM_RESOLUTION) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 100;
     //uint16_t angle = BITS_TO_MAX_VAL(PWM_RESOLUTION) * sensor_g_Value_u16 / 4095;
 
     /* Set and update the PWM signal's duty cycle */
