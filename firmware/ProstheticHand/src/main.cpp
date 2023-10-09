@@ -58,7 +58,7 @@ uint16_t main_g_CurrTaskIndex_u16 = 0;
  * 
  * @values 0..MAIN_DEBUG_LED_CYCLE_COUNT
  */
-uint8_t main_g_DebugLEDCountdown_s = 0;
+uint16_t main_g_DebugLEDCountdown_u16 = 0;
 
 /**
  * Buffer for runtime measurement statistics
@@ -104,8 +104,6 @@ extern "C" void app_main(void)
 
     while(true){
         main_f_Handle_v();
-        /* Hopefully wait for 1us (have to check the math) */
-        vTaskDelay(portTICK_PERIOD_MS);
     }
 
     //pot_f_Deinit_v();
@@ -164,7 +162,7 @@ void main_f_Handle_v(void)
     main_g_LastMicros_u64 = main_g_CurrMicros_u64;
 
     /* Start of runtime measurement */
-    //l_rtmMeas_u32 = main_f_StartRTM_v();
+    l_rtmMeas_u32 = main_f_StartRTM_v();
 
     /* Call the right handle functions for this task */
     switch(main_g_CurrTaskIndex_u16){
@@ -204,10 +202,10 @@ void main_f_Handle_v(void)
     }
 
     /* Calculate current task execution time */
-    //main_g_RuntimeMeas_s[main_g_CurrTaskIndex_u16].currentCycle_u32 = main_f_StopRTM_v(l_rtmMeas_u32);
+    main_g_RuntimeMeas_s[main_g_CurrTaskIndex_u16].currentCycle_u32 = main_f_StopRTM_v(l_rtmMeas_u32);
 
     /* Calculate the rest of the statistics for runtime measurement (min/max) */
-    //main_f_HandleRTMStats_v(main_g_CurrTaskIndex_u16);
+    main_f_HandleRTMStats_v(main_g_CurrTaskIndex_u16);
 
     /* Keep track of which task we're in */
     main_g_CurrTaskIndex_u16++;
@@ -280,17 +278,15 @@ void main_f_DebugLEDInit_v(void)
  */
 void main_f_DebugLEDHandle_v(void)
 {
-  ESP_LOGI(MAIN_TAG, "Debug LED...");
-  //ESP_LOGI(MAIN_TAG, "Debug LED: cnt %u - state: %u - want: %u", main_g_DebugLEDCountdown_s, gpio_get_level(MAIN_DEBUG_LED_PIN), main_g_DebugLEDState_s);
   /* If debug LED cycle counter greater than 0, decrement it */
-  if(main_g_DebugLEDCountdown_s > 0){
-    main_g_DebugLEDCountdown_s--;
+  if(main_g_DebugLEDCountdown_u16 > 0){
+    main_g_DebugLEDCountdown_u16--;
   }
   /* If countdown done: set LED to inverse of itself and reset the counter! */
   else{
-    main_g_DebugLEDCountdown_s = MAIN_DEBUG_LED_CYCLE_COUNT;
-    ESP_LOGI(MAIN_TAG, "Debug LED: %u", gpio_get_level(MAIN_DEBUG_LED_PIN));
+    main_g_DebugLEDCountdown_u16 = MAIN_DEBUG_LED_CYCLE_COUNT;
     ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, !gpio_get_level(MAIN_DEBUG_LED_PIN)));
+    ESP_LOGI(MAIN_TAG, "LED level: %d", gpio_get_level(MAIN_DEBUG_LED_PIN));
   }
 }
 

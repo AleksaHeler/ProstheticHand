@@ -34,7 +34,7 @@
  * @values Comment out the line to disable serial debug
  * 
  */
-#define SERIAL_DEBUG
+//#define SERIAL_DEBUG
 
 
 /**
