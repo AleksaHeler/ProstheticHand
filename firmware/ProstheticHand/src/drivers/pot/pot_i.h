@@ -67,7 +67,7 @@ typedef struct{
     /**
      * How many ADC readings to take at once to average reading
      * 
-     * @values see float32_t define
+     * @values must be an odd number
      */
     uint16_t averageCount_u16;
 

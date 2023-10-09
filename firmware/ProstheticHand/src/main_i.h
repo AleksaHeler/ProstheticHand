@@ -49,7 +49,7 @@
  * 
  * @values 0-250 = 0-2.5s
  */
-#define MAIN_DEBUG_LED_CYCLE_COUNT 100
+#define MAIN_DEBUG_LED_CYCLE_COUNT 99
 
 /**************************************************************************
  * Structures
