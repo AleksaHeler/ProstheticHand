@@ -37,20 +37,6 @@
 //#define SERIAL_DEBUG
 
 
-/**
- * @brief Define all processors for which we make our project
- */
-#define ESP32 0x0E32
-#define ESP32_S3 0xE323
-
-/**
- * @brief Which exact processor we're using
- * 
- * @values See defines above
- * 
- */
-#define PROCESSOR_TYPE ESP32_S3
-
 /**************************************************************************
  * Type defines
  **************************************************************************/
