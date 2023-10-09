@@ -280,6 +280,7 @@ void main_f_DebugLEDHandle_v(void)
   else{
     main_g_DebugLEDCountdown_u16 = MAIN_DEBUG_LED_CYCLE_COUNT;
     ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, !gpio_get_level(MAIN_DEBUG_LED_PIN)));
+    ESP_LOGI(MAIN_TAG, "POT: %f", pot_g_PotValues_f32[0]);
   }
 }
 
