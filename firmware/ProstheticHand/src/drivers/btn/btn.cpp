@@ -19,6 +19,7 @@
  **************************************************************************/
 
 #include "btn_e.h"
+#include "btn_i.h"
 
 /**************************************************************************
  * Global variables
@@ -51,14 +52,25 @@ void btn_f_SerialDebug_v( void );
  */
 void btn_f_Init_v(void)
 {
-    gpio_config_t btn_pin_config{
-        (1ULL << BTN_0) | (1ULL << BTN_1),
-        GPIO_MODE_INPUT,
-        GPIO_PULLUP_ENABLE, // The pins used don't have a pull-up/pull-down resistor, so we've implemented our own in the PCB design
-        GPIO_PULLDOWN_DISABLE,
-        GPIO_INTR_DISABLE
-    };
-    ESP_ERROR_CHECK(gpio_config(&btn_pin_config));
+  uint8_t i;
+  uint64_t btn_pin_mask = 0;
+
+  /* Combine all button masks into one (set a bit to 1 on the corret pin index) */
+  for(i = 0; i < BTN_CNT; i++){
+    btn_pin_mask |= 1ULL << btn_g_BtnPins_s[i];
+  }
+
+  /* Now use that mask to configure the input ports */
+  /* The pins used for btn don't have a pull-up/pull-down resistor in hardware, 
+  so we're using built-in ESP pullups here (and buttons connect the pin to ground) */
+  gpio_config_t btn_pin_config{
+      btn_pin_mask,
+      GPIO_MODE_INPUT,
+      GPIO_PULLUP_ENABLE,
+      GPIO_PULLDOWN_DISABLE,
+      GPIO_INTR_DISABLE
+  };
+  ESP_ERROR_CHECK(gpio_config(&btn_pin_config));
 }
 
 
@@ -71,17 +83,22 @@ void btn_f_Init_v(void)
  */
 void btn_f_Handle_v( void )
 {
-    btn_g_BtnStates_u8[0] = !gpio_get_level(BTN_0);
-    btn_g_BtnStates_u8[1] = !gpio_get_level(BTN_1);
+  uint8_t i;
+
+  /* Go over all buttons and store their inverse digital value, */
+  /* since when the button is pressed it's connected to GND */
+  for(i = 0; i < BTN_CNT; i++){
+    btn_g_BtnStates_u8[i] = !gpio_get_level(btn_g_BtnPins_s[i]);
+  }
 }
 
 #ifdef SERIAL_DEBUG
 void btn_f_SerialDebug_v(void)
 {
-    uint16_t i;
+  uint16_t i;
 
-    for(i = 0; i < BTN_CNT; i++){
-        ESP_LOGD(BTN_TAG, "Button %u: %u", i, btn_g_BtnStates_u8[i]);
-    }
+  for(i = 0; i < BTN_CNT; i++){
+    ESP_LOGD(BTN_TAG, "Button %u: %u", i, btn_g_BtnStates_u8[i]);
+  }
 }
 #endif

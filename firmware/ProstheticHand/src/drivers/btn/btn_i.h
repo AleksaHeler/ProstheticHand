@@ -15,43 +15,37 @@
  * 
  */
 
-#ifndef BTN_E_H
-#define BTN_E_H
+#ifndef BTN_I_H
+#define BTN_I_H
 
 
 /**************************************************************************
  * Includes
  **************************************************************************/
 
-#include "config/project.h"
+#include "btn_e.h"
 
 /**************************************************************************
  * Defines
  **************************************************************************/
 
-#define BTN_TAG "BTN"
-
-#define BTN_CNT 2
 
 /**************************************************************************
  * Global variables
  **************************************************************************/
 
 /**
- * Buffer for storing if a button is pressed
- *
- * @values 0..1 (HIGH/LOW, TRUE/FALSE, PRESSED/RELEASED...)
+ * @brief Configures all connected buttons, the code does all the rest
  */
-extern uint8_t btn_g_BtnStates_u8[BTN_CNT];
+gpio_num_t btn_g_BtnPins_s[BTN_CNT] = {
+  /* Pin          Comment        */
+  GPIO_NUM_1,  /* Normal button  */ 
+  GPIO_NUM_2   /* Normal button  */ 
+};
 
 /**************************************************************************
  * Function prototypes
  **************************************************************************/
 
-extern void btn_f_Init_v( void );
-extern void btn_f_Handle_v( void );
-#ifdef SERIAL_DEBUG
-extern void btn_f_SerialDebug_v( void );
-#endif
 
-#endif // BTN_E_H
+#endif // BTN_I_H

@@ -49,7 +49,7 @@ uint64_t main_g_LastMicros_u64 = 0;
 /**
  * Keep track of current task index
  * 
- * @values 0..MAIN_CYCLE_TASK_COUNT
+ * @values 0..main_c_CycleTaskCount_u8
  */
 uint16_t main_g_CurrTaskIndex_u16 = 0;
 
@@ -98,20 +98,19 @@ void main_f_DebugLEDHandle_v(void);
 
 extern "C" void app_main(void)
 {
-    ESP_LOGI(MAIN_TAG, "Application start");
+  ESP_LOGI(MAIN_TAG, "Application start");
 
-    main_f_Init_v();
+  main_f_Init_v();
+  
+  #ifdef SERIAL_DEBUG
+  /* Create a separate parallel task on the other core (0) to run Serial debug interface (rest of the code runs on core 1) */
+  xTaskCreatePinnedToCore(main_f_SerialDebug_v, "main_f_SerialDebug_v", 4096, NULL, 10, &main_g_SerialDebugTaskHandle_s, 0);
+  #endif
 
-    while(true){
-        main_f_Handle_v();
-    }
-
-    //pot_f_Deinit_v();
-    //btn_f_Deinit_v();
-    //sensor_f_Deinit_v();
+  while(true){
+    main_f_Handle_v();
+  }
 }
-
-
 
 /** @brief Init function called once on boot 
  *
@@ -133,15 +132,9 @@ void main_f_Init_v(void)
 
     /* Call all the initialization functions */
     main_f_DebugLEDInit_v();
-    //btn_f_Init_v();
+    btn_f_Init_v();
     //pot_f_Init_v();
     //sensor_f_Init_v();
-
-
-    #ifdef SERIAL_DEBUG
-    /* Create a separate parallel task on the other core (0) to run Serial debug interface (rest of the code runs on core 1) */
-    xTaskCreatePinnedToCore(main_f_SerialDebug_v, "main_f_SerialDebug_v", 4096, NULL, 10, &main_g_SerialDebugTaskHandle_s, 0);
-    #endif
 }
 
 /**
@@ -170,7 +163,7 @@ void main_f_Handle_v(void)
           main_f_DebugLEDHandle_v();
           break;
       case 1:
-          //btn_f_Handle_v();
+          btn_f_Handle_v();
           break;
       case 2:
           //pot_f_Handle_v();
@@ -286,7 +279,6 @@ void main_f_DebugLEDHandle_v(void)
   else{
     main_g_DebugLEDCountdown_u16 = MAIN_DEBUG_LED_CYCLE_COUNT;
     ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, !gpio_get_level(MAIN_DEBUG_LED_PIN)));
-    ESP_LOGI(MAIN_TAG, "LED level: %d", gpio_get_level(MAIN_DEBUG_LED_PIN));
   }
 }
 
@@ -301,12 +293,12 @@ void main_f_SerialDebug_v( void *arg ) {
     ESP_LOGD(MAIN_TAG, "----------------------------------------");
 
     ESP_LOGD(MAIN_TAG, " > runtimes (in microseconds):");
-    for(i = 0; i < MAIN_CYCLE_TASK_COUNT; i++) {
+    for(i = 0; i < main_c_CycleTaskCount_u8; i++) {
         ESP_LOGD(MAIN_TAG, "    ├─[%u] curr: %lu, min: %lu, max: %lu", i, main_g_RuntimeMeas_s[i].currentCycle_u32, main_g_RuntimeMeas_s[i].minCycle_u32, main_g_RuntimeMeas_s[i].maxCycle_u32);
     }
 
     /* Call all module debug functions! */
-    //btn_f_SerialDebug_v();
+    btn_f_SerialDebug_v();
     //pot_f_SerialDebug_v();
     //sensor_f_SerialDebug_v();
 
