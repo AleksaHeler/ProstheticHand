@@ -33,7 +33,7 @@
 #define SERVO_PIN1 GPIO_NUM_6
 #define SERVO_PIN3 GPIO_NUM_15
 
-#define PWM_RESOLUTION LEDC_TIMER_12_BIT
+#define PWM_RESOLUTION LEDC_TIMER_13_BIT
 
 #define BITS_TO_MAX_VAL(x) ((1<<x)-1)
 
@@ -47,8 +47,8 @@
  * @values 500..2500 (microseconds)
  * 
  */
-#define SERVO_MIN_WIDTH_US 600
-#define SERVO_MAX_WIDTH_US 2400
+#define SERVO_MIN_WIDTH_US 500
+#define SERVO_MAX_WIDTH_US 2500
 
 /**
  * Min/max angles of the servo in degrees (So that the finger doesn't destroy itself)

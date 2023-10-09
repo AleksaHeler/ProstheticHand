@@ -87,8 +87,10 @@ void pot_f_Init_v(void)
 
     adc_oneshot_unit_init_cfg_t init_config = {
         .unit_id = adc_unit,
+        .clk_src = ADC_RTC_CLK_SRC_DEFAULT,
         .ulp_mode = ADC_ULP_MODE_DISABLE
     };
+
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config, &pot_g_handle));
 
     adc_oneshot_chan_cfg_t channel_config = {
