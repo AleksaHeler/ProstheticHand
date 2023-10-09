@@ -65,7 +65,7 @@ uint16_t main_g_DebugLEDCountdown_u16 = 0;
  * 
  * @values see main_g_RuntimeMeasTyp_t define in main_e.h
  */
-main_g_RuntimeMeasTyp_t main_g_RuntimeMeas_s[MAIN_CYCLE_TASK_COUNT];
+main_g_RuntimeMeasTyp_t main_g_RuntimeMeas_s[main_c_CycleTaskCount_u8];
 
 #ifdef SERIAL_DEBUG
 /**
@@ -125,7 +125,7 @@ void main_f_Init_v(void)
     uint16_t i;
 
     /* Prepare runtime measurement buffer */
-    for(i = 0; i < MAIN_CYCLE_TASK_COUNT; i++) {
+    for(i = 0; i < main_c_CycleTaskCount_u8; i++) {
         main_g_RuntimeMeas_s[i].currentCycle_u32 = 0;
         main_g_RuntimeMeas_s[i].maxCycle_u32 = 0;
         main_g_RuntimeMeas_s[i].minCycle_u32 = 0;
@@ -157,7 +157,7 @@ void main_f_Handle_v(void)
   /* Get current time */
   main_g_CurrMicros_u64 = esp_timer_get_time();
 
-  if(main_g_CurrMicros_u64 - main_g_LastMicros_u64 >= main_g_CycleTaskLengthUs_u16){
+  if(main_g_CurrMicros_u64 - main_g_LastMicros_u64 >= main_c_CycleTaskLengthUs_u16){
     /* Keep track of the last task time */
     main_g_LastMicros_u64 = main_g_CurrMicros_u64;
 
@@ -209,7 +209,7 @@ void main_f_Handle_v(void)
 
     /* Keep track of which task we're in */
     main_g_CurrTaskIndex_u16++;
-    if(main_g_CurrTaskIndex_u16 >= MAIN_CYCLE_TASK_COUNT){
+    if(main_g_CurrTaskIndex_u16 >= main_c_CycleTaskCount_u8){
         main_g_CurrTaskIndex_u16 = 0;
     }
   }

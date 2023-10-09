@@ -38,7 +38,7 @@
  * 
  * @values no less than 1 ms
  */
-#define MAIN_CYCLE_LENGTH_MS 10
+const uint8_t main_c_CycleLengthMS_u8 = 10;
 
 /**
  * @brief Into how many cases is the main cycle divided? If this is for example 10, 
@@ -46,14 +46,14 @@
  * 
  * @values recommended 1 - 10 (has to be able to divide MAIN_CYCLE_LENGTH_MS)
  */
-#define MAIN_CYCLE_TASK_COUNT 10
+const uint8_t main_c_CycleTaskCount_u8 = 10;
 
 /**
  * @brief Length of the main cycle task (main cycle time / task count)
  * 
  * @values recommended 1 - 10
  */
-const uint16_t main_g_CycleTaskLengthUs_u16 = 1000 * MAIN_CYCLE_LENGTH_MS / MAIN_CYCLE_TASK_COUNT;
+const uint16_t main_c_CycleTaskLengthUs_u16 = 1000 * main_c_CycleLengthMS_u8 / main_c_CycleTaskCount_u8;
 
 /**************************************************************************
  * Structures
@@ -69,7 +69,7 @@ typedef struct {
  * Global variables
  **************************************************************************/
 
-extern main_g_RuntimeMeasTyp_t main_g_RuntimeMeas_s[MAIN_CYCLE_TASK_COUNT];
+extern main_g_RuntimeMeasTyp_t main_g_RuntimeMeas_s[main_c_CycleTaskCount_u8];
 
 /**************************************************************************
  * Function prototypes
