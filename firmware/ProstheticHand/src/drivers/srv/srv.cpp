@@ -35,6 +35,13 @@
  * Global variables
  **************************************************************************/
 
+/**
+ * @brief Stores the servo's angle value as a duty cycle
+ * 
+ * @values srv_c_minimumAllowedDuty_f32..max allowed duty
+ */
+uint16_t srv_g_Angle_u16;
+
 /**************************************************************************
  * Functions
  **************************************************************************/
@@ -100,22 +107,20 @@ void srv_f_Init_v(void)
 void srv_f_Handle_v(void)
 {
     /* Scale the angle to the duty cycle */
-    uint16_t angle = BITS_TO_MAX_VAL(PWM_RESOLUTION) * (uint16_t)pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 100;
-    //uint16_t angle = BITS_TO_MAX_VAL(PWM_RESOLUTION) * sensor_g_Value_u16 / 4095;
+    srv_g_Angle_u16 = srv_c_minimumAllowedDuty_f32 + (SERVO_MAX_ANGLE * srv_c_OneDegreeAsDuty_f32) * pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 100;
+    //srv_g_Angle_u16 = srv_c_minimumAllowedDuty_f32 + (SERVO_MAX_ANGLE * srv_c_OneDegreeAsDuty_f32) * sensor_g_Value_u16 / 4095;
 
     /* Set and update the PWM signal's duty cycle */
-    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, angle));
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, srv_g_Angle_u16));
     ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0));
 
     /* Using a 2nd channel makes it possible to give different PWM signals to each servo */
-    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1, angle));
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1, srv_g_Angle_u16));
     ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1));
-
-    ESP_LOGD(SRV_TAG, "Duty: %lu", ledc_get_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0));
 }
 
 #ifdef SERIAL_DEBUG
 void srv_f_SerialDebug_v(void){
-    ESP_LOGD(SRV_TAG, "Servo working");
+    ESP_LOGD(SRV_TAG, "MIN_CYCLE = %f, MAX_CYCLE = %f, duty = %u", SERVO_MIN_DUTY_CYCLE, SERVO_MAX_DUTY_CYCLE, srv_g_Angle_u16);
 }
 #endif

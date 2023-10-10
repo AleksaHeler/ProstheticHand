@@ -5,8 +5,7 @@
  * 
  * @brief Header file for the corresponding btn.cpp
  * 
- *  @todo Aleksa Heler: add comment for this file (what is located here?)
- *  @todo Aleksa Heler: add structure that defines button input, so that it's modular
+ * This file contains everything needed by other modules in order to use this module
  * 
  * @version 0.1
  * @date 2023-09-17
@@ -31,7 +30,7 @@
 
 #define BTN_TAG "BTN"
 
-#define BTN_CNT 2
+#define BTN_COUNT 2
 
 /**************************************************************************
  * Global variables

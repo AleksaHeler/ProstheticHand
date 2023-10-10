@@ -34,7 +34,7 @@
  * 
  * @values recommended more than 50 (milliseconds)
  */
-#define MAIN_SERIAL_DEBUG_DELAY 500/portTICK_PERIOD_MS
+#define MAIN_SERIAL_DEBUG_DELAY 1000/portTICK_PERIOD_MS
 #endif
 
 /**
