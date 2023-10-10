@@ -42,7 +42,7 @@
  *
  * @values 0..1 (HIGH/LOW, TRUE/FALSE, PRESSED/RELEASED...)
  */
-extern uint8_t btn_g_BtnStates_u8[BTN_CNT];
+extern uint8_t btn_g_BtnStates_u8[BTN_COUNT];
 
 /**************************************************************************
  * Function prototypes

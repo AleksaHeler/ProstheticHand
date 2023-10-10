@@ -30,7 +30,7 @@
  * 
  * @values 0..1 (HIGH/LOW, TRUE/FALSE...)
  */
-uint8_t btn_g_BtnStates_u8[BTN_CNT];
+uint8_t btn_g_BtnStates_u8[BTN_COUNT];
 
 /**************************************************************************
  * Functions
@@ -55,8 +55,8 @@ void btn_f_Init_v(void)
   uint8_t i;
   uint64_t btn_pin_mask = 0;
 
-  /* Combine all button masks into one (set a bit to 1 on the corret pin index) */
-  for(i = 0; i < BTN_CNT; i++){
+  /* Combine all button masks into one (set a bit to 1 on the correct pin index) */
+  for(i = 0; i < BTN_COUNT; i++){
     btn_pin_mask |= 1ULL << btn_g_BtnPins_s[i];
   }
 
@@ -87,7 +87,7 @@ void btn_f_Handle_v( void )
 
   /* Go over all buttons and store their inverse digital value, */
   /* since when the button is pressed it's connected to GND */
-  for(i = 0; i < BTN_CNT; i++){
+  for(i = 0; i < BTN_COUNT; i++){
     btn_g_BtnStates_u8[i] = !gpio_get_level(btn_g_BtnPins_s[i]);
   }
 }
@@ -97,7 +97,7 @@ void btn_f_SerialDebug_v(void)
 {
   uint16_t i;
 
-  for(i = 0; i < BTN_CNT; i++){
+  for(i = 0; i < BTN_COUNT; i++){
     ESP_LOGD(BTN_TAG, "Button %u: %u", i, btn_g_BtnStates_u8[i]);
   }
 }

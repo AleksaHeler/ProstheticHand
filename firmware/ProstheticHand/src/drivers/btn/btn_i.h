@@ -37,7 +37,7 @@
 /**
  * @brief Configures all connected buttons, the code does all the rest
  */
-gpio_num_t btn_g_BtnPins_s[BTN_CNT] = {
+gpio_num_t btn_g_BtnPins_s[BTN_COUNT] = {
   /* Pin          Comment        */
   GPIO_NUM_1,  /* Normal button  */ 
   GPIO_NUM_2   /* Normal button  */ 
