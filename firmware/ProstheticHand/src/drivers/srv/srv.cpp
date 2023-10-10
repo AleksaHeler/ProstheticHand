@@ -25,6 +25,7 @@
 
 /* Own header file */
 #include "srv_e.h"
+#include "srv_i.h"
 
 /* Other components used here */
 #include "drivers/pot/pot_e.h"
@@ -58,7 +59,7 @@ void srv_f_Init_v(void)
         .speed_mode         = LEDC_LOW_SPEED_MODE,
         .duty_resolution    = PWM_RESOLUTION,
         .timer_num          = LEDC_TIMER_0,
-        .freq_hz            = 330,
+        .freq_hz            = PWM_FREQUENCY,
         .clk_cfg            = LEDC_AUTO_CLK
     };
     ESP_ERROR_CHECK(ledc_timer_config(&srvPWM_TimerConfig));
