@@ -6,6 +6,8 @@
  * @brief This module handles the development board's configuration and mode of operation.
  * 
  * 
+ * @bug The module lacks all the functionality and as such, isn't utilised in the main program yet
+ * 
  * @version 0.1
  * @date 2023-10-12
  * 
@@ -24,18 +26,32 @@
  * Global variables
  **************************************************************************/
 
-uint8_t dipsw_g_DIPConfig_u8;
+/**
+ * @brief Stores the signal source configuration
+ * 
+ * Tells us whether we're using signal from the potentiometer,
+ * or the signal from the sensor
+ * 
+ * @values 0..1 (SIG_SRC_POT/SIG_SRC_SENS)
+ */
+ESigSrc dipsw_g_SignalSrcConfig_e;
 
 /**************************************************************************
  * Functions
  **************************************************************************/
 
 void dipsw_f_Init_v(void);
+void dipsw_f_ReadConfig_v(void);
 
-
+/**
+ * @brief Initialize function to be called once on startup/boot
+ *
+ *  Set all the given pins as inputs and call the ReadConfig function
+ *
+ *  @return void
+ */
 void dipsw_f_Init_v(void)
 {
-    uint8_t i;
     uint64_t dipsw_pin_mask = (1ULL << DIP_0) | (1ULL << DIP_1) | (1ULL << DIP_2) | (1ULL << DIP_3);
 
     gpio_config_t dipsw_pin_config = {
@@ -46,4 +62,16 @@ void dipsw_f_Init_v(void)
         .intr_type      = GPIO_INTR_DISABLE
     };
     ESP_ERROR_CHECK(gpio_config(&dipsw_pin_config));
+
+    dipsw_f_ReadConfig_v();
+}
+
+/**
+ * @brief Read all the configuration pins and store the values
+ * 
+ * @return void
+ */
+void dipsw_f_ReadConfig_v(void)
+{
+    dipsw_g_SignalSrcConfig_e = !gpio_get_level(DIP_0);
 }

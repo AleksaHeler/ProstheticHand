@@ -28,15 +28,27 @@
  * Defines
  **************************************************************************/
 
-#define DIP_0 GPIO_NUM_42
-#define DIP_1 GPIO_NUM_41
-#define DIP_2 GPIO_NUM_40
-#define DIP_3 GPIO_NUM_39
+
+
+/**************************************************************************
+ * Global variables
+ **************************************************************************/
+
+/**
+ * @brief Stores the signal source configuration read from the DIP switch
+ * 
+ * Tells us whether we're using signal from the potentiometer,
+ * or the signal from the sensor
+ * 
+ * @values 0..1 (SIG_SRC_POT/SIG_SRC_SENS)
+ */
+extern ESigSrc dipsw_g_SignalSrcConfig_e;
 
 /**************************************************************************
  * Function prototypes
  **************************************************************************/
 
 extern void dipsw_f_Init_v(void);
+extern void dipsw_f_ReadConfig_v(void);
 
 #endif // DIPSW_E_H
