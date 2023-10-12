@@ -8,7 +8,7 @@
  * This file contains configurations needed by this module that should not be visible to other modules
  * 
  * @version 0.1
- * @date 2023-09-28
+ * @date 2023-10-10
  * 
  * @copyright Copyright (c) 2023
  * 
@@ -83,7 +83,7 @@
  * @values 0..180 (degrees)
  */
 #define SERVO_MIN_ANGLE 0
-#define SERVO_MAX_ANGLE 90
+#define SERVO_MAX_ANGLE 180
 
 /**
  * @brief Index of the potentiometer that controls the servos
