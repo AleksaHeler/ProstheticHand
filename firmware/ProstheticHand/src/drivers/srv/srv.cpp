@@ -28,6 +28,7 @@
 #include "srv_i.h"
 
 /* Other components used here */
+#include "drivers/dipsw/dipsw_e.h"
 #include "drivers/pot/pot_e.h"
 #include "drivers/sensor/sensor_e.h"
 
@@ -106,21 +107,29 @@ void srv_f_Init_v(void)
  */
 void srv_f_Handle_v(void)
 {
-    /* Scale the angle to the duty cycle */
+  /* Scale the angle to the duty cycle */
+  if(dipsw_g_SignalSrcConfig_e == SIG_SRC_POT)
+  {
     srv_g_Angle_u16 = srv_c_minimumAllowedDuty_f32 + (SERVO_MAX_ANGLE * srv_c_OneDegreeAsDuty_f32) * pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 100;
-    //srv_g_Angle_u16 = srv_c_minimumAllowedDuty_f32 + (SERVO_MAX_ANGLE * srv_c_OneDegreeAsDuty_f32) * sensor_g_Value_u16 / 4095;
+  }
+  else // dipsw_g_SignalSrcConfig_e == SIG_SRC_SENS
+  {
+    // Not implemented!
+    srv_g_Angle_u16 = 90;
+  }
+  //srv_g_Angle_u16 = srv_c_minimumAllowedDuty_f32 + (SERVO_MAX_ANGLE * srv_c_OneDegreeAsDuty_f32) * sensor_g_Value_u16 / 4095;
 
-    /* Set and update the PWM signal's duty cycle */
-    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, srv_g_Angle_u16));
-    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0));
+  /* Set and update the PWM signal's duty cycle */
+  ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, srv_g_Angle_u16));
+  ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0));
 
-    /* Using a 2nd channel makes it possible to give different PWM signals to each servo */
-    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1, srv_g_Angle_u16));
-    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1));
+  /* Using a 2nd channel makes it possible to give different PWM signals to each servo */
+  ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1, srv_g_Angle_u16));
+  ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1));
 }
 
 #ifdef SERIAL_DEBUG
 void srv_f_SerialDebug_v(void){
-    ESP_LOGD(SRV_TAG, "MIN_CYCLE = %f, MAX_CYCLE = %f, duty = %u", SERVO_MIN_DUTY_CYCLE, SERVO_MAX_DUTY_CYCLE, srv_g_Angle_u16);
+  ESP_LOGD(SRV_TAG, "MIN_CYCLE = %f, MAX_CYCLE = %f, duty = %u", SERVO_MIN_DUTY_CYCLE, SERVO_MAX_DUTY_CYCLE, srv_g_Angle_u16);
 }
 #endif

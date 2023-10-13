@@ -26,15 +26,6 @@
  * Global variables
  **************************************************************************/
 
-/**
- * @brief Stores the signal source configuration
- * 
- * Tells us whether we're using signal from the potentiometer,
- * or the signal from the sensor
- * 
- * @values 0..1 (SIG_SRC_POT/SIG_SRC_SENS)
- */
-ESigSrc dipsw_g_SignalSrcConfig_e;
 
 /**************************************************************************
  * Functions
@@ -52,18 +43,18 @@ void dipsw_f_ReadConfig_v(void);
  */
 void dipsw_f_Init_v(void)
 {
-    uint64_t dipsw_pin_mask = (1ULL << DIP_0) | (1ULL << DIP_1) | (1ULL << DIP_2) | (1ULL << DIP_3);
+  uint64_t dipsw_pin_mask = (1ULL << DIP_0) | (1ULL << DIP_1) | (1ULL << DIP_2) | (1ULL << DIP_3);
 
-    gpio_config_t dipsw_pin_config = {
-        .pin_bit_mask   = dipsw_pin_mask,
-        .mode           = GPIO_MODE_INPUT,
-        .pull_up_en     = GPIO_PULLUP_ENABLE,
-        .pull_down_en   = GPIO_PULLDOWN_DISABLE,
-        .intr_type      = GPIO_INTR_DISABLE
-    };
-    ESP_ERROR_CHECK(gpio_config(&dipsw_pin_config));
+  gpio_config_t dipsw_pin_config = {
+    .pin_bit_mask   = dipsw_pin_mask,
+    .mode           = GPIO_MODE_INPUT,
+    .pull_up_en     = GPIO_PULLUP_ENABLE,
+    .pull_down_en   = GPIO_PULLDOWN_DISABLE,
+    .intr_type      = GPIO_INTR_DISABLE
+  };
+  ESP_ERROR_CHECK(gpio_config(&dipsw_pin_config));
 
-    dipsw_f_ReadConfig_v();
+  dipsw_f_ReadConfig_v();
 }
 
 /**
@@ -73,5 +64,5 @@ void dipsw_f_Init_v(void)
  */
 void dipsw_f_ReadConfig_v(void)
 {
-    dipsw_g_SignalSrcConfig_e = !gpio_get_level(DIP_0);
+  dipsw_g_SignalSrcConfig_e = (ESigSrc)!gpio_get_level(DIP_0);
 }

@@ -28,7 +28,14 @@
  * Defines
  **************************************************************************/
 
-
+/**
+ * @brief Enum that defines what signal source we're using
+ * 
+ */
+typedef enum{
+  SIG_SRC_POT = 0, 
+  SIG_SRC_SENS = 1
+} ESigSrc;
 
 /**************************************************************************
  * Global variables

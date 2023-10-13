@@ -32,16 +32,19 @@
 #define DIP_2 GPIO_NUM_40
 #define DIP_3 GPIO_NUM_39
 
-/**
- * @brief 
- * 
- */
-enum ESigSrc{SIG_SRC_POT, SIG_SRC_SENS};
-
 /**************************************************************************
  * Global variables
  **************************************************************************/
 
+/**
+ * @brief Stores the signal source configuration
+ * 
+ * Tells us whether we're using signal from the potentiometer,
+ * or the signal from the sensor
+ * 
+ * @values 0..1 (SIG_SRC_POT/SIG_SRC_SENS)
+ */
+ESigSrc dipsw_g_SignalSrcConfig_e;
 
 /**************************************************************************
  * Function prototypes
