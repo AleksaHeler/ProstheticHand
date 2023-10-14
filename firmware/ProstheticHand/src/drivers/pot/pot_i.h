@@ -30,6 +30,12 @@
  **************************************************************************/
 
 /**
+ * @brief How many previous analog reads to take into account for averaging value 
+ * 
+ */
+#define POT_AVG_CNT 50
+
+/**
  * @brief Configuration parameters of a potentiometer
  * Pot can be scaled automatically to any value by knowing its min/max values and offset
  * 
@@ -42,6 +48,14 @@ typedef struct{
      * @values See which pins are usable in file "ESP32_Pins.xlsx
      */
     uint16_t pin_u16;
+
+    /**
+     * To which ADC unit does the pin belong to? 1 or 2
+     * 
+     * 
+     * @values ADC_UNIT_1, ADC_UNIT_2
+     */
+    adc_unit_t adc_unit_s;
 
     /**
      * Minimum value returned when the pot is at its lowest
@@ -63,21 +77,6 @@ typedef struct{
      * @values see float32_t define
      */
     float32_t offset_f32;
-
-    /**
-     * How many ADC readings to take at once to average reading
-     * 
-     * @values must be an odd number
-     */
-    uint16_t averageCount_u16;
-
-    /**
-     * How much the previous value should affect current reading
-     * reading = prevValMult * prevReading + (1-prevValMult) * currReading
-     * 
-     * @values 0..1
-     */
-    float32_t prevValMult_f32;
 } pot_s_PotConfig_t;
 
 /**************************************************************************
@@ -89,32 +88,20 @@ typedef struct{
  * 
  */
 pot_s_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
-  /*  pin         min_val max_val offset averageCount prevValMult  */
-  {   GPIO_NUM_10,      0,    100,     0,           5,        0.6 },  /* Normal 5k pot  */ 
-  {   GPIO_NUM_11,      0,    100,     0,           5,        0.6 },  /* Normal 5k pot  */ 
-  {   GPIO_NUM_12,      0,    100,     0,           5,        0.6 },  /* 10k Trim pot   */
-  {   GPIO_NUM_13,      0,    100,     0,           5,        0.6 }   /* 10k Trim pot   */
+  /*  pin          adc_unit  min_val max_val offset */
+  {   GPIO_NUM_10, ADC_UNIT_2,     0,    100,     0 },  /* Normal 5k pot  */ 
+  {   GPIO_NUM_11, ADC_UNIT_2,     0,    100,     0 },  /* Normal 5k pot  */ 
+  {   GPIO_NUM_12, ADC_UNIT_2,     0,    100,     0 },  /* 10k Trim pot   */
+  {   GPIO_NUM_13, ADC_UNIT_2,     0,    100,     0 }   /* 10k Trim pot   */
 };
+
 
 /**
  * @brief Buffer for storing previous values of the potentiometers for filtering
  * 
- * @values See pot_g_PotConfig_s above
+ * @values same as pot values
  */
-extern float32_t pot_g_PotPrevValues_f32[POT_COUNT];
-
-/**
- * @brief Buffer for storing the sum of all readings to be averaged
- * 
- * @values See pot_g_PotConfig_s above 
- */
-extern float32_t pot_g_PotReadingSum_f32[POT_COUNT];
-
-/**
- * @brief Analog to Digital converter unit handle
- * 
- */
-extern adc_oneshot_unit_handle_t pot_g_handle;
+extern float32_t pot_g_PrevValues_f32[POT_COUNT][POT_AVG_CNT];
 
 /**
  * @brief Analog to digital converter channel

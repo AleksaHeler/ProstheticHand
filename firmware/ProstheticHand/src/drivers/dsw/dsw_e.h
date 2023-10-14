@@ -1,22 +1,22 @@
 /**
- * @file dipsw_e.h
- * 
+ * @file dsw_e.h
+ *
  * @author Milan Popđurđev (m.popdjurdjev@gmail.com)
- * 
+ *
  * @brief Header file containing DIP switch configurations for the development board
- * 
+ *
  * This file contains everything needed by other modules in order to use this module
 
- * 
+ *
  * @version 0.1
  * @date 2023-10-11
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#ifndef DIPSW_E_H
-#define DIPSW_E_H
+#ifndef DSW_E_H
+#define DSW_E_H
 
 /**************************************************************************
  * Includes
@@ -28,14 +28,35 @@
  * Defines
  **************************************************************************/
 
+#define DSW_TAG "DSW"
+
+#define DSW_COUNT 4
+
 /**
- * @brief Enum that defines what signal source we're using
- * 
+ * @brief Enum that defines all possible HW revisions of our board
+ *
+ * Must have all values defined for 2^DSW_COUNT (for 4 dip switches that's total of 16 possible revisions)
+ * @todo Document all wanted/possible/used variants, in docs, as well as here!
  */
-typedef enum{
-  SIG_SRC_POT = 0, 
-  SIG_SRC_SENS = 1
-} ESigSrc;
+typedef enum
+{
+  REV00 = 0, /* 2 servos, controlled by pot */
+  REV01,     /* 2 servos, controlled by sensor */
+  REV02,
+  REV03,
+  REV04,
+  REV05,
+  REV06,
+  REV07,
+  REV08,
+  REV09,
+  REV10,
+  REV11,
+  REV12,
+  REV13,
+  REV14,
+  REV15
+} dsw_HWRev_e;
 
 /**************************************************************************
  * Global variables
@@ -43,19 +64,22 @@ typedef enum{
 
 /**
  * @brief Stores the signal source configuration read from the DIP switch
- * 
+ *
  * Tells us whether we're using signal from the potentiometer,
  * or the signal from the sensor
- * 
+ *
  * @values 0..1 (SIG_SRC_POT/SIG_SRC_SENS)
  */
-extern ESigSrc dipsw_g_SignalSrcConfig_e;
+extern dsw_HWRev_e dsw_g_HardwareRevision_e;
 
 /**************************************************************************
  * Function prototypes
  **************************************************************************/
 
-extern void dipsw_f_Init_v(void);
-extern void dipsw_f_ReadConfig_v(void);
+extern void dsw_f_Init_v(void);
 
-#endif // DIPSW_E_H
+#ifdef SERIAL_DEBUG
+extern void dsw_f_SerialDebug_v(void);
+#endif
+
+#endif // DSW_E_H

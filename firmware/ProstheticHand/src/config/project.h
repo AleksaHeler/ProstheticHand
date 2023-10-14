@@ -44,4 +44,8 @@
 /* Info headers */
 #include "version.h"
 
+/* Global handle for ADC converter */
+extern adc_oneshot_unit_handle_t main_g_AdcUnit1Handle_s;
+extern adc_oneshot_unit_handle_t main_g_AdcUnit2Handle_s;
+
 #endif // PROJECT_H

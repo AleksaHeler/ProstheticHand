@@ -14,8 +14,8 @@
  * 
  */
 
-#ifndef SENSOR_E_H
-#define SENSOR_E_H
+#ifndef SNS_E_H
+#define SNS_E_H
 
 /**************************************************************************
  * Includes
@@ -27,27 +27,26 @@
  * Defines
  **************************************************************************/
 
-#define SENSOR_TAG "SENSOR"
+#define SNS_TAG "SNS"
 
-#define SENSOR_PIN GPIO_NUM_17
-//#define SENSOR_PIN GPIO_NUM_18 // Another sensor input
+#define SNS_COUNT 2
 
 /**************************************************************************
  * Global variables
  **************************************************************************/
 
-extern uint16_t sensor_g_Value_u16;
+extern uint16_t sns_g_Values_u16[SNS_COUNT];
 
 /**************************************************************************
  * Function prototypes
  **************************************************************************/
 
-extern void sensor_f_Init_v(void);
-extern void sensor_f_Handle_v(void);
-extern void sensor_f_Deinit_v(void);
+extern void sns_f_Init_v(void);
+extern void sns_f_Handle_v(void);
+
 #ifdef SERIAL_DEBUG
-extern void sensor_f_SerialDebug_v(void);
+extern void sns_f_SerialDebug_v(void);
 #endif
 
 
-#endif // SENSOR_E_H
+#endif // SNS_E_H

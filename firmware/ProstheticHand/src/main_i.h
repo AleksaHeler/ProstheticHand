@@ -1,22 +1,21 @@
 /**
  * @file main_i.h
- * 
+ *
  * @author Aleksa Heler (aleksaheler@gmail.com)
- * 
+ *
  * @brief Header file for the corresponding main.cpp
- * 
+ *
  * @todo Aleksa Heler: add comment for this file (what is located here?)
- * 
+ *
  * @version 0.1
  * @date 2023-09-21
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #ifndef MAIN_I_H
 #define MAIN_I_H
-
 
 /**************************************************************************
  * Includes
@@ -31,22 +30,22 @@
 #ifdef SERIAL_DEBUG
 /**
  * @brief How long to wait between writing serial data to console between writes
- * 
+ *
  * @values recommended more than 50 (milliseconds)
  */
-#define MAIN_SERIAL_DEBUG_DELAY 1000/portTICK_PERIOD_MS
+#define MAIN_SERIAL_DEBUG_DELAY 1000 / portTICK_PERIOD_MS
 #endif
 
 /**
  * @brief Debug LED pin
- * 
+ *
  * @values GPIO pin
  */
 #define MAIN_DEBUG_LED_PIN GPIO_NUM_37
 
 /**
- * @brief How many main 10ms cycles to wait until changing debug LED state 
- * 
+ * @brief How many main 10ms cycles to wait until changing debug LED state
+ *
  * @values 0-250 = 0-2.5s
  */
 #define MAIN_DEBUG_LED_CYCLE_COUNT 99
@@ -81,6 +80,7 @@ extern void main_f_SerialDebug_v(void *arg);
 extern uint32_t main_f_StartRTM_v(void);
 extern uint32_t main_f_StopRTM_v(uint32_t rtmStart);
 extern void main_f_HandleRTMStats_v(uint16_t index);
+extern void main_f_ADCInit_v(void);
 extern void main_f_DebugLEDInit_v(void);
 extern void main_f_DebugLEDHandle_v(void);
 
