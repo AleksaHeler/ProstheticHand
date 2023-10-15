@@ -85,6 +85,6 @@ void dsw_f_ReadConfig_v(void)
 #ifdef SERIAL_DEBUG
 void dsw_f_SerialDebug_v(void)
 {
-    ESP_LOGI(DSW_TAG, "Dipswitch reading = %u", dsw_g_HardwareRevision_e);
+    ESP_LOGD(DSW_TAG, "Dipswitch reading = %u", dsw_g_HardwareRevision_e);
 }
 #endif

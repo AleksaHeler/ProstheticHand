@@ -30,6 +30,7 @@
 
 /* Include all drivers/software components... */
 #include "drivers/dsw/dsw_e.h"
+#include "drivers/bat/bat_e.h"
 #include "drivers/btn/btn_e.h"
 #include "drivers/pot/pot_e.h"
 #include "drivers/sns/sns_e.h"
@@ -147,7 +148,8 @@ void main_f_Init_v(void)
   main_f_DebugLEDInit_v();  /* then initialize blinky LED */
   dsw_f_Init_v();           /* now bootstrap pins         */
 
-  btn_f_Init_v();           /* after that all the other 'input' modules */
+  bat_f_Init_v();           /* after that all the other 'input' modules */
+  btn_f_Init_v();
   pot_f_Init_v();
   sns_f_Init_v();
 
@@ -182,19 +184,19 @@ void main_f_Handle_v(void)
       main_f_DebugLEDHandle_v();  /* First handle the debug LED */
       break;
     case 1:
-      btn_f_Handle_v();           /* then one by one 'input' modules */
+      bat_f_Handle_v();           /* then one by one 'input' modules */
       break;
     case 2:
-      pot_f_Handle_v();
+      btn_f_Handle_v();
       break;
     case 3:
-      sns_f_Handle_v();
+      pot_f_Handle_v();
       break;
     case 4:
-      srv_f_Handle_v();           /* finally handle the 'output' module(s) */
+      sns_f_Handle_v();
       break;
     case 5:
-      /* To be populated*/
+      srv_f_Handle_v();           /* finally handle the 'output' module(s) */
       break;
     case 6:
       /* To be populated*/
@@ -345,6 +347,7 @@ void main_f_SerialDebug_v(void *arg)
 
     /* Call all module debug functions! */
     dsw_f_SerialDebug_v();
+    bat_f_SerialDebug_v();
     btn_f_SerialDebug_v();
     pot_f_SerialDebug_v();
     sns_f_SerialDebug_v();

@@ -147,7 +147,7 @@ void sns_f_SerialDebug_v(void)
   /* Go over all connected sensors */
   for (i = 0; i < SNS_COUNT; i++)
   {
-    ESP_LOGI(SNS_TAG, "Sensor #%u reading = %u", i, sns_g_Values_u16[i]);
+    ESP_LOGD(SNS_TAG, "Sensor #%u reading = %u", i, sns_g_Values_u16[i]);
   }
 }
 #endif

@@ -107,7 +107,7 @@ extern float32_t pot_g_PrevValues_f32[POT_COUNT][POT_AVG_CNT];
  * @brief Analog to digital converter channel
  * 
  */
-extern adc_channel_t pot_g_channel[POT_COUNT];
+extern adc_channel_t pot_g_channel_s[POT_COUNT];
 
 /**************************************************************************
  * Function prototypes

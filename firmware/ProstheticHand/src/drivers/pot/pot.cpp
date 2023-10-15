@@ -45,7 +45,7 @@ float32_t pot_g_PrevValues_f32[POT_COUNT][POT_AVG_CNT];
  * @brief Analog to digital converter channel
  *
  */
-adc_channel_t pot_g_channel[POT_COUNT];
+adc_channel_t pot_g_channel_s[POT_COUNT];
 
 adc_oneshot_unit_handle_t *pot_g_AdcHandle_s;
 
@@ -81,14 +81,14 @@ void pot_f_Init_v(void)
   /* Now actually go over all channels and initialize them */
   for (i = 0; i < POT_COUNT; i++)
   {
-    ESP_ERROR_CHECK(adc_oneshot_io_to_channel(pot_g_PotConfig_s[i].pin_u16, &pot_g_PotConfig_s[i].adc_unit_s, &pot_g_channel[i]));
+    ESP_ERROR_CHECK(adc_oneshot_io_to_channel(pot_g_PotConfig_s[i].pin_u16, &pot_g_PotConfig_s[i].adc_unit_s, &pot_g_channel_s[i]));
     if(pot_g_PotConfig_s[i].adc_unit_s == ADC_UNIT_1)
     {
-      ESP_ERROR_CHECK(adc_oneshot_config_channel(main_g_AdcUnit1Handle_s, pot_g_channel[i], &channel_config));
+      ESP_ERROR_CHECK(adc_oneshot_config_channel(main_g_AdcUnit1Handle_s, pot_g_channel_s[i], &channel_config));
     }
     else // ADC_UNIT_2
     {
-      ESP_ERROR_CHECK(adc_oneshot_config_channel(main_g_AdcUnit2Handle_s, pot_g_channel[i], &channel_config));
+      ESP_ERROR_CHECK(adc_oneshot_config_channel(main_g_AdcUnit2Handle_s, pot_g_channel_s[i], &channel_config));
     }
   }
 
@@ -163,11 +163,11 @@ float32_t pot_f_AnalogRead_f32(uint16_t potIndex)
   /* Based on which ADC group this pin belongs to, read the corresponding group */
   if (pot_g_PotConfig_s[potIndex].adc_unit_s == ADC_UNIT_1)
   {
-    ESP_ERROR_CHECK(adc_oneshot_read(main_g_AdcUnit1Handle_s, pot_g_channel[potIndex], (int *)&adcAnalogRead));
+    ESP_ERROR_CHECK(adc_oneshot_read(main_g_AdcUnit1Handle_s, pot_g_channel_s[potIndex], (int *)&adcAnalogRead));
   }
   else // ADC_UNIT_2
   {
-    ESP_ERROR_CHECK(adc_oneshot_read(main_g_AdcUnit2Handle_s, pot_g_channel[potIndex], (int *)&adcAnalogRead));
+    ESP_ERROR_CHECK(adc_oneshot_read(main_g_AdcUnit2Handle_s, pot_g_channel_s[potIndex], (int *)&adcAnalogRead));
   }
 
   /* Return scaled value based on POT define */
