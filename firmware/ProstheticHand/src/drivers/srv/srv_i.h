@@ -85,9 +85,32 @@
 /**
  * @brief Index of the sensor that controls the servos
  *
- * @values 0..number of servos (index)
+ * @values 0..number of sensors (index)
  */
 #define SERVO_CONTROL_SNS_INDEX 0
+
+/**
+ * @brief Index of the button that controls the servos
+ *
+ * @values 0..number of buttons (index)
+ */
+#define SERVO_CONTROL_BTN_INDEX 0
+
+/**
+ * @brief Index of the potentiometer that controls the maximum angle
+ * of the servos
+ * 
+ * @values 0..number of potentiometers (index)
+ */
+#define SERVO_ANGLE_MAX_POT_INDEX 3
+
+/**
+ * @brief Index of the potentiometer that controls the minimum angle
+ * of the servos
+ * 
+ * @values 0..number of potentiometers (index)
+ */
+#define SERVO_ANGLE_MIN_POT_INDEX 2
 
 /**
  * @brief The value of a single degree angle in duty cycle length
@@ -160,5 +183,6 @@ extern float32_t srv_c_minimumAllowedDuty_f32[SRV_COUNT];
 
 extern void srv_f_CalculateSrvAngleFromPot_f32(uint8_t servoIndex, uint8_t potIndex);
 extern void srv_f_CalculateSrvAngleFromSensor_f32(uint8_t servoIndex, uint8_t sensorIndex);
+extern void srv_f_CalculateSrvAngleFromBtn_f32(uint8_t servoIndex, uint8_t btnIndex);
 
 #endif // SRV_I_H

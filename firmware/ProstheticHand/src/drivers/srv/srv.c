@@ -31,6 +31,8 @@
 #include "drivers/dsw/dsw_e.h"
 #include "drivers/pot/pot_e.h"
 #include "drivers/sns/sns_e.h"
+#include "drivers/btn/btn_e.h"
+
 
 /**************************************************************************
  * Global variables
@@ -52,6 +54,7 @@ void srv_f_Handle_v(void);
 
 void srv_f_CalculateSrvAngleFromPot_f32(uint8_t servoIndex, uint8_t potIndex);
 void srv_f_CalculateSrvAngleFromSensor_f32(uint8_t servoIndex, uint8_t sensorIndex);
+void srv_f_CalculateSrvAngleFromBtn_f32(uint8_t servoIndex, uint8_t btnIndex);
 
 #ifdef SERIAL_DEBUG
 void srv_f_SerialDebug_v(void);
@@ -114,9 +117,12 @@ void srv_f_Handle_v(void)
     {
       srv_f_CalculateSrvAngleFromPot_f32(i, SERVO_CONTROL_POT_INDEX);
     }
-    else /* EMG sensor controller */
+    else if (dsw_g_HardwareRevision_e == REV01) /* EMG sensor controller */
     {
       srv_f_CalculateSrvAngleFromSensor_f32(i, SERVO_CONTROL_SNS_INDEX);
+    }
+    else if (dsw_g_HardwareRevision_e == REV02){
+      srv_f_CalculateSrvAngleFromBtn_f32(i, SERVO_CONTROL_BTN_INDEX);
     }
 
     /* Finally set and update each servo PWM signal's duty cycle  */
@@ -141,6 +147,18 @@ void srv_f_CalculateSrvAngleFromPot_f32(uint8_t servoIndex, uint8_t potIndex)
 void srv_f_CalculateSrvAngleFromSensor_f32(uint8_t servoIndex, uint8_t sensorIndex)
 {
   srv_g_Positions_u16[servoIndex] = srv_c_minimumAllowedDuty_f32[servoIndex] + (srv_s_ServoConfig_s[servoIndex].max_angle_u16 * srv_c_OneDegreeAsDuty_f32) * sns_g_Values_u16[0] / 4095;
+}
+
+void srv_f_CalculateSrvAngleFromBtn_f32(uint8_t servoIndex, uint8_t btnIndex)
+{
+  float32_t angle;
+  if(btn_g_BtnStates_u8[btnIndex] == 1){
+    angle = pot_g_PotValues_f32[SERVO_ANGLE_MIN_POT_INDEX];
+  }
+  else {
+    angle = pot_g_PotValues_f32[SERVO_ANGLE_MAX_POT_INDEX];
+  }
+  srv_g_Positions_u16[servoIndex] = srv_c_minimumAllowedDuty_f32[servoIndex] + (srv_s_ServoConfig_s[servoIndex].max_angle_u16 * srv_c_OneDegreeAsDuty_f32) * angle;
 }
 
 #ifdef SERIAL_DEBUG
