@@ -64,12 +64,12 @@ void btn_f_Init_v(void)
   /* Now use that mask to configure the input ports */
   /* The pins used for btn don't have a pull-up/pull-down resistor in hardware,
   so we're using built-in ESP pullups here (and buttons connect the pin to ground) */
-  gpio_config_t btn_pin_config{
-      btn_pin_mask,
-      GPIO_MODE_INPUT,
-      GPIO_PULLUP_ENABLE,
-      GPIO_PULLDOWN_DISABLE,
-      GPIO_INTR_DISABLE};
+  gpio_config_t btn_pin_config = {
+      .pin_bit_mask = btn_pin_mask,
+      .mode = GPIO_MODE_INPUT,
+      .pull_up_en = GPIO_PULLUP_ENABLE,
+      .pull_down_en = GPIO_PULLDOWN_DISABLE,
+      .intr_type = GPIO_INTR_DISABLE};
   ESP_ERROR_CHECK(gpio_config(&btn_pin_config));
 }
 

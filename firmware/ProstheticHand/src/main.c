@@ -13,9 +13,6 @@
  * @version 0.1
  * @date 2023-09-21
  *
- * @bug Pot and Sensor modules cannot be called together as they initialise the same ADC unit.
- * The code needs to be restructured so that the ADC unit initialisation is done directly in main.cpp
- *
  * @copyright Copyright (c) 2023
  *
  */
@@ -107,7 +104,7 @@ void main_f_DebugLEDHandle_v(void);
  * Application entry point
  **************************************************************************/
 
-extern "C" void app_main(void)
+void app_main(void)
 {
   ESP_LOGI(MAIN_TAG, "Application start");
 
@@ -301,7 +298,7 @@ void main_f_ADCInit_v(void)
 void main_f_DebugLEDInit_v(void)
 {
   /* Output pin without any pullup/pulldown */
-  gpio_config_t dbg_pin_config{
+  gpio_config_t dbg_pin_config = {
       (1ULL << MAIN_DEBUG_LED_PIN),
       GPIO_MODE_INPUT_OUTPUT,
       GPIO_PULLUP_DISABLE,

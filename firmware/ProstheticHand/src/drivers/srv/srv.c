@@ -131,7 +131,7 @@ void srv_f_Handle_v(void)
  */
 void srv_f_CalculateSrvAngleFromPot_f32(uint8_t servoIndex, uint8_t potIndex)
 {
-  srv_g_Positions_u16[servoIndex] = srv_c_minimumAllowedDuty_f32[servoIndex] + (srv_s_ServoConfig_s[servoIndex].max_angle_u16 * srv_c_OneDegreeAsDuty_f32) * pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX] / 100;
+  srv_g_Positions_u16[servoIndex] = srv_c_minimumAllowedDuty_f32[servoIndex] + (srv_s_ServoConfig_s[servoIndex].max_angle_u16 * srv_c_OneDegreeAsDuty_f32) * pot_g_PotValues_f32[SERVO_CONTROL_POT_INDEX];
 }
 
 /**

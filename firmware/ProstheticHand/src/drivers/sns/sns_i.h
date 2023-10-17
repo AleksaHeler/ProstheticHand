@@ -46,7 +46,7 @@ typedef struct{
     uint16_t pin_u16;
 
     /**
-     * To which ADC unit does the pin belong to? 1 or 2
+     * Which ADC unit does the pin belong to? 1 or 2
      * 
      * @values ADC_UNIT_1, ADC_UNIT_2
      */
@@ -56,7 +56,7 @@ typedef struct{
      * Minimum value for the sensor input 
      * (means muscle is 0% actuated - relaxed)
      * 
-     * @values 0-4096
+     * @values 0-4095
      */
     uint16_t min_val_u16;
 
@@ -64,7 +64,7 @@ typedef struct{
      * Maximum value for the sensor input
      * (means muscle is 100% actuated - basically a cramp)
      * 
-     * @values 0-4096
+     * @values 0-4095
      */
     uint16_t max_val_u16;
 } sns_s_SensorConfig_t;
@@ -80,8 +80,8 @@ typedef struct{
  */
 sns_s_SensorConfig_t sns_g_SensorConfig_s[SNS_COUNT] = {
   /*  pin          adc_unit  min_val max_val */
-  {   GPIO_NUM_17, ADC_UNIT_2,     0,   4096 },  /* sensor 1   */
-  {   GPIO_NUM_18, ADC_UNIT_2,     0,   4096 }   /* sensor 2   */
+  {   GPIO_NUM_17, ADC_UNIT_2,     0,   4095 },  /* sensor 1   */
+  {   GPIO_NUM_18, ADC_UNIT_2,     0,   4095 }   /* sensor 2   */
 };
 
 /**
