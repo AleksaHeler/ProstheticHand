@@ -34,6 +34,8 @@
  */
 uint16_t sns_g_Values_u16[SNS_COUNT];
 
+uint8_t sns_g_ActiveStatus_u8[SNS_COUNT];
+
 /**
  * @brief Buffer for storing previous values of the potentiometers for filtering
  *
@@ -135,7 +137,12 @@ void sns_f_Handle_v(void)
     {
       sum += sns_g_PrevValues_u16[i][j];
     }
+
+    /* Final sensor value assignment */
     sns_g_Values_u16[i] = sum / SNS_AVG_CNT;
+
+    /* Set sensor active if over threshold */
+    sns_g_ActiveStatus_u8[i] = sns_g_Values_u16[i] > sns_g_SensorConfig_s[i].thresh_u16;
   }
 }
 

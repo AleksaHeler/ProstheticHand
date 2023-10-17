@@ -183,6 +183,7 @@ extern float32_t srv_c_minimumAllowedDuty_f32[SRV_COUNT];
 
 extern void srv_f_CalculateSrvAngleFromPot_f32(uint8_t servoIndex, uint8_t potIndex);
 extern void srv_f_CalculateSrvAngleFromSensor_f32(uint8_t servoIndex, uint8_t sensorIndex);
+extern void srv_f_CalculateSrvAngleFromSensorThreshold_f32(uint8_t servoIndex, uint8_t sensorIndex);
 extern void srv_f_CalculateSrvAngleFromBtn_f32(uint8_t servoIndex, uint8_t btnIndex);
 
 #endif // SRV_I_H

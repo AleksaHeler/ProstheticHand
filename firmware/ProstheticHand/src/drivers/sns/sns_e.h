@@ -37,6 +37,8 @@
 
 extern uint16_t sns_g_Values_u16[SNS_COUNT];
 
+extern uint8_t sns_g_ActiveStatus_u8[SNS_COUNT];
+
 /**************************************************************************
  * Function prototypes
  **************************************************************************/
