@@ -32,7 +32,7 @@
  *  
  *        Resistance is in Ohms
  */
-#define BAT_SENSE_R1 5200
+#define BAT_SENSE_R1 4680
 #define BAT_SENSE_R2 1200
 
 /**
@@ -41,13 +41,13 @@
  *        
  *        mult = Vs/Vout = (R1 + R2) / R2
  */
-#define BAT_SENSE_MULT ((BAT_SENSE_R1) + (BAT_SENSE_R2)) / (BAT_SENSE_R2)
+#define BAT_SENSE_MULT (((float32_t)BAT_SENSE_R1) + ((float32_t)BAT_SENSE_R2)) / ((float32_t)BAT_SENSE_R2)
 
 /**
  * @brief With what to multiply the ADC reading to get the actual voltage?
  *        0 - 4096 == 0 - 3.3V -> 1 count = 0.805664mV
  */
-#define BAT_ADC_COUNT_TO_VOLTAGE_MULT (float32_t)0.000805664
+#define BAT_ADC_COUNT_TO_MILLIVOLT_MULT (float32_t)0.8056640625
 
 /**
  * @brief How many previous analog reads to take into account for averaging value 
@@ -120,6 +120,6 @@ extern float32_t bat_g_PrevBatVoltages_f32[BAT_AVG_CNT];
  * @param val
  * @return scaled float32_t value
  */
-extern float32_t bat_f_MapAdcToVoltage_f32(uint16_t val);
+extern float32_t bat_f_MapAdcToMillivolts_f32(uint16_t val);
 
 #endif // BAT_I_H

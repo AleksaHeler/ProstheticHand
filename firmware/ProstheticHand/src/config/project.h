@@ -28,13 +28,12 @@
 #include "stdint.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
-#include "esp_adc/adc_oneshot.h"    // Replaces the header above
+#include "esp_adc/adc_oneshot.h"
+#include "esp_adc/adc_cali.h"
 #include "driver/ledc.h"
 #include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include <math.h>
-
 
 //#include "include/GPIO_ADC_Mapping/gpio_adc_mapping.h"
 

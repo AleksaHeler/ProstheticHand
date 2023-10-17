@@ -50,7 +50,7 @@ float32_t bat_g_PrevBatVoltages_f32[BAT_AVG_CNT];
 
 void bat_f_Init_v(void);
 void bat_f_Handle_v(void);
-float32_t bat_f_MapAdcToVoltage_f32(uint16_t val);
+float32_t bat_f_MapAdcToMillivolts_f32(uint16_t val);
 
 #ifdef SERIAL_DEBUG
 void bat_f_SerialDebug_v(void);
@@ -120,7 +120,7 @@ void bat_f_Handle_v(void)
   }
 
   /* Set current value to first index (and scale the value to get exact voltage) */
-  bat_g_PrevBatVoltages_f32[0] = bat_f_MapAdcToVoltage_f32(adcAnalogRead) * bat_s_BatSensConfig_s.mult_f32;
+  bat_g_PrevBatVoltages_f32[0] = bat_f_MapAdcToMillivolts_f32(adcAnalogRead) * bat_s_BatSensConfig_s.mult_f32 / (float)1000;
 
   /* Take the average of all those readings */
   sum = 0;
@@ -139,9 +139,9 @@ void bat_f_Handle_v(void)
  * @param val
  * @return scaled float32_t value
  */
-float32_t bat_f_MapAdcToVoltage_f32(uint16_t val)
+float32_t bat_f_MapAdcToMillivolts_f32(uint16_t val)
 {
-  return (float32_t)val * BAT_ADC_COUNT_TO_VOLTAGE_MULT;
+  return (float32_t)val * BAT_ADC_COUNT_TO_MILLIVOLT_MULT;
 }
 
 #ifdef SERIAL_DEBUG

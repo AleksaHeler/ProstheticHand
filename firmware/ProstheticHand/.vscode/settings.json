@@ -1,5 +1,7 @@
 {
   "files.associations": {
-    "sns_e.h": "c"
+    "sns_e.h": "c",
+    "adc_cali.h": "c",
+    "ledc.h": "c"
   }
 }
