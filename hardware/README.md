@@ -66,3 +66,21 @@ Used ESP32 GPIO pins:
 Maybe: selectable pin functions using DIP swithces or jumper header connectors (we had some 4x DIP switches at hand so we're using them): each pin can be routed to some functionality by enabling these DIP switches. For example we can use a pin as a button input or as a pot input based on the DIP swith configuration. This is purely hardware oriented configuration and we have to then configure the code to support these changes.
 
 ![ESP32_S3_Pinout](images\esp_s3_pins.png)
+
+
+## Prosthetic Hand v2
+
+Ideas:
+- 3 servo motors, current sensing for each and MOSFET to control the power/current they get
+- MOSFETs controlled by op-amps, where uC gives them using PWM signal and sets the max current
+- (test if PWM to DC voltage works, test if given DC voltage by uC works with op-ampto set max current) 
+- 2 debug LEDs (one main RED LED, one green LED for sensor actuating)
+- 5V dropdown regulator
+- battery voltage sensing
+- 3 potentiometers (one big, two trim pots)
+- 2 buttons
+- 4 dip switches for configuration
+- 2 sensor connections
+- sensors will be on a separate board with 2x 9V batteries
+- check if we can have OLED connected to display data or just use JSON format over serial monitor and Processing
+- still use full-size ESP32 S3 Devkit C boards
