@@ -76,11 +76,25 @@
 #define SERVO_MAX_DUTY_CYCLE (BITS_TO_MAX_VAL(PWM_RESOLUTION) / ((float32_t)(1000000 / PWM_FREQUENCY) / SERVO_MAX_WIDTH_US))
 
 /**
+ * @brief Minimum duty cycle that the servo responds to
+ *
+ * Corresponds to 0 degrees
+ */
+#define SERVO_100_PERCENT_DUTY_CYCLE BITS_TO_MAX_VAL(PWM_RESOLUTION)
+
+/**
  * @brief Index of the potentiometer that controls the servos
  *
  * @values 0..number of potentiometers (index)
  */
 #define SERVO_CONTROL_POT_INDEX 0
+
+/**
+ * @brief Index of the potentiometer that controls the PWM from 0% to 100%
+ *
+ * @values 0..number of potentiometers (index)
+ */
+#define SERVO_PWM_POT_INDEX 0
 
 /**
  * @brief Index of the sensor that controls the servos
