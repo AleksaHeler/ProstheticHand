@@ -86,9 +86,9 @@ typedef struct{
  * 
  */
 sns_s_SensorConfig_t sns_g_SensorConfig_s[SNS_COUNT] = {
-  /*  pin          adc_unit  min_val max_val */
-  {   GPIO_NUM_17, ADC_UNIT_2,     0,   4095, 1500 },  /* sensor 1   */
-  {   GPIO_NUM_18, ADC_UNIT_2,     0,   4095, 1500 }   /* sensor 2   */
+  /*  pin          adc_unit  min_val max_val threshold */
+  {   GPIO_NUM_17, ADC_UNIT_2,     0,   4095,     1500 },  /* sensor 1   */
+  {   GPIO_NUM_18, ADC_UNIT_2,     0,   4095,     1500 }   /* sensor 2   */
 };
 
 /**
