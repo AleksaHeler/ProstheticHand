@@ -40,11 +40,11 @@
  */
 typedef enum
 {
-  REV00 = 0, /* 2 servos, controlled by pot */
-  REV01,     /* 2 servos, controlled by sensor */
-  REV02,
-  REV03,
-  REV04,
+  REV00 = 0, /* Servo angle controlled by a value from a potentiometer */
+  REV01,     /* Servo angle controlled by a value from a sensor */
+  REV02,     /* Servo controlled if a button is pressed (min/max angle controlled by servo position) */
+  REV03,     /* Servo controlled if a sensor threshold is activated (min/max angle controlled by servo position) */
+  REV04,     /* Servo PWM output from 0% duty to 100% duty (even if that is not a standard pot signal) based on potentiometer value */
   REV05,
   REV06,
   REV07,

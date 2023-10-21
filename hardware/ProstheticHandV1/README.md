@@ -84,3 +84,6 @@ Ideas:
 - sensors will be on a separate board with 2x 9V batteries
 - check if we can have OLED connected to display data or just use JSON format over serial monitor and Processing
 - still use full-size ESP32 S3 Devkit C boards
+
+KiCad 7 ESP32 PCB Design Full Tutorial: https://www.youtube.com/watch?v=b-7bMl6fJio
+RF + MCU PCB Design Review: https://www.youtube.com/watch?v=71bW_sKZIZw
