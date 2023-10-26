@@ -1,0 +1,16 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 15671482-862b-4c4a-b434-f6a745910fd4)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (text "TODO\n - 3 servo motors, current sensing for each and \n   MOSFET to control the power/current they get\n - MOSFETs controlled by op-amps, where uC gives \n   them using PWM signal and sets the max current"
+    (at 43.18 78.74 0)
+    (effects (font (size 5 5)) (justify left bottom))
+    (uuid 81e7aef9-c124-4e42-8627-9ec267493332)
+  )
+)

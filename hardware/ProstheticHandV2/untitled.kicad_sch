@@ -7,10 +7,4 @@
   (lib_symbols
   )
 
-
-  (text "TODO\n - 3 potentiometers (one big, two trim pots)\n - 2 buttons\n\nNext sheet\n - 3 servo motors, current sensing for each and \n   MOSFET to control the power/current they get\n - MOSFETs controlled by op-amps, where uC gives \n   them using PWM signal and sets the max current"
-    (at 38.1 104.14 0)
-    (effects (font (size 5 5)) (justify left bottom))
-    (uuid 0a12bc30-1803-45ab-8494-d55fc98b8f1b)
-  )
 )
