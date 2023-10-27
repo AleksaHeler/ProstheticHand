@@ -1113,6 +1113,9 @@
   (junction (at 218.44 129.54) (diameter 0) (color 0 0 0 0)
     (uuid a6739623-6fb7-46ee-866f-4f6fe130ba9d)
   )
+  (junction (at 246.38 83.82) (diameter 0) (color 0 0 0 0)
+    (uuid b8e7873b-ee2b-4296-ab56-e38987aba7b8)
+  )
   (junction (at 187.96 68.58) (diameter 0) (color 0 0 0 0)
     (uuid b9d376a7-5e49-4f14-b4c4-79cd723ddbbb)
   )
@@ -1202,10 +1205,6 @@
     (stroke (width 0) (type default))
     (uuid 19d5aeba-aab3-4d27-9a91-c6b932cebe4d)
   )
-  (wire (pts (xy 99.06 71.12) (xy 109.22 71.12))
-    (stroke (width 0) (type default))
-    (uuid 1b8b3be0-0e78-450b-b7d7-a64b8d03e0bf)
-  )
   (wire (pts (xy 251.46 48.26) (xy 256.54 48.26))
     (stroke (width 0) (type default))
     (uuid 1dfb6988-0b9e-465f-9283-8506fb6835de)
@@ -1269,6 +1268,10 @@
   (wire (pts (xy 66.04 157.48) (xy 73.66 157.48))
     (stroke (width 0) (type default))
     (uuid 42dec8ab-ecdc-4ab4-b840-9b12cbe18445)
+  )
+  (wire (pts (xy 63.5 86.36) (xy 73.66 86.36))
+    (stroke (width 0) (type default))
+    (uuid 4475e041-4592-4b01-8449-1e3ae54473c7)
   )
   (wire (pts (xy 195.58 152.4) (xy 218.44 152.4))
     (stroke (width 0) (type default))
@@ -1406,13 +1409,13 @@
     (stroke (width 0) (type default))
     (uuid 7f0490b7-6f28-41c7-8296-9e91a229d9cd)
   )
+  (wire (pts (xy 246.38 83.82) (xy 256.54 83.82))
+    (stroke (width 0) (type default))
+    (uuid 7f0f489c-8141-403b-819b-e33829c4d139)
+  )
   (wire (pts (xy 99.06 83.82) (xy 109.22 83.82))
     (stroke (width 0) (type default))
     (uuid 83539021-f72d-4876-b226-30fe9a6718b6)
-  )
-  (wire (pts (xy 99.06 73.66) (xy 109.22 73.66))
-    (stroke (width 0) (type default))
-    (uuid 843ae5bf-d52f-4f64-a2f5-838139477c3b)
   )
   (wire (pts (xy 63.5 73.66) (xy 73.66 73.66))
     (stroke (width 0) (type default))
@@ -1430,9 +1433,17 @@
     (stroke (width 0) (type default))
     (uuid 8e427ec5-3022-4d1b-8d33-97289ab3d12e)
   )
+  (wire (pts (xy 99.06 71.12) (xy 109.22 71.12))
+    (stroke (width 0) (type default))
+    (uuid 8fc01450-93c7-4167-9d94-b5890a9b467e)
+  )
   (wire (pts (xy 111.76 152.4) (xy 128.27 152.4))
     (stroke (width 0) (type default))
     (uuid 933aed69-3228-47fd-a375-a5bf2ffcdd42)
+  )
+  (wire (pts (xy 63.5 88.9) (xy 73.66 88.9))
+    (stroke (width 0) (type default))
+    (uuid 98972e02-5619-4f1a-b123-949c629a34ec)
   )
   (wire (pts (xy 232.41 116.84) (xy 236.22 116.84))
     (stroke (width 0) (type default))
@@ -1614,7 +1625,7 @@
     (stroke (width 0) (type default))
     (uuid d885df58-974a-4a63-8795-a508b6e31d85)
   )
-  (wire (pts (xy 243.84 83.82) (xy 256.54 83.82))
+  (wire (pts (xy 243.84 83.82) (xy 246.38 83.82))
     (stroke (width 0) (type default))
     (uuid d896f81d-048b-4e15-a08b-0c9d02d6fd88)
   )
@@ -1646,6 +1657,10 @@
     (stroke (width 0) (type default))
     (uuid eccc8691-b5c2-4c8b-bbc9-350a6bbabc61)
   )
+  (wire (pts (xy 99.06 73.66) (xy 109.22 73.66))
+    (stroke (width 0) (type default))
+    (uuid ee500a06-a545-4656-91ad-2da2cdadf222)
+  )
   (wire (pts (xy 212.09 116.84) (xy 218.44 116.84))
     (stroke (width 0) (type default))
     (uuid ef4141bd-093a-4a51-a8f2-4f2fffd039d5)
@@ -1657,14 +1672,6 @@
   (wire (pts (xy 180.34 142.24) (xy 195.58 142.24))
     (stroke (width 0) (type default))
     (uuid f551b9af-4c64-4c60-a671-17b265298aaf)
-  )
-  (wire (pts (xy 63.5 86.36) (xy 73.66 86.36))
-    (stroke (width 0) (type default))
-    (uuid f5e6ae1d-d2aa-46ac-9737-6b8be3fc400f)
-  )
-  (wire (pts (xy 63.5 88.9) (xy 73.66 88.9))
-    (stroke (width 0) (type default))
-    (uuid f796b17e-c0e5-41e9-ac74-8e56a1d3be49)
   )
   (wire (pts (xy 218.44 48.26) (xy 231.14 48.26))
     (stroke (width 0) (type default))
@@ -1737,10 +1744,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "EMG_SENSOR_01" (shape input) (at 109.22 73.66 0) (fields_autoplaced)
+  (global_label "EMG_SENSOR_01" (shape input) (at 109.22 71.12 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 29f22d96-afc9-4229-af4a-ac8fca089e7f)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 127.9288 73.66 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 127.9288 71.12 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1765,10 +1772,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "BUTTON_01" (shape input) (at 63.5 86.36 180) (fields_autoplaced)
+  (global_label "BUTTON_01" (shape input) (at 63.5 88.9 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 435bf622-75c9-48a4-8df1-0837fd413bd3)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 49.9315 86.36 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 49.9315 88.9 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
@@ -1842,10 +1849,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "BUTTON_02" (shape input) (at 63.5 88.9 180) (fields_autoplaced)
+  (global_label "BUTTON_02" (shape input) (at 63.5 86.36 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid ab9fc054-314e-4965-9310-4f04d2f12958)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 49.9315 88.9 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 49.9315 86.36 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
@@ -1870,10 +1877,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "EMG_SENSOR_02" (shape input) (at 109.22 71.12 0) (fields_autoplaced)
+  (global_label "EMG_SENSOR_02" (shape input) (at 109.22 73.66 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid b3539187-35ad-4f4a-8f27-2f1d989d247d)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 127.9288 71.12 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 127.9288 73.66 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1937,7 +1944,7 @@
   (symbol (lib_id "Device:C_Polarized") (at 218.44 58.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 12b62b5d-a672-49d3-87c8-fae7fd90d39c)
-    (property "Reference" "C3" (at 222.25 56.261 0)
+    (property "Reference" "C1" (at 222.25 56.261 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "470uF" (at 222.25 58.801 0)
@@ -1954,7 +1961,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "C3") (unit 1)
+          (reference "C1") (unit 1)
         )
       )
     )
@@ -1963,7 +1970,7 @@
   (symbol (lib_id "power:GND") (at 228.6 86.36 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1e306034-82a4-45c3-9b07-d0f6264986e6)
-    (property "Reference" "#PWR05" (at 228.6 92.71 0)
+    (property "Reference" "#PWR06" (at 228.6 92.71 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 228.6 91.44 0)
@@ -1979,7 +1986,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR05") (unit 1)
+          (reference "#PWR06") (unit 1)
         )
       )
     )
@@ -1988,7 +1995,7 @@
   (symbol (lib_id "Device:D_Zener") (at 248.92 123.19 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 200a381a-1445-490e-871b-9bc1c6712d95)
-    (property "Reference" "D4" (at 251.46 121.92 90)
+    (property "Reference" "D3" (at 251.46 121.92 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "5v1" (at 251.46 124.46 90)
@@ -2005,7 +2012,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "D4") (unit 1)
+          (reference "D3") (unit 1)
         )
       )
     )
@@ -2014,7 +2021,7 @@
   (symbol (lib_id "power:+5V") (at 274.32 45.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 25b1f418-44ca-4467-a91b-1ccd534a9324)
-    (property "Reference" "#PWR06" (at 274.32 49.53 0)
+    (property "Reference" "#PWR04" (at 274.32 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 274.32 40.64 0)
@@ -2030,7 +2037,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR06") (unit 1)
+          (reference "#PWR04") (unit 1)
         )
       )
     )
@@ -2039,7 +2046,7 @@
   (symbol (lib_id "power:GND") (at 218.44 129.54 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 26f633c3-e038-44e9-88ff-f6a26dacc937)
-    (property "Reference" "#PWR011" (at 218.44 135.89 0)
+    (property "Reference" "#PWR09" (at 218.44 135.89 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 218.44 134.62 0)
@@ -2055,7 +2062,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR011") (unit 1)
+          (reference "#PWR09") (unit 1)
         )
       )
     )
@@ -2096,7 +2103,7 @@
   (symbol (lib_id "Device:C") (at 269.24 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 39568188-f64e-4e33-9f24-94774e493cc6)
-    (property "Reference" "C1" (at 273.05 58.42 0)
+    (property "Reference" "C4" (at 273.05 58.42 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1uF" (at 273.05 60.96 0)
@@ -2113,7 +2120,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "C1") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -2122,7 +2129,7 @@
   (symbol (lib_id "power:+5V") (at 104.14 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3b363406-1733-4a2e-ba94-ec93e8840482)
-    (property "Reference" "#PWR04" (at 104.14 41.91 0)
+    (property "Reference" "#PWR02" (at 104.14 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 104.14 33.02 0)
@@ -2138,7 +2145,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR04") (unit 1)
+          (reference "#PWR02") (unit 1)
         )
       )
     )
@@ -2147,7 +2154,7 @@
   (symbol (lib_id "Device:R") (at 228.6 139.7 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 40092ef2-5bea-4b1a-97a8-b5e3b9513964)
-    (property "Reference" "R8" (at 228.6 133.35 90)
+    (property "Reference" "R7" (at 228.6 133.35 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 228.6 135.89 90)
@@ -2164,7 +2171,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "R8") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
     )
@@ -2173,7 +2180,7 @@
   (symbol (lib_id "Device:LED") (at 142.24 152.4 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 48d365d0-b601-4b48-9bae-c4ddcef38bdf)
-    (property "Reference" "D2" (at 143.8275 144.78 0)
+    (property "Reference" "D5" (at 143.8275 144.78 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LED RED" (at 143.8275 147.32 0)
@@ -2190,7 +2197,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "D2") (unit 1)
+          (reference "D5") (unit 1)
         )
       )
     )
@@ -2199,7 +2206,7 @@
   (symbol (lib_id "power:GND") (at 71.12 101.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5569f7eb-989a-40bc-be50-69603a989c01)
-    (property "Reference" "#PWR01" (at 71.12 107.95 0)
+    (property "Reference" "#PWR08" (at 71.12 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 71.12 106.68 0)
@@ -2215,7 +2222,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR01") (unit 1)
+          (reference "#PWR08") (unit 1)
         )
       )
     )
@@ -2224,7 +2231,7 @@
   (symbol (lib_id "power:GND") (at 218.44 152.4 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 55f6d73b-0e87-4e8f-bf58-27a539c43bcf)
-    (property "Reference" "#PWR012" (at 218.44 158.75 0)
+    (property "Reference" "#PWR010" (at 218.44 158.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 218.44 157.48 0)
@@ -2240,7 +2247,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR012") (unit 1)
+          (reference "#PWR010") (unit 1)
         )
       )
     )
@@ -2249,7 +2256,7 @@
   (symbol (lib_id "Device:R") (at 198.12 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 599eae25-6248-4104-97a7-d20612df3d7b)
-    (property "Reference" "R9" (at 200.66 58.42 0)
+    (property "Reference" "R2" (at 200.66 58.42 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10k" (at 200.66 60.96 0)
@@ -2266,7 +2273,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "R9") (unit 1)
+          (reference "R2") (unit 1)
         )
       )
     )
@@ -2328,7 +2335,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 111.76 167.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5ee08167-201b-4e06-9881-b749de242a4a)
-    (property "Reference" "TP4" (at 114.3 163.068 0)
+    (property "Reference" "TP9" (at 114.3 163.068 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_DEBUG_02" (at 114.3 165.608 0)
@@ -2344,7 +2351,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "TP4") (unit 1)
+          (reference "TP9") (unit 1)
         )
       )
     )
@@ -2453,7 +2460,7 @@
   (symbol (lib_id "power:GND") (at 73.66 167.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 710917b8-8bc8-4932-97ae-7265a4444f06)
-    (property "Reference" "#PWR010" (at 73.66 173.99 0)
+    (property "Reference" "#PWR011" (at 73.66 173.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 73.66 172.72 0)
@@ -2469,7 +2476,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR010") (unit 1)
+          (reference "#PWR011") (unit 1)
         )
       )
     )
@@ -2478,7 +2485,7 @@
   (symbol (lib_id "Device:LED") (at 142.24 167.64 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 739cd454-5b76-447d-98c4-824c380c7529)
-    (property "Reference" "D3" (at 143.8275 160.02 0)
+    (property "Reference" "D6" (at 143.8275 160.02 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LED BLUE" (at 143.8275 162.56 0)
@@ -2495,7 +2502,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "D3") (unit 1)
+          (reference "D6") (unit 1)
         )
       )
     )
@@ -2504,7 +2511,7 @@
   (symbol (lib_id "Device:R") (at 208.28 139.7 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 74517e05-3873-4f32-8867-2d01c4e768ee)
-    (property "Reference" "R7" (at 208.28 133.35 90)
+    (property "Reference" "R6" (at 208.28 133.35 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "330k" (at 208.28 135.89 90)
@@ -2521,7 +2528,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "R7") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
     )
@@ -2556,7 +2563,7 @@
   (symbol (lib_id "Device:C_Polarized") (at 256.54 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 81cbf5ad-2f5c-4499-ab42-5e92235cfc58)
-    (property "Reference" "C4" (at 260.35 57.531 0)
+    (property "Reference" "C3" (at 260.35 57.531 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "470uF" (at 260.35 60.071 0)
@@ -2573,7 +2580,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "C4") (unit 1)
+          (reference "C3") (unit 1)
         )
       )
     )
@@ -2607,7 +2614,7 @@
   (symbol (lib_id "Device:R") (at 187.96 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8c74771e-e293-4dea-81ab-42f60e8106be)
-    (property "Reference" "R2" (at 190.5 74.93 0)
+    (property "Reference" "R3" (at 190.5 74.93 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "47k" (at 190.5 77.47 0)
@@ -2624,7 +2631,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "R2") (unit 1)
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -2633,7 +2640,7 @@
   (symbol (lib_id "Device:D_Zener") (at 248.92 146.05 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8c951fc5-62b6-46a8-8dc2-6a6375c76356)
-    (property "Reference" "D5" (at 251.46 144.78 90)
+    (property "Reference" "D4" (at 251.46 144.78 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "5v1" (at 251.46 147.32 90)
@@ -2650,7 +2657,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "D5") (unit 1)
+          (reference "D4") (unit 1)
         )
       )
     )
@@ -2659,7 +2666,7 @@
   (symbol (lib_id "power:GND") (at 63.5 33.02 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8f3408ac-1a43-4b12-a72b-3b45ee1fe260)
-    (property "Reference" "#PWR02" (at 63.5 39.37 0)
+    (property "Reference" "#PWR01" (at 63.5 39.37 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 63.5 38.1 0)
@@ -2675,7 +2682,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR02") (unit 1)
+          (reference "#PWR01") (unit 1)
         )
       )
     )
@@ -2684,7 +2691,7 @@
   (symbol (lib_id "power:+BATT") (at 208.28 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ac8dffaf-7b88-4fae-918f-8e499c693bfc)
-    (property "Reference" "#PWR07" (at 208.28 44.45 0)
+    (property "Reference" "#PWR03" (at 208.28 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 208.28 35.56 0)
@@ -2700,7 +2707,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR07") (unit 1)
+          (reference "#PWR03") (unit 1)
         )
       )
     )
@@ -2709,7 +2716,7 @@
   (symbol (lib_id "power:GND") (at 153.67 172.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b663054d-b5de-42e3-b30f-0460f7b793a1)
-    (property "Reference" "#PWR09" (at 153.67 179.07 0)
+    (property "Reference" "#PWR012" (at 153.67 179.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 153.67 177.8 0)
@@ -2725,7 +2732,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR09") (unit 1)
+          (reference "#PWR012") (unit 1)
         )
       )
     )
@@ -2734,7 +2741,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 236.22 139.7 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b66a4b8a-7d7c-4cde-978a-68dd0aa70469)
-    (property "Reference" "TP8" (at 238.76 135.128 0)
+    (property "Reference" "TP7" (at 238.76 135.128 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_EMG_02_UC" (at 238.76 137.668 0)
@@ -2750,7 +2757,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "TP8") (unit 1)
+          (reference "TP7") (unit 1)
         )
       )
     )
@@ -2765,7 +2772,7 @@
     (property "Value" "BATT_CONNECTOR" (at 173.355 45.72 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_JST:JST_XA_B02B-XASK-1-A_1x02_P2.50mm_Vertical" (at 172.72 48.26 0)
+    (property "Footprint" "Connector_JST:JST_XA_B02B-XASK-1_1x02_P2.50mm_Vertical" (at 172.72 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 172.72 48.26 0)
@@ -2785,7 +2792,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 236.22 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b825a289-a548-4f4a-bce6-4945df6b7f8a)
-    (property "Reference" "TP7" (at 238.76 112.268 0)
+    (property "Reference" "TP5" (at 238.76 112.268 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_EMG_01_UC" (at 238.76 114.808 0)
@@ -2801,7 +2808,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "TP7") (unit 1)
+          (reference "TP5") (unit 1)
         )
       )
     )
@@ -2810,7 +2817,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 111.76 152.4 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b8efcb80-a6bb-49ef-ada6-26dd5e464624)
-    (property "Reference" "TP3" (at 114.3 147.828 0)
+    (property "Reference" "TP8" (at 114.3 147.828 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_DEBUG_01" (at 114.3 150.368 0)
@@ -2826,7 +2833,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "TP3") (unit 1)
+          (reference "TP8") (unit 1)
         )
       )
     )
@@ -2841,7 +2848,7 @@
     (property "Value" "EMG_SENSOR_02" (at 175.895 137.16 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_JST:JST_XA_B02B-XASK-1-A_1x02_P2.50mm_Vertical" (at 175.26 139.7 0)
+    (property "Footprint" "Connector_JST:JST_XA_B02B-XASK-1_1x02_P2.50mm_Vertical" (at 175.26 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 175.26 139.7 0)
@@ -2861,7 +2868,7 @@
   (symbol (lib_id "Device:R") (at 208.28 116.84 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c241deb2-bffc-4562-ab85-efe6cf618800)
-    (property "Reference" "R5" (at 208.28 110.49 90)
+    (property "Reference" "R4" (at 208.28 110.49 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "330k" (at 208.28 113.03 90)
@@ -2878,7 +2885,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "R5") (unit 1)
+          (reference "R4") (unit 1)
         )
       )
     )
@@ -2934,10 +2941,35 @@
     )
   )
 
+  (symbol (lib_id "Connector:TestPoint") (at 246.38 83.82 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid d12ce03f-abf7-4350-89dc-0b41f15d3471)
+    (property "Reference" "TP3" (at 248.92 79.248 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "TP_GND" (at 248.92 81.788 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.5mm" (at 251.46 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 251.46 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 168f7371-97f0-48ed-ad40-a0904f65678e))
+    (instances
+      (project "ProstheticHandV2"
+        (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
+          (reference "TP3") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:R") (at 132.08 152.4 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d16831ac-d920-496f-8ac6-7f4855314a8a)
-    (property "Reference" "R3" (at 132.08 146.05 90)
+    (property "Reference" "R8" (at 132.08 146.05 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "220" (at 132.08 148.59 90)
@@ -2954,7 +2986,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "R3") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
     )
@@ -2989,7 +3021,7 @@
   (symbol (lib_id "Device:R") (at 228.6 116.84 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d52134a6-d053-4985-aa0c-948e087e6641)
-    (property "Reference" "R6" (at 228.6 110.49 90)
+    (property "Reference" "R5" (at 228.6 110.49 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10k" (at 228.6 113.03 90)
@@ -3006,7 +3038,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "R6") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
     )
@@ -3015,7 +3047,7 @@
   (symbol (lib_id "Device:R") (at 132.08 167.64 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dd255a3d-fab3-4bc1-a1a0-9d68a82e7e44)
-    (property "Reference" "R4" (at 132.08 161.29 90)
+    (property "Reference" "R9" (at 132.08 161.29 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "220" (at 132.08 163.83 90)
@@ -3032,7 +3064,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "R4") (unit 1)
+          (reference "R9") (unit 1)
         )
       )
     )
@@ -3041,7 +3073,7 @@
   (symbol (lib_id "power:GND") (at 180.34 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid df753474-0fbe-46ec-af5f-1682916a5118)
-    (property "Reference" "#PWR08" (at 180.34 62.23 0)
+    (property "Reference" "#PWR05" (at 180.34 62.23 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 180.34 60.96 0)
@@ -3057,7 +3089,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR08") (unit 1)
+          (reference "#PWR05") (unit 1)
         )
       )
     )
@@ -3066,7 +3098,7 @@
   (symbol (lib_id "Device:LED") (at 198.12 72.39 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e59dca96-f3e9-46dd-aac0-5429de10445c)
-    (property "Reference" "D6" (at 201.93 72.7075 90)
+    (property "Reference" "D2" (at 201.93 72.7075 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "LED GREEN" (at 201.93 75.2475 90)
@@ -3083,7 +3115,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "D6") (unit 1)
+          (reference "D2") (unit 1)
         )
       )
     )
@@ -3118,7 +3150,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 187.96 116.84 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ee9c0147-9f80-494f-b8fc-eeb2dc0abf37)
-    (property "Reference" "TP5" (at 190.5 112.268 0)
+    (property "Reference" "TP4" (at 190.5 112.268 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_EMG_01_IN" (at 190.5 114.808 0)
@@ -3134,7 +3166,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "TP5") (unit 1)
+          (reference "TP4") (unit 1)
         )
       )
     )
@@ -3143,7 +3175,7 @@
   (symbol (lib_id "power:+3V3") (at 109.22 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f02c27d6-9762-4079-9dca-654a16ce4705)
-    (property "Reference" "#PWR03" (at 109.22 102.87 0)
+    (property "Reference" "#PWR07" (at 109.22 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 109.22 93.98 0)
@@ -3159,7 +3191,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0"
-          (reference "#PWR03") (unit 1)
+          (reference "#PWR07") (unit 1)
         )
       )
     )
@@ -3174,7 +3206,7 @@
     (property "Value" "EMG_SENSOR_01" (at 175.895 114.3 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_JST:JST_XA_B02B-XASK-1-A_1x02_P2.50mm_Vertical" (at 175.26 116.84 0)
+    (property "Footprint" "Connector_JST:JST_XA_B02B-XASK-1_1x02_P2.50mm_Vertical" (at 175.26 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 175.26 116.84 0)

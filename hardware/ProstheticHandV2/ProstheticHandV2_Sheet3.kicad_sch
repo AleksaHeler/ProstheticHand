@@ -596,7 +596,7 @@
   (symbol (lib_id "Device:C") (at 218.44 72.39 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 17c69141-c7b7-4514-92d1-42d31e56b25f)
-    (property "Reference" "C14" (at 222.25 71.12 0)
+    (property "Reference" "C12" (at 222.25 71.12 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 222.25 73.66 0)
@@ -613,7 +613,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "C14") (unit 1)
+          (reference "C12") (unit 1)
         )
       )
     )
@@ -622,7 +622,7 @@
   (symbol (lib_id "Device:R") (at 87.63 124.46 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2b569999-6b26-4784-b475-905dbece6313)
-    (property "Reference" "R28" (at 87.63 118.11 90)
+    (property "Reference" "R25" (at 87.63 118.11 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k2" (at 87.63 120.65 90)
@@ -639,7 +639,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "R28") (unit 1)
+          (reference "R25") (unit 1)
         )
       )
     )
@@ -648,7 +648,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 233.68 63.5 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3019892a-0e29-414c-8189-ddd4f19d07c7)
-    (property "Reference" "TP29" (at 236.22 58.928 0)
+    (property "Reference" "TP24" (at 236.22 58.928 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CURR_02" (at 236.22 61.468 0)
@@ -664,7 +664,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP29") (unit 1)
+          (reference "TP24") (unit 1)
         )
       )
     )
@@ -673,7 +673,7 @@
   (symbol (lib_id "Device:R") (at 107.95 124.46 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 37ea68ca-1323-4428-bab6-93872df066ca)
-    (property "Reference" "R29" (at 107.95 118.11 90)
+    (property "Reference" "R26" (at 107.95 118.11 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "68k" (at 107.95 120.65 90)
@@ -690,7 +690,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "R29") (unit 1)
+          (reference "R26") (unit 1)
         )
       )
     )
@@ -699,7 +699,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 175.26 63.5 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3925eba0-35a3-445d-9a8f-46e6f664d2c7)
-    (property "Reference" "TP25" (at 177.8 58.928 0)
+    (property "Reference" "TP23" (at 177.8 58.928 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CURR_RAW_02" (at 177.8 61.468 0)
@@ -715,7 +715,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP25") (unit 1)
+          (reference "TP23") (unit 1)
         )
       )
     )
@@ -724,7 +724,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 111.76 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3b1f8cb5-8067-4681-ba2f-d0e0c1d01f14)
-    (property "Reference" "TP28" (at 114.3 61.468 0)
+    (property "Reference" "TP26" (at 114.3 61.468 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CURR_01" (at 114.3 64.008 0)
@@ -740,7 +740,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP28") (unit 1)
+          (reference "TP26") (unit 1)
         )
       )
     )
@@ -749,7 +749,7 @@
   (symbol (lib_id "Device:R") (at 170.18 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3e3cdb35-02b9-4064-b90c-e04b22856245)
-    (property "Reference" "R24" (at 172.72 69.85 0)
+    (property "Reference" "R23" (at 172.72 69.85 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1" (at 172.72 72.39 0)
@@ -766,7 +766,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "R24") (unit 1)
+          (reference "R23") (unit 1)
         )
       )
     )
@@ -775,7 +775,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 175.26 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4bb400cd-4346-4c40-a643-cb366c497b8c)
-    (property "Reference" "TP24" (at 177.8 48.768 0)
+    (property "Reference" "TP21" (at 177.8 48.768 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CONTROL_02" (at 177.8 51.308 0)
@@ -791,7 +791,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP24") (unit 1)
+          (reference "TP21") (unit 1)
         )
       )
     )
@@ -800,7 +800,7 @@
   (symbol (lib_id "Device:C") (at 99.06 133.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 53cbeefc-e95d-4013-b461-d128caaee9d6)
-    (property "Reference" "C15" (at 102.87 132.08 0)
+    (property "Reference" "C14" (at 102.87 132.08 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 102.87 134.62 0)
@@ -817,7 +817,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "C15") (unit 1)
+          (reference "C14") (unit 1)
         )
       )
     )
@@ -826,7 +826,7 @@
   (symbol (lib_id "Device:R") (at 48.26 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5fc426a2-2b6d-443b-8c5c-b6ba07f71fae)
-    (property "Reference" "R19" (at 50.8 72.39 0)
+    (property "Reference" "R24" (at 50.8 72.39 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1" (at 50.8 74.93 0)
@@ -843,7 +843,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "R19") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
     )
@@ -852,7 +852,7 @@
   (symbol (lib_id "Device:R") (at 227.33 63.5 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 64292eb3-ca40-4da1-8dfd-84ed8d768bf3)
-    (property "Reference" "R26" (at 227.33 57.15 90)
+    (property "Reference" "R20" (at 227.33 57.15 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "68k" (at 227.33 59.69 90)
@@ -869,7 +869,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "R26") (unit 1)
+          (reference "R20") (unit 1)
         )
       )
     )
@@ -878,7 +878,7 @@
   (symbol (lib_id "power:GND") (at 48.26 81.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6cf765b6-ba1f-4638-b060-a1234b4c0704)
-    (property "Reference" "#PWR019" (at 48.26 87.63 0)
+    (property "Reference" "#PWR023" (at 48.26 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 48.26 86.36 0)
@@ -894,7 +894,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR019") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -903,7 +903,7 @@
   (symbol (lib_id "Device:R") (at 207.01 63.5 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 739b83c4-7678-4e9c-a746-86afaef07d32)
-    (property "Reference" "R25" (at 207.01 57.15 90)
+    (property "Reference" "R19" (at 207.01 57.15 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "1k2" (at 207.01 59.69 90)
@@ -920,7 +920,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "R25") (unit 1)
+          (reference "R19") (unit 1)
         )
       )
     )
@@ -929,7 +929,7 @@
   (symbol (lib_id "power:GND") (at 218.44 78.74 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7c40fda4-c269-46f3-8c54-c187480aa1a1)
-    (property "Reference" "#PWR025" (at 218.44 85.09 0)
+    (property "Reference" "#PWR022" (at 218.44 85.09 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 218.44 83.82 0)
@@ -945,7 +945,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -954,7 +954,7 @@
   (symbol (lib_id "Device:C") (at 96.52 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7fa7b1eb-fb53-4d35-9b79-b64a6fcc5130)
-    (property "Reference" "C12" (at 100.33 73.66 0)
+    (property "Reference" "C13" (at 100.33 73.66 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "100nF" (at 100.33 76.2 0)
@@ -971,7 +971,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "C12") (unit 1)
+          (reference "C13") (unit 1)
         )
       )
     )
@@ -980,7 +980,7 @@
   (symbol (lib_id "power:+BATT") (at 48.26 101.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8e416bfb-7f61-4d79-9850-c8582258aef1)
-    (property "Reference" "#PWR026" (at 48.26 105.41 0)
+    (property "Reference" "#PWR025" (at 48.26 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 48.26 96.52 0)
@@ -996,7 +996,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -1005,7 +1005,7 @@
   (symbol (lib_id "power:GND") (at 50.8 139.7 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 95bee605-f4c2-427d-9f77-5589ea216e86)
-    (property "Reference" "#PWR027" (at 50.8 146.05 0)
+    (property "Reference" "#PWR026" (at 50.8 146.05 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 50.8 144.78 0)
@@ -1021,7 +1021,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -1030,7 +1030,7 @@
   (symbol (lib_id "Connector:Conn_01x03_Socket") (at 33.02 58.42 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9fa684ad-eb3b-4312-b2a8-6936adbe5fb9)
-    (property "Reference" "J4" (at 33.655 50.8 0)
+    (property "Reference" "J5" (at 33.655 50.8 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "CONN_SERVO_01" (at 33.655 53.34 0)
@@ -1048,7 +1048,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "J4") (unit 1)
+          (reference "J5") (unit 1)
         )
       )
     )
@@ -1057,7 +1057,7 @@
   (symbol (lib_id "Connector:Conn_01x03_Socket") (at 154.94 55.88 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ab7275b0-efaf-4898-8d0b-960f2198f3b6)
-    (property "Reference" "J6" (at 155.575 48.26 0)
+    (property "Reference" "J4" (at 155.575 48.26 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "CONN_SERVO_02" (at 155.575 50.8 0)
@@ -1075,7 +1075,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "J6") (unit 1)
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -1084,7 +1084,7 @@
   (symbol (lib_id "power:GND") (at 99.06 139.7 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b460a05c-6eb0-4123-9b15-12b3785405cd)
-    (property "Reference" "#PWR028" (at 99.06 146.05 0)
+    (property "Reference" "#PWR027" (at 99.06 146.05 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 99.06 144.78 0)
@@ -1100,7 +1100,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
     )
@@ -1135,7 +1135,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 55.88 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b98e479a-5573-4663-b40b-5c2e76b6031c)
-    (property "Reference" "TP27" (at 58.42 119.888 0)
+    (property "Reference" "TP28" (at 58.42 119.888 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CURR_RAW_03" (at 58.42 122.428 0)
@@ -1151,7 +1151,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP27") (unit 1)
+          (reference "TP28") (unit 1)
         )
       )
     )
@@ -1160,7 +1160,7 @@
   (symbol (lib_id "power:GND") (at 96.52 81.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bcc9f038-6ebc-4f17-bc08-cc478b4001ff)
-    (property "Reference" "#PWR022" (at 96.52 87.63 0)
+    (property "Reference" "#PWR024" (at 96.52 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 96.52 86.36 0)
@@ -1176,7 +1176,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
     )
@@ -1211,7 +1211,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 53.34 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c1b3414a-6c5b-45ed-b1c6-7c56a1915303)
-    (property "Reference" "TP22" (at 55.88 61.468 0)
+    (property "Reference" "TP25" (at 55.88 61.468 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CURR_RAW_01" (at 55.88 64.008 0)
@@ -1227,7 +1227,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP22") (unit 1)
+          (reference "TP25") (unit 1)
         )
       )
     )
@@ -1236,7 +1236,7 @@
   (symbol (lib_id "power:+BATT") (at 167.64 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cef99b6d-804b-4178-b6db-df134c385624)
-    (property "Reference" "#PWR023" (at 167.64 44.45 0)
+    (property "Reference" "#PWR019" (at 167.64 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 167.64 35.56 0)
@@ -1252,7 +1252,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR023") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
@@ -1261,7 +1261,7 @@
   (symbol (lib_id "power:GND") (at 170.18 78.74 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cfdce0bb-ee32-456f-99f8-312496631302)
-    (property "Reference" "#PWR024" (at 170.18 85.09 0)
+    (property "Reference" "#PWR021" (at 170.18 85.09 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 170.18 83.82 0)
@@ -1277,7 +1277,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
     )
@@ -1286,7 +1286,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 55.88 114.3 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d3982b54-942f-4d7f-8bbf-82bb65644aed)
-    (property "Reference" "TP26" (at 58.42 109.728 0)
+    (property "Reference" "TP27" (at 58.42 109.728 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CONTROL_03" (at 58.42 112.268 0)
@@ -1302,7 +1302,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP26") (unit 1)
+          (reference "TP27") (unit 1)
         )
       )
     )
@@ -1311,7 +1311,7 @@
   (symbol (lib_id "Device:R") (at 105.41 66.04 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d83abcbf-7634-43fa-aa7e-ea9fb0bbac83)
-    (property "Reference" "R23" (at 105.41 59.69 90)
+    (property "Reference" "R22" (at 105.41 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "68k" (at 105.41 62.23 90)
@@ -1328,7 +1328,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "R23") (unit 1)
+          (reference "R22") (unit 1)
         )
       )
     )
@@ -1337,7 +1337,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 53.34 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ddfa5a47-1e8b-44b8-b764-c271d7663640)
-    (property "Reference" "TP20" (at 55.88 51.308 0)
+    (property "Reference" "TP22" (at 55.88 51.308 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CONTROL_01" (at 55.88 53.848 0)
@@ -1353,7 +1353,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP20") (unit 1)
+          (reference "TP22") (unit 1)
         )
       )
     )
@@ -1362,7 +1362,7 @@
   (symbol (lib_id "power:+BATT") (at 45.72 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid df68578d-b179-443f-960a-ebc6c8aec095)
-    (property "Reference" "#PWR021" (at 45.72 46.99 0)
+    (property "Reference" "#PWR020" (at 45.72 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 45.72 38.1 0)
@@ -1378,7 +1378,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -1387,7 +1387,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 114.3 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f43c0930-0388-4362-b570-f777a887a1e6)
-    (property "Reference" "TP30" (at 116.84 119.888 0)
+    (property "Reference" "TP29" (at 116.84 119.888 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "TP_SERVO_CURR_03" (at 116.84 122.428 0)
@@ -1403,7 +1403,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "TP30") (unit 1)
+          (reference "TP29") (unit 1)
         )
       )
     )
@@ -1412,7 +1412,7 @@
   (symbol (lib_id "Connector:Conn_01x03_Socket") (at 35.56 116.84 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f7ac62e1-e6cb-4f1f-9ee9-d5057779fb7a)
-    (property "Reference" "J7" (at 36.195 109.22 0)
+    (property "Reference" "J6" (at 36.195 109.22 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "CONN_SERVO_03" (at 36.195 111.76 0)
@@ -1430,7 +1430,7 @@
     (instances
       (project "ProstheticHandV2"
         (path "/4b4c4f07-d40b-46d6-800c-cabc6090ace0/5fb0c383-2664-4f99-bb83-a325ad02f62e"
-          (reference "J7") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
