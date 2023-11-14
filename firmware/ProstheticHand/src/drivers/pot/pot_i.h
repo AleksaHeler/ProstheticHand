@@ -98,8 +98,7 @@ pot_s_PotConfig_t pot_g_PotConfig_s[POT_COUNT] = {
   /*  pin          adc_unit  min_val max_val offset */
   {   GPIO_NUM_10, ADC_UNIT_2,     0,    pot_c_PotMaxVal_f32,     0 },  /* Normal 5k pot  */ 
   {   GPIO_NUM_11, ADC_UNIT_2,     0,    pot_c_PotMaxVal_f32,     0 },  /* Normal 5k pot  */ 
-  {   GPIO_NUM_12, ADC_UNIT_2,     0,    pot_c_PotMaxVal_f32,     0 },  /* 10k Trim pot   */
-  {   GPIO_NUM_13, ADC_UNIT_2,     0,    pot_c_PotMaxVal_f32,     0 }   /* 10k Trim pot   */
+  {   GPIO_NUM_12, ADC_UNIT_2,     0,    pot_c_PotMaxVal_f32,     0 }   /* 10k Trim pot   */
 };
 
 

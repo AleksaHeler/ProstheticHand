@@ -179,9 +179,9 @@ typedef struct
  */
 srv_s_ServoConfig_t srv_s_ServoConfig_s[SRV_COUNT] = {
     /*  pin          channel       min_val max_val */
-    {GPIO_NUM_4, LEDC_CHANNEL_0, 0, 180}, /* servo 1   */
-    {GPIO_NUM_6, LEDC_CHANNEL_1, 0, 180}, /* servo 2   */
-    {GPIO_NUM_15, LEDC_CHANNEL_1, 0, 180} /* servo 3   */
+    {GPIO_NUM_4,  LEDC_CHANNEL_0,  30,     150 }, /* servo 1   */
+    {GPIO_NUM_5,  LEDC_CHANNEL_0,  30,     150 }, /* servo 2   */
+    {GPIO_NUM_6,  LEDC_CHANNEL_0,  30,     150 }  /* servo 3   */
 };
 
 /**
