@@ -1,1 +1,0 @@
-# This folder contains some global images used in the main readme file

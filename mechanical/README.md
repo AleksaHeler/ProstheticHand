@@ -1,3 +1,9 @@
 # Mechanical designs for the prosthetic hand project
 
-We're using Fusion360 to design our mechanical components. Here we have for now only one folder **TestFingerJoint** which is based on some examples in that folder. You can find .f3d files that can be imported into Fusion360.
+## First prototype for testing
+
+TODO: add images of the initial hand/finger design
+
+## Actual hand we would want to make
+
+TODO: put here all the info/ideas about what we want it to look like in the end (Minimum Viable Product for now)
