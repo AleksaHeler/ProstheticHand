@@ -15,3 +15,12 @@ See a video of EMG sensor actuating a servo [here](images/poc/poc_emg_sensor_tes
 
 <img src="images/poc/poc_hand_with_finger.jpg" width=50% />
 
+
+## Minimum Viable Product (MVP)
+
+Here are the pictures of the whiteboard and an example hand we had in mind for first MVP (TODO: document this process and finalize plan):
+
+<img src="images/mvp/mvp_1.jpg" width=50% />
+<img src="images/mvp/mvp_2.jpg" width=50% />
+<img src="images/mvp/mvp_3.jpg" width=50% />
+<img src="images/mvp/hand_idea_from_internet.jpg" width=50% />
