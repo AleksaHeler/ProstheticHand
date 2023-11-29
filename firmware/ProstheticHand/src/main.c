@@ -9,6 +9,9 @@
  * Here we have two functions: setup (called once on boot) and loop (called in loop forever)
  * In 'setup' we firstly initialize all modules (software components), and then in 'loop'
  * we constantly call each ` function in constrained timing containers (1ms, 10ms etc.)
+ * 
+ * @todo: Update file description
+ * @todo: Populate debug LED02 functionalities
  *
  * @version 0.1
  * @date 2023-09-21
@@ -55,9 +58,9 @@ uint16_t main_g_CurrTaskIndex_u16 = 0;
 /**
  * Counter to know when to turn on/off the debug LED
  *
- * @values 0..MAIN_DEBUG_LED_CYCLE_COUNT
+ * @values 0..MAIN_DEBUG_LED_01_CYCLE_COUNT
  */
-uint16_t main_g_DebugLEDCountdown_u16 = 0;
+uint16_t main_g_DebugLED01Countdown_u16 = 0;
 
 /**
  * Buffer for runtime measurement statistics
@@ -228,7 +231,8 @@ void main_f_Handle_v(void)
 }
 
 /**************************************************************************
- * Runtime measurements **************************************************************************/
+ * Runtime measurements
+ **************************************************************************/
 
 /**
  * @brief Gets current time in microseconds
@@ -273,7 +277,9 @@ void main_f_HandleRTMStats_v(uint16_t index)
   }
 }
 
-/** @brief Configures the two ADC grops for ESP32 S3 that are used by other modules
+
+
+/** @brief Configures the two ADC groups for ESP32 S3 that are used by other modules
  */
 void main_f_ADCInit_v(void)
 {
@@ -293,13 +299,13 @@ void main_f_ADCInit_v(void)
   ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config2, &main_g_AdcUnit2Handle_s));
 }
 
-/** @brief Configures the LED debug output pin accordingly
+/** @brief Configures the LED debug output pins accordingly
  */
 void main_f_DebugLEDInit_v(void)
 {
   /* Output pin without any pullup/pulldown */
   gpio_config_t dbg_pin_config = {
-      (1ULL << MAIN_DEBUG_LED_PIN),
+      (1ULL << MAIN_DEBUG_LED_01_PIN | 1ULL << MAIN_DEBUG_LED_02_PIN),
       GPIO_MODE_INPUT_OUTPUT,
       GPIO_PULLUP_DISABLE,
       GPIO_PULLDOWN_DISABLE,
@@ -307,21 +313,43 @@ void main_f_DebugLEDInit_v(void)
   ESP_ERROR_CHECK(gpio_config(&dbg_pin_config));
 }
 
-/** @brief Turns on/off debug LED when needed (cyclically)
+/** @brief Handles the logic of debug LEDs
+ * 
+ * Turns on/off debug LED01 when needed - cyclically
+ * Turns on/off debug LED02 when needed - based on the selected revision
  */
 void main_f_DebugLEDHandle_v(void)
 {
-  /* If debug LED cycle counter greater than 0, decrement it */
-  if (main_g_DebugLEDCountdown_u16 > 0)
+  /* If debug LED01 cycle counter greater than 0, decrement it */
+  if (main_g_DebugLED01Countdown_u16 > 0)
   {
-    main_g_DebugLEDCountdown_u16--;
+    main_g_DebugLED01Countdown_u16--;
   }
-  /* If countdown done: set LED to inverse of itself and reset the counter! */
+  /* If countdown done: set LED01 to inverse of itself and reset the counter! */
   else
   {
-    main_g_DebugLEDCountdown_u16 = MAIN_DEBUG_LED_CYCLE_COUNT;
-    ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_PIN, !gpio_get_level(MAIN_DEBUG_LED_PIN)));
+    main_g_DebugLED01Countdown_u16 = MAIN_DEBUG_LED_01_CYCLE_COUNT;
+    ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_01_PIN, !gpio_get_level(MAIN_DEBUG_LED_01_PIN)));
   }
+
+  /* LED02 logic */
+  if (dsw_g_HardwareRevision_e == REV00)
+    {
+      /* To be populated */
+    }
+    else if (dsw_g_HardwareRevision_e == REV01)
+    {
+      /* To be populated */
+    }
+    else if (dsw_g_HardwareRevision_e == REV02){
+      /* To be populated */
+    }
+    else if (dsw_g_HardwareRevision_e == REV03){ /* SNS controlled servo (with threshold) - Turns LED02 on when above threshold */
+      ESP_ERROR_CHECK(gpio_set_level(MAIN_DEBUG_LED_02_PIN, sns_g_ActiveStatus_u8[SERVO_CONTROL_SNS_INDEX]));
+    }
+    else if (dsw_g_HardwareRevision_e == REV04) {
+      /* To be populated */
+    }
 }
 
 #ifdef SERIAL_DEBUG

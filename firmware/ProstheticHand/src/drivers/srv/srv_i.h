@@ -50,7 +50,7 @@
  *
  * The frequency of 330Hz means the pulse will be triggered rougly every 3.03ms
  */
-#define PWM_FREQUENCY 50
+#define PWM_FREQUENCY 330
 
 /**
  * @brief Used when initializing servos, to know the min/max pulse times for 180 degrees
@@ -81,50 +81,6 @@
  * Corresponds to 0 degrees
  */
 #define SERVO_100_PERCENT_DUTY_CYCLE BITS_TO_MAX_VAL(PWM_RESOLUTION)
-
-/**
- * @brief Index of the potentiometer that controls the servos
- *
- * @values 0..number of potentiometers (index)
- */
-#define SERVO_CONTROL_POT_INDEX 0
-
-/**
- * @brief Index of the potentiometer that controls the PWM from 0% to 100%
- *
- * @values 0..number of potentiometers (index)
- */
-#define SERVO_PWM_POT_INDEX 0
-
-/**
- * @brief Index of the sensor that controls the servos
- *
- * @values 0..number of sensors (index)
- */
-#define SERVO_CONTROL_SNS_INDEX 0
-
-/**
- * @brief Index of the button that controls the servos
- *
- * @values 0..number of buttons (index)
- */
-#define SERVO_CONTROL_BTN_INDEX 0
-
-/**
- * @brief Index of the potentiometer that controls the maximum angle
- * of the servos
- * 
- * @values 0..number of potentiometers (index)
- */
-#define SERVO_ANGLE_MAX_POT_INDEX 3
-
-/**
- * @brief Index of the potentiometer that controls the minimum angle
- * of the servos
- * 
- * @values 0..number of potentiometers (index)
- */
-#define SERVO_ANGLE_MIN_POT_INDEX 2
 
 /**
  * @brief The value of a single degree angle in duty cycle length

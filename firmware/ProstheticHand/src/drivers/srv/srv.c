@@ -56,7 +56,7 @@ void srv_f_CalculateSrvAngleFromPot_f32(uint8_t servoIndex, uint8_t potIndex);
 void srv_f_CalculateSrvAngleFromSensor_f32(uint8_t servoIndex, uint8_t sensorIndex);
 void srv_f_CalculateSrvAngleFromSensorThreshold_f32(uint8_t servoIndex, uint8_t sensorIndex);
 void srv_f_CalculateSrvAngleFromBtn_f32(uint8_t servoIndex, uint8_t btnIndex);
-void srv_f_CalculatePWMFromPot_f32(uint8_t servoIndex, float32_t pwmDutyPercent);
+void srv_f_CalculatePWMFromPercentage_f32(uint8_t servoIndex, float32_t pwmDutyPercent);
 
 #ifdef SERIAL_DEBUG
 void srv_f_SerialDebug_v(void);
@@ -119,18 +119,18 @@ void srv_f_Handle_v(void)
     {
       srv_f_CalculateSrvAngleFromPot_f32(i, SERVO_CONTROL_POT_INDEX);
     }
-    else if (dsw_g_HardwareRevision_e == REV01) /* EMG sensor controller */
+    else if (dsw_g_HardwareRevision_e == REV01) /* SNS controlled */
     {
       srv_f_CalculateSrvAngleFromSensor_f32(i, SERVO_CONTROL_SNS_INDEX);
     }
-    else if (dsw_g_HardwareRevision_e == REV02){
+    else if (dsw_g_HardwareRevision_e == REV02){ /* BTN controlled */
       srv_f_CalculateSrvAngleFromBtn_f32(i, SERVO_CONTROL_BTN_INDEX);
     }
-    else if (dsw_g_HardwareRevision_e == REV03){
+    else if (dsw_g_HardwareRevision_e == REV03){ /* SNS controlled (with threshold) */
       srv_f_CalculateSrvAngleFromSensorThreshold_f32(i, SERVO_CONTROL_SNS_INDEX);
     }
-    else if (dsw_g_HardwareRevision_e == REV04) {
-      srv_f_CalculatePWMFromPot_f32(i, pot_g_PotValues_f32[SERVO_PWM_POT_INDEX]);
+    else if (dsw_g_HardwareRevision_e == REV04) { /* Full PWM range control (through POT) */
+      srv_f_CalculatePWMFromPercentage_f32(i, pot_g_PotValues_f32[SERVO_PWM_POT_INDEX]);
     }
 
     /* Finally set and update each servo PWM signal's duty cycle  */
@@ -194,7 +194,7 @@ void srv_f_CalculateSrvAngleFromBtn_f32(uint8_t servoIndex, uint8_t btnIndex)
  * @brief Writes PWM signal from 0% duty to 100% duty (always on) based on given value
  * 
  */
-void srv_f_CalculatePWMFromPot_f32(uint8_t servoIndex, float32_t pwmDutyPercent)
+void srv_f_CalculatePWMFromPercentage_f32(uint8_t servoIndex, float32_t pwmDutyPercent)
 {
   srv_g_Positions_u16[servoIndex] = SERVO_100_PERCENT_DUTY_CYCLE * pwmDutyPercent;
 }

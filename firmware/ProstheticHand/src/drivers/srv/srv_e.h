@@ -32,6 +32,50 @@
 
 #define SRV_COUNT 3
 
+/**
+ * @brief Index of the potentiometer that controls the servos
+ *
+ * @values 0..number of potentiometers (index)
+ */
+#define SERVO_CONTROL_POT_INDEX 0
+
+/**
+ * @brief Index of the potentiometer that controls the PWM from 0% to 100%
+ *
+ * @values 0..number of potentiometers (index)
+ */
+#define SERVO_PWM_POT_INDEX 0
+
+/**
+ * @brief Index of the sensor that controls the servos
+ *
+ * @values 0..number of sensors (index)
+ */
+#define SERVO_CONTROL_SNS_INDEX 0
+
+/**
+ * @brief Index of the button that controls the servos
+ *
+ * @values 0..number of buttons (index)
+ */
+#define SERVO_CONTROL_BTN_INDEX 0
+
+/**
+ * @brief Index of the potentiometer that controls the maximum angle
+ * of the servos
+ * 
+ * @values 0..number of potentiometers (index)
+ */
+#define SERVO_ANGLE_MAX_POT_INDEX 3
+
+/**
+ * @brief Index of the potentiometer that controls the minimum angle
+ * of the servos
+ * 
+ * @values 0..number of potentiometers (index)
+ */
+#define SERVO_ANGLE_MIN_POT_INDEX 2
+
 /**************************************************************************
  * Global variables
  **************************************************************************/

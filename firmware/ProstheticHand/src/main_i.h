@@ -38,17 +38,28 @@
 
 /**
  * @brief Debug LED pin
+ * 
+ * Indicates that the board is functional
  *
  * @values GPIO pin
  */
-#define MAIN_DEBUG_LED_PIN GPIO_NUM_37
+#define MAIN_DEBUG_LED_01_PIN GPIO_NUM_37
 
 /**
  * @brief How many main 10ms cycles to wait until changing debug LED state
  *
  * @values 0-250 = 0-2.5s
  */
-#define MAIN_DEBUG_LED_CYCLE_COUNT 99
+#define MAIN_DEBUG_LED_01_CYCLE_COUNT 99
+
+/**
+ * @brief Debug LED pin
+ * 
+ * Indicates sensor threshold
+ * 
+ * @values GPIO pin
+ */
+#define MAIN_DEBUG_LED_02_PIN GPIO_NUM_38
 
 /**************************************************************************
  * Structures
@@ -63,7 +74,7 @@ extern uint64_t main_g_LastMicros_u64;
 
 extern uint16_t main_g_CurrTaskIndex_u16;
 
-extern uint16_t main_g_DebugLEDCountdown_u16;
+extern uint16_t main_g_DebugLED01Countdown_u16;
 extern TaskHandle_t main_g_SerialDebugTaskHandle_s;
 
 /**************************************************************************
