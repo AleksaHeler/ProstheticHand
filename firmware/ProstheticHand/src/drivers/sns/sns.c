@@ -105,9 +105,9 @@ void sns_f_Init_v(void)
  */
 void sns_f_Handle_v(void)
 {
-  uint16_t i, j;
+  int i, j;
   uint32_t sum = 0;
-  uint16_t readValue = 0;
+  int readValue = 0;
 
   /* Go over all connected sensors */
   for (i = 0; i < SNS_COUNT; i++)
@@ -115,31 +115,31 @@ void sns_f_Handle_v(void)
     /* Based on pins ADC group, do the right reading: */
     if (sns_g_SensorConfig_s[i].adc_unit_s == ADC_UNIT_1)
     {
-      ESP_ERROR_CHECK(adc_oneshot_read(main_g_AdcUnit1Handle_s, sns_g_sensorChannel_t[i], (int *)&readValue));
+      ESP_ERROR_CHECK(adc_oneshot_read(main_g_AdcUnit1Handle_s, sns_g_sensorChannel_t[i], &readValue));
     }
     else // ADC_UNIT_2
     {
-      ESP_ERROR_CHECK(adc_oneshot_read(main_g_AdcUnit2Handle_s, sns_g_sensorChannel_t[i], (int *)&readValue));
+      ESP_ERROR_CHECK(adc_oneshot_read(main_g_AdcUnit2Handle_s, sns_g_sensorChannel_t[i], &readValue));
     }
 
     /* Shift all values in buffer to the next place in the array */
-    for (j = 49; j > 0; j--)
+    for (j = SNS_AVG_CNT - 1; j > 0; j--)
     {
       sns_g_PrevValues_u16[i][j] = sns_g_PrevValues_u16[i][j - 1];
     }
 
     /* Set the current sensor value */
-    sns_g_PrevValues_u16[i][0] = readValue;
+    sns_g_PrevValues_u16[i][0] = (uint16_t)readValue;
 
     /* Take the average of those readings */
     sum = 0;
-    for (j = 0; i < SNS_AVG_CNT; i++)
+    for (j = 0; j < SNS_AVG_CNT; j++)
     {
       sum += sns_g_PrevValues_u16[i][j];
     }
 
     /* Final sensor value assignment */
-    sns_g_Values_u16[i] = sum / SNS_AVG_CNT;
+    sns_g_Values_u16[i] = (sum / SNS_AVG_CNT);
 
     /* Set sensor active if over threshold */
     sns_g_ActiveStatus_u8[i] = sns_g_Values_u16[i] > sns_g_SensorConfig_s[i].thresh_u16;

@@ -20,8 +20,9 @@ If you want to use the serial monitor with the ESP32, you may need to install dr
  - __Find and install the driver__
  You can find most USB to UART bridge chips included on ESP32 development boards listed [here](http://esp32.net/usb-uart/), together with the necessary drivers
  
- Note: You can install the [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) extension for Visual Studio Code, which provides a more organised interface compared to PlatformIO's built-in serial monitor.
+Note: You can install the [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) extension for Visual Studio Code, which provides a more organised interface compared to PlatformIO's built-in serial monitor.
 
+Note: For debugging with ESPs internal JTAG over USB, see [this article](https://community.platformio.org/t/how-to-use-jtag-built-in-debugger-of-the-esp32-s3-in-platformio/36042).
 
 ## Code guide / developer guide
 
