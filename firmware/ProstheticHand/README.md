@@ -5,6 +5,7 @@ Before we used the [SEGGER J-Link debug probe](https://www.segger.com/products/d
 
 Below is the step by step process on how to set the project up and compile it for the first time:
  - __Install [Visual Studio Code](https://code.visualstudio.com/download)__
+ - __Install [ESP IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html)__ (make sure to download ESP-IDF vX.X.X - Offline Installer)
  - __Install the [PlatformIO](https://platformio.org/install/ide?install=vscode) plugin__ for Visual Studio Code
  - __[Optional] Install the [J-Link Software](https://www.segger.com/downloads/jlink/)__ from SEGGER (Choose the installer based on your operating system, leave all settings at their default values during installation)
  - __Clone the project's git repository__
@@ -20,9 +21,9 @@ If you want to use the serial monitor with the ESP32, you may need to install dr
  - __Find and install the driver__
  You can find most USB to UART bridge chips included on ESP32 development boards listed [here](http://esp32.net/usb-uart/), together with the necessary drivers
  
-Note: You can install the [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) extension for Visual Studio Code, which provides a more organised interface compared to PlatformIO's built-in serial monitor.
+**Note for serial monitor**: You can install the [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) extension for Visual Studio Code, which provides a more organised interface compared to PlatformIO's built-in serial monitor.
 
-Note: For debugging with ESPs internal JTAG over USB, see [this article](https://community.platformio.org/t/how-to-use-jtag-built-in-debugger-of-the-esp32-s3-in-platformio/36042).
+**Note for debug**: For debugging with ESPs internal JTAG over USB, first make sure you installed [ESP IDF from here](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html) (make sure to download ESP-IDF vX.X.X - Offline Installer), then use Zadig to install "__WinUSB (6.1.7600.16385)__" driver on both "__USB JTAG/Serial debug unit (Interface 0)__" and "__USB JTAG/Serial debug unit (Interface 1)__" [(useful article for this)](https://community.platformio.org/t/how-to-use-jtag-built-in-debugger-of-the-esp32-s3-in-platformio/36042).
 
 ## Code guide / developer guide
 
