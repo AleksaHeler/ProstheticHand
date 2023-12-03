@@ -66,7 +66,7 @@
  * 
  * @values 0..number of potentiometers (index)
  */
-#define SERVO_ANGLE_MAX_POT_INDEX 3
+#define SERVO_ANGLE_MAX_POT_INDEX 2
 
 /**
  * @brief Index of the potentiometer that controls the minimum angle
@@ -74,7 +74,7 @@
  * 
  * @values 0..number of potentiometers (index)
  */
-#define SERVO_ANGLE_MIN_POT_INDEX 2
+#define SERVO_ANGLE_MIN_POT_INDEX 1
 
 /**************************************************************************
  * Global variables

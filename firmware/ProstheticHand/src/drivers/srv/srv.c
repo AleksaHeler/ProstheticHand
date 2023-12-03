@@ -164,13 +164,15 @@ void srv_f_CalculateSrvAngleFromSensor_f32(uint8_t servoIndex, uint8_t sensorInd
  */
 void srv_f_CalculateSrvAngleFromSensorThreshold_f32(uint8_t servoIndex, uint8_t sensorIndex)
 {
-float32_t angle;
+  float32_t angle;
+
   if(sns_g_ActiveStatus_u8[sensorIndex] == 1){
-    angle = pot_g_PotValues_f32[SERVO_ANGLE_MIN_POT_INDEX];
-  }
-  else {
     angle = pot_g_PotValues_f32[SERVO_ANGLE_MAX_POT_INDEX];
   }
+  else {
+    angle = pot_g_PotValues_f32[SERVO_ANGLE_MIN_POT_INDEX];
+  }
+
   srv_g_Positions_u16[servoIndex] = srv_c_minimumAllowedDuty_f32[servoIndex] + (srv_s_ServoConfig_s[servoIndex].max_angle_u16 * srv_c_OneDegreeAsDuty_f32) * angle;
 }
 
@@ -182,10 +184,10 @@ void srv_f_CalculateSrvAngleFromBtn_f32(uint8_t servoIndex, uint8_t btnIndex)
 {
   float32_t angle;
   if(btn_g_BtnStates_u8[btnIndex] == 1){
-    angle = pot_g_PotValues_f32[SERVO_ANGLE_MIN_POT_INDEX];
+    angle = pot_g_PotValues_f32[SERVO_ANGLE_MAX_POT_INDEX];
   }
   else {
-    angle = pot_g_PotValues_f32[SERVO_ANGLE_MAX_POT_INDEX];
+    angle = pot_g_PotValues_f32[SERVO_ANGLE_MIN_POT_INDEX];
   }
   srv_g_Positions_u16[servoIndex] = srv_c_minimumAllowedDuty_f32[servoIndex] + (srv_s_ServoConfig_s[servoIndex].max_angle_u16 * srv_c_OneDegreeAsDuty_f32) * angle;
 }

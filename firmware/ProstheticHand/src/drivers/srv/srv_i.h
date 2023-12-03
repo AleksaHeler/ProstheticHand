@@ -50,7 +50,7 @@
  *
  * The frequency of 330Hz means the pulse will be triggered rougly every 3.03ms
  */
-#define PWM_FREQUENCY 330
+#define PWM_FREQUENCY 50
 
 /**
  * @brief Used when initializing servos, to know the min/max pulse times for 180 degrees
@@ -86,7 +86,7 @@
  * @brief The value of a single degree angle in duty cycle length
  *
  */
-const float32_t srv_c_OneDegreeAsDuty_f32 = (SERVO_MAX_DUTY_CYCLE - SERVO_MIN_DUTY_CYCLE) / 180;
+const float32_t srv_c_OneDegreeAsDuty_f32 = (SERVO_MAX_DUTY_CYCLE - SERVO_MIN_DUTY_CYCLE) / 180.0;
 
 /**
  * @brief Configuration parameters of a servo motor
