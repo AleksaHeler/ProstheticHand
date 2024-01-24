@@ -1,0 +1,54 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 5a0647c2-f475-44d3-a1e6-116b547f68f2)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (rectangle (start 20.32 106.68) (end 149.86 180.34)
+    (stroke (width 0) (type dash_dot))
+    (fill (type none))
+    (uuid 163bcd5b-ae3b-4504-8144-13daaa58e319)
+  )
+  (rectangle (start 15.24 22.86) (end 144.78 96.52)
+    (stroke (width 0) (type dash_dot))
+    (fill (type none))
+    (uuid 208c58e5-a531-4d3b-bd26-7d6c0c5e84c8)
+  )
+  (rectangle (start 147.32 22.86) (end 276.86 96.52)
+    (stroke (width 0) (type dash_dot))
+    (fill (type none))
+    (uuid 4b090c3e-1bb7-42f1-8631-3dc99243c058)
+  )
+
+  (text "H bridge controller (use available IC)\nShunt resistor\nCurrent limiting circuit with a potentiometer (possibly included in IC)"
+    (at 35.56 134.62 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 0bc1f802-54aa-4d8c-af6b-2f9dbcdd0446)
+  )
+  (text "MOTOR CONTROLLER" (at 20.32 33.02 0)
+    (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
+    (uuid 20f149e7-565b-49cb-80fc-6677d8e14caf)
+  )
+  (text "H bridge controller (use available IC)\nShunt resistor\nCurrent limiting circuit with a potentiometer (possibly included in IC)"
+    (at 25.4 50.8 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 581b050f-5d8c-4a0a-addd-d4448d85f718)
+  )
+  (text "MOTOR CONTROLLER" (at 25.4 116.84 0)
+    (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
+    (uuid 73b04d2d-a85a-4ffb-8c6a-5082d1d682b2)
+  )
+  (text "MOTOR CONTROLLER" (at 152.4 33.02 0)
+    (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
+    (uuid 9356df1a-1761-42de-b383-d4be0cecfb24)
+  )
+  (text "H bridge controller (use available IC)\nShunt resistor\nCurrent limiting circuit with a potentiometer (possibly included in IC)"
+    (at 157.48 50.8 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid c461a24b-2152-41a8-9d37-1bf198a34d5f)
+  )
+)

@@ -1,0 +1,43 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 2b54d1ce-d017-42a6-968a-cd3bd3f43d58)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (rectangle (start 22.86 88.9) (end 170.18 190.5)
+    (stroke (width 0) (type dash_dot))
+    (fill (type none))
+    (uuid 42a30b0c-da51-4644-8989-6b306e21f75a)
+  )
+  (rectangle (start 22.86 22.86) (end 180.34 83.82)
+    (stroke (width 0) (type dash_dot))
+    (fill (type none))
+    (uuid 5fa0b0d4-5a90-455a-b1f7-09c7728c64b5)
+  )
+
+  (text "5v in, 3 cell LiIon battery charge (no balancing, done externally on battery pack)"
+    (at 33.02 109.22 0)
+    (effects (font (size 1.27 1.27) bold) (justify left bottom))
+    (uuid 2c92afe4-3f39-4a30-a954-c9ad5747b0eb)
+  )
+  (text "Reverse polarity protection for battery" (at 33.02 119.38 0)
+    (effects (font (size 1.27 1.27) bold) (justify left bottom))
+    (uuid 498e192f-5981-495c-a927-40ecc31aea0d)
+  )
+  (text "PSU" (at 27.94 33.02 0)
+    (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
+    (uuid 73cada43-8dab-42c5-b315-acfc0aff4177)
+  )
+  (text "BATTERY CHARGER" (at 27.94 99.06 0)
+    (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
+    (uuid 8742abae-5a7e-4814-bd85-9ae37e2f6a7f)
+  )
+  (text "5V (motors) + 3V3 (STM32) regulators" (at 33.02 43.18 0)
+    (effects (font (size 1.27 1.27) bold) (justify left bottom))
+    (uuid 8bd9843b-91d4-462c-88a4-8b90e06f6733)
+  )
+)
