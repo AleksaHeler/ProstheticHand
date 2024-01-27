@@ -24,6 +24,10 @@
     (uuid bcd6d41e-7797-41e0-9b04-7e40445bb71f)
   )
 
+  (text "How to power EMG sensor circuit (split rail)" (at 27.94 45.72 0)
+    (effects (font (size 1.27 1.27) (thickness 0.254) bold) (justify left bottom))
+    (uuid 046e7334-40b0-4e05-83be-e797bb41910d)
+  )
   (text "EMG SENSOR" (at 25.4 30.48 0)
     (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
     (uuid 05401164-602c-4da1-9de7-7f36c237cda1)
