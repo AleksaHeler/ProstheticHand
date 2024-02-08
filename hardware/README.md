@@ -2,6 +2,8 @@
 
 For designing those we use [KiCAD](https://www.kicad.org/download/). Good tutorial can be found [here](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB). Although it's for a bit older version of the KiCAD it is still usefull.
 
+For now we have two designs: DevBoard and OpenHand. First one is for proof of concept, while other one is still in development and meant to be used as initial version to build upon.
+
 ## DevBoard
 
 Firstly we haver here a development board, custom made for our purpose of having EMG sensors and servo motors connected. Also a couple of buttons/pots etc. for easier debugging/testing. Schematic can be found [here](DevBoard/schematic.pdf).
@@ -86,18 +88,21 @@ I could not get the pot to give us errors (jumping to gnd of supplied voltage), 
 With 10V on input from a bench power supply, at battery sense voltage divider we get 9.97V as input, and output at 1.753V measured with multimeter - as expected (from calculation: 1.754V with 4k7 and 1k resistors in divider).
 
 
-## Actual project PCB
+## OpenHand PCB
 
-Final design will still have to be made once we know exactly what we need and how to do it.
+Work in progress. 
 
-Some ideas:
- - on-board battery charger
- - on-board EMG sensor processing (from raw electrode connections)
- - some thing from devboard (trim-pots maybe, debug LEDs etc.)
- - using ESP32 S3 microchip, not the whole ESP32 development board
- - input reverse polarity protection with MOSFETs
- - connectors and drivers for linear actuators instead of servo motors (H-bridge)
- - connectors and drivers for haptic feedback (vibrating motor, similar to a console joystick vibration)
- - maybe current/power limiting for linear actuators
- - feedback loop for finger positions - maybe hall-efect sensors and magnets, will require additional connectins
+Features:
+ - Microcontroller: STM32 or ESP32, still to be decided, will make a version with both of them
+ - USB C connector, CH340C USB to UART IC, JTAG for debugging
+ - On-board 3 cell battery charger (BMS to be implemented on the battery pack)
+ - Switch mode power suplly, to generate 5V high current for motors, and 3.3V lower current for microcontroller and sensors
+ - On-board EMG sensor processing (from raw electrode connections)
+ - Some user interaction components - trim-pots, debug LEDs, buttons
+ - Separate ADC converter over I2C, for battery voltage sensing and hall effect sensors
+ - Hall effect sensors for detecting finger position
+ - Input reverse polarity protection with MOSFETs
+ - Connectors and drivers (separate motor driver IC) for linear actuators instead of servo motors (H-bridge)
+ - Connectors and drivers for haptic feedback (vibrating motor, similar to a console joystick vibration)
 
+Schematic and project can be found [here in OpenHand folder](OpenHand/OpenHand.kicad_pro).

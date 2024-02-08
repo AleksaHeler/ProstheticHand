@@ -816,6 +816,10 @@
     (uuid 4b090c3e-1bb7-42f1-8631-3dc99243c058)
   )
 
+  (text "Low current vibrating motors for haptic feedback" (at 165.1 125.73 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 137228d3-2d12-4a50-963d-b84b5fd9c97d)
+  )
   (text "TODO: put some short description of circuit \nand components here, how it operates..."
     (at 157.48 109.22 0)
     (effects (font (size 2 2)) (justify left bottom))
