@@ -12,4 +12,4 @@ After it is imported into Fusion 360, we can create a more basic shape following
 
 After adding finger design by [fflori4n](https://github.com/fflori4n) and motor 3D model:
 ![First prototype idea](images/FirstPrototypeIdea.png)
-![First prototype idea render](images/FirstPrototypeRender.png)
+![First prototype idea render](images/FirstPrototypeRender.PNG)
