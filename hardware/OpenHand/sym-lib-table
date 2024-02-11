@@ -1,4 +1,4 @@
 (sym_lib_table
   (version 7)
-  (lib (name "TPS63070RNMR")(type "KiCad")(uri "${KIPRJMOD}/CustomParts/TPS63070RNMR .kicad_sym")(options "")(descr "Switch mode buck converter IC"))
+  (lib (name "TPS63070RNMR")(type "KiCad")(uri "${KIPRJMOD}/CustomParts/TPS63070RNMR.kicad_sym")(options "")(descr "Switch mode buck converter IC"))
 )
