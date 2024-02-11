@@ -934,10 +934,9 @@
     (uuid 4b090c3e-1bb7-42f1-8631-3dc99243c058)
   )
 
-  (text "TODO: put some short description of circuit \nand components here, how it operates...\nSense resistro and current limiting, en and fault signals, \nPWM configuration...\nDoubling up the channels for more current"
-    (at 17.78 186.69 0)
-    (effects (font (size 2 2)) (justify left bottom))
-    (uuid 16839427-5c51-4828-9660-db617d079491)
+  (text "Cutoff current 1A\nRSENSE = 0.2 V / 1 A = 0.2 Ω" (at 154.94 85.09 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 114cbf6a-8612-4954-84e4-5064200363b1)
   )
   (text "MOTOR CONTROLLER" (at 20.32 25.4 0)
     (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
@@ -955,6 +954,11 @@
     (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
     (uuid 66a91ca4-b1f2-4fe7-a306-679ab02b5642)
   )
+  (text "Using PWM and GPIO signals on pins xIN1 and xIN2, we can control the speed (current) and direction of connected DC motors. Looking at the datasheet, \nwe can use xIN1 as PWM for speed, and xIN2 as direction input (HIGH for reverse, LOW for forward). PWM frequency should be 50kHz.\n\nWhen the voltage on pin xISEN exceeds VTRIP (0.2 V), current regulation is activated. The RISENSE resistor should be sized to set the current cutoff level:\nRISENSE = 0.2 V / ICHOP -> To set ICHOP to 1 A, RSENSE = 0.2 V / 1 A = 0.2 Ω (finger linear actuator motors)\nTo set ICHOP to ~42.5mA, RSENSE = 0.2 V / 0.0425 A = ~4.7 Ω (haptic feedback motors)\n\nUsing nSLEEP pin (EN) we can turn the specific IC off (by setting the pin to LOW) for lower power consumption, or just to turn the motors off. If pin is HIGH, \nthe device operates normally. When returning from sleep mode, some time (up to 1 ms) needs to pass before the motor driver becomes fully operational. Device \nalso features internal over-temperature protection (at ~160 °C), it will auto shut off, nFAULT pin will be driven LOW, and once the temperature falls operation \nresumes and nFAULT pin will be HIGH. Same behaviour in case of over-current detection over RISENSE resistors.\n\nOn ICs for main finger motor control, we double up the channels (connect them in parallel) for double the current (and power) for that given motor. We do this \nto give us room for thermal design and possibly more powerful motors in future."
+    (at 17.78 195.58 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 71127535-3c18-49fe-9eff-edc3743568a7)
+  )
   (text "MOTOR CONTROLLER" (at 20.32 106.68 0)
     (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
     (uuid 73b04d2d-a85a-4ffb-8c6a-5082d1d682b2)
@@ -967,14 +971,22 @@
     (effects (font (size 1.27 1.27) (thickness 0.254) bold) (justify left bottom) (href "https://www.lcsc.com/product-detail/Motor-Driver-ICs_Texas-Instruments-DRV8833PWPR_C50506.html"))
     (uuid 969a4989-d392-4a6d-b397-4b5edce208e1)
   )
-  (text "TODO: Change sense resistors for \nmuch lower current.\nFind out what current are \nhaptic vibrating motors"
-    (at 154.94 123.19 0)
-    (effects (font (size 2 2) (thickness 0.4) bold) (justify left bottom))
-    (uuid a18d5557-ff7b-4d3e-8985-1727fb8c3c10)
+  (text "Cutoff current 1A\nRSENSE = 0.2 V / 1 A = 0.2 Ω" (at 20.32 85.09 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 9cb171e8-05e8-4809-822e-ad8adcb51a8f)
+  )
+  (text "Cutoff current ~42.5mA\nRSENSE = 0.2 V / 0.0425 A = ~4.7 Ω"
+    (at 154.94 157.48 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid a2ccdb0c-6c8f-4d64-bb77-afc89cdf325d)
   )
   (text "DRV8833PWPR PWM motor driver" (at 154.94 88.9 0)
     (effects (font (size 1.27 1.27) (thickness 0.254) bold) (justify left bottom) (href "https://www.lcsc.com/product-detail/Motor-Driver-ICs_Texas-Instruments-DRV8833PWPR_C50506.html"))
     (uuid c31e290f-07d9-439d-8e0a-410a6e40b78e)
+  )
+  (text "Cutoff current 1A\nRSENSE = 0.2 V / 1 A = 0.2 Ω" (at 20.32 157.48 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid e047ed2c-40df-4c53-8b25-6ebc883c0b78)
   )
 
   (global_label "MOTOR_1_UC1" (shape input) (at 55.88 63.5 180) (fields_autoplaced)
@@ -1177,7 +1189,7 @@
   (symbol (lib_id "power:Earth") (at 223.52 81.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 06044f7f-f98b-4814-bade-49430cf41b78)
-    (property "Reference" "#PWR050" (at 223.52 87.63 0)
+    (property "Reference" "#PWR051" (at 223.52 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 223.52 85.09 0)
@@ -1193,7 +1205,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR050") (unit 1)
+          (reference "#PWR051") (unit 1)
         )
       )
     )
@@ -1202,7 +1214,7 @@
   (symbol (lib_id "Driver_Motor:DRV8833PWP") (at 92.71 135.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0b56343e-d5da-4824-9ad5-ec622c682a6f)
-    (property "Reference" "U6" (at 97.79 151.13 0)
+    (property "Reference" "U8" (at 97.79 151.13 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "DRV8833PWP" (at 97.79 153.67 0)
@@ -1234,7 +1246,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "U6") (unit 1)
+          (reference "U8") (unit 1)
         )
       )
     )
@@ -1295,7 +1307,7 @@
   (symbol (lib_id "power:+5V") (at 203.2 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 145db9ff-e7a2-4771-abbc-efbc9e634f81)
-    (property "Reference" "#PWR042" (at 203.2 41.91 0)
+    (property "Reference" "#PWR043" (at 203.2 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 203.2 33.02 0)
@@ -1311,7 +1323,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR042") (unit 1)
+          (reference "#PWR043") (unit 1)
         )
       )
     )
@@ -1320,7 +1332,7 @@
   (symbol (lib_id "Driver_Motor:DRV8833PWP") (at 223.52 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 14e552b7-2a5e-44b6-9fd6-98dd25feec4f)
-    (property "Reference" "U5" (at 228.6 76.2 0)
+    (property "Reference" "U7" (at 228.6 76.2 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "DRV8833PWP" (at 228.6 78.74 0)
@@ -1352,7 +1364,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "U5") (unit 1)
+          (reference "U7") (unit 1)
         )
       )
     )
@@ -1361,7 +1373,7 @@
   (symbol (lib_id "power:Earth") (at 243.84 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1dd90e5e-63f7-4925-966a-da6eb733bfd9)
-    (property "Reference" "#PWR058" (at 243.84 130.81 0)
+    (property "Reference" "#PWR059" (at 243.84 130.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 243.84 128.27 0)
@@ -1377,7 +1389,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR058") (unit 1)
+          (reference "#PWR059") (unit 1)
         )
       )
     )
@@ -1386,7 +1398,7 @@
   (symbol (lib_id "power:+5V") (at 93.98 35.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 20605139-c587-4318-b91b-06b17fea7735)
-    (property "Reference" "#PWR039" (at 93.98 39.37 0)
+    (property "Reference" "#PWR040" (at 93.98 39.37 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 93.98 30.48 0)
@@ -1402,7 +1414,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR039") (unit 1)
+          (reference "#PWR040") (unit 1)
         )
       )
     )
@@ -1437,7 +1449,7 @@
   (symbol (lib_id "power:Earth") (at 185.42 133.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 259a7dad-4fa4-451f-a83c-2fb465441fde)
-    (property "Reference" "#PWR060" (at 185.42 139.7 0)
+    (property "Reference" "#PWR061" (at 185.42 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 185.42 137.16 0)
@@ -1453,7 +1465,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR060") (unit 1)
+          (reference "#PWR061") (unit 1)
         )
       )
     )
@@ -1462,7 +1474,7 @@
   (symbol (lib_id "power:+5V") (at 236.22 114.3 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 28c3ca47-44d7-4dcc-accd-31248287307e)
-    (property "Reference" "#PWR053" (at 236.22 118.11 0)
+    (property "Reference" "#PWR054" (at 236.22 118.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 236.22 109.22 0)
@@ -1478,7 +1490,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR053") (unit 1)
+          (reference "#PWR054") (unit 1)
         )
       )
     )
@@ -1513,7 +1525,7 @@
   (symbol (lib_id "power:+5V") (at 72.39 113.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 38323a12-f345-4a38-9d4c-b09a6815959b)
-    (property "Reference" "#PWR052" (at 72.39 116.84 0)
+    (property "Reference" "#PWR053" (at 72.39 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 72.39 107.95 0)
@@ -1529,7 +1541,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR052") (unit 1)
+          (reference "#PWR053") (unit 1)
         )
       )
     )
@@ -1538,7 +1550,7 @@
   (symbol (lib_id "power:Earth") (at 220.98 115.57 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4e0145d4-b986-40cc-8376-ac75f8f80179)
-    (property "Reference" "#PWR056" (at 220.98 121.92 0)
+    (property "Reference" "#PWR057" (at 220.98 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 220.98 119.38 0)
@@ -1554,7 +1566,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR056") (unit 1)
+          (reference "#PWR057") (unit 1)
         )
       )
     )
@@ -1589,7 +1601,7 @@
   (symbol (lib_id "power:Earth") (at 101.6 49.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 532be8f2-92d6-432a-b83c-c363c6ebca6f)
-    (property "Reference" "#PWR045" (at 101.6 55.88 0)
+    (property "Reference" "#PWR046" (at 101.6 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 101.6 53.34 0)
@@ -1605,7 +1617,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR046") (unit 1)
         )
       )
     )
@@ -1640,7 +1652,7 @@
   (symbol (lib_id "power:Earth") (at 215.9 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5904b4bd-4aa5-4cf7-b204-9793ef795b59)
-    (property "Reference" "#PWR044" (at 215.9 46.99 0)
+    (property "Reference" "#PWR045" (at 215.9 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 215.9 44.45 0)
@@ -1656,7 +1668,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR044") (unit 1)
+          (reference "#PWR045") (unit 1)
         )
       )
     )
@@ -1665,7 +1677,7 @@
   (symbol (lib_id "power:+5V") (at 231.14 35.56 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 69a1b6be-5288-4b94-8607-12a7702755d9)
-    (property "Reference" "#PWR040" (at 231.14 39.37 0)
+    (property "Reference" "#PWR041" (at 231.14 39.37 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 231.14 30.48 0)
@@ -1681,7 +1693,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR040") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
     )
@@ -1690,7 +1702,7 @@
   (symbol (lib_id "power:Earth") (at 190.5 58.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6e2e91c7-74a4-49ba-ba7f-dfed891d4219)
-    (property "Reference" "#PWR048" (at 190.5 64.77 0)
+    (property "Reference" "#PWR049" (at 190.5 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 190.5 62.23 0)
@@ -1706,7 +1718,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR048") (unit 1)
+          (reference "#PWR049") (unit 1)
         )
       )
     )
@@ -1715,7 +1727,7 @@
   (symbol (lib_id "power:Earth") (at 238.76 49.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 705a8136-6012-4ee8-a6c3-f01fce000579)
-    (property "Reference" "#PWR046" (at 238.76 55.88 0)
+    (property "Reference" "#PWR047" (at 238.76 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 238.76 53.34 0)
@@ -1731,7 +1743,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR046") (unit 1)
+          (reference "#PWR047") (unit 1)
         )
       )
     )
@@ -1740,7 +1752,7 @@
   (symbol (lib_id "power:+5V") (at 208.28 115.57 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 747497ca-fae4-447e-9420-fa03919def7e)
-    (property "Reference" "#PWR055" (at 208.28 119.38 0)
+    (property "Reference" "#PWR056" (at 208.28 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 208.28 110.49 0)
@@ -1756,7 +1768,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR055") (unit 1)
+          (reference "#PWR056") (unit 1)
         )
       )
     )
@@ -1765,7 +1777,7 @@
   (symbol (lib_id "Driver_Motor:DRV8833PWP") (at 86.36 60.96 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 78699816-5a37-4fa3-b6b6-4a72708fdb84)
-    (property "Reference" "U4" (at 91.44 76.2 0)
+    (property "Reference" "U6" (at 91.44 76.2 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "DRV8833PWP" (at 91.44 78.74 0)
@@ -1797,7 +1809,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "U4") (unit 1)
+          (reference "U6") (unit 1)
         )
       )
     )
@@ -1806,7 +1818,7 @@
   (symbol (lib_id "power:Earth") (at 92.71 156.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7ad430f2-b26d-4692-a76d-8b0a891ca5c0)
-    (property "Reference" "#PWR061" (at 92.71 162.56 0)
+    (property "Reference" "#PWR062" (at 92.71 162.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 92.71 160.02 0)
@@ -1822,7 +1834,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR061") (unit 1)
+          (reference "#PWR062") (unit 1)
         )
       )
     )
@@ -1831,7 +1843,7 @@
   (symbol (lib_id "power:Earth") (at 53.34 58.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8553edb8-6e14-4f50-8572-e6fe97e1d991)
-    (property "Reference" "#PWR047" (at 53.34 64.77 0)
+    (property "Reference" "#PWR048" (at 53.34 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 53.34 62.23 0)
@@ -1847,7 +1859,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR047") (unit 1)
+          (reference "#PWR048") (unit 1)
         )
       )
     )
@@ -1882,7 +1894,7 @@
   (symbol (lib_id "power:Earth") (at 107.95 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8c86bac9-9ed3-45cf-bd4f-5ecbb4bec90f)
-    (property "Reference" "#PWR057" (at 107.95 130.81 0)
+    (property "Reference" "#PWR058" (at 107.95 130.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 107.95 128.27 0)
@@ -1898,7 +1910,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR057") (unit 1)
+          (reference "#PWR058") (unit 1)
         )
       )
     )
@@ -1907,7 +1919,7 @@
   (symbol (lib_id "power:Earth") (at 85.09 115.57 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9053b738-411f-476c-92be-2a904e3c1a43)
-    (property "Reference" "#PWR054" (at 85.09 121.92 0)
+    (property "Reference" "#PWR055" (at 85.09 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 85.09 119.38 0)
@@ -1923,7 +1935,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR054") (unit 1)
+          (reference "#PWR055") (unit 1)
         )
       )
     )
@@ -1984,7 +1996,7 @@
   (symbol (lib_id "power:Earth") (at 59.69 133.35 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a67bae74-cb3c-4e16-aa40-f269c3888a03)
-    (property "Reference" "#PWR059" (at 59.69 139.7 0)
+    (property "Reference" "#PWR060" (at 59.69 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 59.69 137.16 0)
@@ -2000,7 +2012,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR059") (unit 1)
+          (reference "#PWR060") (unit 1)
         )
       )
     )
@@ -2035,7 +2047,7 @@
   (symbol (lib_id "power:+5V") (at 66.04 38.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b64005d5-d691-4265-a6b5-ef241711bae9)
-    (property "Reference" "#PWR041" (at 66.04 41.91 0)
+    (property "Reference" "#PWR042" (at 66.04 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 66.04 33.02 0)
@@ -2051,7 +2063,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR041") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
     )
@@ -2060,7 +2072,7 @@
   (symbol (lib_id "power:+5V") (at 100.33 110.49 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bde87889-ab4b-415e-9586-f7e9763603e2)
-    (property "Reference" "#PWR051" (at 100.33 114.3 0)
+    (property "Reference" "#PWR052" (at 100.33 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 100.33 105.41 0)
@@ -2076,7 +2088,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR051") (unit 1)
+          (reference "#PWR052") (unit 1)
         )
       )
     )
@@ -2085,7 +2097,7 @@
   (symbol (lib_id "power:Earth") (at 78.74 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid be2ecafd-a309-44c3-a23d-21e300d88da2)
-    (property "Reference" "#PWR043" (at 78.74 46.99 0)
+    (property "Reference" "#PWR044" (at 78.74 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 78.74 44.45 0)
@@ -2101,7 +2113,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR043") (unit 1)
+          (reference "#PWR044") (unit 1)
         )
       )
     )
@@ -2188,7 +2200,7 @@
   (symbol (lib_id "power:Earth") (at 86.36 81.28 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid db1df2f2-ba2f-4583-b63b-3cb5e83faa63)
-    (property "Reference" "#PWR049" (at 86.36 87.63 0)
+    (property "Reference" "#PWR050" (at 86.36 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 86.36 85.09 0)
@@ -2204,7 +2216,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR049") (unit 1)
+          (reference "#PWR050") (unit 1)
         )
       )
     )
@@ -2213,7 +2225,7 @@
   (symbol (lib_id "power:Earth") (at 228.6 156.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e3137021-fe73-4717-ba48-8f719a4ee907)
-    (property "Reference" "#PWR062" (at 228.6 162.56 0)
+    (property "Reference" "#PWR063" (at 228.6 162.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 228.6 160.02 0)
@@ -2229,7 +2241,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "#PWR062") (unit 1)
+          (reference "#PWR063") (unit 1)
         )
       )
     )
@@ -2238,7 +2250,7 @@
   (symbol (lib_id "Driver_Motor:DRV8833PWP") (at 228.6 135.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e32a50f5-9577-4ad8-937f-ae82954f5f94)
-    (property "Reference" "U7" (at 233.68 151.13 0)
+    (property "Reference" "U9" (at 233.68 151.13 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "DRV8833PWP" (at 233.68 153.67 0)
@@ -2270,7 +2282,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "U7") (unit 1)
+          (reference "U9") (unit 1)
         )
       )
     )
@@ -2308,7 +2320,7 @@
     (property "Reference" "R21" (at 193.04 129.54 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "0R200" (at 193.04 135.89 90)
+    (property "Value" "4R7" (at 193.04 135.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "" (at 193.04 135.128 90)
@@ -2360,7 +2372,7 @@
     (property "Reference" "R19" (at 203.2 128.27 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "0R200" (at 203.2 134.62 90)
+    (property "Value" "4R7" (at 203.2 134.62 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "" (at 203.2 132.588 90)

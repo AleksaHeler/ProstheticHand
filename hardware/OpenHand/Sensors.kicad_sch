@@ -594,7 +594,7 @@
   (symbol (lib_id "power:Earth") (at 81.28 170.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 45ee307c-27cb-4734-aae7-e0624084f2b4)
-    (property "Reference" "#PWR038" (at 81.28 176.53 0)
+    (property "Reference" "#PWR039" (at 81.28 176.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 81.28 173.99 0)
@@ -610,7 +610,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/286dde41-8068-419e-b7de-6276970410d8"
-          (reference "#PWR038") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
     )
@@ -619,7 +619,7 @@
   (symbol (lib_id "Analog_ADC:ADS1115IDGS") (at 81.28 154.94 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6ff673ee-b235-4586-9bc1-92003e6cea3a)
-    (property "Reference" "U3" (at 73.66 165.1 0)
+    (property "Reference" "U5" (at 73.66 165.1 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "ADS1115IDGS" (at 63.5 167.64 0)
@@ -644,7 +644,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/286dde41-8068-419e-b7de-6276970410d8"
-          (reference "U3") (unit 1)
+          (reference "U5") (unit 1)
         )
       )
     )
@@ -653,7 +653,7 @@
   (symbol (lib_id "power:Earth") (at 40.64 170.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 89d73d04-781f-4094-ab82-d79a411b051b)
-    (property "Reference" "#PWR037" (at 40.64 176.53 0)
+    (property "Reference" "#PWR038" (at 40.64 176.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 40.64 173.99 0)
@@ -669,7 +669,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/286dde41-8068-419e-b7de-6276970410d8"
-          (reference "#PWR037") (unit 1)
+          (reference "#PWR038") (unit 1)
         )
       )
     )
@@ -678,7 +678,7 @@
   (symbol (lib_id "power:+3V3") (at 93.98 121.92 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 982f54ad-a9c7-49a3-9e5a-3fa7d9055577)
-    (property "Reference" "#PWR036" (at 93.98 125.73 0)
+    (property "Reference" "#PWR037" (at 93.98 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3" (at 93.98 116.84 0)
@@ -694,7 +694,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/286dde41-8068-419e-b7de-6276970410d8"
-          (reference "#PWR036") (unit 1)
+          (reference "#PWR037") (unit 1)
         )
       )
     )
