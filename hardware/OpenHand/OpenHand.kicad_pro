@@ -503,6 +503,10 @@
     [
       "20793231-6e6d-417f-8f1f-2d40174b5a27",
       "Control, Analog"
+    ],
+    [
+      "f902a664-dd70-4f4d-9751-e3b0e12c3979",
+      "ESP32"
     ]
   ],
   "text_variables": {}

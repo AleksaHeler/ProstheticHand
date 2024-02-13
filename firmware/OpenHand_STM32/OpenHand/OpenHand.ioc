@@ -267,4 +267,4 @@ SH.S_TIM3_CH2.ConfNb=1
 USART1.IPParameters=VirtualMode
 USART1.VirtualMode=VM_ASYNC
 board=custom
-isbadioc=false
+isbadioc=true
