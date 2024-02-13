@@ -1289,10 +1289,6 @@
     (stroke (width 0) (type default))
     (uuid 58fc1e20-b3d6-4373-8f1c-6d88c6304388)
   )
-  (wire (pts (xy 49.53 46.99) (xy 54.61 46.99))
-    (stroke (width 0) (type default))
-    (uuid 5b0a1383-442a-4d7b-9944-7493ba722c9e)
-  )
   (wire (pts (xy 49.53 57.15) (xy 39.37 57.15))
     (stroke (width 0) (type default))
     (uuid 5bd4f4ac-73b2-40f9-aff1-94bbdeebf704)
@@ -1337,7 +1333,7 @@
     (stroke (width 0) (type default))
     (uuid 75491915-7a7e-4658-937a-6489f9ced19f)
   )
-  (wire (pts (xy 55.245 46.99) (xy 62.865 46.99))
+  (wire (pts (xy 49.53 46.99) (xy 62.865 46.99))
     (stroke (width 0) (type default))
     (uuid 774daa7f-73e1-4d26-b1d7-eb288e6f1a00)
   )
@@ -1573,6 +1569,31 @@
     )
   )
 
+  (symbol (lib_id "power:+BATT") (at 199.39 128.27 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 01e49330-3c4d-403a-b20c-c50241f940bc)
+    (property "Reference" "#PWR054" (at 199.39 132.08 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+BATT" (at 199.39 123.19 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 199.39 128.27 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 199.39 128.27 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid d5e141ac-5bc5-44a2-80f4-6d25c22360b5))
+    (instances
+      (project "OpenHand"
+        (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
+          (reference "#PWR054") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:D_Zener") (at 49.53 52.07 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 02108f97-3d0a-4ba7-a247-42b76eed15a4)
@@ -1602,7 +1623,7 @@
   (symbol (lib_id "power:Earth") (at 158.75 86.36 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 04a73358-e070-4c36-ad9b-5f2e69ce9681)
-    (property "Reference" "#PWR049" (at 158.75 92.71 0)
+    (property "Reference" "#PWR050" (at 158.75 92.71 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 158.75 90.17 0)
@@ -1618,7 +1639,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR049") (unit 1)
+          (reference "#PWR050") (unit 1)
         )
       )
     )
@@ -1715,7 +1736,7 @@
     (property "Value" "TP_V_N5V" (at 240.03 129.54 0)
       (effects (font (size 0.8 0.8)))
     )
-    (property "Footprint" "" (at 234.95 130.81 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 234.95 130.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 234.95 130.81 0)
@@ -1731,7 +1752,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP26") (unit 1)
+          (reference "TP38") (unit 1)
         )
       )
     )
@@ -1798,7 +1819,7 @@
   (symbol (lib_id "power:Earth") (at 229.87 139.7 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2e10fdc4-3b32-47e7-8651-fb92bc2d2420)
-    (property "Reference" "#PWR057" (at 229.87 146.05 0)
+    (property "Reference" "#PWR058" (at 229.87 146.05 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 229.87 143.51 0)
@@ -1814,7 +1835,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR057") (unit 1)
+          (reference "#PWR058") (unit 1)
         )
       )
     )
@@ -1823,7 +1844,7 @@
   (symbol (lib_id "power:Earth") (at 234.95 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3bc0ab7c-fdf3-4b6a-8bbf-a324fab7872b)
-    (property "Reference" "#PWR043" (at 234.95 66.04 0)
+    (property "Reference" "#PWR044" (at 234.95 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 234.95 63.5 0)
@@ -1839,7 +1860,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR043") (unit 1)
+          (reference "#PWR044") (unit 1)
         )
       )
     )
@@ -1890,7 +1911,7 @@
     (property "Value" "TP_BATT_P" (at 31.115 45.72 0)
       (effects (font (size 0.8 0.8)))
     )
-    (property "Footprint" "" (at 26.035 46.99 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 26.035 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 26.035 46.99 0)
@@ -1906,7 +1927,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP21") (unit 1)
+          (reference "TP33") (unit 1)
         )
       )
     )
@@ -1915,7 +1936,7 @@
   (symbol (lib_id "power:+BATT") (at 62.865 45.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4b89addc-a192-4200-8f24-8f9f1c21fd2d)
-    (property "Reference" "#PWR039" (at 62.865 49.53 0)
+    (property "Reference" "#PWR040" (at 62.865 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+BATT" (at 62.865 40.64 0)
@@ -1931,7 +1952,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR039") (unit 1)
+          (reference "#PWR040") (unit 1)
         )
       )
     )
@@ -1998,7 +2019,7 @@
   (symbol (lib_id "power:Earth") (at 260.35 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5db11651-7c6c-495e-b0ca-fd9374be7e4c)
-    (property "Reference" "#PWR047" (at 260.35 77.47 0)
+    (property "Reference" "#PWR048" (at 260.35 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 260.35 74.93 0)
@@ -2014,7 +2035,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR047") (unit 1)
+          (reference "#PWR048") (unit 1)
         )
       )
     )
@@ -2084,7 +2105,7 @@
     (property "Value" "TP_V_5V" (at 252.095 45.72 0)
       (effects (font (size 0.8 0.8)))
     )
-    (property "Footprint" "" (at 247.015 46.99 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 247.015 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 247.015 46.99 0)
@@ -2100,7 +2121,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP23") (unit 1)
+          (reference "TP35") (unit 1)
         )
       )
     )
@@ -2128,7 +2149,7 @@
           (reference "#PWR01") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR038") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
     )
@@ -2137,7 +2158,7 @@
   (symbol (lib_id "power:Earth") (at 92.71 135.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6e4b138a-46f5-4eb3-9c08-63f98fe34160)
-    (property "Reference" "#PWR055" (at 92.71 142.24 0)
+    (property "Reference" "#PWR056" (at 92.71 142.24 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 92.71 139.7 0)
@@ -2153,7 +2174,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR055") (unit 1)
+          (reference "#PWR056") (unit 1)
         )
       )
     )
@@ -2162,7 +2183,7 @@
   (symbol (lib_id "power:Earth") (at 163.83 54.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7472e052-6c73-486e-92f0-eb8c62a3db33)
-    (property "Reference" "#PWR040" (at 163.83 60.96 0)
+    (property "Reference" "#PWR041" (at 163.83 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 163.83 58.42 0)
@@ -2178,7 +2199,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR040") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
     )
@@ -2187,7 +2208,7 @@
   (symbol (lib_id "power:Earth") (at 114.3 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 78b1ece8-edcd-4af0-b2fa-f04be6d9e335)
-    (property "Reference" "#PWR042" (at 114.3 66.04 0)
+    (property "Reference" "#PWR043" (at 114.3 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 114.3 63.5 0)
@@ -2203,7 +2224,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR042") (unit 1)
+          (reference "#PWR043") (unit 1)
         )
       )
     )
@@ -2267,7 +2288,7 @@
   (symbol (lib_id "power:Earth") (at 220.98 119.4916 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 84d45330-dc34-410f-b4bf-a5918139cc2c)
-    (property "Reference" "#PWR050" (at 220.98 125.8416 0)
+    (property "Reference" "#PWR051" (at 220.98 125.8416 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 220.98 123.3016 0)
@@ -2283,7 +2304,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR050") (unit 1)
+          (reference "#PWR051") (unit 1)
         )
       )
     )
@@ -2345,7 +2366,7 @@
   (symbol (lib_id "power:Earth") (at 158.75 64.77 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 870e5bef-6e4c-4974-82c9-7934b6d2ecef)
-    (property "Reference" "#PWR044" (at 158.75 71.12 0)
+    (property "Reference" "#PWR045" (at 158.75 71.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 158.75 68.58 0)
@@ -2361,7 +2382,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR044") (unit 1)
+          (reference "#PWR045") (unit 1)
         )
       )
     )
@@ -2370,7 +2391,7 @@
   (symbol (lib_id "power:Earth") (at 39.37 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 87c71c80-9251-40de-8e2e-d0e869ff2fb2)
-    (property "Reference" "#PWR046" (at 39.37 77.47 0)
+    (property "Reference" "#PWR047" (at 39.37 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 39.37 74.93 0)
@@ -2386,7 +2407,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR046") (unit 1)
+          (reference "#PWR047") (unit 1)
         )
       )
     )
@@ -2401,7 +2422,7 @@
     (property "Value" "TP_V_BATT" (at 74.295 45.72 0)
       (effects (font (size 0.8 0.8)))
     )
-    (property "Footprint" "" (at 69.215 46.99 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 69.215 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 69.215 46.99 0)
@@ -2417,7 +2438,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP22") (unit 1)
+          (reference "TP34") (unit 1)
         )
       )
     )
@@ -2471,7 +2492,7 @@
           (reference "#PWR01") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR051") (unit 1)
+          (reference "#PWR052") (unit 1)
         )
       )
     )
@@ -2480,7 +2501,7 @@
   (symbol (lib_id "power:Earth") (at 74.295 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9d177f38-4abf-44f4-bed5-b90fc3c7578b)
-    (property "Reference" "#PWR041" (at 74.295 66.04 0)
+    (property "Reference" "#PWR042" (at 74.295 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 74.295 63.5 0)
@@ -2496,35 +2517,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR041") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:+5V") (at 199.39 128.27 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 9d200e1f-8580-44dc-8579-a5574dc5fcdd)
-    (property "Reference" "#PWR01" (at 199.39 132.08 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+5V" (at 199.39 123.19 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 199.39 128.27 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 199.39 128.27 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 84af2679-fe87-47a9-9a57-7348337f52c9))
-    (instances
-      (project "OpenHand"
-        (path "/f1fbd835-8408-4592-854c-2fbec9d052ec"
-          (reference "#PWR01") (unit 1)
-        )
-        (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR053") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
     )
@@ -2598,7 +2591,7 @@
   (symbol (lib_id "power:-5V") (at 245.11 132.08 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b200c91e-f7e8-47d1-bbaf-7a101dc431e3)
-    (property "Reference" "#PWR054" (at 245.11 134.62 0)
+    (property "Reference" "#PWR055" (at 245.11 134.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "-5V" (at 245.11 137.16 0)
@@ -2614,7 +2607,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR054") (unit 1)
+          (reference "#PWR055") (unit 1)
         )
       )
     )
@@ -2700,7 +2693,7 @@
           (reference "#PWR041") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR052") (unit 1)
+          (reference "#PWR053") (unit 1)
         )
       )
     )
@@ -2738,7 +2731,7 @@
   (symbol (lib_id "power:Earth") (at 100.33 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c3bd9509-cb8b-4446-a125-df5bfc9641fb)
-    (property "Reference" "#PWR048" (at 100.33 80.01 0)
+    (property "Reference" "#PWR049" (at 100.33 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 100.33 77.47 0)
@@ -2754,7 +2747,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR048") (unit 1)
+          (reference "#PWR049") (unit 1)
         )
       )
     )
@@ -2763,7 +2756,7 @@
   (symbol (lib_id "power:Earth") (at 78.74 137.16 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d9810694-3d6e-40f8-ae44-d190117494c9)
-    (property "Reference" "#PWR056" (at 78.74 143.51 0)
+    (property "Reference" "#PWR057" (at 78.74 143.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 78.74 140.97 0)
@@ -2779,7 +2772,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR056") (unit 1)
+          (reference "#PWR057") (unit 1)
         )
       )
     )
@@ -2814,7 +2807,7 @@
   (symbol (lib_id "power:Earth") (at 190.5 69.85 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dd91a6c0-6f65-475e-893b-db024e1ef3da)
-    (property "Reference" "#PWR045" (at 190.5 76.2 0)
+    (property "Reference" "#PWR046" (at 190.5 76.2 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "Earth" (at 190.5 73.66 0)
@@ -2830,7 +2823,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR046") (unit 1)
         )
       )
     )
@@ -2845,7 +2838,7 @@
     (property "Value" "TP_PSU_FDBK" (at 177.8 58.42 0)
       (effects (font (size 0.8 0.8)))
     )
-    (property "Footprint" "" (at 172.72 59.69 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 172.72 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 172.72 59.69 0)
@@ -2861,7 +2854,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP24") (unit 1)
+          (reference "TP36") (unit 1)
         )
       )
     )
@@ -2905,7 +2898,7 @@
     (property "Value" "TP_V_3V3" (at 101.6 125.73 0)
       (effects (font (size 0.8 0.8)))
     )
-    (property "Footprint" "" (at 96.52 127 0)
+    (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 96.52 127 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 96.52 127 0)
@@ -2921,7 +2914,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP25") (unit 1)
+          (reference "TP37") (unit 1)
         )
       )
     )
