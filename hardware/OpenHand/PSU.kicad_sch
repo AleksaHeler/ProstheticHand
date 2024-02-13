@@ -1683,7 +1683,7 @@
   (symbol (lib_id "Device:R") (at 39.37 62.23 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 27df5aa4-5d77-4a54-8e39-5e75978879e7)
-    (property "Reference" "R17" (at 40.64 60.96 0)
+    (property "Reference" "R19" (at 40.64 60.96 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "47k" (at 40.64 63.5 0)
@@ -1700,7 +1700,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "R17") (unit 1)
+          (reference "R19") (unit 1)
         )
       )
     )
@@ -1731,7 +1731,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP21") (unit 1)
+          (reference "TP26") (unit 1)
         )
       )
     )
@@ -1906,7 +1906,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP57") (unit 1)
+          (reference "TP21") (unit 1)
         )
       )
     )
@@ -1989,7 +1989,7 @@
           (reference "R9") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "R19") (unit 1)
+          (reference "R21") (unit 1)
         )
       )
     )
@@ -2052,7 +2052,7 @@
   (symbol (lib_id "Device:R") (at 200.66 59.69 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5fc249db-8f9c-444e-bfa1-40a5d069678a)
-    (property "Reference" "R16" (at 201.93 58.42 0)
+    (property "Reference" "R18" (at 201.93 58.42 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "100k" (at 201.93 60.96 0)
@@ -2069,7 +2069,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "R16") (unit 1)
+          (reference "R18") (unit 1)
         )
       )
     )
@@ -2100,7 +2100,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP58") (unit 1)
+          (reference "TP23") (unit 1)
         )
       )
     )
@@ -2241,7 +2241,7 @@
   (symbol (lib_id "Device:R") (at 190.5 64.77 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 849d7e58-026b-4d5c-afd0-585e6f2eac97)
-    (property "Reference" "R18" (at 191.77 63.5 0)
+    (property "Reference" "R20" (at 191.77 63.5 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "130k" (at 191.77 66.04 0)
@@ -2258,7 +2258,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "R18") (unit 1)
+          (reference "R20") (unit 1)
         )
       )
     )
@@ -2319,7 +2319,7 @@
   (symbol (lib_id "Device:R") (at 190.5 53.34 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 86aa3724-7729-4fa4-b53b-62a6768eea8b)
-    (property "Reference" "R15" (at 191.77 52.07 0)
+    (property "Reference" "R17" (at 191.77 52.07 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "680k" (at 191.77 54.61 0)
@@ -2336,7 +2336,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "R15") (unit 1)
+          (reference "R17") (unit 1)
         )
       )
     )
@@ -2417,7 +2417,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP19") (unit 1)
+          (reference "TP22") (unit 1)
         )
       )
     )
@@ -2533,7 +2533,7 @@
   (symbol (lib_id "Device:R") (at 102.87 53.34 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a61dda91-05a8-41f5-8bb5-9cb26d04b82d)
-    (property "Reference" "R14" (at 104.14 52.07 0)
+    (property "Reference" "R16" (at 104.14 52.07 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "10k" (at 104.14 54.61 0)
@@ -2550,7 +2550,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "R14") (unit 1)
+          (reference "R16") (unit 1)
         )
       )
     )
@@ -2861,7 +2861,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP59") (unit 1)
+          (reference "TP24") (unit 1)
         )
       )
     )
@@ -2921,7 +2921,7 @@
           (reference "TP4") (unit 1)
         )
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/11b37193-b902-4bf9-977f-96c37af6f134"
-          (reference "TP20") (unit 1)
+          (reference "TP25") (unit 1)
         )
       )
     )

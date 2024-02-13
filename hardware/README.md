@@ -106,3 +106,18 @@ Features:
  - Connectors and drivers for haptic feedback (vibrating motor, similar to a console joystick vibration)
 
 Schematic and project can be found [here in OpenHand folder](OpenHand/OpenHand.kicad_pro).
+
+Schematics for now:
+
+<img src="OpenHand/images/wip_schm_1.png" width="60%"/>
+<img src="OpenHand/images/wip_schm_2.png" width="60%"/>
+<img src="OpenHand/images/wip_schm_3.png" width="60%"/>
+<img src="OpenHand/images/wip_schm_4.png" width="60%"/>
+
+Layou for now:
+
+<img src="OpenHand/images/wip_layout.png" width="60%"/>
+
+3D PCB view for now:
+
+<img src="OpenHand/images/wip_pcb.png" width="60%"/>
