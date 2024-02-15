@@ -175,7 +175,9 @@
         0.0,
         0.2,
         0.4,
-        0.6
+        0.5,
+        0.6,
+        1.0
       ],
       "via_dimensions": [
         {
@@ -197,7 +199,21 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "pin_to_pin|1016000|635000|7537de16-d6de-4674-9ceb-03aa6f49cad8|61d250fb-e83f-4f15-94c6-6a5554455f68|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27",
+      "pin_to_pin|1016000|711200|c3db403d-5934-4c1e-a84a-b9b04fdb72f7|5cf62876-ae69-4c36-9cad-ad687c094391|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27",
+      "pin_to_pin|1079500|1435100|aa734e36-9df8-480d-ac05-82a491b98651|76986add-bcad-4f06-a478-00b05dbf7d3d|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27",
+      "pin_to_pin|1079500|1460500|deb5388b-bfdf-477b-83b2-41fe60c22e28|b02e5ef5-7015-43e9-8a11-40408ce382ea|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27",
+      "pin_to_pin|2387600|635000|43db2711-6e41-4317-a185-a429c4ccd8b8|9f2ff2b7-3d83-45b9-89cf-b11ea3bf72bf|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27",
+      "pin_to_pin|2387600|660400|39096a2e-2c6f-41ba-99fe-6502276499b8|8c5f301e-6516-457a-991d-5f7a5127071d|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27|/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27",
+      "power_pin_not_driven|1219200|482600|338be3a0-956d-4c93-9cd5-e98def20ef64|00000000-0000-0000-0000-000000000000|||",
+      "power_pin_not_driven|1574800|482600|3f5bb4e7-3f2f-4323-ab72-57291f3ccd74|00000000-0000-0000-0000-000000000000|||",
+      "power_pin_not_driven|1574800|558800|e92866de-b95e-483e-b433-47339a2d483e|00000000-0000-0000-0000-000000000000|||",
+      "power_pin_not_driven|2286000|431800|e8d4aecb-f22e-4e12-afa7-8be7b7d7eb17|00000000-0000-0000-0000-000000000000|||",
+      "power_pin_not_driven|2336800|1181100|d816566b-811b-467b-8cab-b1b414bdadf7|00000000-0000-0000-0000-000000000000|||",
+      "power_pin_not_driven|914400|431800|b7ff88cb-3cc0-4cd6-a1a7-d8332c48a977|00000000-0000-0000-0000-000000000000|||",
+      "power_pin_not_driven|977900|1181100|516b827a-b1aa-4c6d-b1e9-0cc0fad636ec|00000000-0000-0000-0000-000000000000|||"
+    ],
     "meta": {
       "version": 0
     },
@@ -381,7 +397,7 @@
       "different_unit_net": "error",
       "duplicate_reference": "error",
       "duplicate_sheet_names": "error",
-      "endpoint_off_grid": "warning",
+      "endpoint_off_grid": "ignore",
       "extra_units": "error",
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
@@ -502,11 +518,7 @@
     ],
     [
       "20793231-6e6d-417f-8f1f-2d40174b5a27",
-      "Control, Analog"
-    ],
-    [
-      "f902a664-dd70-4f4d-9751-e3b0e12c3979",
-      "ESP32"
+      "Motor Control"
     ]
   ],
   "text_variables": {}
