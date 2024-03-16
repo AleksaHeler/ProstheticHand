@@ -1565,6 +1565,11 @@
     (uuid f420c402-b58a-4c0e-9027-4b2de62dcf0b)
   )
 
+  (label "amp_out_1" (at 68.58 66.04 0) (fields_autoplaced)
+    (effects (font (size 0.6 0.6)) (justify left bottom))
+    (uuid 01f6884d-7894-407c-99f4-96261fc9e8f2)
+  )
+
   (global_label "EMG_1_MIDPOINT" (shape output) (at 124.46 59.69 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 0a581bf3-a0c6-489d-bb61-3222baf39024)
