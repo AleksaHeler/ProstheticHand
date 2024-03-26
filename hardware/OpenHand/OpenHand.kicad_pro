@@ -60,8 +60,7 @@
         "hole_clearance|107105000|111400000|b481c934-afc4-409a-aaac-918f678df850|937cdbcf-3fd2-48f8-8832-89e64cd6903a",
         "hole_clearance|107105000|111400000|b481c934-afc4-409a-aaac-918f678df850|93aefd6e-d88c-45f3-af43-8fdcb505b469",
         "hole_clearance|107105000|116800000|267d2d3c-46b3-4b2b-9980-431fb749ec93|c4cc34b0-3e53-4d8d-a0b4-2a3aeba96593",
-        "hole_clearance|107105000|117000000|267d2d3c-46b3-4b2b-9980-431fb749ec93|bd7a7f84-6e8f-447b-8b66-875187b16f7f",
-        "starved_thermal|118100000|131340000|ba2e511c-72b9-47e1-806d-13e3c88ec136|70a9e2d6-b2c5-498a-9191-8574ec3f71bf|F.Cu"
+        "hole_clearance|107105000|117000000|267d2d3c-46b3-4b2b-9980-431fb749ec93|bd7a7f84-6e8f-447b-8b66-875187b16f7f"
       ],
       "meta": {
         "version": 2
@@ -180,6 +179,7 @@
       ],
       "track_widths": [
         0.0,
+        0.1,
         0.2,
         0.4,
         0.5,

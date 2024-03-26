@@ -1677,7 +1677,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 121.92 146.05 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 19dd35bd-c981-4eda-837f-e00f70cdea52)
-    (property "Reference" "TP54" (at 121.92 148.59 0)
+    (property "Reference" "TP59" (at 121.92 148.59 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_3_OUT_N" (at 121.92 147.32 0)
@@ -1693,7 +1693,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP54") (unit 1)
+          (reference "TP59") (unit 1)
         )
       )
     )
@@ -1778,7 +1778,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 182.88 125.73 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2215a1ec-e43d-4080-9856-f7498b73365b)
-    (property "Reference" "TP45" (at 182.88 123.19 0)
+    (property "Reference" "TP50" (at 182.88 123.19 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_FDBK_MOT_EN" (at 182.88 124.46 0)
@@ -1794,7 +1794,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP45") (unit 1)
+          (reference "TP50") (unit 1)
         )
       )
     )
@@ -1854,7 +1854,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 58.42 58.42 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 28be7720-19b2-4372-aa6c-6a64f792ca2e)
-    (property "Reference" "TP32" (at 58.42 55.88 0)
+    (property "Reference" "TP37" (at 58.42 55.88 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_1_IS" (at 58.42 57.15 0)
@@ -1870,7 +1870,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP32") (unit 1)
+          (reference "TP37") (unit 1)
         )
       )
     )
@@ -1904,7 +1904,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 177.8 63.5 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 28d62ddf-8f63-4e2f-b93d-d9facf29edf0)
-    (property "Reference" "TP37" (at 177.8 60.96 0)
+    (property "Reference" "TP42" (at 177.8 60.96 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_2_UC1" (at 177.8 62.23 0)
@@ -1920,7 +1920,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP37") (unit 1)
+          (reference "TP42") (unit 1)
         )
       )
     )
@@ -1929,7 +1929,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 39.37 50.8 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2f344c64-0827-489f-a3e2-809f83adb406)
-    (property "Reference" "TP30" (at 39.37 48.26 0)
+    (property "Reference" "TP35" (at 39.37 48.26 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_1_EN" (at 39.37 49.53 0)
@@ -1945,7 +1945,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP30") (unit 1)
+          (reference "TP35") (unit 1)
         )
       )
     )
@@ -1954,7 +1954,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 115.57 68.58 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2f49659a-54e4-414f-9037-d999770cc3f4)
-    (property "Reference" "TP40" (at 115.57 66.04 0)
+    (property "Reference" "TP45" (at 115.57 66.04 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_1_OUT_P" (at 115.57 67.31 0)
@@ -1970,7 +1970,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP40") (unit 1)
+          (reference "TP45") (unit 1)
         )
       )
     )
@@ -2005,7 +2005,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 184.15 138.43 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 37a16d22-60d5-4df6-82f5-4c49e6ff3501)
-    (property "Reference" "TP50" (at 184.15 135.89 0)
+    (property "Reference" "TP55" (at 184.15 135.89 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_FDBK_MOT_1_UC1" (at 184.15 137.16 0)
@@ -2021,7 +2021,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP50") (unit 1)
+          (reference "TP55") (unit 1)
         )
       )
     )
@@ -2055,7 +2055,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 252.73 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 484e0444-58b1-4f18-9165-649a6ecbc9f2)
-    (property "Reference" "TP43" (at 252.73 73.66 0)
+    (property "Reference" "TP48" (at 252.73 73.66 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_2_OUT_N" (at 252.73 72.39 0)
@@ -2071,7 +2071,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP43") (unit 1)
+          (reference "TP48") (unit 1)
         )
       )
     )
@@ -2105,7 +2105,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 63.5 133.35 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4fb2626f-a9c6-4f27-bc6d-282bb8ccb56a)
-    (property "Reference" "TP46" (at 63.5 130.81 0)
+    (property "Reference" "TP51" (at 63.5 130.81 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_3_IS" (at 63.5 132.08 0)
@@ -2121,7 +2121,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP46") (unit 1)
+          (reference "TP51") (unit 1)
         )
       )
     )
@@ -2232,7 +2232,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 177.8 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5f4a7f3f-1fe8-4f33-a122-5744c5ad57e0)
-    (property "Reference" "TP39" (at 177.8 68.58 0)
+    (property "Reference" "TP44" (at 177.8 68.58 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_2_UC2" (at 177.8 67.31 0)
@@ -2248,7 +2248,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP39") (unit 1)
+          (reference "TP44") (unit 1)
         )
       )
     )
@@ -2383,7 +2383,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 114.3 58.42 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7765947d-e5dc-4fd9-9d41-83387d36890f)
-    (property "Reference" "TP33" (at 114.3 55.88 0)
+    (property "Reference" "TP38" (at 114.3 55.88 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_1_FAULT" (at 114.3 57.15 0)
@@ -2399,7 +2399,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP33") (unit 1)
+          (reference "TP38") (unit 1)
         )
       )
     )
@@ -2474,7 +2474,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 115.57 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8233dbd2-9974-4635-93ce-2f92fb4b9797)
-    (property "Reference" "TP42" (at 115.57 73.66 0)
+    (property "Reference" "TP47" (at 115.57 73.66 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_1_OUT_N" (at 115.57 72.39 0)
@@ -2490,7 +2490,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP42") (unit 1)
+          (reference "TP47") (unit 1)
         )
       )
     )
@@ -2575,7 +2575,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 121.92 143.51 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8f3f4828-d9c0-4019-a407-a6394bdd3dce)
-    (property "Reference" "TP53" (at 121.92 140.97 0)
+    (property "Reference" "TP58" (at 121.92 140.97 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_3_OUT_P" (at 121.92 142.24 0)
@@ -2591,7 +2591,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP53") (unit 1)
+          (reference "TP58") (unit 1)
         )
       )
     )
@@ -2600,7 +2600,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 251.46 58.42 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8fb20bfd-f94f-49bf-9efb-8f0c842076ce)
-    (property "Reference" "TP35" (at 251.46 55.88 0)
+    (property "Reference" "TP40" (at 251.46 55.88 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_2_FAULT" (at 251.46 57.15 0)
@@ -2616,7 +2616,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP35") (unit 1)
+          (reference "TP40") (unit 1)
         )
       )
     )
@@ -2650,7 +2650,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 43.18 140.97 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 90a3973c-2f73-4dff-a4cf-fc77a4b69e50)
-    (property "Reference" "TP51" (at 43.18 143.51 0)
+    (property "Reference" "TP56" (at 43.18 143.51 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_3_UC2" (at 43.18 142.24 0)
@@ -2666,7 +2666,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP51") (unit 1)
+          (reference "TP56") (unit 1)
         )
       )
     )
@@ -2803,7 +2803,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 119.38 133.35 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b3180816-db3f-41f5-912b-3c1d5d688af6)
-    (property "Reference" "TP47" (at 119.38 130.81 0)
+    (property "Reference" "TP52" (at 119.38 130.81 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_3_FAULT" (at 119.38 132.08 0)
@@ -2819,7 +2819,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP47") (unit 1)
+          (reference "TP52") (unit 1)
         )
       )
     )
@@ -2878,7 +2878,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 250.19 133.35 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ba4e0623-c478-444c-8b0a-f3339f71280d)
-    (property "Reference" "TP48" (at 250.19 130.81 0)
+    (property "Reference" "TP53" (at 250.19 130.81 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_FDBK_MOT_FAULT" (at 250.19 132.08 0)
@@ -2894,7 +2894,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP48") (unit 1)
+          (reference "TP53") (unit 1)
         )
       )
     )
@@ -2953,7 +2953,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 195.58 58.42 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid be81eb60-f402-47f8-b2f4-f863108d60d1)
-    (property "Reference" "TP34" (at 195.58 55.88 0)
+    (property "Reference" "TP39" (at 195.58 55.88 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_2_IS" (at 195.58 57.15 0)
@@ -2969,7 +2969,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP34") (unit 1)
+          (reference "TP39") (unit 1)
         )
       )
     )
@@ -2978,7 +2978,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 189.23 146.05 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c055d216-c7cf-4e47-a2f5-024053fdac2a)
-    (property "Reference" "TP55" (at 189.23 143.51 0)
+    (property "Reference" "TP60" (at 189.23 143.51 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_FDBK_MOT_2_UC1" (at 189.23 144.78 0)
@@ -2994,7 +2994,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP55") (unit 1)
+          (reference "TP60") (unit 1)
         )
       )
     )
@@ -3003,7 +3003,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 43.18 125.73 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c09680c2-479d-4426-bb44-573e92e6b7cc)
-    (property "Reference" "TP44" (at 43.18 123.19 0)
+    (property "Reference" "TP49" (at 43.18 123.19 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_3_EN" (at 43.18 124.46 0)
@@ -3019,7 +3019,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP44") (unit 1)
+          (reference "TP49") (unit 1)
         )
       )
     )
@@ -3028,7 +3028,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 43.18 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c157a944-943d-4b36-8e67-dabe85bfcb70)
-    (property "Reference" "TP38" (at 43.18 68.58 0)
+    (property "Reference" "TP43" (at 43.18 68.58 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_1_UC2" (at 43.18 67.31 0)
@@ -3044,7 +3044,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP38") (unit 1)
+          (reference "TP43") (unit 1)
         )
       )
     )
@@ -3053,7 +3053,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 43.18 138.43 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c15cf6da-e713-4b37-85ea-f0113f50eca6)
-    (property "Reference" "TP49" (at 43.18 135.89 0)
+    (property "Reference" "TP54" (at 43.18 135.89 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_3_UC1" (at 43.18 137.16 0)
@@ -3069,7 +3069,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP49") (unit 1)
+          (reference "TP54") (unit 1)
         )
       )
     )
@@ -3078,7 +3078,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 175.26 50.8 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c23ab700-8fcc-4362-b447-1ed5ada817d8)
-    (property "Reference" "TP31" (at 175.26 48.26 0)
+    (property "Reference" "TP36" (at 175.26 48.26 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_2_EN" (at 175.26 49.53 0)
@@ -3094,7 +3094,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP31") (unit 1)
+          (reference "TP36") (unit 1)
         )
       )
     )
@@ -3129,7 +3129,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 191.77 149.86 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d17b5b0b-8dda-4265-935b-0239880f0a03)
-    (property "Reference" "TP56" (at 191.77 147.32 0)
+    (property "Reference" "TP61" (at 191.77 147.32 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_FDBK_MOT_2_UC2" (at 191.77 148.59 0)
@@ -3145,7 +3145,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP56") (unit 1)
+          (reference "TP61") (unit 1)
         )
       )
     )
@@ -3180,7 +3180,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 186.69 142.24 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d42775ee-dcdc-42df-be9b-66be6a042095)
-    (property "Reference" "TP52" (at 186.69 139.7 0)
+    (property "Reference" "TP57" (at 186.69 139.7 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_FDBK_MOT_1_UC2" (at 186.69 140.97 0)
@@ -3196,7 +3196,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP52") (unit 1)
+          (reference "TP57") (unit 1)
         )
       )
     )
@@ -3231,7 +3231,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 252.73 68.58 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d795940d-a258-42e8-abdb-bff2e61f10c4)
-    (property "Reference" "TP41" (at 252.73 66.04 0)
+    (property "Reference" "TP46" (at 252.73 66.04 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_2_OUT_P" (at 252.73 67.31 0)
@@ -3247,7 +3247,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP41") (unit 1)
+          (reference "TP46") (unit 1)
         )
       )
     )
@@ -3424,7 +3424,7 @@
   (symbol (lib_id "Connector:TestPoint_Small") (at 43.18 63.5 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e5e08dfd-c1a4-4cf8-af1a-51cbe7d22efd)
-    (property "Reference" "TP36" (at 43.18 60.96 0)
+    (property "Reference" "TP41" (at 43.18 60.96 0)
       (effects (font (size 0.8 0.8)))
     )
     (property "Value" "TP_MOT_1_UC1" (at 43.18 62.23 0)
@@ -3440,7 +3440,7 @@
     (instances
       (project "OpenHand"
         (path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-          (reference "TP36") (unit 1)
+          (reference "TP41") (unit 1)
         )
       )
     )
