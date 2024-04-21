@@ -82,8 +82,8 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  SysTick_Config(SystemCoreClock / 1000);
-  HAL_InitTick(TICK_INT_PRIORITY);
+//  SysTick_Config(SystemCoreClock / 1000);
+//  HAL_InitTick(TICK_INT_PRIORITY);
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */

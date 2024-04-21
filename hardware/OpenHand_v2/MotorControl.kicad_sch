@@ -113,6 +113,398 @@
 				)
 			)
 		)
+		(symbol "DRV8833PWP_1"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -3.81 16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DRV8833PWP"
+				(at -3.81 13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
+				(at 5.08 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
+				(at 5.08 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "Dual H-Bridge Motor Driver, HTSSOP-16"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "H-bridge motor driver"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "HTSSOP-16-1EP*4.4x5mm*P0.65mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "DRV8833PWP_1_0_1"
+				(rectangle
+					(start -10.16 12.7)
+					(end 10.16 -12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "DRV8833PWP_1_1_1"
+				(pin input line
+					(at -15.24 10.16 0)
+					(length 5.08)
+					(name "~{SLEEP}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 -10.16 0)
+					(length 5.08)
+					(name "BIN2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 7.62 0)
+					(length 5.08)
+					(name "VCP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 7.62 17.78 270)
+					(length 5.08)
+					(name "VM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -17.78 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 5.08 17.78 270)
+					(length 5.08)
+					(name "VINT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 -5.08 0)
+					(length 5.08)
+					(name "AIN2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 -2.54 0)
+					(length 5.08)
+					(name "AIN1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -17.78 90)
+					(length 5.08) hide
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 15.24 -2.54 180)
+					(length 5.08)
+					(name "AOUT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 5.08 0)
+					(length 5.08)
+					(name "AISEN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 15.24 -5.08 180)
+					(length 5.08)
+					(name "AOUT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 15.24 -10.16 180)
+					(length 5.08)
+					(name "BOUT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 2.54 0)
+					(length 5.08)
+					(name "BISEN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 15.24 -7.62 180)
+					(length 5.08)
+					(name "BOUT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 15.24 2.54 180)
+					(length 5.08)
+					(name "~{FAULT}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 -7.62 0)
+					(length 5.08)
+					(name "BIN1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -370,402 +762,11 @@
 				)
 			)
 		)
-		(symbol "Driver_Motor:DRV8833PWP"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at -3.81 16.51 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "DRV8833PWP"
-				(at -3.81 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
-				(at 11.43 11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
-				(at -3.81 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Dual H-Bridge Motor Driver, HTSSOP-16"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "H-bridge motor driver"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "HTSSOP-16-1EP*4.4x5mm*P0.65mm*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "DRV8833PWP_0_1"
-				(rectangle
-					(start -10.16 12.7)
-					(end 10.16 -12.7)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "DRV8833PWP_1_1"
-				(pin input line
-					(at -15.24 10.16 0)
-					(length 5.08)
-					(name "nSLEEP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -10.16 0)
-					(length 5.08)
-					(name "BIN2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -15.24 7.62 0)
-					(length 5.08)
-					(name "VCP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 7.62 17.78 270)
-					(length 5.08)
-					(name "VM"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -17.78 90)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 5.08 17.78 270)
-					(length 5.08)
-					(name "VINT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -5.08 0)
-					(length 5.08)
-					(name "AIN2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -2.54 0)
-					(length 5.08)
-					(name "AIN1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -17.78 90)
-					(length 5.08)
-					(name "GND(PPAD)"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "17"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 15.24 -2.54 180)
-					(length 5.08)
-					(name "AOUT1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -15.24 5.08 0)
-					(length 5.08)
-					(name "AISEN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 15.24 -5.08 180)
-					(length 5.08)
-					(name "AOUT2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 15.24 -10.16 180)
-					(length 5.08)
-					(name "BOUT2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -15.24 2.54 0)
-					(length 5.08)
-					(name "BISEN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 15.24 -7.62 180)
-					(length 5.08)
-					(name "BOUT1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin open_collector line
-					(at 15.24 2.54 180)
-					(length 5.08)
-					(name "nFAULT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -7.62 0)
-					(length 5.08)
-					(name "BIN1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "power:+5V"
 			(power)
+			(pin_numbers hide)
 			(pin_names
-				(offset 0)
-			)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -863,8 +864,8 @@
 			(symbol "+5V_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
-					(name "+5V"
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -881,11 +882,11 @@
 				)
 			)
 		)
-		(symbol "power:Earth"
+		(symbol "power:GND"
 			(power)
+			(pin_numbers hide)
 			(pin_names
-				(offset 0)
-			)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -898,13 +899,12 @@
 					(hide yes)
 				)
 			)
-			(property "Value" "Earth"
+			(property "Value" "GND"
 				(at 0 -3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(hide yes)
 				)
 			)
 			(property "Footprint" ""
@@ -916,7 +916,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -925,7 +925,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 				(at 0 0 0)
 				(effects
 					(font
@@ -934,7 +934,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "global ground gnd"
+			(property "ki_keywords" "global power"
 				(at 0 0 0)
 				(effects
 					(font
@@ -943,46 +943,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "Earth_0_1"
+			(symbol "GND_0_1"
 				(polyline
 					(pts
-						(xy -0.635 -1.905) (xy 0.635 -1.905)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.127 -2.54) (xy 0.127 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy 0 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy -1.27 -1.27)
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -993,11 +957,11 @@
 					)
 				)
 			)
-			(symbol "Earth_1_1"
+			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
-					(name "Earth"
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1092,12 +1056,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2c9da8e4-2e9b-4337-802e-ac7336cdc14f")
-	)
-	(junction
-		(at 192.405 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "30dbc761-f494-4c7e-a779-a5aee42b064a")
 	)
 	(junction
 		(at 252.73 71.12)
@@ -1196,12 +1154,6 @@
 		(uuid "78563cff-7a15-4873-9fbb-fd58120def90")
 	)
 	(junction
-		(at 86.36 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7de1c405-bbcf-40b7-b44b-8f3067d8e7a5")
-	)
-	(junction
 		(at 195.58 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1274,6 +1226,12 @@
 		(uuid "b8394137-a1e8-401f-80c3-168d9495a2c3")
 	)
 	(junction
+		(at 191.77 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b84db5c8-4bfc-4b78-bb26-3986121d2246")
+	)
+	(junction
 		(at 119.38 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1292,12 +1250,6 @@
 		(uuid "c581b4da-55e4-4dcb-b967-4d12d464b44a")
 	)
 	(junction
-		(at 223.52 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c912c740-51e0-46f7-b732-09f5d8bc571a")
-	)
-	(junction
 		(at 100.33 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1308,12 +1260,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1f3306f-0209-4d90-9b09-cf06f48c4e82")
-	)
-	(junction
-		(at 92.71 156.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e6574250-9811-4b04-9e70-505904ff6248")
 	)
 	(junction
 		(at 66.04 66.04)
@@ -1338,12 +1284,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f94c9dc1-479f-4303-9301-f32dffb0838b")
-	)
-	(junction
-		(at 228.6 156.21)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fa04f903-fe18-4880-9ef6-8d1886c556e1")
 	)
 	(wire
 		(pts
@@ -1647,16 +1587,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 81.28) (xy 86.36 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2e0893fe-232d-41cc-ac9d-e3b420b17a75")
-	)
-	(wire
-		(pts
 			(xy 193.04 40.64) (xy 193.04 41.91)
 		)
 		(stroke
@@ -1757,16 +1687,6 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 78.74) (xy 220.98 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3ecb1d65-1fc8-455f-b1af-f7847e0b239c")
-	)
-	(wire
-		(pts
 			(xy 209.55 140.97) (xy 213.36 140.97)
 		)
 		(stroke
@@ -1847,16 +1767,6 @@
 	)
 	(wire
 		(pts
-			(xy 192.405 133.35) (xy 193.675 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45f7cc21-2242-4482-86db-e51014b91f64")
-	)
-	(wire
-		(pts
 			(xy 251.46 58.42) (xy 259.08 58.42)
 		)
 		(stroke
@@ -1897,6 +1807,16 @@
 	)
 	(wire
 		(pts
+			(xy 191.77 133.35) (xy 193.675 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d187a40-3c8e-4936-ad42-e51027162938")
+	)
+	(wire
+		(pts
 			(xy 74.93 133.35) (xy 77.47 133.35)
 		)
 		(stroke
@@ -1924,16 +1844,6 @@
 			(type default)
 		)
 		(uuid "5519bcfe-68e7-4c65-b818-b04170bc70eb")
-	)
-	(wire
-		(pts
-			(xy 226.06 153.67) (xy 226.06 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "561d55ee-d9e0-4828-9143-d6f87721e3ec")
 	)
 	(wire
 		(pts
@@ -1974,16 +1884,6 @@
 			(type default)
 		)
 		(uuid "5913e989-2574-49d0-a023-4e1cf1c2b463")
-	)
-	(wire
-		(pts
-			(xy 226.06 156.21) (xy 228.6 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "59194995-8943-4a21-b9f3-3391fc2c2d1c")
 	)
 	(wire
 		(pts
@@ -2117,7 +2017,7 @@
 	)
 	(wire
 		(pts
-			(xy 192.405 130.81) (xy 192.405 133.35)
+			(xy 191.77 130.81) (xy 191.77 133.35)
 		)
 		(stroke
 			(width 0)
@@ -2154,16 +2054,6 @@
 			(type default)
 		)
 		(uuid "70e47966-bb01-4346-842f-e8ebeb08fbd4")
-	)
-	(wire
-		(pts
-			(xy 220.98 81.28) (xy 223.52 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7126e6be-1b45-4605-8cd1-cfac652067b2")
 	)
 	(wire
 		(pts
@@ -2404,16 +2294,6 @@
 			(type default)
 		)
 		(uuid "a0aa9775-a2e1-4b9a-9b32-38fb3e03bad2")
-	)
-	(wire
-		(pts
-			(xy 83.82 78.74) (xy 83.82 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a3e9a170-4409-46c7-8c9a-5b5a7a1f928e")
 	)
 	(wire
 		(pts
@@ -2667,7 +2547,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.295 130.81) (xy 192.405 130.81)
+			(xy 201.295 130.81) (xy 191.77 130.81)
 		)
 		(stroke
 			(width 0)
@@ -2694,16 +2574,6 @@
 			(type default)
 		)
 		(uuid "c4d14493-fd2f-484c-a89b-5f40c532dabf")
-	)
-	(wire
-		(pts
-			(xy 90.17 156.21) (xy 92.71 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c72adb6f-abba-4a81-9d75-2648d650bf6e")
 	)
 	(wire
 		(pts
@@ -2947,16 +2817,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 153.67) (xy 90.17 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e86cfc95-e1e5-4cb3-9454-499db7d3e741")
-	)
-	(wire
-		(pts
 			(xy 213.36 143.51) (xy 210.82 143.51)
 		)
 		(stroke
@@ -3096,7 +2956,7 @@
 		(uuid "fcaef552-1cd0-4c2b-abb4-d0f7396402b1")
 	)
 	(rectangle
-		(start 17.78 99.06)
+		(start 17.78 97.79)
 		(end 144.78 163.83)
 		(stroke
 			(width 0)
@@ -3120,7 +2980,7 @@
 		(uuid 208c58e5-a531-4d3b-bd26-7d6c0c5e84c8)
 	)
 	(rectangle
-		(start 152.4 99.06)
+		(start 152.4 97.79)
 		(end 279.4 163.83)
 		(stroke
 			(width 0)
@@ -3154,7 +3014,7 @@
 		)
 		(uuid "114cbf6a-8612-4954-84e4-5064200363b1")
 	)
-	(text "MOTOR CONTROLLER"
+	(text "MOTOR CONTROLLER #1"
 		(exclude_from_sim no)
 		(at 20.32 25.4 0)
 		(effects
@@ -3197,7 +3057,7 @@
 	)
 	(text "HAPTIC FEEDBACK MOTOR CONTROLLER"
 		(exclude_from_sim no)
-		(at 154.94 106.68 0)
+		(at 154.686 105.664 0)
 		(effects
 			(font
 				(size 3 3)
@@ -3219,9 +3079,9 @@
 		)
 		(uuid "71127535-3c18-49fe-9eff-edc3743568a7")
 	)
-	(text "MOTOR CONTROLLER"
+	(text "MOTOR CONTROLLER #3"
 		(exclude_from_sim no)
-		(at 20.32 106.68 0)
+		(at 20.32 105.156 0)
 		(effects
 			(font
 				(size 3 3)
@@ -3232,7 +3092,7 @@
 		)
 		(uuid "73b04d2d-a85a-4ffb-8c6a-5082d1d682b2")
 	)
-	(text "MOTOR CONTROLLER"
+	(text "MOTOR CONTROLLER #2"
 		(exclude_from_sim no)
 		(at 154.94 25.4 0)
 		(effects
@@ -3923,17 +3783,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 223.52 81.28 0)
+		(lib_id "power:+5V")
+		(at 62.23 115.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "06044f7f-f98b-4814-bade-49430cf41b78")
-		(property "Reference" "#PWR085"
-			(at 223.52 87.63 0)
+		(uuid "02a350d9-ae2a-4ce3-935e-9abe82611a1e")
+		(property "Reference" "#PWR081"
+			(at 62.23 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3941,17 +3801,16 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 223.52 85.09 0)
+		(property "Value" "+5V"
+			(at 62.23 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 223.52 81.28 0)
+			(at 62.23 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3959,8 +3818,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 223.52 81.28 0)
+		(property "Datasheet" ""
+			(at 62.23 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3968,8 +3827,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 223.52 81.28 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 62.23 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3978,28 +3837,30 @@
 			)
 		)
 		(pin "1"
-			(uuid "709642dd-d12e-47f0-9ccd-8abe1d6b094b")
+			(uuid "1a8b2d28-2897-4eb6-9e69-2f13f7b0c048")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR085")
+					(reference "#PWR081")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
+		(lib_name "DRV8833PWP_1")
 		(lib_id "Driver_Motor:DRV8833PWP")
-		(at 92.71 135.89 0)
+		(at 223.52 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0b56343e-d5da-4824-9ad5-ec622c682a6f")
-		(property "Reference" "U9"
-			(at 97.79 151.13 0)
+		(fields_autoplaced yes)
+		(uuid "0eb56fd8-1eb6-42a2-a05d-d167f58439da")
+		(property "Reference" "U8"
+			(at 225.7141 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4008,7 +3869,7 @@
 			)
 		)
 		(property "Value" "DRV8833PWP"
-			(at 97.79 153.67 0)
+			(at 225.7141 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4017,7 +3878,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
-			(at 104.14 124.46 0)
+			(at 228.6 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4027,78 +3888,79 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
-			(at 88.9 121.92 0)
+			(at 228.6 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual H-Bridge Motor Driver, HTSSOP-16"
+			(at 223.52 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Description" ""
-			(at 92.71 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fb84d8d5-34b7-4504-bc90-8a168bd36d63")
-		)
-		(pin "10"
-			(uuid "c36c7660-c27b-406c-98f1-e01e28dcbb04")
-		)
-		(pin "11"
-			(uuid "744f39ca-e516-4ec5-b5a0-feb1d9a94e89")
-		)
-		(pin "12"
-			(uuid "d3df2035-1a1c-4e1c-9a04-64fa3e09eb96")
-		)
-		(pin "13"
-			(uuid "7b41c21e-5125-4d93-8d6c-60c4025803ee")
-		)
-		(pin "14"
-			(uuid "516b827a-b1aa-4c6d-b1e9-0cc0fad636ec")
-		)
-		(pin "15"
-			(uuid "ff38c164-a864-4552-8ba8-70500a2e5510")
-		)
-		(pin "16"
-			(uuid "d4eae606-34f2-4281-b209-0461d16b5f01")
-		)
-		(pin "17"
-			(uuid "6503d26b-2e83-4d80-98f9-bfa1cbfe616b")
-		)
-		(pin "2"
-			(uuid "76986add-bcad-4f06-a478-00b05dbf7d3d")
-		)
-		(pin "3"
-			(uuid "ef152305-f5de-4ef0-9782-2872217d923b")
-		)
-		(pin "4"
-			(uuid "b02e5ef5-7015-43e9-8a11-40408ce382ea")
-		)
-		(pin "5"
-			(uuid "deb5388b-bfdf-477b-83b2-41fe60c22e28")
-		)
-		(pin "6"
-			(uuid "d0a52ef8-cb0d-4b7a-8de6-9a60feae914c")
 		)
 		(pin "7"
-			(uuid "aa734e36-9df8-480d-ac05-82a491b98651")
+			(uuid "08623646-2dff-4d67-bfce-8d6d41f9c7c6")
 		)
-		(pin "8"
-			(uuid "8fdf2513-347f-4032-af3e-2d20a715c696")
+		(pin "13"
+			(uuid "9de3dd43-14a6-445f-9073-2cb3834fb680")
+		)
+		(pin "3"
+			(uuid "0dbe68b3-1e9e-492f-898d-8613dabd33cd")
+		)
+		(pin "15"
+			(uuid "ec1585df-7cb3-4e7d-9aaf-ebf1b1a40bce")
+		)
+		(pin "2"
+			(uuid "1223c548-e71d-49ad-9828-6f442f478fea")
+		)
+		(pin "5"
+			(uuid "4b6784fb-ec4e-476e-9844-b04f5a21683d")
+		)
+		(pin "16"
+			(uuid "61ba316c-259f-44fb-a8d9-57ba8bb4c3a1")
+		)
+		(pin "11"
+			(uuid "be1873ea-f669-4750-99f6-34b0bb9b2074")
+		)
+		(pin "1"
+			(uuid "5f7d39a8-4caf-43cf-a634-34626502b477")
+		)
+		(pin "12"
+			(uuid "d962ec2b-c6ab-459a-8fac-5337c8689572")
+		)
+		(pin "14"
+			(uuid "38f06be5-bd82-4bfb-aa04-313e18bdb81d")
+		)
+		(pin "6"
+			(uuid "52b9f2cd-a66f-4e58-9734-743ec9056eaf")
 		)
 		(pin "9"
-			(uuid "de347e82-5e0f-49de-b602-a126ed9af5ff")
+			(uuid "d66a1690-e6dc-4408-92ad-9da6e1634793")
+		)
+		(pin "4"
+			(uuid "00a31bbb-1af8-47f6-a938-eacaf4ee80e9")
+		)
+		(pin "8"
+			(uuid "ce4c92c4-00c4-43cf-9370-b60eece4584e")
+		)
+		(pin "10"
+			(uuid "fbc84d33-3663-4bae-b983-f28aee5fcf76")
+		)
+		(pin "17"
+			(uuid "5b78dee2-8c27-4001-8e12-83179b11abdb")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "U9")
+					(reference "U8")
 					(unit 1)
 				)
 			)
@@ -4113,7 +3975,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "12f771ed-1192-4f4f-a63d-4688f7436c64")
-		(property "Reference" "C32"
+		(property "Reference" "C35"
 			(at 106.68 44.45 0)
 			(effects
 				(font
@@ -4165,7 +4027,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C32")
+					(reference "C35")
 					(unit 1)
 				)
 			)
@@ -4180,7 +4042,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "13dc0a29-3309-4344-a984-6a733024195f")
-		(property "Reference" "C37"
+		(property "Reference" "C40"
 			(at 213.36 118.11 0)
 			(effects
 				(font
@@ -4232,7 +4094,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C37")
+					(reference "C40")
 					(unit 1)
 				)
 			)
@@ -4240,16 +4102,16 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 203.2 38.1 0)
+		(at 193.04 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "145db9ff-e7a2-4771-abbc-efbc9e634f81")
-		(property "Reference" "#PWR075"
-			(at 203.2 41.91 0)
+		(uuid "145fcf44-918a-4ff3-9f69-061b1aeb29d7")
+		(property "Reference" "#PWR070"
+			(at 193.04 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4258,7 +4120,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 203.2 33.02 0)
+			(at 193.04 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4266,7 +4128,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 203.2 38.1 0)
+			(at 193.04 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4275,7 +4137,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.2 38.1 0)
+			(at 193.04 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4283,8 +4145,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 203.2 38.1 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 193.04 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4293,56 +4155,29 @@
 			)
 		)
 		(pin "1"
-			(uuid "03ed6bb8-8ae6-4267-8353-2c0394505ce3")
+			(uuid "a4b7150d-bba6-4ba7-9013-efcd0a7aa39c")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR075")
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Driver_Motor:DRV8833PWP")
-		(at 223.52 60.96 0)
+		(lib_id "power:GND")
+		(at 215.9 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "14e552b7-2a5e-44b6-9fd6-98dd25feec4f")
-		(property "Reference" "U8"
-			(at 228.6 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "DRV8833PWP"
-			(at 228.6 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
-			(at 234.95 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
-			(at 219.71 46.99 0)
+		(fields_autoplaced yes)
+		(uuid "172ad2ff-bc1b-4f6a-a4ab-f3d98f0acd25")
+		(property "Reference" "#PWR071"
+			(at 215.9 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4350,8 +4185,35 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 223.52 60.96 0)
+		(property "Value" "GND"
+			(at 215.9 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 215.9 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.9 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 215.9 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4360,60 +4222,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b49d48c4-d8e3-436e-8c44-c0e4bf9e747b")
-		)
-		(pin "10"
-			(uuid "7625c0c5-dbf7-482c-a6a1-91cdc27ae54d")
-		)
-		(pin "11"
-			(uuid "42696fb2-82bb-4c4e-a609-06162d0e1597")
-		)
-		(pin "12"
-			(uuid "2569f4cb-7d96-4d0d-8ba3-4bcf05d3033b")
-		)
-		(pin "13"
-			(uuid "87c0ae19-8139-4d39-8c96-6cd460f25c32")
-		)
-		(pin "14"
-			(uuid "e8d4aecb-f22e-4e12-afa7-8be7b7d7eb17")
-		)
-		(pin "15"
-			(uuid "6da0ff6c-e8de-41d7-8193-6f413a72b637")
-		)
-		(pin "16"
-			(uuid "717bcc5b-8f20-47a5-b144-672bdbf2a041")
-		)
-		(pin "17"
-			(uuid "a422eb1c-4483-4c89-985b-dc0a9cc09ce4")
-		)
-		(pin "2"
-			(uuid "43db2711-6e41-4317-a185-a429c4ccd8b8")
-		)
-		(pin "3"
-			(uuid "ebbaa1a1-491d-4f85-869b-c7deca516b13")
-		)
-		(pin "4"
-			(uuid "39096a2e-2c6f-41ba-99fe-6502276499b8")
-		)
-		(pin "5"
-			(uuid "8c5f301e-6516-457a-991d-5f7a5127071d")
-		)
-		(pin "6"
-			(uuid "cd90a1a9-e00b-4daf-88bb-8f4c8b8a5055")
-		)
-		(pin "7"
-			(uuid "9f2ff2b7-3d83-45b9-89cf-b11ea3bf72bf")
-		)
-		(pin "8"
-			(uuid "15fd6439-55d2-4553-ba15-8b6778e44d1a")
-		)
-		(pin "9"
-			(uuid "c7d2f321-4fb5-44b1-a01a-248414e6432f")
+			(uuid "86e92d10-e6af-46e8-9a21-acb02ae48e2f")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "U8")
+					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -4428,7 +4242,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "19dd35bd-c981-4eda-837f-e00f70cdea52")
-		(property "Reference" "TP59"
+		(property "Reference" "TP39"
 			(at 121.92 148.59 0)
 			(effects
 				(font
@@ -4477,24 +4291,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP59")
+					(reference "TP39")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 243.84 124.46 0)
+		(lib_id "power:GND")
+		(at 238.76 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "1dd90e5e-63f7-4925-966a-da6eb733bfd9")
-		(property "Reference" "#PWR095"
-			(at 243.84 130.81 0)
+		(uuid "1a85f151-01b5-4241-b4fa-c6a1e5e1449d")
+		(property "Reference" "#PWR073"
+			(at 238.76 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4502,8 +4316,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 243.84 128.27 0)
+		(property "Value" "GND"
+			(at 238.76 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4512,73 +4326,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 243.84 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 243.84 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 243.84 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ec45d7fe-2aed-4861-9e95-7ce5ac0abf54")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR095")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 93.98 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "20605139-c587-4318-b91b-06b17fea7735")
-		(property "Reference" "#PWR072"
-			(at 93.98 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 93.98 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 35.56 0)
+			(at 238.76 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4587,7 +4335,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 93.98 35.56 0)
+			(at 238.76 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4595,8 +4343,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 93.98 35.56 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 238.76 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4605,12 +4353,146 @@
 			)
 		)
 		(pin "1"
-			(uuid "5549f81b-38c1-49be-a81c-41e2d0d0eb9c")
+			(uuid "6ed410f5-a1c4-42cf-ae57-5a7ff717c3d3")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR072")
+					(reference "#PWR073")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 48.26 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ca139f8-a0a8-4cd6-9704-8eee642d2715")
+		(property "Reference" "#PWR088"
+			(at 48.26 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 48.26 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 48.26 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4eb8ac7e-bde0-40fd-b649-f0edd9f90ee0")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR088")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 107.95 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "21030cb3-4b98-4732-ad75-509023c9a50a")
+		(property "Reference" "#PWR086"
+			(at 107.95 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 107.95 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 107.95 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cbaa43f9-8f74-406d-9c2e-130beb6648b3")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR086")
 					(unit 1)
 				)
 			)
@@ -4625,7 +4507,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "211db928-f196-46c9-815c-d70fd4852e23")
-		(property "Reference" "R56"
+		(property "Reference" "R49"
 			(at 66.04 120.65 0)
 			(effects
 				(font
@@ -4677,7 +4559,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R56")
+					(reference "R49")
 					(unit 1)
 				)
 			)
@@ -4692,7 +4574,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2215a1ec-e43d-4080-9856-f7498b73365b")
-		(property "Reference" "TP50"
+		(property "Reference" "TP30"
 			(at 182.88 123.19 0)
 			(effects
 				(font
@@ -4741,7 +4623,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP50")
+					(reference "TP30")
 					(unit 1)
 				)
 			)
@@ -4756,7 +4638,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "246d5f8b-7398-4a32-9eba-a1575ca3f702")
-		(property "Reference" "C33"
+		(property "Reference" "C36"
 			(at 243.84 44.45 0)
 			(effects
 				(font
@@ -4808,74 +4690,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:Earth")
-		(at 192.405 133.35 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "259a7dad-4fa4-451f-a83c-2fb465441fde")
-		(property "Reference" "#PWR097"
-			(at 192.405 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "Earth"
-			(at 192.405 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 192.405 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 192.405 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 192.405 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "04fd4928-8301-4c8e-a4f4-d0441fc86192")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR097")
+					(reference "C36")
 					(unit 1)
 				)
 			)
@@ -4890,7 +4705,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "28be7720-19b2-4372-aa6c-6a64f792ca2e")
-		(property "Reference" "TP37"
+		(property "Reference" "TP17"
 			(at 58.42 55.88 0)
 			(effects
 				(font
@@ -4939,73 +4754,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP37")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 236.22 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "28c3ca47-44d7-4dcc-accd-31248287307e")
-		(property "Reference" "#PWR088"
-			(at 236.22 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 236.22 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 236.22 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 236.22 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 236.22 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "354b31ac-314a-44fa-98f7-80039f92a966")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR088")
+					(reference "TP17")
 					(unit 1)
 				)
 			)
@@ -5020,7 +4769,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "28d62ddf-8f63-4e2f-b93d-d9facf29edf0")
-		(property "Reference" "TP42"
+		(property "Reference" "TP22"
 			(at 177.8 60.96 0)
 			(effects
 				(font
@@ -5069,7 +4818,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP42")
+					(reference "TP22")
 					(unit 1)
 				)
 			)
@@ -5084,7 +4833,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f344c64-0827-489f-a3e2-809f83adb406")
-		(property "Reference" "TP35"
+		(property "Reference" "TP15"
 			(at 39.37 48.26 0)
 			(effects
 				(font
@@ -5133,7 +4882,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP35")
+					(reference "TP15")
 					(unit 1)
 				)
 			)
@@ -5148,7 +4897,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f49659a-54e4-414f-9037-d999770cc3f4")
-		(property "Reference" "TP45"
+		(property "Reference" "TP25"
 			(at 115.57 66.04 0)
 			(effects
 				(font
@@ -5197,7 +4946,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP45")
+					(reference "TP25")
 					(unit 1)
 				)
 			)
@@ -5212,7 +4961,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3004a511-439a-4d3b-81ab-c57d3c5b51c9")
-		(property "Reference" "C34"
+		(property "Reference" "C37"
 			(at 91.44 107.95 90)
 			(effects
 				(font
@@ -5264,7 +5013,139 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C34")
+					(reference "C37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 66.04 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "30ba90bc-6a8b-4643-9c45-527b68f9dee2")
+		(property "Reference" "#PWR066"
+			(at 66.04 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 66.04 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "edad5121-0afd-4d89-8ba4-41c083ff5a93")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR066")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 196.85 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33d9bd8c-4f5d-48b9-bbef-91631d94b770")
+		(property "Reference" "#PWR085"
+			(at 196.85 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 196.85 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 196.85 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 196.85 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "40344f15-1f80-453d-876b-8ed903e591e5")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR085")
 					(unit 1)
 				)
 			)
@@ -5279,7 +5160,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37a16d22-60d5-4df6-82f5-4c49e6ff3501")
-		(property "Reference" "TP55"
+		(property "Reference" "TP35"
 			(at 184.15 135.89 0)
 			(effects
 				(font
@@ -5328,7 +5209,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP55")
+					(reference "TP35")
 					(unit 1)
 				)
 			)
@@ -5336,16 +5217,16 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 72.39 113.03 0)
+		(at 231.14 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "38323a12-f345-4a38-9d4c-b09a6815959b")
-		(property "Reference" "#PWR087"
-			(at 72.39 116.84 0)
+		(uuid "38241785-7b86-4f1c-a010-9ce321167093")
+		(property "Reference" "#PWR065"
+			(at 231.14 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5354,7 +5235,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 72.39 107.95 0)
+			(at 231.14 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5362,7 +5243,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 72.39 113.03 0)
+			(at 231.14 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5371,7 +5252,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 113.03 0)
+			(at 231.14 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5379,8 +5260,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 72.39 113.03 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 231.14 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5389,12 +5270,78 @@
 			)
 		)
 		(pin "1"
-			(uuid "d72d7421-d431-46af-9c88-34ca085bfdcd")
+			(uuid "84fd4ec0-ee60-4f4d-9bff-3ffbbcd75618")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR087")
+					(reference "#PWR065")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 100.33 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3aed19d7-d55e-4968-a159-07f96b6e468c")
+		(property "Reference" "#PWR078"
+			(at 100.33 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 100.33 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 100.33 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff9e9eb4-16fb-45e0-9039-42e53899c241")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR078")
 					(unit 1)
 				)
 			)
@@ -5409,7 +5356,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "484e0444-58b1-4f18-9165-649a6ecbc9f2")
-		(property "Reference" "TP48"
+		(property "Reference" "TP28"
 			(at 252.73 73.66 0)
 			(effects
 				(font
@@ -5458,24 +5405,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP48")
+					(reference "TP28")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 220.98 115.57 0)
+		(lib_id "power:GND")
+		(at 86.36 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "4e0145d4-b986-40cc-8376-ac75f8f80179")
-		(property "Reference" "#PWR092"
-			(at 220.98 121.92 0)
+		(uuid "4ac4fb6f-c2ce-48cd-9cdb-dd49d2406f24")
+		(property "Reference" "#PWR076"
+			(at 86.36 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5483,8 +5430,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 220.98 119.38 0)
+		(property "Value" "GND"
+			(at 86.36 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5493,7 +5440,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 220.98 115.57 0)
+			(at 86.36 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5501,8 +5448,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 220.98 115.57 0)
+		(property "Datasheet" ""
+			(at 86.36 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5510,8 +5457,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 220.98 115.57 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 86.36 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5520,12 +5467,79 @@
 			)
 		)
 		(pin "1"
-			(uuid "6b36187b-b767-4ea6-b632-364f8bc73c17")
+			(uuid "42ba45ac-eebb-4d3a-9d3c-89c707bb228d")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR092")
+					(reference "#PWR076")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 228.6 156.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4d18b013-4033-4dd0-be96-24b8cf25b8ed")
+		(property "Reference" "#PWR091"
+			(at 228.6 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 228.6 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 228.6 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "075ed2fd-32c4-4f06-b4fb-f6c8d19491bd")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR091")
 					(unit 1)
 				)
 			)
@@ -5540,7 +5554,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4fb2626f-a9c6-4f27-bc6d-282bb8ccb56a")
-		(property "Reference" "TP51"
+		(property "Reference" "TP31"
 			(at 63.5 130.81 0)
 			(effects
 				(font
@@ -5589,7 +5603,73 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP51")
+					(reference "TP31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 236.22 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "51580bfe-0dba-40f4-8681-07ee3af659aa")
+		(property "Reference" "#PWR080"
+			(at 236.22 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 236.22 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 236.22 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "587f1641-beb2-4ff5-a09d-144e43523ff6")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR080")
 					(unit 1)
 				)
 			)
@@ -5604,7 +5684,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5203507b-b19a-4d76-a051-7be949bffa47")
-		(property "Reference" "C29"
+		(property "Reference" "C32"
 			(at 222.25 33.02 90)
 			(effects
 				(font
@@ -5656,24 +5736,63 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C29")
+					(reference "C32")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 101.6 49.53 0)
+		(lib_name "DRV8833PWP_1")
+		(lib_id "Driver_Motor:DRV8833PWP")
+		(at 92.71 135.89 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "532be8f2-92d6-432a-b83c-c363c6ebca6f")
-		(property "Reference" "#PWR080"
-			(at 101.6 55.88 0)
+		(uuid "520a3a2a-c3bc-451b-b46d-0a8164402317")
+		(property "Reference" "U9"
+			(at 94.9041 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV8833PWP"
+			(at 94.9041 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
+			(at 97.79 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
+			(at 97.79 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual H-Bridge Motor Driver, HTSSOP-16"
+			(at 92.71 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5681,49 +5800,61 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 101.6 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
+		(pin "7"
+			(uuid "e4e021fc-c64f-419e-871d-f397093f7e0f")
 		)
-		(property "Footprint" ""
-			(at 101.6 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
+		(pin "13"
+			(uuid "8dfaafc5-db92-4ada-9d8b-525f48fab467")
 		)
-		(property "Datasheet" "~"
-			(at 101.6 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
+		(pin "3"
+			(uuid "b9708e02-36d8-4384-841d-b564a33669d4")
 		)
-		(property "Description" ""
-			(at 101.6 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
+		(pin "15"
+			(uuid "93372ca2-f7aa-45c3-b6f5-bbf3ff914077")
+		)
+		(pin "2"
+			(uuid "53bbd682-84cb-4d55-b0e1-11ba4dcf702f")
+		)
+		(pin "5"
+			(uuid "4afa69fb-cccd-4ffc-a23d-5d9d5187e7de")
+		)
+		(pin "16"
+			(uuid "6be8c915-b4ef-4308-b4ee-707ba241e429")
+		)
+		(pin "11"
+			(uuid "ec48f4c4-1fcf-4830-8ebc-64a7f32bdca2")
 		)
 		(pin "1"
-			(uuid "34ba6e3e-5b46-4f09-a676-d31fa585f775")
+			(uuid "189e4f5e-5b12-45be-ac0c-9cf17c7e2825")
+		)
+		(pin "12"
+			(uuid "3fab2ff3-65e9-4d13-b5ce-39e99b39fe8a")
+		)
+		(pin "14"
+			(uuid "74d42a94-8288-450a-b9be-e77daf0830e7")
+		)
+		(pin "6"
+			(uuid "19b7548a-1fbe-4d55-920d-cd9a97173421")
+		)
+		(pin "9"
+			(uuid "371bf7e2-bed6-498d-8068-a5e52d071a53")
+		)
+		(pin "4"
+			(uuid "b8a46379-546d-4f08-bfcf-40a4738b6162")
+		)
+		(pin "8"
+			(uuid "a34f76e0-7c5f-420c-b5f2-397b66795213")
+		)
+		(pin "10"
+			(uuid "f684f1f3-0ccf-47f7-847a-ad47cb2dd061")
+		)
+		(pin "17"
+			(uuid "972671d2-c9ff-4c71-80b6-93748f6ea6e7")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR080")
+					(reference "U9")
 					(unit 1)
 				)
 			)
@@ -5738,7 +5869,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5897f471-ad35-45f3-93f7-68d61159cae3")
-		(property "Reference" "R55"
+		(property "Reference" "R48"
 			(at 187.96 55.88 90)
 			(effects
 				(font
@@ -5790,74 +5921,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R55")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:Earth")
-		(at 215.9 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5904b4bd-4aa5-4cf7-b204-9793ef795b59")
-		(property "Reference" "#PWR079"
-			(at 215.9 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "Earth"
-			(at 215.9 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 215.9 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 215.9 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 215.9 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "58d1a4d8-fe41-4c0e-9082-7801eec6dafa")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR079")
+					(reference "R48")
 					(unit 1)
 				)
 			)
@@ -5872,7 +5936,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5f4a7f3f-1fe8-4f33-a122-5744c5ad57e0")
-		(property "Reference" "TP44"
+		(property "Reference" "TP24"
 			(at 177.8 68.58 0)
 			(effects
 				(font
@@ -5921,24 +5985,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP44")
+					(reference "TP24")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 231.14 35.56 0)
+		(lib_id "power:GND")
+		(at 45.72 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "69a1b6be-5288-4b94-8607-12a7702755d9")
-		(property "Reference" "#PWR073"
-			(at 231.14 39.37 0)
+		(uuid "5fbf98f7-dae3-4a81-9bd8-56c1e8d5c94d")
+		(property "Reference" "#PWR074"
+			(at 45.72 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5946,16 +6010,17 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
-			(at 231.14 30.48 0)
+		(property "Value" "GND"
+			(at 45.72 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 35.56 0)
+			(at 45.72 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5964,7 +6029,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 35.56 0)
+			(at 45.72 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5972,75 +6037,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 231.14 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "262ae120-e6a8-45e3-8385-c52729cadfa3")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR073")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:Earth")
-		(at 182.88 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6e2e91c7-74a4-49ba-ba7f-dfed891d4219")
-		(property "Reference" "#PWR083"
-			(at 182.88 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "Earth"
-			(at 182.88 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 182.88 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 182.88 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 182.88 58.42 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 45.72 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6049,29 +6047,29 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f86cab6-90af-49af-95b1-a96b44605067")
+			(uuid "d34edb2e-e2bc-4d28-a6b9-3d664409139d")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR083")
+					(reference "#PWR074")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 238.76 49.53 0)
+		(lib_id "power:GND")
+		(at 191.77 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "705a8136-6012-4ee8-a6c3-f01fce000579")
-		(property "Reference" "#PWR081"
-			(at 238.76 55.88 0)
+		(uuid "619f2e99-3b8c-439d-9f1f-e0cec254df20")
+		(property "Reference" "#PWR089"
+			(at 191.77 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6079,8 +6077,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 238.76 53.34 0)
+		(property "Value" "GND"
+			(at 191.77 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6089,73 +6087,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 238.76 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 238.76 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f89fc779-ecf6-4eb6-8597-7deca674297e")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR081")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 208.28 115.57 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "747497ca-fae4-447e-9420-fa03919def7e")
-		(property "Reference" "#PWR091"
-			(at 208.28 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 208.28 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 208.28 115.57 0)
+			(at 191.77 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6164,7 +6096,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 208.28 115.57 0)
+			(at 191.77 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6172,8 +6104,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 208.28 115.57 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 191.77 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6182,12 +6114,197 @@
 			)
 		)
 		(pin "1"
-			(uuid "34e50254-c4ec-460b-bf3d-c72279418cb3")
+			(uuid "17abcb3b-69a3-4ace-878e-b54d8fa4747d")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR091")
+					(reference "#PWR089")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "DRV8833PWP_1")
+		(lib_id "Driver_Motor:DRV8833PWP")
+		(at 86.36 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62d330f4-b2eb-477d-8561-714971b5334f")
+		(property "Reference" "U7"
+			(at 88.5541 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV8833PWP"
+			(at 88.5541 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
+			(at 91.44 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
+			(at 91.44 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual H-Bridge Motor Driver, HTSSOP-16"
+			(at 86.36 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "e9c691af-0558-4d06-b1fc-faa60f0cb8e7")
+		)
+		(pin "13"
+			(uuid "5dab9b08-a0a5-4ab5-931c-69b8b3d441c4")
+		)
+		(pin "3"
+			(uuid "96faf8b6-02ca-41d4-8fde-73f8bb46bc05")
+		)
+		(pin "15"
+			(uuid "560a1574-76d0-4d92-b7e9-4726cdda781a")
+		)
+		(pin "2"
+			(uuid "c3886013-9d4f-49dd-909b-3d0e62ba0c01")
+		)
+		(pin "5"
+			(uuid "fe7a0cd1-11ad-4744-b907-89cecb7463c6")
+		)
+		(pin "16"
+			(uuid "ea6d8aad-43ae-4dc0-a985-9285d154cd6b")
+		)
+		(pin "11"
+			(uuid "59070a4f-f4a7-4bd4-9d98-93ed1659aea4")
+		)
+		(pin "1"
+			(uuid "49b21205-fcd1-41f1-9459-431552fbe077")
+		)
+		(pin "12"
+			(uuid "5b18bf55-3ae5-46e1-8cd9-c1d253614639")
+		)
+		(pin "14"
+			(uuid "12989eca-4f32-43e0-917c-0ebfe51c0c98")
+		)
+		(pin "6"
+			(uuid "48d646d5-f8d1-4634-99f4-1bbaf2a51f53")
+		)
+		(pin "9"
+			(uuid "62f79d85-4510-4ce2-9834-386be7e30ddd")
+		)
+		(pin "4"
+			(uuid "280c69cc-25bd-4954-b5d4-323bbde1e152")
+		)
+		(pin "8"
+			(uuid "d8a0f169-56dc-4363-a28b-c3574f6a5013")
+		)
+		(pin "10"
+			(uuid "32c1ebbb-1d35-42d7-9c89-7440bbeb83c9")
+		)
+		(pin "17"
+			(uuid "281681b0-91e0-4a42-81d0-8061c2ca48ad")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "U7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 78.74 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6c11c671-ed50-40ff-bebb-b2dee125fc6b")
+		(property "Reference" "#PWR069"
+			(at 78.74 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 78.74 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 78.74 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ad3a2180-0e6c-4f8a-838c-f581b62c48bc")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -6202,7 +6319,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7516d3bf-b57b-4344-b487-4c4db2ad1361")
-		(property "Reference" "R57"
+		(property "Reference" "R50"
 			(at 200.66 121.92 0)
 			(effects
 				(font
@@ -6254,7 +6371,74 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R57")
+					(reference "R50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 92.71 156.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75b92c48-0ba3-4a0b-966d-0f19f5f7157f")
+		(property "Reference" "#PWR090"
+			(at 92.71 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 92.71 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.71 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 92.71 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "13c9a724-f1ca-4776-bf58-6be207c2d1ea")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR090")
 					(unit 1)
 				)
 			)
@@ -6269,7 +6453,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7765947d-e5dc-4fd9-9d41-83387d36890f")
-		(property "Reference" "TP38"
+		(property "Reference" "TP18"
 			(at 114.3 55.88 0)
 			(effects
 				(font
@@ -6318,139 +6502,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP38")
+					(reference "TP18")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Driver_Motor:DRV8833PWP")
-		(at 86.36 60.96 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "78699816-5a37-4fa3-b6b6-4a72708fdb84")
-		(property "Reference" "U7"
-			(at 91.44 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "DRV8833PWP"
-			(at 91.44 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
-			(at 97.79 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
-			(at 82.55 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 86.36 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "118e0d56-9a56-45ea-9761-ed4d04a1032d")
-		)
-		(pin "10"
-			(uuid "582ba467-7f85-4264-b207-ee8e2e8ce3e4")
-		)
-		(pin "11"
-			(uuid "4c1d4f5b-d0fd-4c3f-98b7-6e9f99525d4f")
-		)
-		(pin "12"
-			(uuid "20699f14-3848-4cd3-94a1-be511dc21144")
-		)
-		(pin "13"
-			(uuid "4e0f7305-46d5-4dba-bc7e-3908cfb49da3")
-		)
-		(pin "14"
-			(uuid "b7ff88cb-3cc0-4cd6-a1a7-d8332c48a977")
-		)
-		(pin "15"
-			(uuid "189149ad-f498-45a6-984e-bdb783341717")
-		)
-		(pin "16"
-			(uuid "01645fb1-90fd-4dc0-9acc-83b390aeb79a")
-		)
-		(pin "17"
-			(uuid "040f6a01-6a1e-47c8-9b1c-4c95be9b44fd")
-		)
-		(pin "2"
-			(uuid "7537de16-d6de-4674-9ceb-03aa6f49cad8")
-		)
-		(pin "3"
-			(uuid "82cb67a3-5d8d-4361-9b02-4d14addc851a")
-		)
-		(pin "4"
-			(uuid "5cf62876-ae69-4c36-9cad-ad687c094391")
-		)
-		(pin "5"
-			(uuid "c3db403d-5934-4c1e-a84a-b9b04fdb72f7")
-		)
-		(pin "6"
-			(uuid "8f978e78-eef5-4b3c-9fea-8e090288c5e1")
-		)
-		(pin "7"
-			(uuid "61d250fb-e83f-4f15-94c6-6a5554455f68")
-		)
-		(pin "8"
-			(uuid "caf42d9e-9cba-4633-8b5d-9f89a363b8b5")
-		)
-		(pin "9"
-			(uuid "67cba327-b3dd-4ca3-b527-883b0eede948")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "U7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:Earth")
-		(at 92.71 156.21 0)
+		(lib_id "power:+5V")
+		(at 72.39 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "7ad430f2-b26d-4692-a76d-8b0a891ca5c0")
-		(property "Reference" "#PWR098"
-			(at 92.71 162.56 0)
+		(uuid "78cdcf52-f42a-486d-91a9-334d46bb6683")
+		(property "Reference" "#PWR079"
+			(at 72.39 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6458,17 +6527,16 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 92.71 160.02 0)
+		(property "Value" "+5V"
+			(at 72.39 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 156.21 0)
+			(at 72.39 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6476,8 +6544,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 92.71 156.21 0)
+		(property "Datasheet" ""
+			(at 72.39 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6485,8 +6553,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 92.71 156.21 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 72.39 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6495,12 +6563,144 @@
 			)
 		)
 		(pin "1"
-			(uuid "daae0e04-12d7-4e0e-89ff-4f2ca66edd45")
+			(uuid "40467736-6063-46b2-ab6c-040d2c6f6da4")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR098")
+					(reference "#PWR079")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 208.28 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7a01d5b5-5ac8-4fed-8cf3-7ac9e65176ed")
+		(property "Reference" "#PWR083"
+			(at 208.28 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 208.28 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 208.28 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8005103e-56c2-4f61-a491-eceb35ca359f")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR083")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 93.98 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7b7646a2-6dc1-42a3-b8e6-4ba7c67e8285")
+		(property "Reference" "#PWR064"
+			(at 93.98 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 93.98 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 93.98 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8cd1e89f-4a37-4d58-8d2b-9420fb3107e0")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -6515,7 +6715,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8233dbd2-9974-4635-93ce-2f92fb4b9797")
-		(property "Reference" "TP47"
+		(property "Reference" "TP27"
 			(at 115.57 73.66 0)
 			(effects
 				(font
@@ -6564,24 +6764,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP47")
+					(reference "TP27")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 45.72 58.42 0)
+		(lib_id "power:GND")
+		(at 182.88 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8553edb8-6e14-4f50-8572-e6fe97e1d991")
-		(property "Reference" "#PWR082"
-			(at 45.72 64.77 0)
+		(uuid "845da1d9-e6c5-4e10-9c95-cd7963c79840")
+		(property "Reference" "#PWR075"
+			(at 182.88 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6589,8 +6789,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 45.72 62.23 0)
+		(property "Value" "GND"
+			(at 182.88 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6599,7 +6799,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 45.72 58.42 0)
+			(at 182.88 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6607,8 +6807,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 45.72 58.42 0)
+		(property "Datasheet" ""
+			(at 182.88 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6616,8 +6816,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 45.72 58.42 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 182.88 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6626,12 +6826,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "fe311f8c-5dfe-4a0b-8378-3c8ce83307e8")
+			(uuid "f827190e-986b-4b72-9d90-d475ed5f3661")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR082")
+					(reference "#PWR075")
 					(unit 1)
 				)
 			)
@@ -6646,7 +6846,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8560f6f7-794f-4e0a-a368-7d8aec0e8f0c")
-		(property "Reference" "C30"
+		(property "Reference" "C33"
 			(at 71.12 43.18 0)
 			(effects
 				(font
@@ -6698,24 +6898,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C30")
+					(reference "C33")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 107.95 124.46 0)
+		(lib_id "power:+5V")
+		(at 55.88 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8c86bac9-9ed3-45cf-bd4f-5ecbb4bec90f")
-		(property "Reference" "#PWR094"
-			(at 107.95 130.81 0)
+		(uuid "865c1a99-c2c9-4108-a5c0-1c2e0ab042bb")
+		(property "Reference" "#PWR068"
+			(at 55.88 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6723,17 +6923,16 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 107.95 128.27 0)
+		(property "Value" "+5V"
+			(at 55.88 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 107.95 124.46 0)
+			(at 55.88 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6741,8 +6940,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 107.95 124.46 0)
+		(property "Datasheet" ""
+			(at 55.88 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6750,8 +6949,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 107.95 124.46 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 55.88 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6760,12 +6959,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "88b33a1b-9d81-437b-9a92-7a549fb699dc")
+			(uuid "51bad7fb-a149-4c46-804c-f3dfa5e051df")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR094")
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -6780,7 +6979,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f3f4828-d9c0-4019-a407-a6394bdd3dce")
-		(property "Reference" "TP58"
+		(property "Reference" "TP38"
 			(at 121.92 140.97 0)
 			(effects
 				(font
@@ -6829,7 +7028,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP58")
+					(reference "TP38")
 					(unit 1)
 				)
 			)
@@ -6844,7 +7043,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8fb20bfd-f94f-49bf-9efb-8f0c842076ce")
-		(property "Reference" "TP40"
+		(property "Reference" "TP20"
 			(at 251.46 55.88 0)
 			(effects
 				(font
@@ -6893,74 +7092,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP40")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:Earth")
-		(at 85.09 115.57 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9053b738-411f-476c-92be-2a904e3c1a43")
-		(property "Reference" "#PWR090"
-			(at 85.09 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "Earth"
-			(at 85.09 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 85.09 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 85.09 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 85.09 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fada8c30-53f4-477f-9716-922ed2f98bd6")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR090")
+					(reference "TP20")
 					(unit 1)
 				)
 			)
@@ -6975,7 +7107,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "90a3973c-2f73-4dff-a4cf-fc77a4b69e50")
-		(property "Reference" "TP56"
+		(property "Reference" "TP36"
 			(at 43.18 143.51 0)
 			(effects
 				(font
@@ -7024,7 +7156,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP56")
+					(reference "TP36")
 					(unit 1)
 				)
 			)
@@ -7039,7 +7171,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "960a4bb1-7d7c-4b40-a053-05cd06576008")
-		(property "Reference" "C35"
+		(property "Reference" "C38"
 			(at 227.33 109.22 90)
 			(effects
 				(font
@@ -7091,7 +7223,125 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C35")
+					(reference "C38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "DRV8833PWP_1")
+		(lib_id "Driver_Motor:DRV8833PWP")
+		(at 228.6 135.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "973cd38a-bf00-423e-9c58-58de71280e78")
+		(property "Reference" "U10"
+			(at 230.7941 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DRV8833PWP"
+			(at 230.7941 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
+			(at 233.68 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
+			(at 233.68 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual H-Bridge Motor Driver, HTSSOP-16"
+			(at 228.6 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "09322390-f52c-4870-a0f7-8756a6a537ae")
+		)
+		(pin "13"
+			(uuid "e4d0cdef-1b05-4cb1-99aa-70ab95ffbca2")
+		)
+		(pin "3"
+			(uuid "34c8086d-41c6-4b08-8323-c30d5caedf90")
+		)
+		(pin "15"
+			(uuid "92b5fa8e-c8c0-44a7-bbd8-9b36f74b824d")
+		)
+		(pin "2"
+			(uuid "78801b04-cb27-4384-a69a-07092e697ed3")
+		)
+		(pin "5"
+			(uuid "0fd06795-3d74-45e8-ac1b-4bf58f9baab7")
+		)
+		(pin "16"
+			(uuid "2d158e87-5ba8-4bb2-bd47-ef31e233badd")
+		)
+		(pin "11"
+			(uuid "59c449a4-e350-4834-b820-583cc75b955c")
+		)
+		(pin "1"
+			(uuid "fcacffcb-dd1c-462b-a72a-360f5fa424b8")
+		)
+		(pin "12"
+			(uuid "b5c41020-af2d-4dda-af23-dbe09167c4a3")
+		)
+		(pin "14"
+			(uuid "3543e13f-1cc9-48bf-8fe4-bdd8ab6b4779")
+		)
+		(pin "6"
+			(uuid "92eaeffc-1760-46e2-bc62-66e30e66ef43")
+		)
+		(pin "9"
+			(uuid "4935b0fe-27a8-44cd-beea-1fcaccb42fea")
+		)
+		(pin "4"
+			(uuid "bd29c214-c65d-45e2-8aa2-49f9dd4f5a1c")
+		)
+		(pin "8"
+			(uuid "f5c14ed6-2244-4d87-a211-978c41d22019")
+		)
+		(pin "10"
+			(uuid "dcfcc727-2c28-4e84-94f5-cf2ec5383c29")
+		)
+		(pin "17"
+			(uuid "7bdd7a8b-781c-4b77-ab17-5815d93a9d9d")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -7099,16 +7349,16 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 193.04 40.64 0)
+		(at 203.2 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "98f5d7fe-203f-4132-bbe2-4e4d45139e7d")
-		(property "Reference" "#PWR078"
-			(at 193.04 44.45 0)
+		(uuid "9befc0cc-2eca-469b-9016-7442da87a3d5")
+		(property "Reference" "#PWR067"
+			(at 203.2 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7117,7 +7367,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 193.04 35.56 0)
+			(at 203.2 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7125,7 +7375,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 40.64 0)
+			(at 203.2 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7134,7 +7384,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 40.64 0)
+			(at 203.2 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7142,8 +7392,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 193.04 40.64 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 203.2 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7152,12 +7402,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "f3244ae0-2e18-410b-8b34-3c2ab3a32885")
+			(uuid "017f5caf-45b9-458b-b1aa-05e3f016b571")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR078")
+					(reference "#PWR067")
 					(unit 1)
 				)
 			)
@@ -7172,7 +7422,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a3b277b4-cb1a-4ef9-96db-56a94d72d6fe")
-		(property "Reference" "C36"
+		(property "Reference" "C39"
 			(at 77.47 118.11 0)
 			(effects
 				(font
@@ -7224,24 +7474,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C36")
+					(reference "C39")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 48.26 133.35 0)
+		(lib_id "power:GND")
+		(at 243.84 124.46 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "a67bae74-cb3c-4e16-aa40-f269c3888a03")
-		(property "Reference" "#PWR096"
-			(at 48.26 139.7 0)
+		(uuid "a68c37a2-d884-4e4a-b321-d34e11d438f0")
+		(property "Reference" "#PWR087"
+			(at 243.84 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7249,8 +7499,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 48.26 137.16 0)
+		(property "Value" "GND"
+			(at 243.84 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7259,7 +7509,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 48.26 133.35 0)
+			(at 243.84 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7267,8 +7517,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 48.26 133.35 0)
+		(property "Datasheet" ""
+			(at 243.84 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7276,8 +7526,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 48.26 133.35 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 243.84 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7286,12 +7536,79 @@
 			)
 		)
 		(pin "1"
-			(uuid "82a13b60-f85d-4215-a5b8-2d5419fc309b")
+			(uuid "d08b7ad0-6b3b-4b51-a1ea-24b6618f4b48")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR096")
+					(reference "#PWR087")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 101.6 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ad0d2f41-4ca5-4421-93a8-108dc816e940")
+		(property "Reference" "#PWR072"
+			(at 101.6 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 101.6 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 101.6 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e02d2b0b-8ce2-4a2c-90c1-742b519da653")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR072")
 					(unit 1)
 				)
 			)
@@ -7306,7 +7623,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "afed639e-0779-43ea-af48-9ad227524dce")
-		(property "Reference" "R54"
+		(property "Reference" "R47"
 			(at 50.8 55.88 90)
 			(effects
 				(font
@@ -7358,7 +7675,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R54")
+					(reference "R47")
 					(unit 1)
 				)
 			)
@@ -7373,7 +7690,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b3180816-db3f-41f5-912b-3c1d5d688af6")
-		(property "Reference" "TP52"
+		(property "Reference" "TP32"
 			(at 119.38 130.81 0)
 			(effects
 				(font
@@ -7422,139 +7739,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP52")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 66.04 38.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b64005d5-d691-4265-a6b5-ef241711bae9")
-		(property "Reference" "#PWR074"
-			(at 66.04 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 66.04 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 66.04 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2e1df8c5-6253-49ac-b040-c824fffcf6f3")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR074")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 196.85 116.84 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b8615573-666f-4676-a1af-c07cedbe1d45")
-		(property "Reference" "#PWR093"
-			(at 196.85 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 196.85 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 196.85 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 196.85 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 196.85 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d88ad701-ad91-4954-a714-0c492d395383")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR093")
+					(reference "TP32")
 					(unit 1)
 				)
 			)
@@ -7569,7 +7754,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ba4e0623-c478-444c-8b0a-f3339f71280d")
-		(property "Reference" "TP53"
+		(property "Reference" "TP33"
 			(at 250.19 130.81 0)
 			(effects
 				(font
@@ -7618,140 +7803,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP53")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 100.33 110.49 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bde87889-ab4b-415e-9586-f7e9763603e2")
-		(property "Reference" "#PWR086"
-			(at 100.33 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 100.33 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 100.33 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "14a4583e-55cf-4775-8ddb-6c2a0407579e")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR086")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:Earth")
-		(at 78.74 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "be2ecafd-a309-44c3-a23d-21e300d88da2")
-		(property "Reference" "#PWR077"
-			(at 78.74 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "Earth"
-			(at 78.74 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 78.74 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 78.74 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7bbb46d5-de74-4ec3-b1e6-80d8f1b37bcf")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR077")
+					(reference "TP33")
 					(unit 1)
 				)
 			)
@@ -7766,7 +7818,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "be81eb60-f402-47f8-b2f4-f863108d60d1")
-		(property "Reference" "TP39"
+		(property "Reference" "TP19"
 			(at 195.58 55.88 0)
 			(effects
 				(font
@@ -7815,7 +7867,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP39")
+					(reference "TP19")
 					(unit 1)
 				)
 			)
@@ -7830,7 +7882,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c055d216-c7cf-4e47-a2f5-024053fdac2a")
-		(property "Reference" "TP60"
+		(property "Reference" "TP40"
 			(at 189.23 143.51 0)
 			(effects
 				(font
@@ -7879,7 +7931,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP60")
+					(reference "TP40")
 					(unit 1)
 				)
 			)
@@ -7894,7 +7946,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c09680c2-479d-4426-bb44-573e92e6b7cc")
-		(property "Reference" "TP49"
+		(property "Reference" "TP29"
 			(at 43.18 123.19 0)
 			(effects
 				(font
@@ -7943,7 +7995,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP49")
+					(reference "TP29")
 					(unit 1)
 				)
 			)
@@ -7958,7 +8010,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c157a944-943d-4b36-8e67-dabe85bfcb70")
-		(property "Reference" "TP43"
+		(property "Reference" "TP23"
 			(at 43.18 68.58 0)
 			(effects
 				(font
@@ -8007,7 +8059,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP43")
+					(reference "TP23")
 					(unit 1)
 				)
 			)
@@ -8022,7 +8074,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c15cf6da-e713-4b37-85ea-f0113f50eca6")
-		(property "Reference" "TP54"
+		(property "Reference" "TP34"
 			(at 43.18 135.89 0)
 			(effects
 				(font
@@ -8071,7 +8123,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP54")
+					(reference "TP34")
 					(unit 1)
 				)
 			)
@@ -8086,7 +8138,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c23ab700-8fcc-4362-b447-1ed5ada817d8")
-		(property "Reference" "TP36"
+		(property "Reference" "TP16"
 			(at 175.26 48.26 0)
 			(effects
 				(font
@@ -8135,7 +8187,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP36")
+					(reference "TP16")
 					(unit 1)
 				)
 			)
@@ -8150,7 +8202,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ce14aa8c-d460-41b2-8f3b-76a6b2e4e659")
-		(property "Reference" "R52"
+		(property "Reference" "R45"
 			(at 59.69 45.72 0)
 			(effects
 				(font
@@ -8202,7 +8254,74 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R52")
+					(reference "R45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 85.09 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d0b7c15a-f12e-4ba8-b933-8b2600e58bb2")
+		(property "Reference" "#PWR082"
+			(at 85.09 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 85.09 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 85.09 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9bb07414-3358-424f-9238-945152455462")
+		)
+		(instances
+			(project "OpenHand_v2"
+				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
+					(reference "#PWR082")
 					(unit 1)
 				)
 			)
@@ -8217,7 +8336,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d17b5b0b-8dda-4265-935b-0239880f0a03")
-		(property "Reference" "TP61"
+		(property "Reference" "TP41"
 			(at 191.77 147.32 0)
 			(effects
 				(font
@@ -8266,7 +8385,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP61")
+					(reference "TP41")
 					(unit 1)
 				)
 			)
@@ -8281,7 +8400,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d28fcbb2-99ba-4054-9c11-124141b9e210")
-		(property "Reference" "R59"
+		(property "Reference" "R52"
 			(at 54.61 130.81 90)
 			(effects
 				(font
@@ -8333,7 +8452,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R59")
+					(reference "R52")
 					(unit 1)
 				)
 			)
@@ -8348,7 +8467,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d42775ee-dcdc-42df-be9b-66be6a042095")
-		(property "Reference" "TP57"
+		(property "Reference" "TP37"
 			(at 186.69 139.7 0)
 			(effects
 				(font
@@ -8397,7 +8516,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP57")
+					(reference "TP37")
 					(unit 1)
 				)
 			)
@@ -8412,7 +8531,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d455ef75-38ba-44ee-9ee7-bcc4f47a8211")
-		(property "Reference" "C28"
+		(property "Reference" "C31"
 			(at 85.09 33.02 90)
 			(effects
 				(font
@@ -8464,7 +8583,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C28")
+					(reference "C31")
 					(unit 1)
 				)
 			)
@@ -8479,7 +8598,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d795940d-a258-42e8-abdb-bff2e61f10c4")
-		(property "Reference" "TP46"
+		(property "Reference" "TP26"
 			(at 252.73 66.04 0)
 			(effects
 				(font
@@ -8528,7 +8647,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP46")
+					(reference "TP26")
 					(unit 1)
 				)
 			)
@@ -8543,7 +8662,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "da51e0ca-4792-4d97-a024-306278693dbb")
-		(property "Reference" "C31"
+		(property "Reference" "C34"
 			(at 208.28 43.18 0)
 			(effects
 				(font
@@ -8595,24 +8714,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C31")
+					(reference "C34")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 86.36 81.28 0)
+		(lib_id "power:GND")
+		(at 220.98 115.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "db1df2f2-ba2f-4583-b63b-3cb5e83faa63")
+		(uuid "dd2cc770-04b1-41b8-9f7d-70f2a5643ad8")
 		(property "Reference" "#PWR084"
-			(at 86.36 87.63 0)
+			(at 220.98 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8620,8 +8739,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "Earth"
-			(at 86.36 85.09 0)
+		(property "Value" "GND"
+			(at 220.98 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8630,73 +8749,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 86.36 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 86.36 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "44a410e5-a8fa-4696-949b-babf6dbd685e")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR084")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 55.88 40.64 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e0fe8b80-a200-4288-8afc-6319848d9b09")
-		(property "Reference" "#PWR076"
-			(at 55.88 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 55.88 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 40.64 0)
+			(at 220.98 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8705,7 +8758,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 40.64 0)
+			(at 220.98 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8713,75 +8766,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 55.88 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4c6ddbed-2b6e-4419-b5a6-03ed9dc99d1a")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR076")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:Earth")
-		(at 228.6 156.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e3137021-fe73-4717-ba48-8f719a4ee907")
-		(property "Reference" "#PWR099"
-			(at 228.6 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "Earth"
-			(at 228.6 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 228.6 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 228.6 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 228.6 156.21 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 220.98 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8790,127 +8776,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "3fdd6a18-b796-45e9-a7d1-6862c120ac3f")
+			(uuid "37db0fd6-b96f-4ab1-ab60-1c88f92b79cc")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR099")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Driver_Motor:DRV8833PWP")
-		(at 228.6 135.89 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e32a50f5-9577-4ad8-937f-ae82954f5f94")
-		(property "Reference" "U10"
-			(at 233.68 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "DRV8833PWP"
-			(at 233.68 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_ThermalVias"
-			(at 240.03 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
-			(at 224.79 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 228.6 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "02ab8d6d-f6d2-4783-9b9e-6326c69f3521")
-		)
-		(pin "10"
-			(uuid "2ca0c51c-b9a4-4055-8532-71a17f492e05")
-		)
-		(pin "11"
-			(uuid "129ca53c-7483-417e-96ca-de35df30a1a1")
-		)
-		(pin "12"
-			(uuid "db8d656b-d287-4dc8-9e85-c35dc196acee")
-		)
-		(pin "13"
-			(uuid "ab84702e-6c29-494c-9e64-b475688b2074")
-		)
-		(pin "14"
-			(uuid "d816566b-811b-467b-8cab-b1b414bdadf7")
-		)
-		(pin "15"
-			(uuid "1c0152f2-b134-4a15-9ff3-3fbb15688b16")
-		)
-		(pin "16"
-			(uuid "d223fc91-c70a-48c6-b39e-a458df793a32")
-		)
-		(pin "17"
-			(uuid "54ce3eaa-cbea-49d5-a449-4767ed843140")
-		)
-		(pin "2"
-			(uuid "38363e17-24d5-4847-baaa-cf57479a04f4")
-		)
-		(pin "3"
-			(uuid "cbf7cb8c-09fb-4d86-b15f-23aad40d40a3")
-		)
-		(pin "4"
-			(uuid "b7e9e706-d114-4f67-ab69-5f0cd113f821")
-		)
-		(pin "5"
-			(uuid "275160d7-e253-491b-a9d8-61856af995f5")
-		)
-		(pin "6"
-			(uuid "0ce2322d-204c-467f-9c13-a52fb7ab758a")
-		)
-		(pin "7"
-			(uuid "4c19830a-30ff-4556-9d7b-5410766a2ee7")
-		)
-		(pin "8"
-			(uuid "652169be-5823-4d87-a0d3-31ae70eebac3")
-		)
-		(pin "9"
-			(uuid "64247f11-3828-40bc-8a06-e8b6cadd31e2")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "U10")
+					(reference "#PWR084")
 					(unit 1)
 				)
 			)
@@ -8925,7 +8796,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e5659956-486b-4a66-ad02-cdc83eb85f2b")
-		(property "Reference" "C38"
+		(property "Reference" "C41"
 			(at 113.03 119.38 0)
 			(effects
 				(font
@@ -8977,7 +8848,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C38")
+					(reference "C41")
 					(unit 1)
 				)
 			)
@@ -8992,7 +8863,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e5e08dfd-c1a4-4cf8-af1a-51cbe7d22efd")
-		(property "Reference" "TP41"
+		(property "Reference" "TP21"
 			(at 43.18 60.96 0)
 			(effects
 				(font
@@ -9041,7 +8912,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP41")
+					(reference "TP21")
 					(unit 1)
 				)
 			)
@@ -9056,7 +8927,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ebcc8a73-8267-426e-8195-a8bf3f302ec1")
-		(property "Reference" "R60"
+		(property "Reference" "R53"
 			(at 197.485 135.89 90)
 			(effects
 				(font
@@ -9108,7 +8979,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R60")
+					(reference "R53")
 					(unit 1)
 				)
 			)
@@ -9123,7 +8994,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ed099348-f88d-4728-ad48-22d01ed79569")
-		(property "Reference" "C39"
+		(property "Reference" "C42"
 			(at 248.92 119.38 0)
 			(effects
 				(font
@@ -9175,24 +9046,24 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "C39")
+					(reference "C42")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 62.23 115.57 0)
+		(lib_id "power:GND")
+		(at 223.52 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f4e3e52f-be51-4e10-8e15-11b262225b23")
-		(property "Reference" "#PWR089"
-			(at 62.23 119.38 0)
+		(uuid "f6df1793-5175-4633-a5b0-9b8aab8b3ec7")
+		(property "Reference" "#PWR077"
+			(at 223.52 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9200,16 +9071,17 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
-			(at 62.23 110.49 0)
+		(property "Value" "GND"
+			(at 223.52 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 62.23 115.57 0)
+			(at 223.52 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9218,7 +9090,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 115.57 0)
+			(at 223.52 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9226,8 +9098,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 62.23 115.57 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 223.52 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9236,12 +9108,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "3f8aca19-701d-4912-bdde-850ebeef98ca")
+			(uuid "74cb205f-9151-492d-aa02-c6bb20858485")
 		)
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR089")
+					(reference "#PWR077")
 					(unit 1)
 				)
 			)
@@ -9256,7 +9128,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fa23cf26-9f46-49cc-b54b-5917cee995aa")
-		(property "Reference" "R53"
+		(property "Reference" "R46"
 			(at 196.85 45.72 0)
 			(effects
 				(font
@@ -9308,7 +9180,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R53")
+					(reference "R46")
 					(unit 1)
 				)
 			)
@@ -9323,7 +9195,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fca48c4a-d6e7-451f-a527-d687d07c71a1")
-		(property "Reference" "R58"
+		(property "Reference" "R51"
 			(at 205.105 128.27 90)
 			(effects
 				(font
@@ -9375,7 +9247,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "R58")
+					(reference "R51")
 					(unit 1)
 				)
 			)
