@@ -992,40 +992,16 @@
 		(uuid "061d191e-79ce-4a61-a5f0-5f3aa536505c")
 	)
 	(junction
-		(at 115.57 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0834fe39-1af6-4d38-a8a2-27af22afc695")
-	)
-	(junction
-		(at 115.57 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1287b85e-7842-4a64-8614-bfa89b6d241f")
-	)
-	(junction
 		(at 205.74 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "16149781-8735-4b8b-8307-157469f40db9")
 	)
 	(junction
-		(at 251.46 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1616ccd9-697b-456a-8f64-dceb07b611c9")
-	)
-	(junction
 		(at 93.98 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1c6e1058-db24-44ac-91bc-8e05a7a60d38")
-	)
-	(junction
-		(at 191.77 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1f96467e-93f2-4640-8c26-d5452969b8b3")
 	)
 	(junction
 		(at 175.26 50.8)
@@ -1058,12 +1034,6 @@
 		(uuid "2c9da8e4-2e9b-4337-802e-ac7336cdc14f")
 	)
 	(junction
-		(at 252.73 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3242ae6c-6edb-4db2-a6ee-058b18f0dabb")
-	)
-	(junction
 		(at 74.93 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1076,46 +1046,10 @@
 		(uuid "35df78b5-b2ac-4669-a9f1-69d529818a0b")
 	)
 	(junction
-		(at 114.3 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "364e1b61-ab66-4067-9e48-f7d39c8d23d9")
-	)
-	(junction
-		(at 121.92 143.51)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3bd49dbb-4d1d-45f5-bdb9-07271151188a")
-	)
-	(junction
 		(at 205.74 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "40663241-38d1-48ca-b91b-c6152f6fd73d")
-	)
-	(junction
-		(at 121.92 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "45aa2771-3213-4403-8f89-b0f4a9017ecf")
-	)
-	(junction
-		(at 184.15 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4a8acdb7-9882-4ce4-bd99-a715979ad9d3")
-	)
-	(junction
-		(at 250.19 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4d41fcbc-9fad-40b7-be1e-5a348542c731")
-	)
-	(junction
-		(at 63.5 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4ea2c096-0f52-4d6f-b020-d1387f011242")
 	)
 	(junction
 		(at 196.85 125.73)
@@ -1148,24 +1082,6 @@
 		(uuid "6746e5ac-99cf-4675-9cd0-d35037242afb")
 	)
 	(junction
-		(at 58.42 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "78563cff-7a15-4873-9fbb-fd58120def90")
-	)
-	(junction
-		(at 195.58 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7eb56db3-4365-42cf-aacc-d1c9ddd24489")
-	)
-	(junction
-		(at 189.23 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "81900e7d-b657-4933-811c-b8d84c96aad6")
-	)
-	(junction
 		(at 109.22 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1182,18 +1098,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a114c075-9cf9-4159-a322-94ead7a781ab")
-	)
-	(junction
-		(at 186.69 142.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a76681c3-f16a-40cf-a1ee-bca908a42c0d")
-	)
-	(junction
-		(at 252.73 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ac1fc10c-78bd-42db-bf2d-75696fe1e7d7")
 	)
 	(junction
 		(at 43.18 140.97)
@@ -1230,12 +1134,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b84db5c8-4bfc-4b78-bb26-3986121d2246")
-	)
-	(junction
-		(at 119.38 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bb4d4ee1-f41d-48e3-bb55-5077f03b0ed0")
 	)
 	(junction
 		(at 68.58 63.5)
@@ -1294,26 +1192,6 @@
 			(type default)
 		)
 		(uuid "05c16288-2849-4969-8291-9b4f2457a297")
-	)
-	(wire
-		(pts
-			(xy 106.68 71.12) (xy 115.57 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "097d21d1-2047-45ba-b4a2-23c611226959")
-	)
-	(wire
-		(pts
-			(xy 63.5 133.35) (xy 74.93 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0a97b283-4769-4b03-bf15-94991632a997")
 	)
 	(wire
 		(pts
@@ -1427,7 +1305,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 149.86) (xy 212.09 149.86)
+			(xy 177.8 149.86) (xy 212.09 149.86)
 		)
 		(stroke
 			(width 0)
@@ -1487,17 +1365,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 146.05) (xy 189.23 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21a2fd37-f023-43c0-9940-c2b7202a361b")
-	)
-	(wire
-		(pts
-			(xy 107.95 133.35) (xy 119.38 133.35)
+			(xy 107.95 133.35) (xy 124.46 133.35)
 		)
 		(stroke
 			(width 0)
@@ -1547,7 +1415,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 71.12) (xy 121.92 71.12)
+			(xy 106.68 71.12) (xy 121.92 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1567,23 +1435,13 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 58.42) (xy 120.65 58.42)
+			(xy 101.6 58.42) (xy 120.65 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2bfcd5a6-b8a1-460e-997e-02df02524316")
-	)
-	(wire
-		(pts
-			(xy 115.57 68.58) (xy 121.92 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c9505f2-9037-40ec-85c2-3d35c08bafe5")
 	)
 	(wire
 		(pts
@@ -1594,16 +1452,6 @@
 			(type default)
 		)
 		(uuid "2f0eb641-426d-49bb-88de-838903e3a928")
-	)
-	(wire
-		(pts
-			(xy 54.61 58.42) (xy 58.42 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3098aa26-6bfe-42c5-ade5-3e5250a1182f")
 	)
 	(wire
 		(pts
@@ -1747,7 +1595,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 142.24) (xy 209.55 142.24)
+			(xy 177.8 142.24) (xy 209.55 142.24)
 		)
 		(stroke
 			(width 0)
@@ -1757,23 +1605,13 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 68.58) (xy 115.57 68.58)
+			(xy 109.22 68.58) (xy 121.92 68.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4484b27f-bf0e-4693-b3e0-0f1bc660c6d2")
-	)
-	(wire
-		(pts
-			(xy 251.46 58.42) (xy 259.08 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4755fc52-d0ae-4f78-a924-69a939f763cd")
 	)
 	(wire
 		(pts
@@ -1847,16 +1685,6 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 68.58) (xy 252.73 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "566a65d0-57bd-43ee-b60a-9b035af7e8d5")
-	)
-	(wire
-		(pts
 			(xy 231.14 41.91) (xy 231.14 43.18)
 		)
 		(stroke
@@ -1917,7 +1745,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 138.43) (xy 213.36 138.43)
+			(xy 177.8 138.43) (xy 213.36 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1934,16 +1762,6 @@
 			(type default)
 		)
 		(uuid "5d38b49c-cef0-4d6e-9832-296d30a2bd29")
-	)
-	(wire
-		(pts
-			(xy 113.03 146.05) (xy 121.92 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5e00d849-af1c-4f75-bf9e-80af5458c3ba")
 	)
 	(wire
 		(pts
@@ -2007,7 +1825,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 58.42) (xy 68.58 58.42)
+			(xy 54.61 58.42) (xy 68.58 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2024,16 +1842,6 @@
 			(type default)
 		)
 		(uuid "6b01e213-d4d5-4746-ac6f-f5b1b53035f4")
-	)
-	(wire
-		(pts
-			(xy 177.8 142.24) (xy 186.69 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c8e28b5-65b7-4f92-8db1-e3fb66f4894a")
 	)
 	(wire
 		(pts
@@ -2104,16 +1912,6 @@
 			(type default)
 		)
 		(uuid "77673fc2-4894-4a1a-a8b8-132bb3edc9dc")
-	)
-	(wire
-		(pts
-			(xy 101.6 58.42) (xy 114.3 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a9cef01-ab61-49fd-a3fc-ef11104bcd83")
 	)
 	(wire
 		(pts
@@ -2197,7 +1995,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 133.35) (xy 256.54 133.35)
+			(xy 243.84 133.35) (xy 256.54 133.35)
 		)
 		(stroke
 			(width 0)
@@ -2207,7 +2005,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 68.58) (xy 259.08 68.58)
+			(xy 246.38 68.58) (xy 259.08 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2227,7 +2025,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 146.05) (xy 128.27 146.05)
+			(xy 113.03 146.05) (xy 128.27 146.05)
 		)
 		(stroke
 			(width 0)
@@ -2257,7 +2055,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 133.35) (xy 63.5 133.35)
+			(xy 58.42 133.35) (xy 74.93 133.35)
 		)
 		(stroke
 			(width 0)
@@ -2347,16 +2145,6 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 71.12) (xy 259.08 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a92b343a-04e9-44f0-aef3-18b6a3b6df4b")
-	)
-	(wire
-		(pts
 			(xy 78.74 40.64) (xy 81.28 40.64)
 		)
 		(stroke
@@ -2374,16 +2162,6 @@
 			(type default)
 		)
 		(uuid "aa8b156b-935a-4554-80d4-75585a918681")
-	)
-	(wire
-		(pts
-			(xy 177.8 138.43) (xy 184.15 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "abc908b1-a4bd-4fe8-a70a-963057d6201e")
 	)
 	(wire
 		(pts
@@ -2447,7 +2225,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 143.51) (xy 128.27 143.51)
+			(xy 115.57 143.51) (xy 128.27 143.51)
 		)
 		(stroke
 			(width 0)
@@ -2497,7 +2275,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 146.05) (xy 210.82 146.05)
+			(xy 177.8 146.05) (xy 210.82 146.05)
 		)
 		(stroke
 			(width 0)
@@ -2514,16 +2292,6 @@
 			(type default)
 		)
 		(uuid "b9cf37a6-f629-4b0f-ad16-caa48e2b0560")
-	)
-	(wire
-		(pts
-			(xy 243.84 133.35) (xy 250.19 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "be272090-59a4-4ee3-957d-d6fc193ed6cd")
 	)
 	(wire
 		(pts
@@ -2557,16 +2325,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 149.86) (xy 191.77 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4619c47-20d7-49e7-add4-473bc755cec0")
-	)
-	(wire
-		(pts
 			(xy 243.84 138.43) (xy 255.27 138.43)
 		)
 		(stroke
@@ -2587,23 +2345,13 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 71.12) (xy 252.73 71.12)
+			(xy 243.84 71.12) (xy 259.08 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c7e6e859-b147-4822-97db-33148b945806")
-	)
-	(wire
-		(pts
-			(xy 119.38 133.35) (xy 124.46 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c80c93d2-8f0c-4abf-8dfb-14b070e16861")
 	)
 	(wire
 		(pts
@@ -2624,16 +2372,6 @@
 			(type default)
 		)
 		(uuid "cd40c904-5518-406d-a4b2-95a0360f99cd")
-	)
-	(wire
-		(pts
-			(xy 195.58 58.42) (xy 205.74 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d732fd73-fb84-4e16-976d-bbd4c9f99437")
 	)
 	(wire
 		(pts
@@ -2707,7 +2445,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 58.42) (xy 195.58 58.42)
+			(xy 191.77 58.42) (xy 205.74 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2797,16 +2535,6 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 143.51) (xy 121.92 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e24f5f37-e3c8-45a8-a71a-510498b7e6f8")
-	)
-	(wire
-		(pts
 			(xy 205.74 68.58) (xy 208.28 68.58)
 		)
 		(stroke
@@ -2837,7 +2565,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 58.42) (xy 251.46 58.42)
+			(xy 238.76 58.42) (xy 259.08 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3792,7 +3520,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "02a350d9-ae2a-4ce3-935e-9abe82611a1e")
-		(property "Reference" "#PWR081"
+		(property "Reference" "#PWR083"
 			(at 62.23 119.38 0)
 			(effects
 				(font
@@ -3842,7 +3570,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR081")
+					(reference "#PWR083")
 					(unit 1)
 				)
 			)
@@ -4110,7 +3838,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "145fcf44-918a-4ff3-9f69-061b1aeb29d7")
-		(property "Reference" "#PWR070"
+		(property "Reference" "#PWR072"
 			(at 193.04 44.45 0)
 			(effects
 				(font
@@ -4160,7 +3888,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR070")
+					(reference "#PWR072")
 					(unit 1)
 				)
 			)
@@ -4176,7 +3904,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "172ad2ff-bc1b-4f6a-a4ab-f3d98f0acd25")
-		(property "Reference" "#PWR071"
+		(property "Reference" "#PWR073"
 			(at 215.9 46.99 0)
 			(effects
 				(font
@@ -4227,71 +3955,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR071")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 121.92 146.05 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "19dd35bd-c981-4eda-837f-e00f70cdea52")
-		(property "Reference" "TP39"
-			(at 121.92 148.59 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_3_OUT_N"
-			(at 121.92 147.32 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 127 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 127 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 121.92 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f5934178-2b8c-4ad9-b503-de8975492aa1")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP39")
+					(reference "#PWR073")
 					(unit 1)
 				)
 			)
@@ -4307,7 +3971,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a85f151-01b5-4241-b4fa-c6a1e5e1449d")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR075"
 			(at 238.76 55.88 0)
 			(effects
 				(font
@@ -4358,7 +4022,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR073")
+					(reference "#PWR075")
 					(unit 1)
 				)
 			)
@@ -4374,7 +4038,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1ca139f8-a0a8-4cd6-9704-8eee642d2715")
-		(property "Reference" "#PWR088"
+		(property "Reference" "#PWR090"
 			(at 48.26 139.7 0)
 			(effects
 				(font
@@ -4425,7 +4089,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR088")
+					(reference "#PWR090")
 					(unit 1)
 				)
 			)
@@ -4441,7 +4105,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "21030cb3-4b98-4732-ad75-509023c9a50a")
-		(property "Reference" "#PWR086"
+		(property "Reference" "#PWR088"
 			(at 107.95 130.81 0)
 			(effects
 				(font
@@ -4492,7 +4156,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR086")
+					(reference "#PWR088")
 					(unit 1)
 				)
 			)
@@ -4574,7 +4238,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2215a1ec-e43d-4080-9856-f7498b73365b")
-		(property "Reference" "TP30"
+		(property "Reference" "TP33"
 			(at 182.88 123.19 0)
 			(effects
 				(font
@@ -4623,7 +4287,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP30")
+					(reference "TP33")
 					(unit 1)
 				)
 			)
@@ -4698,70 +4362,6 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 58.42 58.42 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "28be7720-19b2-4372-aa6c-6a64f792ca2e")
-		(property "Reference" "TP17"
-			(at 58.42 55.88 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_1_IS"
-			(at 58.42 57.15 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 53.34 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 53.34 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 58.42 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2f2def65-b70b-4827-85d4-a69c638fb3f3")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
 		(at 177.8 63.5 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4769,7 +4369,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "28d62ddf-8f63-4e2f-b93d-d9facf29edf0")
-		(property "Reference" "TP22"
+		(property "Reference" "TP29"
 			(at 177.8 60.96 0)
 			(effects
 				(font
@@ -4818,7 +4418,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP22")
+					(reference "TP29")
 					(unit 1)
 				)
 			)
@@ -4833,7 +4433,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f344c64-0827-489f-a3e2-809f83adb406")
-		(property "Reference" "TP15"
+		(property "Reference" "TP26"
 			(at 39.37 48.26 0)
 			(effects
 				(font
@@ -4882,71 +4482,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 115.57 68.58 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2f49659a-54e4-414f-9037-d999770cc3f4")
-		(property "Reference" "TP25"
-			(at 115.57 66.04 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_1_OUT_P"
-			(at 115.57 67.31 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 110.49 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 110.49 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 115.57 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "274e4011-c263-4e70-8cf3-9f645df9a96b")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP25")
+					(reference "TP26")
 					(unit 1)
 				)
 			)
@@ -5029,7 +4565,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "30ba90bc-6a8b-4643-9c45-527b68f9dee2")
-		(property "Reference" "#PWR066"
+		(property "Reference" "#PWR068"
 			(at 66.04 41.91 0)
 			(effects
 				(font
@@ -5079,7 +4615,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR066")
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -5095,7 +4631,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "33d9bd8c-4f5d-48b9-bbef-91631d94b770")
-		(property "Reference" "#PWR085"
+		(property "Reference" "#PWR087"
 			(at 196.85 120.65 0)
 			(effects
 				(font
@@ -5145,71 +4681,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR085")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 184.15 138.43 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "37a16d22-60d5-4df6-82f5-4c49e6ff3501")
-		(property "Reference" "TP35"
-			(at 184.15 135.89 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_FDBK_MOT_1_UC1"
-			(at 184.15 137.16 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 179.07 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 179.07 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 184.15 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "59bae65e-3b53-49d8-8453-b29a3242856f")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP35")
+					(reference "#PWR087")
 					(unit 1)
 				)
 			)
@@ -5225,7 +4697,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "38241785-7b86-4f1c-a010-9ce321167093")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR067"
 			(at 231.14 39.37 0)
 			(effects
 				(font
@@ -5275,7 +4747,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR065")
+					(reference "#PWR067")
 					(unit 1)
 				)
 			)
@@ -5291,7 +4763,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3aed19d7-d55e-4968-a159-07f96b6e468c")
-		(property "Reference" "#PWR078"
+		(property "Reference" "#PWR080"
 			(at 100.33 114.3 0)
 			(effects
 				(font
@@ -5341,71 +4813,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR078")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 252.73 71.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "484e0444-58b1-4f18-9165-649a6ecbc9f2")
-		(property "Reference" "TP28"
-			(at 252.73 73.66 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_2_OUT_N"
-			(at 252.73 72.39 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 257.81 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 257.81 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 252.73 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "965a79a1-c5b8-459e-862c-693a344dbdf2")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP28")
+					(reference "#PWR080")
 					(unit 1)
 				)
 			)
@@ -5421,7 +4829,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4ac4fb6f-c2ce-48cd-9cdb-dd49d2406f24")
-		(property "Reference" "#PWR076"
+		(property "Reference" "#PWR078"
 			(at 86.36 87.63 0)
 			(effects
 				(font
@@ -5472,7 +4880,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR076")
+					(reference "#PWR078")
 					(unit 1)
 				)
 			)
@@ -5488,7 +4896,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d18b013-4033-4dd0-be96-24b8cf25b8ed")
-		(property "Reference" "#PWR091"
+		(property "Reference" "#PWR093"
 			(at 228.6 162.56 0)
 			(effects
 				(font
@@ -5539,71 +4947,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR091")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 63.5 133.35 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4fb2626f-a9c6-4f27-bc6d-282bb8ccb56a")
-		(property "Reference" "TP31"
-			(at 63.5 130.81 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_3_IS"
-			(at 63.5 132.08 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 58.42 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 58.42 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 63.5 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c2be9412-647a-4cc6-bf6a-ba92dd86363f")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP31")
+					(reference "#PWR093")
 					(unit 1)
 				)
 			)
@@ -5619,7 +4963,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "51580bfe-0dba-40f4-8681-07ee3af659aa")
-		(property "Reference" "#PWR080"
+		(property "Reference" "#PWR082"
 			(at 236.22 118.11 0)
 			(effects
 				(font
@@ -5669,7 +5013,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR080")
+					(reference "#PWR082")
 					(unit 1)
 				)
 			)
@@ -5936,7 +5280,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5f4a7f3f-1fe8-4f33-a122-5744c5ad57e0")
-		(property "Reference" "TP24"
+		(property "Reference" "TP31"
 			(at 177.8 68.58 0)
 			(effects
 				(font
@@ -5985,7 +5329,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP24")
+					(reference "TP31")
 					(unit 1)
 				)
 			)
@@ -6001,7 +5345,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5fbf98f7-dae3-4a81-9bd8-56c1e8d5c94d")
-		(property "Reference" "#PWR074"
+		(property "Reference" "#PWR076"
 			(at 45.72 64.77 0)
 			(effects
 				(font
@@ -6052,7 +5396,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR074")
+					(reference "#PWR076")
 					(unit 1)
 				)
 			)
@@ -6068,7 +5412,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "619f2e99-3b8c-439d-9f1f-e0cec254df20")
-		(property "Reference" "#PWR089"
+		(property "Reference" "#PWR091"
 			(at 191.77 139.7 0)
 			(effects
 				(font
@@ -6119,7 +5463,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR089")
+					(reference "#PWR091")
 					(unit 1)
 				)
 			)
@@ -6253,7 +5597,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c11c671-ed50-40ff-bebb-b2dee125fc6b")
-		(property "Reference" "#PWR069"
+		(property "Reference" "#PWR071"
 			(at 78.74 46.99 0)
 			(effects
 				(font
@@ -6304,7 +5648,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR069")
+					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -6387,7 +5731,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75b92c48-0ba3-4a0b-966d-0f19f5f7157f")
-		(property "Reference" "#PWR090"
+		(property "Reference" "#PWR092"
 			(at 92.71 162.56 0)
 			(effects
 				(font
@@ -6438,71 +5782,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR090")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 114.3 58.42 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7765947d-e5dc-4fd9-9d41-83387d36890f")
-		(property "Reference" "TP18"
-			(at 114.3 55.88 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_1_FAULT"
-			(at 114.3 57.15 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 109.22 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 109.22 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 114.3 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "91bfac7c-8025-450f-bc65-7a99f2450161")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP18")
+					(reference "#PWR092")
 					(unit 1)
 				)
 			)
@@ -6518,7 +5798,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78cdcf52-f42a-486d-91a9-334d46bb6683")
-		(property "Reference" "#PWR079"
+		(property "Reference" "#PWR081"
 			(at 72.39 116.84 0)
 			(effects
 				(font
@@ -6568,7 +5848,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR079")
+					(reference "#PWR081")
 					(unit 1)
 				)
 			)
@@ -6584,7 +5864,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7a01d5b5-5ac8-4fed-8cf3-7ac9e65176ed")
-		(property "Reference" "#PWR083"
+		(property "Reference" "#PWR085"
 			(at 208.28 119.38 0)
 			(effects
 				(font
@@ -6634,7 +5914,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR083")
+					(reference "#PWR085")
 					(unit 1)
 				)
 			)
@@ -6650,7 +5930,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b7646a2-6dc1-42a3-b8e6-4ba7c67e8285")
-		(property "Reference" "#PWR064"
+		(property "Reference" "#PWR066"
 			(at 93.98 39.37 0)
 			(effects
 				(font
@@ -6700,71 +5980,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR064")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 115.57 71.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8233dbd2-9974-4635-93ce-2f92fb4b9797")
-		(property "Reference" "TP27"
-			(at 115.57 73.66 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_1_OUT_N"
-			(at 115.57 72.39 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 120.65 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 120.65 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 115.57 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a7e468d5-da02-4386-815b-036626ea5ee3")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP27")
+					(reference "#PWR066")
 					(unit 1)
 				)
 			)
@@ -6780,7 +5996,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "845da1d9-e6c5-4e10-9c95-cd7963c79840")
-		(property "Reference" "#PWR075"
+		(property "Reference" "#PWR077"
 			(at 182.88 64.77 0)
 			(effects
 				(font
@@ -6831,7 +6047,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR075")
+					(reference "#PWR077")
 					(unit 1)
 				)
 			)
@@ -6914,7 +6130,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "865c1a99-c2c9-4108-a5c0-1c2e0ab042bb")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR070"
 			(at 55.88 44.45 0)
 			(effects
 				(font
@@ -6964,135 +6180,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR068")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 121.92 143.51 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8f3f4828-d9c0-4019-a407-a6394bdd3dce")
-		(property "Reference" "TP38"
-			(at 121.92 140.97 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_3_OUT_P"
-			(at 121.92 142.24 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 116.84 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 116.84 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 121.92 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "30fbf2ac-09c7-40ca-a935-fb47a983f2f1")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP38")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 251.46 58.42 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8fb20bfd-f94f-49bf-9efb-8f0c842076ce")
-		(property "Reference" "TP20"
-			(at 251.46 55.88 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_2_FAULT"
-			(at 251.46 57.15 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 246.38 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 246.38 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 251.46 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e497b704-7cea-4697-badd-9296b178266e")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP20")
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -7107,7 +6195,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "90a3973c-2f73-4dff-a4cf-fc77a4b69e50")
-		(property "Reference" "TP36"
+		(property "Reference" "TP35"
 			(at 43.18 143.51 0)
 			(effects
 				(font
@@ -7156,7 +6244,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP36")
+					(reference "TP35")
 					(unit 1)
 				)
 			)
@@ -7357,7 +6445,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9befc0cc-2eca-469b-9016-7442da87a3d5")
-		(property "Reference" "#PWR067"
+		(property "Reference" "#PWR069"
 			(at 203.2 41.91 0)
 			(effects
 				(font
@@ -7407,7 +6495,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR067")
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -7490,7 +6578,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a68c37a2-d884-4e4a-b321-d34e11d438f0")
-		(property "Reference" "#PWR087"
+		(property "Reference" "#PWR089"
 			(at 243.84 130.81 0)
 			(effects
 				(font
@@ -7541,7 +6629,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR087")
+					(reference "#PWR089")
 					(unit 1)
 				)
 			)
@@ -7557,7 +6645,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ad0d2f41-4ca5-4421-93a8-108dc816e940")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR074"
 			(at 101.6 55.88 0)
 			(effects
 				(font
@@ -7608,7 +6696,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR072")
+					(reference "#PWR074")
 					(unit 1)
 				)
 			)
@@ -7683,262 +6771,6 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 119.38 133.35 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b3180816-db3f-41f5-912b-3c1d5d688af6")
-		(property "Reference" "TP32"
-			(at 119.38 130.81 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_3_FAULT"
-			(at 119.38 132.08 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 114.3 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 114.3 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 119.38 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "44ce4780-00a3-43e3-82db-c35ea9dc8409")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP32")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 250.19 133.35 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ba4e0623-c478-444c-8b0a-f3339f71280d")
-		(property "Reference" "TP33"
-			(at 250.19 130.81 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_FDBK_MOT_FAULT"
-			(at 250.19 132.08 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 245.11 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 245.11 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 250.19 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "856f97dd-ac85-4d3b-99ff-fde066883bda")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 195.58 58.42 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "be81eb60-f402-47f8-b2f4-f863108d60d1")
-		(property "Reference" "TP19"
-			(at 195.58 55.88 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_2_IS"
-			(at 195.58 57.15 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 190.5 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 190.5 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 195.58 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "64bf48e8-a8a9-42ff-a591-d951c05ba459")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 189.23 146.05 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c055d216-c7cf-4e47-a2f5-024053fdac2a")
-		(property "Reference" "TP40"
-			(at 189.23 143.51 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_FDBK_MOT_2_UC1"
-			(at 189.23 144.78 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 184.15 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 184.15 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 189.23 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "560d19c5-0de7-4d08-a808-27cb0fef2c12")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP40")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
 		(at 43.18 125.73 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7946,7 +6778,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c09680c2-479d-4426-bb44-573e92e6b7cc")
-		(property "Reference" "TP29"
+		(property "Reference" "TP32"
 			(at 43.18 123.19 0)
 			(effects
 				(font
@@ -7995,7 +6827,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP29")
+					(reference "TP32")
 					(unit 1)
 				)
 			)
@@ -8010,7 +6842,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c157a944-943d-4b36-8e67-dabe85bfcb70")
-		(property "Reference" "TP23"
+		(property "Reference" "TP30"
 			(at 43.18 68.58 0)
 			(effects
 				(font
@@ -8059,7 +6891,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP23")
+					(reference "TP30")
 					(unit 1)
 				)
 			)
@@ -8138,7 +6970,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c23ab700-8fcc-4362-b447-1ed5ada817d8")
-		(property "Reference" "TP16"
+		(property "Reference" "TP27"
 			(at 175.26 48.26 0)
 			(effects
 				(font
@@ -8187,7 +7019,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP16")
+					(reference "TP27")
 					(unit 1)
 				)
 			)
@@ -8270,7 +7102,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d0b7c15a-f12e-4ba8-b933-8b2600e58bb2")
-		(property "Reference" "#PWR082"
+		(property "Reference" "#PWR084"
 			(at 85.09 121.92 0)
 			(effects
 				(font
@@ -8321,71 +7153,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR082")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 191.77 149.86 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d17b5b0b-8dda-4265-935b-0239880f0a03")
-		(property "Reference" "TP41"
-			(at 191.77 147.32 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_FDBK_MOT_2_UC2"
-			(at 191.77 148.59 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 186.69 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 186.69 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 191.77 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a2c9763a-0ce0-44b7-8148-f127e599628b")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP41")
+					(reference "#PWR084")
 					(unit 1)
 				)
 			)
@@ -8459,70 +7227,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 186.69 142.24 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d42775ee-dcdc-42df-be9b-66be6a042095")
-		(property "Reference" "TP37"
-			(at 186.69 139.7 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_FDBK_MOT_1_UC2"
-			(at 186.69 140.97 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 181.61 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 181.61 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 186.69 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ebfcaf81-8f6f-45b0-afad-0266b746d962")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP37")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 85.09 40.64 90)
 		(unit 1)
@@ -8584,70 +7288,6 @@
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
 					(reference "C31")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Small")
-		(at 252.73 68.58 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d795940d-a258-42e8-abdb-bff2e61f10c4")
-		(property "Reference" "TP26"
-			(at 252.73 66.04 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Value" "TP_MOT_2_OUT_P"
-			(at 252.73 67.31 0)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 247.65 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 247.65 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 252.73 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "38f3181d-ff18-4649-97c5-b1f478be3052")
-		)
-		(instances
-			(project "OpenHand_v2"
-				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP26")
 					(unit 1)
 				)
 			)
@@ -8730,7 +7370,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd2cc770-04b1-41b8-9f7d-70f2a5643ad8")
-		(property "Reference" "#PWR084"
+		(property "Reference" "#PWR086"
 			(at 220.98 121.92 0)
 			(effects
 				(font
@@ -8781,7 +7421,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR084")
+					(reference "#PWR086")
 					(unit 1)
 				)
 			)
@@ -8863,7 +7503,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e5e08dfd-c1a4-4cf8-af1a-51cbe7d22efd")
-		(property "Reference" "TP21"
+		(property "Reference" "TP28"
 			(at 43.18 60.96 0)
 			(effects
 				(font
@@ -8912,7 +7552,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "TP21")
+					(reference "TP28")
 					(unit 1)
 				)
 			)
@@ -9062,7 +7702,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6df1793-5175-4633-a5b0-9b8aab8b3ec7")
-		(property "Reference" "#PWR077"
+		(property "Reference" "#PWR079"
 			(at 223.52 87.63 0)
 			(effects
 				(font
@@ -9113,7 +7753,7 @@
 		(instances
 			(project "OpenHand_v2"
 				(path "/f1fbd835-8408-4592-854c-2fbec9d052ec/20793231-6e6d-417f-8f1f-2d40174b5a27"
-					(reference "#PWR077")
+					(reference "#PWR079")
 					(unit 1)
 				)
 			)
