@@ -6627,19 +6627,6 @@
 		)
 		(uuid "46bfeb4b-1c39-4c2f-a547-f458fcdc057c")
 	)
-	(text "TODO: mark nets"
-		(exclude_from_sim no)
-		(at 134.62 256.032 0)
-		(effects
-			(font
-				(size 3 3)
-				(thickness 0.6)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "4ba1b972-be41-4b3b-b439-f90b7516ac2a")
-	)
 	(text "Haptic feedback motors"
 		(exclude_from_sim no)
 		(at 153.67 67.31 0)
@@ -6688,18 +6675,6 @@
 			(justify left bottom)
 		)
 		(uuid "66b7e67a-b2f5-4c73-97bc-fd0483dea66f")
-	)
-	(text "TODO:\n- Add JLC order number on PCB\n- Double-check all the footprint sizes and dimensions\n- Order additional parts (osc, caps, buttons...)"
-		(exclude_from_sim no)
-		(at 29.464 255.016 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "6ab4e908-51dd-4784-b136-cc11cb6b78dc")
 	)
 	(text "Battery voltage sense divider: \n - max bat voltage ~12.6V\n - gives us ~2.2V on output"
 		(exclude_from_sim no)
@@ -7285,6 +7260,28 @@
 			)
 		)
 	)
+	(global_label "SWCLK"
+		(shape bidirectional)
+		(at 87.63 93.98 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2af7cd4f-e7d5-46fe-8f7d-f70e1ff8f4fd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.9555 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "EMG_01_UC"
 		(shape input)
 		(at 121.92 166.37 0)
@@ -7298,28 +7295,6 @@
 		(uuid "2b54a54c-d028-4a88-afd6-efe2aa648eb3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 135.7303 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SWDIO"
-		(shape bidirectional)
-		(at 87.63 93.98 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "36bd96ec-5b2e-4787-8c8d-263fe7e4991f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 97.5927 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7857,28 +7832,6 @@
 			)
 		)
 	)
-	(global_label "SWCLK"
-		(shape bidirectional)
-		(at 87.63 91.44 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a1989c66-c3b2-4578-a2ab-7cf0c77f5cc5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 97.9555 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "UC_SCL"
 		(shape bidirectional)
 		(at 130.81 222.25 0)
@@ -8288,6 +8241,28 @@
 		(uuid "e54b1b16-a8eb-4f7d-83a1-c0a48d351c33")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 145.8903 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWDIO"
+		(shape bidirectional)
+		(at 87.63 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e567efc5-eded-45c9-9a41-66e9791ba251")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.5927 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
