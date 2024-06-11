@@ -49,6 +49,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -59,16 +61,16 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define BATT_SENSE_Pin GPIO_PIN_0
 #define BATT_SENSE_GPIO_Port GPIOC
-#define HALL_SENS_01_Pin GPIO_PIN_1
-#define HALL_SENS_01_GPIO_Port GPIOC
-#define HALL_SENS_02_Pin GPIO_PIN_2
-#define HALL_SENS_02_GPIO_Port GPIOC
-#define HALL_SENS_03_Pin GPIO_PIN_3
-#define HALL_SENS_03_GPIO_Port GPIOC
-#define TRIM_POT_02_Pin GPIO_PIN_1
-#define TRIM_POT_02_GPIO_Port GPIOA
-#define TRIM_POT_01_Pin GPIO_PIN_2
+#define HALL_SENSE_01_Pin GPIO_PIN_1
+#define HALL_SENSE_01_GPIO_Port GPIOC
+#define HALL_SENSE_02_Pin GPIO_PIN_2
+#define HALL_SENSE_02_GPIO_Port GPIOC
+#define HALL_SENSE_03_Pin GPIO_PIN_3
+#define HALL_SENSE_03_GPIO_Port GPIOC
+#define TRIM_POT_01_Pin GPIO_PIN_1
 #define TRIM_POT_01_GPIO_Port GPIOA
+#define TRIM_POT_02_Pin GPIO_PIN_2
+#define TRIM_POT_02_GPIO_Port GPIOA
 #define EMG_01_Pin GPIO_PIN_3
 #define EMG_01_GPIO_Port GPIOA
 #define EMG_02_Pin GPIO_PIN_4
@@ -97,12 +99,12 @@ void Error_Handler(void);
 #define HAPTIC_02_DIR_GPIO_Port GPIOB
 #define HAPTIC_02_PWM_Pin GPIO_PIN_6
 #define HAPTIC_02_PWM_GPIO_Port GPIOC
-#define MOTOR_02_DIR_Pin GPIO_PIN_7
-#define MOTOR_02_DIR_GPIO_Port GPIOC
+#define MOTOR_01_DIR_Pin GPIO_PIN_7
+#define MOTOR_01_DIR_GPIO_Port GPIOC
 #define MOTOR_01_PWM_Pin GPIO_PIN_8
 #define MOTOR_01_PWM_GPIO_Port GPIOC
-#define MOTOR_02_DIRC9_Pin GPIO_PIN_9
-#define MOTOR_02_DIRC9_GPIO_Port GPIOC
+#define MOTOR_02_DIR_Pin GPIO_PIN_9
+#define MOTOR_02_DIR_GPIO_Port GPIOC
 #define MOTOR_02_PWM_Pin GPIO_PIN_8
 #define MOTOR_02_PWM_GPIO_Port GPIOA
 #define MOTOR_03_DIR_Pin GPIO_PIN_9

@@ -1,0 +1,2 @@
+../Core/Drivers/led/led.c:21:6:led_f_Init_v	4	static
+../Core/Drivers/led/led.c:30:6:led_f_Handle_v	8	static

@@ -1,4 +1,4 @@
-../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c:411:19:HAL_ADC_Init	14
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c:411:19:HAL_ADC_Init	12
 ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c:629:19:HAL_ADC_DeInit	3
 ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c:777:13:HAL_ADC_MspInit	1
 ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c:791:13:HAL_ADC_MspDeInit	1
