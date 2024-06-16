@@ -6603,19 +6603,6 @@
 		)
 		(uuid "35a54a18-691a-4989-a0b2-9c58b447d23b")
 	)
-	(text "TODO: Update connector footprints"
-		(exclude_from_sim no)
-		(at 78.486 19.05 0)
-		(effects
-			(font
-				(size 4 4)
-				(thickness 0.6)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "3ed682fc-19cf-4ec3-a86c-268cd3540b07")
-	)
 	(text "Just in case I2C"
 		(exclude_from_sim no)
 		(at 143.256 224.536 0)
@@ -14102,7 +14089,7 @@
 				)
 			)
 		)
-		(property "Value" "4k7"
+		(property "Value" "10k"
 			(at 254 157.48 90)
 			(effects
 				(font

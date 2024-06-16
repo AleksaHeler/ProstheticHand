@@ -3182,6 +3182,19 @@
 		)
 		(uuid "1e0ff40b-4d34-4194-b993-e7d539f61bcf")
 	)
+	(text "TODO: Change LM324 to TL084"
+		(exclude_from_sim no)
+		(at 48.006 85.09 0)
+		(effects
+			(font
+				(size 3 3)
+				(thickness 0.6)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "2a61f26d-96d9-4a3c-b534-99f15c9c9912")
+	)
 	(text "Low-pass filter"
 		(exclude_from_sim no)
 		(at 191.77 87.63 0)
@@ -3194,6 +3207,30 @@
 			(justify left bottom)
 		)
 		(uuid "317cec8a-b7fe-4e92-a6ba-9acb46ad98ab")
+	)
+	(text "CALCULATOR"
+		(exclude_from_sim no)
+		(at 106.68 72.898 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(href "https://www.jotrin.com/tool/details/YFGTLBQJSQ")
+		)
+		(uuid "40f3ac52-cc4a-4e02-b718-47b86c9cdc05")
+	)
+	(text "CALCULATOR"
+		(exclude_from_sim no)
+		(at 60.452 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(href "https://onechip.com/differential-amplifier-using-op-amp-calculator.html")
+		)
+		(uuid "6c32ef0f-9401-44a0-a24b-c0f6013372b9")
 	)
 	(text "Differential amplifier"
 		(exclude_from_sim no)
@@ -3246,6 +3283,19 @@
 		)
 		(uuid "a3ef9582-2f0e-4dcd-9e18-14b37cb36696")
 	)
+	(text "TODO: ADD 10uF and 18k here for filtering"
+		(exclude_from_sim no)
+		(at 251.46 117.856 0)
+		(effects
+			(font
+				(size 3 3)
+				(thickness 0.6)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a540aadd-6313-4f88-9439-3a7929c76a84")
+	)
 	(text "High-pass filter"
 		(exclude_from_sim no)
 		(at 96.52 38.1 0)
@@ -3258,6 +3308,19 @@
 			(justify left bottom)
 		)
 		(uuid "b0c25494-98fc-40cb-aba1-4a6e996e4bc0")
+	)
+	(text "TODO: Change LM324 to TL084"
+		(exclude_from_sim no)
+		(at 172.974 80.772 0)
+		(effects
+			(font
+				(size 3 3)
+				(thickness 0.6)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "bd0fa2ec-c09d-46b8-af7c-790248fe1f8f")
 	)
 	(text "(OpenEMG project by charleslabs.fr)"
 		(exclude_from_sim no)
@@ -3296,6 +3359,18 @@
 			(justify left bottom)
 		)
 		(uuid "f1903d52-dafe-442c-83b6-4a884ef633a4")
+	)
+	(text "CALCULATOR"
+		(exclude_from_sim no)
+		(at 68.326 121.158 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(href "https://www.jotrin.com/tool/details/YSFDQDTLBQJSQ")
+		)
+		(uuid "f34d8fc1-84ba-45ba-8074-e17f6232aa6d")
 	)
 	(text "Tunable amplifier"
 		(exclude_from_sim no)
@@ -3547,7 +3622,7 @@
 				)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 233.68 102.87 0)
 			(effects
 				(font
@@ -3852,7 +3927,7 @@
 				)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 64.77 113.03 0)
 			(effects
 				(font
@@ -4694,7 +4769,7 @@
 				)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 194.31 53.34 0)
 			(effects
 				(font
@@ -4797,7 +4872,7 @@
 				)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 104.14 53.34 0)
 			(effects
 				(font
@@ -4964,7 +5039,7 @@
 				)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 199.39 113.03 0)
 			(effects
 				(font
@@ -5134,7 +5209,7 @@
 				)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 59.69 50.8 0)
 			(effects
 				(font
@@ -5510,7 +5585,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 271.78 34.29 0)
 			(effects
 				(font
@@ -6548,7 +6623,7 @@
 				)
 			)
 		)
-		(property "Value" "470n"
+		(property "Value" "330n"
 			(at 64.77 93.345 90)
 			(effects
 				(font
@@ -6749,7 +6824,7 @@
 				)
 			)
 		)
-		(property "Value" "470n"
+		(property "Value" "330n"
 			(at 199.39 92.71 90)
 			(effects
 				(font
@@ -7354,7 +7429,7 @@
 				)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 238.76 55.88 0)
 			(effects
 				(font
@@ -7521,7 +7596,7 @@
 				)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 99.06 102.87 0)
 			(effects
 				(font
@@ -7814,7 +7889,7 @@
 		(dnp no)
 		(uuid "ce4f7ad2-0010-45ac-aeae-c9b9ce2f639b")
 		(property "Reference" "R23"
-			(at 39.37 61.595 90)
+			(at 39.37 61.722 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7957,7 +8032,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LM324"
+		(property "Value" "TL084"
 			(at 137.16 34.29 0)
 			(effects
 				(font

@@ -42,7 +42,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
-ADC_HandleTypeDef hadc2;
+DMA_HandleTypeDef hdma_adc1;
 
 I2C_HandleTypeDef hi2c1;
 
@@ -51,34 +51,37 @@ TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart3;
 
-/* Definitions for main_task_10ms */
-osThreadId_t main_task_10msHandle;
-const osThreadAttr_t main_task_10ms_attributes = {
-  .name = "main_task_10ms",
+/* Definitions for hand_control */
+osThreadId_t hand_controlHandle;
+const osThreadAttr_t hand_control_attributes = {
+  .name = "hand_control",
   .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
+  .priority = (osPriority_t) osPriorityRealtime,
 };
-/* Definitions for main_task_1s */
-osThreadId_t main_task_1sHandle;
-const osThreadAttr_t main_task_1s_attributes = {
-  .name = "main_task_1s",
+/* Definitions for system_health */
+osThreadId_t system_healthHandle;
+const osThreadAttr_t system_health_attributes = {
+  .name = "system_health",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* USER CODE BEGIN PV */
+volatile uint16_t adcResultsDMA[64][8]; // 64 measurements per channel, 8 channels
+const int adcChannelCount = sizeof(adcResultsDMA) / sizeof(uint16_t);
+volatile int adcConversionComplete = 0; // Set by callback
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_ADC1_Init(void);
-static void MX_ADC2_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
-void main_f_Handle10ms_v(void *argument);
-void main_f_Handle1s_v(void *argument);
+void hand_control_function(void *argument);
+void system_health_function(void *argument);
 
 /* USER CODE BEGIN PFP */
 void main_f_Init_v(void);
@@ -128,9 +131,9 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_I2C1_Init();
   MX_ADC1_Init();
-  MX_ADC2_Init();
   MX_USART3_UART_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
@@ -154,11 +157,11 @@ int main(void)
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of main_task_10ms */
-  main_task_10msHandle = osThreadNew(main_f_Handle10ms_v, NULL, &main_task_10ms_attributes);
+  /* creation of hand_control */
+  hand_controlHandle = osThreadNew(hand_control_function, NULL, &hand_control_attributes);
 
-  /* creation of main_task_1s */
-  main_task_1sHandle = osThreadNew(main_f_Handle1s_v, NULL, &main_task_1s_attributes);
+  /* creation of system_health */
+  system_healthHandle = osThreadNew(system_health_function, NULL, &system_health_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* USER CODE END RTOS_THREADS */
@@ -244,57 +247,13 @@ static void MX_ADC1_Init(void)
   /** Common config
   */
   hadc1.Instance = ADC1;
-  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
-  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.NbrOfConversion = 8;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure Regular Channel
-  */
-  sConfig.Channel = ADC_CHANNEL_11;
-  sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
-  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN ADC1_Init 2 */
-  /* USER CODE END ADC1_Init 2 */
-
-}
-
-/**
-  * @brief ADC2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_ADC2_Init(void)
-{
-
-  /* USER CODE BEGIN ADC2_Init 0 */
-  /* USER CODE END ADC2_Init 0 */
-
-  ADC_ChannelConfTypeDef sConfig = {0};
-
-  /* USER CODE BEGIN ADC2_Init 1 */
-  /* USER CODE END ADC2_Init 1 */
-
-  /** Common config
-  */
-  hadc2.Instance = ADC2;
-  hadc2.Init.ScanConvMode = ADC_SCAN_DISABLE;
-  hadc2.Init.ContinuousConvMode = DISABLE;
-  hadc2.Init.DiscontinuousConvMode = DISABLE;
-  hadc2.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-  hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc2.Init.NbrOfConversion = 1;
-  if (HAL_ADC_Init(&hadc2) != HAL_OK)
   {
     Error_Handler();
   }
@@ -304,12 +263,75 @@ static void MX_ADC2_Init(void)
   sConfig.Channel = ADC_CHANNEL_1;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
-  if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN ADC2_Init 2 */
-  /* USER CODE END ADC2_Init 2 */
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_2;
+  sConfig.Rank = ADC_REGULAR_RANK_2;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_3;
+  sConfig.Rank = ADC_REGULAR_RANK_3;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_4;
+  sConfig.Rank = ADC_REGULAR_RANK_4;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_10;
+  sConfig.Rank = ADC_REGULAR_RANK_5;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_11;
+  sConfig.Rank = ADC_REGULAR_RANK_6;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_12;
+  sConfig.Rank = ADC_REGULAR_RANK_7;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_13;
+  sConfig.Rank = ADC_REGULAR_RANK_8;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+  /* USER CODE END ADC1_Init 2 */
 
 }
 
@@ -495,6 +517,22 @@ static void MX_USART3_UART_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -569,22 +607,31 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+// Called when buffer is completely filled
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+  adcConversionComplete = 1;
+}
+
 /* USER CODE END 4 */
 
-/* USER CODE BEGIN Header_main_f_Handle10ms_v */
+/* USER CODE BEGIN Header_hand_control_function */
 /**
-  * @brief  Function implementing the main_task_10ms thread.
+  * @brief  Function implementing the hand_control thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_main_f_Handle10ms_v */
-void main_f_Handle10ms_v(void *argument)
+/* USER CODE END Header_hand_control_function */
+void hand_control_function(void *argument)
 {
   /* init code for USB_DEVICE */
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   uint32_t last_10ms = 0;
   uint32_t my_pot = 0;
+  uint32_t my_emg = 0;
+  uint32_t i = 0;
+  uint32_t emg_max = 0;
   double my_pwm = 0;
   /* Infinite loop */
   for(;;)
@@ -605,13 +652,33 @@ void main_f_Handle10ms_v(void *argument)
 
       /* All the motors are ENABLED by default (configured HIGH by default) */
       /* Get pot value */
-      HAL_ADC_Start(&hadc2);
-      HAL_ADC_PollForConversion(&hadc2, HAL_MAX_DELAY);
-      my_pot = HAL_ADC_GetValue(&hadc2);
+//      HAL_ADC_Start(&hadc2);
+//      HAL_ADC_PollForConversion(&hadc2, HAL_MAX_DELAY);
+//      my_pot = HAL_ADC_GetValue(&hadc2);
+
+      // Start reading of all channels
+      HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adcResultsDMA, adcChannelCount);
+      // Wait for that to finish
+//      while(adcConversionComplete == 0) {}
+//      adcConversionComplete = 0;
+
+      my_pot = adcResultsDMA[0][1];
+
+      emg_max = 0;
+      for(i = 0; i < 64; i++)
+      {
+		  if (adcResultsDMA[i][3] > emg_max)
+		  {
+			  emg_max = adcResultsDMA[i][3];
+		  }
+      }
+      my_emg = emg_max;
+      // my_emg = adcResultsDMA[3];
 
       /* Set DIR for all motors to given value (from button) */
       /* And PWM for all motors to given value (from potentiometer) */
-      if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET)
+      // if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET)
+      if (my_emg > 200)
       {
         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_SET);
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
@@ -651,25 +718,23 @@ void main_f_Handle10ms_v(void *argument)
   /* USER CODE END 5 */
 }
 
-/* USER CODE BEGIN Header_main_f_Handle1s_v */
+/* USER CODE BEGIN Header_system_health_function */
 /**
-* @brief Function implementing the main_task_1s thread.
+* @brief Function implementing the system_health thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_main_f_Handle1s_v */
-void main_f_Handle1s_v(void *argument)
+/* USER CODE END Header_system_health_function */
+void system_health_function(void *argument)
 {
-  /* USER CODE BEGIN main_f_Handle1s_v */
+  /* USER CODE BEGIN system_health_function */
   /* Infinite loop */
   for(;;)
   {
-    led_f_Handle_v();
+    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_6);
     osDelay(1000);
   }
-  /* In case we exit the infinite loop, terminate cleanly */
-  osThreadTerminate(NULL);
-  /* USER CODE END main_f_Handle1s_v */
+  /* USER CODE END system_health_function */
 }
 
 /**

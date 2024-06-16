@@ -67,10 +67,10 @@ void Error_Handler(void);
 #define HALL_SENSE_02_GPIO_Port GPIOC
 #define HALL_SENSE_03_Pin GPIO_PIN_3
 #define HALL_SENSE_03_GPIO_Port GPIOC
-#define TRIM_POT_01_Pin GPIO_PIN_1
-#define TRIM_POT_01_GPIO_Port GPIOA
-#define TRIM_POT_02_Pin GPIO_PIN_2
+#define TRIM_POT_02_Pin GPIO_PIN_1
 #define TRIM_POT_02_GPIO_Port GPIOA
+#define TRIM_POT_01_Pin GPIO_PIN_2
+#define TRIM_POT_01_GPIO_Port GPIOA
 #define EMG_01_Pin GPIO_PIN_3
 #define EMG_01_GPIO_Port GPIOA
 #define EMG_02_Pin GPIO_PIN_4
