@@ -69,6 +69,11 @@ const osThreadAttr_t system_health_attributes = {
 volatile uint16_t adcResultsDMA[64][8]; // 64 measurements per channel, 8 channels
 const int adcChannelCount = sizeof(adcResultsDMA) / sizeof(uint16_t);
 volatile int adcConversionComplete = 0; // Set by callback
+uint32_t my_mode = 0; // 0 for button activation, 1 for EMG sensor activation
+uint32_t my_pot = 0;
+uint32_t my_hall = 0;
+double my_batt_volt = 0;
+uint32_t emg_max = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -102,6 +107,16 @@ void main_f_Init_v(void)
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+
+  // Read user button, if it's high, go to EMG mode
+  if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET)
+  {
+	my_mode = 1;
+  }
+  else
+  {
+	my_mode = 0;
+  }
 }
 
 /* USER CODE END 0 */
@@ -628,10 +643,9 @@ void hand_control_function(void *argument)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   uint32_t last_10ms = 0;
-  uint32_t my_pot = 0;
   uint32_t my_emg = 0;
+  uint32_t my_batt = 0;
   uint32_t i = 0;
-  uint32_t emg_max = 0;
   double my_pwm = 0;
   /* Infinite loop */
   for(;;)
@@ -664,6 +678,13 @@ void hand_control_function(void *argument)
 
       my_pot = adcResultsDMA[0][1];
 
+      my_batt = adcResultsDMA[0][4];
+      my_batt_volt = ( ( (my_batt / 4096.0) * 3.3 ) * 5.7 ); // 47k and 10k voltage divider -> 5.7 factor
+
+      my_hall = adcResultsDMA[0][5];
+      // = 1600..2400 (but goes a bit out of range both on max and min travel)
+      // http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/
+
       emg_max = 0;
       for(i = 0; i < 64; i++)
       {
@@ -678,7 +699,7 @@ void hand_control_function(void *argument)
       /* Set DIR for all motors to given value (from button) */
       /* And PWM for all motors to given value (from potentiometer) */
       // if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET)
-      if (my_emg > 200)
+      if ((my_mode  == 0 && HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET) || (my_mode  == 1 && my_emg > adcResultsDMA[0][0]))
       {
         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_SET);
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
