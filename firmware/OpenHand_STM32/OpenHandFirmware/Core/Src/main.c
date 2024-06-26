@@ -66,14 +66,201 @@ const osThreadAttr_t system_health_attributes = {
   .priority = (osPriority_t) osPriorityLow,
 };
 /* USER CODE BEGIN PV */
+
+// ADC stuff
 volatile uint16_t adcResultsDMA[64][8]; // 64 measurements per channel, 8 channels
 const int adcChannelCount = sizeof(adcResultsDMA) / sizeof(uint16_t);
 volatile int adcConversionComplete = 0; // Set by callback
+
+// Mode handling stuff
 uint32_t my_mode = 0; // 0 for button activation, 1 for EMG sensor activation
-uint32_t my_pot = 0;
-uint32_t my_hall = 0;
+
+// Our ADC inputs
+uint32_t my_pot_1 = 0;
+uint32_t my_pot_2 = 0;
+uint32_t my_emg_1 = 0;
+uint32_t my_emg_2 = 0;
+uint32_t my_batt = 0;
+uint32_t my_hall_1 = 0;
+uint32_t my_hall_2 = 0;
+uint32_t my_hall_3 = 0;
+
 double my_batt_volt = 0;
-uint32_t emg_max = 0;
+uint32_t my_emg_1_max = 0;
+
+// Finger hall sensor calibration output:
+uint16_t my_calibration[] = {
+  2024, 1889,
+  2026, 1888,
+  2024, 1890,
+  2024, 1887,
+  2023, 1883,
+  2022, 1878,
+  2021, 1875,
+  2019, 1868,
+  2019, 1863,
+  2019, 1857,
+  2017, 1850,
+  2016, 1840,
+  2015, 1830,
+  2014, 1818,
+  2012, 1806,
+  2010, 1794,
+  2008, 1783,
+  2007, 1768,
+  2006, 1755,
+  2005, 1739,
+  2001, 1724,
+  2000, 1708,
+  1996, 1690,
+  1995, 1675,
+  1994, 1655,
+  1992, 1635,
+  1989, 1614,
+  1987, 1592,
+  1984, 1574,
+  1982, 1550,
+  1978, 1525,
+  1975, 1502,
+  1974, 1479,
+  1971, 1453,
+  1968, 1429,
+  1966, 1407,
+  1962, 1379,
+  1959, 1354,
+  1955, 1328,
+  1952, 1307,
+  1948, 1288,
+  1945, 1269,
+  1939, 1256,
+  1936, 1248,
+  1932, 1245,
+  1928, 1246,
+  1922, 1252,
+  1918, 1266,
+  1913, 1288,
+  1910, 1317,
+  1903, 1351,
+  1898, 1391,
+  1893, 1442,
+  1886, 1498,
+  1880, 1562,
+  1873, 1627,
+  1867, 1698,
+  1861, 1776,
+  1854, 1859,
+  1846, 1937,
+  1838, 2021,
+  1829, 2104,
+  1820, 2180,
+  1812, 2254,
+  1804, 2326,
+  1792, 2395,
+  1783, 2452,
+  1773, 2505,
+  1762, 2554,
+  1751, 2596,
+  1741, 2629,
+  1725, 2658,
+  1713, 2682,
+  1700, 2695,
+  1686, 2704,
+  1671, 2711,
+  1654, 2709,
+  1639, 2706,
+  1620, 2699,
+  1604, 2688,
+  1582, 2675,
+  1562, 2658,
+  1540, 2643,
+  1520, 2624,
+  1497, 2604,
+  1471, 2587,
+  1447, 2570,
+  1423, 2549,
+  1398, 2530,
+  1373, 2513,
+  1348, 2495,
+  1318, 2475,
+  1294, 2458,
+  1270, 2440,
+  1247, 2426,
+  1224, 2409,
+  1205, 2395,
+  1192, 2380,
+  1179, 2367,
+  1172, 2355,
+  1169, 2340,
+  1171, 2326,
+  1179, 2314,
+  1199, 2300,
+  1230, 2289,
+  1268, 2277,
+  1325, 2268,
+  1394, 2257,
+  1472, 2247,
+  1552, 2238,
+  1646, 2229,
+  1749, 2222,
+  1859, 2213,
+  1963, 2206,
+  2078, 2196,
+  2190, 2190,
+  2303, 2183,
+  2405, 2179,
+  2517, 2171,
+  2626, 2165,
+  2715, 2159,
+  2806, 2153,
+  2883, 2146,
+  2948, 2142,
+  2990, 2137,
+  3019, 2133,
+  3032, 2127,
+  3037, 2123,
+  3038, 2118,
+  3034, 2116,
+  3025, 2111,
+  3010, 2106,
+  2988, 2103,
+  2958, 2100,
+  2921, 2097,
+  2883, 2094,
+  2840, 2092,
+  2800, 2088,
+  2760, 2084,
+  2717, 2083,
+  2678, 2080,
+  2639, 2076,
+  2599, 2075,
+  2565, 2072,
+  2533, 2071,
+  2501, 2067,
+  2470, 2064,
+  2446, 2063,
+  2420, 2061,
+  2397, 2061,
+  2373, 2059,
+  2354, 2055,
+  2332, 2054,
+  2313, 2052,
+  2296, 2052,
+  2279, 2049,
+  2266, 2048,
+  2253, 2048,
+  2247, 2046,
+  2245, 2046,
+  2246, 2046,
+  2247, 2046,
+  2250, 2046,
+  2253, 2046,
+  2257, 2048,
+  2259, 2047,
+  2260, 2048,
+  2261, 2048,
+  2261, 2047
+};
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -101,7 +288,7 @@ void main_f_Init_v(void);
  */
 void main_f_Init_v(void)
 {
-	/* Start all PWM channels */
+  /* Start all PWM channels */
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
@@ -111,11 +298,11 @@ void main_f_Init_v(void)
   // Read user button, if it's high, go to EMG mode
   if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET)
   {
-	my_mode = 1;
+  my_mode = 1;
   }
   else
   {
-	my_mode = 0;
+  my_mode = 0;
   }
 }
 
@@ -628,6 +815,29 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
   adcConversionComplete = 1;
 }
 
+uint32_t lastTime;
+float Input, Output, Setpoint = 0;
+float errSum, lastErr;
+float kp = 0.2, ki = 0.00, kd = 0.001;
+
+void handle_motor_pid()
+{
+  /* How long since we last calculated */
+  uint32_t now = HAL_GetTick();
+  float timeChange = (float)(now - lastTime);
+
+  /* Compute all the working error variables */
+  float error = Setpoint - Input;
+  errSum += (error * timeChange);
+  float dErr = (error - lastErr) / timeChange;
+
+  /*Compute PID Output*/
+  Output = kp * error + ki * errSum + kd * dErr;
+
+  /*Remember some variables for next time*/
+  lastErr = error;
+  lastTime = now;
+}
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_hand_control_function */
@@ -642,11 +852,11 @@ void hand_control_function(void *argument)
   /* init code for USB_DEVICE */
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
+  char my_data[24];
   uint32_t last_10ms = 0;
-  uint32_t my_emg = 0;
-  uint32_t my_batt = 0;
   uint32_t i = 0;
   double my_pwm = 0;
+  static uint8_t my_flag = 0;
   /* Infinite loop */
   for(;;)
   {
@@ -664,74 +874,141 @@ void hand_control_function(void *argument)
     {
       last_10ms = HAL_GetTick();
 
-      /* All the motors are ENABLED by default (configured HIGH by default) */
-      /* Get pot value */
-//      HAL_ADC_Start(&hadc2);
-//      HAL_ADC_PollForConversion(&hadc2, HAL_MAX_DELAY);
-//      my_pot = HAL_ADC_GetValue(&hadc2);
+      ////////////////////////////////////////////////////////////////////////
+      /// Initial handling of ADC inputs /////////////////////////////////////
+      ////////////////////////////////////////////////////////////////////////
 
-      // Start reading of all channels
+      // Start ADC reading of all channels, to be stored via DMA - check if it should be done continuously
       HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adcResultsDMA, adcChannelCount);
-      // Wait for that to finish
-//      while(adcConversionComplete == 0) {}
-//      adcConversionComplete = 0;
+      // Wait for that to finish - not necessary I think
+      // while(adcConversionComplete == 0) {}
+      // adcConversionComplete = 0;
 
-      my_pot = adcResultsDMA[0][1];
-
+      // Store all ADC results in global vars
+      my_pot_1 = adcResultsDMA[0][0];
+      my_pot_2 = adcResultsDMA[0][1];
+      my_emg_1 = adcResultsDMA[0][2];
+      my_emg_2 = adcResultsDMA[0][3];
       my_batt = adcResultsDMA[0][4];
+      my_hall_1 = adcResultsDMA[0][5];
+      my_hall_2 = adcResultsDMA[0][6];
+      my_hall_3 = adcResultsDMA[0][7];
+
       my_batt_volt = ( ( (my_batt / 4096.0) * 3.3 ) * 5.7 ); // 47k and 10k voltage divider -> 5.7 factor
 
-      my_hall = adcResultsDMA[0][5];
-      // = 1600..2400 (but goes a bit out of range both on max and min travel)
-      // http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/
-
-      emg_max = 0;
+      // Find max of EMG signal
+      my_emg_1_max = 0;
       for(i = 0; i < 64; i++)
       {
-		  if (adcResultsDMA[i][3] > emg_max)
-		  {
-			  emg_max = adcResultsDMA[i][3];
-		  }
+        if (adcResultsDMA[i][3] > my_emg_1_max)
+        {
+          my_emg_1_max = adcResultsDMA[i][3];
+        }
       }
-      my_emg = emg_max;
-      // my_emg = adcResultsDMA[3];
+      my_emg_1 = my_emg_1_max;
+
+      ////////////////////////////////////////////////////////////////////////
+      /// Move motors based on button ////////////////////////////////////////
+      ////////////////////////////////////////////////////////////////////////
 
       /* Set DIR for all motors to given value (from button) */
       /* And PWM for all motors to given value (from potentiometer) */
-      // if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET)
-      if ((my_mode  == 0 && HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET) || (my_mode  == 1 && my_emg > adcResultsDMA[0][0]))
+      /* If in BTN mode, read button press / in EGM mode, read pot for EMG treshold value */
+      if ((my_mode  == 0 && HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET) || (my_mode  == 1 && my_emg_1 > my_pot_1))
       {
+        // Close hand
         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_SET);
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);  // Motor 1 DIR
         HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, GPIO_PIN_SET);
-
-        my_pwm = (double)my_pot / 40.96;
+        my_pwm = (double)my_pot_2 / 40.96;
         TIM1->CCR1 = (uint16_t)my_pwm;
         TIM1->CCR2 = (uint16_t)my_pwm;
         TIM1->CCR3 = (uint16_t)my_pwm;
         TIM3->CCR1 = (uint16_t)my_pwm;
-        TIM3->CCR3 = (uint16_t)my_pwm;
+        TIM3->CCR3 = (uint16_t)my_pwm;  // Motor 1 PWM
+        // Also, log current hand state
+        sprintf(my_data, "1\n");
+        CDC_Transmit_FS(my_data, strlen(my_data));
       }
       else
       {
+        // OpenHand™
         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);  // Motor 1 DIR
         HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, GPIO_PIN_RESET);
-
-        my_pwm = 100.0 - (double)my_pot / 40.96;
+        my_pwm = 100.0 - (double)my_pot_2 / 40.96; // PWM should now be inverted (high time/low time should flip, damn these motor drivers!)
         TIM1->CCR1 = (uint16_t)my_pwm;
         TIM1->CCR2 = (uint16_t)my_pwm;
         TIM1->CCR3 = (uint16_t)my_pwm;
         TIM3->CCR1 = (uint16_t)my_pwm;
-        TIM3->CCR3 = (uint16_t)my_pwm;
+        TIM3->CCR3 = (uint16_t)my_pwm;  // Motor 1 PWM
+        // Also, log current hand state
+        sprintf(my_data, "0\n");
+        CDC_Transmit_FS(my_data, strlen(my_data));
       }
+
+      ////////////////////////////////////////////////////////////////////////
+      /// Calibration procedure //////////////////////////////////////////////
+      ////////////////////////////////////////////////////////////////////////
+
+      // my_hall = adcResultsDMA[0][5];
+      // my_hall_2 = adcResultsDMA[0][6];
+
+      // // If button is pressed, start calibration sequence
+      // if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_RESET)
+      // {
+      //   my_flag = 1;
+      // }
+
+      // if(my_flag == 0)
+      // {
+      //   // Log ready message
+      //   sprintf(my_data, "Ready!\n");
+      //   CDC_Transmit_FS(my_data, strlen(my_data));
+      //   // Generally, first move all motors to open position
+      //   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_RESET);
+      //   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
+      //   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+      //   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);  // Motor 1 DIR
+      //   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, GPIO_PIN_RESET);
+      //   my_pot = 1;
+      //   my_pwm = 100.0 - (double)my_pot / 40.96;
+      //   TIM1->CCR1 = (uint16_t)my_pwm;
+      //   TIM1->CCR2 = (uint16_t)my_pwm;
+      //   TIM1->CCR3 = (uint16_t)my_pwm;
+      //   TIM3->CCR1 = (uint16_t)my_pwm;
+      //   TIM3->CCR3 = (uint16_t)my_pwm;  // Motor 1 PWM
+      // }
+      // else
+      // {
+      //   // Log hall sensors...
+      //   sprintf(my_data, "%d, %d\n", my_hall, my_hall_2);
+      //   CDC_Transmit_FS(my_data, strlen(my_data));
+      //   // ... and start moving motor to closed position
+      //   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, GPIO_PIN_SET);
+      //   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
+      //   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+      //   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);  // Motor 1 DIR
+      //   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, GPIO_PIN_SET);
+      //   my_pot = 1;
+      //   my_pwm = (double)my_pot / 40.96;
+      //   TIM1->CCR1 = (uint16_t)my_pwm;
+      //   TIM1->CCR2 = (uint16_t)my_pwm;
+      //   TIM1->CCR3 = (uint16_t)my_pwm;
+      //   TIM3->CCR1 = (uint16_t)my_pwm;
+      //   TIM3->CCR3 = (uint16_t)my_pwm;  // Motor 1 PWM
+      // }
+
+      ////////////////////////////////////////////////////////////////////////
+      ///  End of main task //////////////////////////////////////////////////
+      ////////////////////////////////////////////////////////////////////////
     }
 
-    /* Wait 1ms to let other tasks do their thing! */
+    /* Wait 1ms to let other tasks do their thing! And for time to pass quicker while we wait for our 10ms! */
     osDelay(1);
   }
   /* In case we exit the infinite loop, terminate cleanly */
