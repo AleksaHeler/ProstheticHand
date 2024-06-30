@@ -498,7 +498,7 @@
       "plot": "outputs/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "OpenHand_v2.step",
       "svg": "",
       "vrml": ""
     },
