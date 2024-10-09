@@ -3270,6 +3270,17 @@
 		)
 		(uuid "8496ddda-807a-469b-a883-b7635cc14b53")
 	)
+	(text "TODO:\nADD PASSIVE FILTERING HERE\n(CAP AND RES TO GND SHOULD DO)"
+		(exclude_from_sim no)
+		(at 129.286 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify top)
+		)
+		(uuid "957e7171-529d-4ef1-9df8-e6a3030f2f8d")
+	)
 	(text "Tunable amplifier"
 		(exclude_from_sim no)
 		(at 226.06 97.79 0)
