@@ -1,31 +1,45 @@
-# ProstheticHand
+# OpenHand
  
 Our attempt at a prosthetic hand controlled by muscle EMG sensors, using linear actuators to move mechanically linked fingers. Implementing our own 3D models (ME), schematic & PCB design of main control board (EE) and software solution (SW).
 
 
 ## Proof of concept
 
-For (very basic and quick) proof of concept, we measure bicep activation because it seemed the simplest muscle to use. Using the EMG sensor we could get some useful waveforms and filter them with both HW and SW low-pass filter. Also we made some simple 3D printed fingers and connected them with wire to servo motor, and the hand could actually move and be controlled using muscle activation.
+Our (actually second) proof of concept, is using our own PCBs with STM32, our own mechanical design, and some basic software running on STM32 reacting on button press or EMG sensor activation.
 
-Some images of the POC:
+For now, this approach seems promising, and only thing left to be changed is the motors used. We use linear actuators, which seem to be exactly what we need, but for now they don't have any position feedback. To solve that we will be using motors with built-in encoders in future, and monitoring their position with STM32 HW timer functions for encoders. Preliminary testing for that worked perfectly, we could always know the position of the motor based on the encoder value, and using endstops we can also calibrate the travel, and using current limiting H bridge motor drivers, we can control the force applied. 
 
-See a video of the hand being operated by a potentiometer [here](images/poc/poc_finger_test.mp4).
+Here are some screenshots of the current status:
 
-See a video of EMG sensor actuating a servo [here](images/poc/poc_emg_sensor_test.mp4).
+### Finger design. Completely mechanical linkage, with linear actuator
+![](images/poc2/finger.jpg)
 
-<img src="images/poc/poc_hand_with_finger.jpg" width=50% />
+### Our custom PCB, with many components including EMG sensors, H bridge motor drivers, etc.
+![](images/poc2/pcb_model.png)
+![](images/poc2/pcb_built.jpg)
 
+### Also some EMG sensor readings (before additional filtering)
+![](images/poc2/emg_sensor_reading.jpg)
 
-## Minimum Viable Product (MVP) defition
+### Now, the whole prototype of the hand (3D printed, batteries, PCB, 3x fingers with motors)
+![](images/poc2/OpenHand_model.png)
+![](images/poc2/OpenHand_built.jpg)
+![](images/poc2/OpenHand_mounted.jpg)
 
-Here are the pictures of the whiteboard and an example hand we had in mind for first MVP (TODO: document this process and finalize plan):
+## Example videos of OpenHand in action
 
-<img src="images/mvp/mvp_1.jpg" width=50% />
-<img src="images/mvp/mvp_2.jpg" width=50% />
-<img src="images/mvp/mvp_3.jpg" width=50% />
-<img src="images/mvp/hand_idea_from_internet.jpg" width=50% />
+Here are some videos of the project for now. Nice to see it finally come together, although this is still early in development, and some things will be changed, and a lot of things will be made to look even prettier.
 
+Note: you might have to download .mp4 videos if GitHub doesn't support playback in browser.
 
-## Examples/demos of ME/EE/SW
+### Showing the response when EMG reading muscle activity 
+[![](images/poc2/OpenHand_POC_EMG_Response_Thumbnail.png)](images/poc2/OpenHand_POC_EMG_Response.mp4)
 
-TODO: describe all three parts of the project roughly here, add some images/diagrams of high level overview
+### Simple demonstration of holding a bottle
+[![](images/poc2/OpenHand_POC_Holding_Bottle_Thumbnail.png)](images/poc2/OpenHand_POC_Holding_Bottle.mp4)
+
+### Demo: holding a can of soda
+[![](images/poc2/OpenHand_POC_Holding_Can_Thumbnail.png)](images/poc2/OpenHand_POC_Holding_Can.mp4)
+
+### Demo: holding a multimeter
+[![](images/poc2/OpenHand_POC_Holding_Multimeter_Thumbnail.png)](images/poc2/OpenHand_POC_Holding_Multimeter.mp4)
